@@ -1,0 +1,90 @@
+:root {
+  font-family: var(--font-poppins), sans-serif;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: white;
+  font-family: var(--font-poppins), sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+
+.hero_inform {
+  background-color: rgba(217, 24, 7, 0.1568627451);
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.4rem 1rem;
+  display: flex;
+}
+.hero_inform p,
+.hero_inform a {
+  font-size: 0.9rem;
+  color: black;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.hero_inform p svg,
+.hero_inform a svg {
+  width: 1rem;
+}
+
+.navBar {
+  width: 100%;
+  background: #D91807 url("/red-cloud.png") no-repeat center center;
+  background-size: cover;
+  padding: 0.4rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navBar img {
+  width: 9rem;
+}
+.navBar__aside {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+.navBar__aside--inputContainer {
+  display: flex;
+  gap: 0.7rem;
+  align-items: center;
+  background-color: white;
+  border-radius: 3rem;
+  width: 24rem;
+  padding: 0.2rem 0.8rem 0.2rem 0.4rem;
+}
+.navBar__aside--inputContainer svg {
+  width: 1.5rem;
+}
+.navBar__aside--inputContainer input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 0.3rem;
+  font-size: 1rem;
+}
+.navBar__aside p {
+  cursor: pointer;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.navBar__aside p svg {
+  width: 1rem;
+}
+
+/*# sourceMappingURL=style.css.map */

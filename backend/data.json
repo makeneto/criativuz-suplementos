@@ -1,0 +1,8 @@
+{
+    "products": [
+        { "id": 1, "name": "Whey Protein", "price": 120000 },
+        { "id": 2, "name": "Creatina", "price": 28000 },
+        { "id": 3, "name": "BCAA", "price": 12000 },
+        { "id": 4, "name": "Glutamina", "price": 17500 }
+    ]
+}
