@@ -11,6 +11,7 @@
 body {
   background: white;
   font-family: var(--font-poppins), sans-serif;
+  color: #3d0a0f;
 }
 
 a {
@@ -67,6 +68,7 @@ a {
   padding: 0.2rem 0.8rem 0.2rem 0.4rem;
 }
 .navBar__aside--inputContainer svg {
+  stroke: #3d0a0f;
   width: 1.5rem;
 }
 .navBar__aside--inputContainer input {

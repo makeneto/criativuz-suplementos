@@ -16,7 +16,7 @@ export default function NavBar() {
             <div className="hero_inform">
                 <Link href="">
                     <PhoneOutgoing />
-                    945336003
+                    923801395
                 </Link>
                 <p>
                     <TruckElectric />
