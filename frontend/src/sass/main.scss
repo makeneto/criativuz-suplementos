@@ -1,2 +1,7 @@
+@use "abstracts/variables";
+
 @use "base/base";
-@use "components/navBar"
+
+@use "components/modal";
+@use "components/navBar";
+@use "components/productList";

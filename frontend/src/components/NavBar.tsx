@@ -29,7 +29,9 @@ export default function NavBar() {
             </div>
 
             <nav className="navBar">
-                <img src="/logo.png" alt="Criativuz Logo" />
+                <Link href="/">
+                    <img src="/logo.png" alt="Criativuz Logo" />
+                </Link>
 
                 <aside className="navBar__aside">
                     <div className="navBar__aside--inputContainer">

@@ -2,72 +2,45 @@
     "products": {
         "all": [
             {
-                "id": 2039,
-                "name": "Hyperbolic Mass gh",
-                "price": 15500,
-                "weight": "1kg",
-                "category": "mass gainer",
-                "description": {
-                    "synopsis": "bla bla bla",
-                    "highlights": {},
-                    "information": "",
-                    "recommendedUse": "",
-                    "purpose": ""
-                },
-                "postImages": [],
-                "bestSeller": true,
-                "flavours": [],
-                "inStock": true
-            },
-            {
-                "id": 2033,
-                "name": "Hyperbolic Mass gh",
-                "price": 25000,
-                "weight": "2kg",
-                "category": "mass gainer",
-                "description": {
-                    "synopsis": "bla bla bla",
-                    "highlights": {},
-                    "information": "",
-                    "recommendedUse": "",
-                    "purpose": ""
-                },
-                "postImages": [],
-                "flavours": [],
-                "inStock": true
-            },
-            {
                 "id": 6354,
                 "name": "Hyperbolic Mass gh",
-                "price": 38500,
-                "weight": "4kg",
+                "price": [38500, 25000, 15500],
+                "weight": ["4kg", "2kg", "1kg"],
                 "category": "mass gainer",
                 "description": {
-                    "synopsis": "bla bla bla",
-                    "highlights": {},
-                    "information": "",
-                    "recommendedUse": "",
-                    "purpose": ""
+                    "synopsis": "The all-in-one mass gainer for extreme size, power and strength increases.",
+                    "highlights": [
+                        "Promove ganhos extremos musculares e em massa",
+                        "Melhora a saída de energia e força",
+                        "Aumenta a recuperação e a síntese de proteínas"
+                    ],
+                    "information": "A massa hiperbólica é um vencedor de massa tudo em um, projetado para indivíduos com um metabolismo rápido. Ele contém uma formulação avançada de aminoácidos, incluindo a adição de glutamina para ajudar no reparo muscular, recuperação e ganhos. É rico em proteínas e contém um sistema de glicomatrix de três estágios para liberação sustentada de energia e transporte eficaz de nutrientes.",
+                    "recommendedUse": "Para começar: adicione ± 2 colheres (150 g) a 375-450 ml de água fria ou leite de creme completo. Após uma semana: adicione ± 4 colheres (300 g) com 750-900 ml de água ou leite creme completo (dividido entre 2 pequenos agitadores). Pegue 300 g completo que serve uma vez ao dia ou como doses divididas. Use como uma bebida de recuperação pós-treinamento e/ou entre as refeições."
                 },
-                "postImages": [],
+                "postImages": [
+                    "https://i.postimg.cc/vHRrsxph/hyperbolic-4kg.webp",
+                    "https://i.postimg.cc/Qtzb9QHP/hyperbolic-2kg.webp",
+                    "https://i.postimg.cc/0jyL5HMM/hyperbolic-1kg.webp"
+                ],
                 "bestSeller": true,
-                "flavours": [],
+                "flavours": ["Chocolate", "Baunilha", "Morango"],
                 "inStock": true
             },
             {
                 "id": 2552,
                 "name": "Hulk Gainer",
-                "price": 37000,
-                "weight": "4kg",
+                "price": [37000],
+                "weight": ["4kg"],
                 "category": "mass gainer",
                 "description": {
                     "synopsis": "bla bla bla",
-                    "highlights": {},
+                    "highlights": [],
                     "information": "",
-                    "recommendedUse": "",
-                    "purpose": ""
+                    "recommendedUse": ""
                 },
-                "postImages": [],
+                "postImages": [
+                    "https://i.postimg.cc/CLjjLL0V/hulk-gainer-4kg.webp"
+                ],
                 "bestSeller": true,
                 "flavours": [],
                 "inStock": true
@@ -75,17 +48,18 @@
             {
                 "id": 3342,
                 "name": "Huge Anabolic Muscle",
-                "price": 37000,
-                "weight": "4kg",
+                "price": [37000],
+                "weight": ["4kg"],
                 "category": "mass gainer",
                 "description": {
                     "synopsis": "bla bla bla",
-                    "highlights": {},
+                    "highlights": [],
                     "information": "",
-                    "recommendedUse": "",
-                    "purpose": ""
+                    "recommendedUse": ""
                 },
-                "postImages": [],
+                "postImages": [
+                    "https://i.postimg.cc/J4wNLH9K/huge-anabolic-muscle.webp"
+                ],
                 "bestSeller": true,
                 "flavours": [],
                 "inStock": true
@@ -93,119 +67,110 @@
             {
                 "id": 8872,
                 "name": "Hardcore Whey gh",
-                "price": 32000,
-                "weight": "908g",
+                "price": [32000],
+                "weight": ["908g"],
                 "category": "protein",
                 "description": {
                     "synopsis": "bla bla bla",
-                    "highlights": {},
+                    "highlights": [],
                     "information": "",
-                    "recommendedUse": "",
-                    "purpose": ""
+                    "recommendedUse": ""
                 },
-                "postImages": [],
+                "postImages": [
+                    "https://i.postimg.cc/4yxr4F7y/hardcore-whey.webp"
+                ],
+                "bestSeller": true,
                 "flavours": [],
                 "inStock": true
             },
             {
                 "id": 3329,
                 "name": "Whey Protein",
-                "price": 24000,
-                "weight": "450g",
+                "price": [24000],
+                "weight": ["450g"],
                 "category": "protein",
                 "description": {
                     "synopsis": "bla bla bla",
-                    "highlights": {},
+                    "highlights": [],
                     "information": "",
-                    "recommendedUse": "",
-                    "purpose": ""
+                    "recommendedUse": ""
                 },
                 "postImages": [],
+                "bestSeller": false,
                 "flavours": [],
                 "inStock": true
             },
             {
                 "id": 9989,
                 "name": "Whey Supreme",
-                "price": 28500,
-                "weight": "908g",
+                "price": [28500],
+                "weight": ["908g"],
                 "category": "protein",
                 "description": {
                     "synopsis": "bla bla bla",
-                    "highlights": {},
+                    "highlights": [],
                     "information": "",
-                    "recommendedUse": "",
-                    "purpose": ""
+                    "recommendedUse": ""
                 },
                 "postImages": [],
+                "bestSeller": false,
                 "flavours": [],
                 "inStock": true
             },
             {
                 "id": 7763,
                 "name": "Whey Protein Amino System",
-                "price": 24000,
-                "weight": "454g",
+                "price": [24000],
+                "weight": ["454g"],
                 "category": "protein",
                 "description": {
                     "synopsis": "bla bla bla",
-                    "highlights": {},
+                    "highlights": [],
                     "information": "",
-                    "recommendedUse": "",
-                    "purpose": ""
+                    "recommendedUse": ""
                 },
                 "postImages": [],
+                "bestSeller": false,
                 "flavours": [],
                 "inStock": true
             },
             {
                 "id": 5424,
                 "name": "Creatina 3-in-1",
-                "price": 19500,
-                "weight": "200g",
+                "price": [19500],
+                "weight": ["200g"],
                 "category": "creatine",
                 "description": {
                     "synopsis": "bla bla bla",
-                    "highlights": {},
+                    "highlights": [],
                     "information": "",
-                    "recommendedUse": "",
-                    "purpose": ""
+                    "recommendedUse": ""
                 },
                 "postImages": [],
-                "flavours": ["Sem sabor"],
-                "inStock": true
-            },
-            {
-                "id": 5444,
-                "name": "Creatina Pura Monohidratada",
-                "price": 30000,
-                "weight": "410g",
-                "category": "creatine",
-                "description": {
-                    "synopsis": "A forma micronizada de monohidrato de creatina pura para auxiliar no desempenho, crescimento e potência muscular.",
-                    "highlights": {},
-                    "information": "Dê um impulso ao seu corpo e melhore seus exercícios de curta duração, alta intensidade ou repetições com Creatina 100% Micronizada. Esta forma de creatina de rápida absorção vem em um pó prático e fácil de misturar.",
-                    "recommendedUse": "Misture 5g com 250ml de água fria ou suco. É importante manter uma ingestão diária adequada de líquidos. A ingestão máxima diária é de 20g, equivalente a 4 porções.",
-                    "purpose": "POR QUE CREATINA? A Creatina Pura Monohidratada Powder da USN contém uma das formas de creatina mais bem estudadas disponíveis. Foi comprovado cientificamente que o monohidrato de creatina aumenta o desempenho de resistência e a força em homens e mulheres, jovens e idosos."
-                },
-                "postImages": [],
+                "bestSeller": false,
                 "flavours": ["Sem sabor"],
                 "inStock": true
             },
             {
                 "id": 3524,
                 "name": "Creatina Pura Monohidratada",
-                "price": 19500,
-                "weight": "200g",
+                "price": [19500, 30000],
+                "weight": ["200g", "410g"],
                 "category": "creatine",
                 "description": {
-                    "synopsis": "bla bla bla",
-                    "highlights": {},
-                    "information": "",
-                    "recommendedUse": "",
-                    "purpose": ""
+                    "synopsis": "A forma micronizada de monohidrato de creatina pura para auxiliar no desempenho, crescimento e potência muscular.",
+                    "highlights": [
+                        "Altamente absorvível",
+                        "Aumenta a força e o desenvolvimento muscular",
+                        "Maximiza o desempenho muscular"
+                    ],
+                    "information": "Dê um impulso ao seu corpo e melhore seus exercícios de curta duração, alta intensidade ou repetições com Creatina 100% Micronizada. Esta forma de creatina de rápida absorção vem em um pó prático e fácil de misturar.",
+                    "recommendedUse": "Misture 5g com 250ml de água fria ou suco. É importante manter uma ingestão diária adequada de líquidos. A ingestão máxima diária é de 20g, equivalente a 4 porções."
                 },
-                "postImages": [],
+                "postImages": [
+                    "https://i.postimg.cc/WbRGvqQX/creatina-mono-200g.webp",
+                    "https://i.postimg.cc/tRzjnDyX/creatina-mono-410g.webp"
+                ],
                 "bestSeller": true,
                 "flavours": ["Sem sabor"],
                 "inStock": true
@@ -213,187 +178,194 @@
             {
                 "id": 2239,
                 "name": "Creatina Transport",
-                "price": 19500,
-                "weight": "650g",
+                "price": [19500],
+                "weight": ["650g"],
                 "category": "creatine",
                 "description": {
-                    "synopsis": "bla bla bla",
-                    "highlights": {},
-                    "information": "",
-                    "recommendedUse": "",
-                    "purpose": ""
+                    "synopsis": "Creatine Transport é um sistema avançado de fornecimento de creatina e recarga de glicogênio, projetado para otimizar o desempenho e aumentar a força e a resistência.",
+                    "highlights": [
+                        "Aumenta o desempenho muscular e a potência",
+                        "Aumenta a resistência",
+                        "Transporta creatina e glicogênio para os músculos"
+                    ],
+                    "information": "O transporte de creatina é um sistema avançado de entrega de creatina e recarga de glicogênio, projetado para otimizar o desempenho e aumentar a força e a resistência. A pilha Nitrocor™ Creatina Amino Esther tem um efeito multiuso na preservação muscular, ganhos musculares e força e desempenho aprimorados.",
+                    "recommendedUse": "For muscle building, mix 2 scoops (43 g) with 300–350 ml of cold water. For creatine loading, drink 4 servings daily for 5 days, then maintain with 1–2 servings per day. For maintenance, take 1 serving before and 1 serving directly after your workout. Remember to have at least 10–12 large glasses of water per day. For sprinting, take 1 serving before training or an event."
                 },
-                "postImages": [],
-                "flavours": [],
+                "postImages": [
+                    "https://i.postimg.cc/Yqc6HLJ3/creatine-transport-650g.webp"
+                ],
+                "bestSeller": true,
+                "flavours": ["Uva"],
                 "inStock": true
             },
             {
                 "id": 3343,
                 "name": "Crea Extreme",
-                "price": 19500,
-                "weight": "800g",
+                "price": [19500],
+                "weight": ["800g"],
                 "category": "creatine",
                 "description": {
                     "synopsis": "bla bla bla",
-                    "highlights": {},
+                    "highlights": [],
                     "information": "",
-                    "recommendedUse": "",
-                    "purpose": ""
+                    "recommendedUse": ""
                 },
                 "postImages": [],
+                "bestSeller": false,
                 "flavours": [],
                 "inStock": true
             },
             {
                 "id": 2238,
                 "name": "BCAA Amino",
-                "price": 18500,
-                "weight": "180g",
+                "price": [18500],
+                "weight": ["180g"],
                 "category": "bcaa",
                 "description": {
                     "synopsis": "bla bla bla",
-                    "highlights": {},
+                    "highlights": [],
                     "information": "",
-                    "recommendedUse": "",
-                    "purpose": ""
+                    "recommendedUse": ""
                 },
                 "postImages": [],
+                "bestSeller": false,
                 "flavours": [],
                 "inStock": true
             },
             {
                 "id": 4488,
                 "name": "Cuts Burner",
-                "price": 18500,
-                "weight": "90 Comp",
+                "price": [18500],
+                "weight": ["90 Comp"],
                 "category": "fat-burner",
                 "description": {
                     "synopsis": "bla bla bla",
-                    "highlights": {},
+                    "highlights": [],
                     "information": "",
-                    "recommendedUse": "",
-                    "purpose": ""
+                    "recommendedUse": ""
                 },
                 "postImages": [],
+                "bestSeller": false,
                 "flavours": [],
                 "inStock": true
             },
             {
                 "id": 4188,
                 "name": "Lipo Cut",
-                "price": 25500,
-                "weight": "120 Comp",
+                "price": [25500],
+                "weight": ["120 Comp"],
                 "category": "fat-burner",
                 "description": {
                     "synopsis": "bla bla bla",
-                    "highlights": {},
+                    "highlights": [],
                     "information": "",
-                    "recommendedUse": "",
-                    "purpose": ""
+                    "recommendedUse": ""
                 },
                 "postImages": [],
+                "bestSeller": false,
                 "flavours": [],
                 "inStock": true
             },
             {
                 "id": 4189,
                 "name": "Omega 3",
-                "price": 12000,
-                "weight": "30 Comp",
+                "price": [12000],
+                "weight": ["30 Comp"],
                 "category": "health-support",
                 "description": {
                     "synopsis": "bla bla bla",
-                    "highlights": {},
+                    "highlights": [],
                     "information": "",
-                    "recommendedUse": "",
-                    "purpose": ""
+                    "recommendedUse": ""
                 },
                 "postImages": [],
+                "bestSeller": false,
                 "flavours": [],
                 "inStock": true
             },
             {
                 "id": 4288,
                 "name": "Collagen Peptides",
-                "price": 16000,
-                "weight": "30 Comp",
+                "price": [16000],
+                "weight": ["30 Comp"],
                 "category": "health-support",
                 "description": {
                     "synopsis": "bla bla bla",
-                    "highlights": {},
+                    "highlights": [],
                     "information": "",
-                    "recommendedUse": "",
-                    "purpose": ""
+                    "recommendedUse": ""
                 },
                 "postImages": [],
+                "bestSeller": false,
                 "flavours": [],
                 "inStock": true
             },
             {
                 "id": 4388,
                 "name": "Multi Vitamin Women",
-                "price": 16000,
-                "weight": "30 Comp",
+                "price": [16000],
+                "weight": ["30 Comp"],
                 "category": "health-support",
                 "description": {
                     "synopsis": "bla bla bla",
-                    "highlights": {},
+                    "highlights": [],
                     "information": "",
-                    "recommendedUse": "",
-                    "purpose": ""
+                    "recommendedUse": ""
                 },
                 "postImages": [],
+                "bestSeller": false,
                 "flavours": [],
                 "inStock": true
             },
             {
                 "id": 4588,
                 "name": "Multi Vitamin Men",
-                "price": 16000,
-                "weight": "30 Comp",
+                "price": [16000],
+                "weight": ["30 Comp"],
                 "category": "health-support",
                 "description": {
                     "synopsis": "bla bla bla",
-                    "highlights": {},
+                    "highlights": [],
                     "information": "",
-                    "recommendedUse": "",
-                    "purpose": ""
+                    "recommendedUse": ""
                 },
                 "postImages": [],
+                "bestSeller": false,
                 "flavours": [],
                 "inStock": true
             },
             {
                 "id": 8844,
                 "name": "Big Testo Booster",
-                "price": 18500,
-                "weight": "90 Comp",
+                "price": [18500],
+                "weight": ["90 Comp"],
                 "category": "testosterone-booster",
                 "description": {
                     "synopsis": "bla bla bla",
-                    "highlights": {},
+                    "highlights": [],
                     "information": "",
-                    "recommendedUse": "",
-                    "purpose": ""
+                    "recommendedUse": ""
                 },
                 "postImages": [],
+                "bestSeller": false,
                 "flavours": [],
                 "inStock": true
             },
             {
                 "id": 5556,
                 "name": "Super Pump Beast",
-                "price": 20000,
-                "weight": "500g",
+                "price": [20000],
+                "weight": ["500g"],
                 "category": "pre-workout",
                 "description": {
                     "synopsis": "bla bla bla",
-                    "highlights": {},
+                    "highlights": [],
                     "information": "",
-                    "recommendedUse": "",
-                    "purpose": ""
+                    "recommendedUse": ""
                 },
-                "postImages": [],
+                "postImages": [
+                    "https://i.postimg.cc/kXrQmR0C/super-pump-beast.webp"
+                ],
                 "bestSeller": true,
                 "flavours": [],
                 "inStock": true

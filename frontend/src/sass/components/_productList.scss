@@ -1,0 +1,91 @@
+.sectionGrid {
+    margin: 6rem 18rem;
+
+    &__title {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    &__list {
+        margin-top: 4rem;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        align-items: center;
+        column-gap: 1rem;
+        row-gap: 2rem;
+
+        & li {
+            list-style: none;
+            padding: 0 2rem 1rem;
+            cursor: pointer;
+            transition: all .2s ease-in;
+            text-align: center;
+
+            & p {
+                margin-top: 0.3rem;
+                font-size: 1.1rem;
+            }
+
+            & h3 {
+                margin-top: 0.3rem;
+                font-size: 1rem;
+                font-weight: 700;
+            }
+
+            &:hover {
+                box-shadow: 0 15px 25px #00000014;
+
+                .sectionGrid__list--view--controls {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
+            }
+        }
+
+        &--view {
+            position: relative;
+
+            & img {
+                width: 100%;
+            }
+
+            &--controls {
+                opacity: 0;
+                position: absolute;
+                top: 20%;
+                left: -6%;
+                display: grid;
+                gap: .8rem;
+
+                transform: translateX(-15px);
+                transition: all .3s ease-in-out;
+
+                & div {
+                    border-radius: 50%;
+                    width: 2.5rem;
+                    height: 2.5rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: white;
+                    box-shadow: 0 15px 25px #00000014;
+                    transition: all .2s ease-in;
+
+                    &:hover {
+                        background-color: red;
+
+                        & svg {
+                            stroke: white;
+                        }
+                    }
+
+                    & svg {
+                        width: 1.2rem;
+                        transition: all .2s ease-in;
+                    }
+                }
+            }
+        }
+    }
+}

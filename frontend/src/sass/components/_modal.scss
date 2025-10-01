@@ -1,0 +1,182 @@
+$solidBorder: 1px solid #e7e7e7;
+
+.modalOverlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+.modalProduct {
+    background-color: white;
+    position: relative;
+    z-index: 1000;
+    top: auto;
+    left: auto;
+    width: 45%;
+    height: 29.7rem;
+    padding: 1.3rem;
+    display: flex;
+
+    &__container {
+        display: flex;
+        gap: 2rem;
+        flex: 1;
+
+        &--closeButton {
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 0;
+            right: -5%;
+            transition: all .2s ease-in;
+            cursor: pointer;
+
+            &:hover {
+                background-color: rgb(255, 225, 225);
+            }
+        }
+
+        &--image {
+            width: 50%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        &--content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+            padding-right: .5rem;
+
+            & div:first-child {
+                display: grid;
+                gap: 0.4rem;
+                padding-bottom: 1.2rem;
+                border-bottom: $solidBorder;
+                margin-bottom: 1rem;
+
+                h2 {
+                    font-size: 1.4rem;
+                    font-weight: 500;
+                }
+
+                p {
+                    color: red;
+                    font-weight: 500;
+                    font-size: 1rem;
+                }
+            }
+
+            &--description {
+                margin-top: 1.2rem;
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            & section {
+                display: grid;
+                gap: 1.5rem;
+                margin-top: 1.5rem;
+            }
+
+            &--list {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                gap: 0.9rem;
+
+                & li:first-child {
+                    border-bottom: .1rem solid red;
+                    padding-block: .2rem;
+                }
+
+                & li:not(:first-child) {
+                    cursor: pointer;
+                    border: $solidBorder;
+                    padding: .5rem 1rem;
+                    color: #c7c0c0;
+                    font-weight: 500;
+                    text-transform: uppercase;
+                    transition: all .2s ease-in;
+
+                    &.active {
+                        background-color: #3d0a0f;
+                        color: white;
+                        border: .1rem solid transparent;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.submitSection {
+    position: sticky;
+    bottom: 0;
+    background: white;
+    padding-top: 1rem;
+    margin-top: auto;
+    display: flex;
+    gap: 1rem;
+
+    & span {
+        background-color: #3d0a0f24;
+        padding: .6rem .7rem;
+        display: flex;
+        align-items: center;
+        color: #3d0a0f;
+
+        & button[type="button"] {
+            background-color: white;
+            width: 2rem;
+            height: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: #3d0a0f;
+            font-size: 1.5rem;
+            border: none;
+
+            &:disabled {
+                filter: brightness(96%);
+                cursor: not-allowed;
+            }
+        }
+
+        & p {
+            font-weight: 500;
+            width: 0.8rem;
+            margin-inline: 1.2rem;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+    }
+
+    & button[type="submit"] {
+        flex: 1;
+        background-color: red;
+        color: white;
+        border: none;
+        text-transform: uppercase;
+        font-size: 1rem;
+        transition: all .2s ease-in;
+
+        &:hover {
+            background-color: rgb(216, 0, 0);
+        }
+    }
+}

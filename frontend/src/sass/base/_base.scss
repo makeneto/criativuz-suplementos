@@ -1,6 +1,5 @@
-:root {
-    font-family: var(--font-poppins), sans-serif;
-}
+$font-family: var(--font-poppins),
+sans-serif;
 
 * {
     padding: 0;
@@ -10,12 +9,30 @@
 
 body {
     background: white;
-    font-family: var(--font-poppins), sans-serif;
+    font-family: $font-family;
     color: #3d0a0f;
+}
+
+a,
+button {
+    cursor: pointer;
 }
 
 a {
     text-decoration: none;
     color: black;
-    cursor: pointer;
+}
+
+li {
+    list-style: none;
+}
+
+button {
+    font-family: inherit;
+    user-select: none;
+
+    &:disabled {
+        filter: brightness(90%);
+        cursor: not-allowed;
+    }
 }
