@@ -98,6 +98,10 @@ $solidBorder: 1px solid #e7e7e7;
                 align-items: center;
                 gap: 0.9rem;
 
+                & li {
+                    user-select: none;
+                }
+
                 & li:first-child {
                     border-bottom: .1rem solid red;
                     padding-block: .2rem;
@@ -118,6 +122,7 @@ $solidBorder: 1px solid #e7e7e7;
                         border: .1rem solid transparent;
                     }
                 }
+
             }
         }
     }

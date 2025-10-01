@@ -123,6 +123,9 @@ button:disabled {
   align-items: center;
   gap: 0.9rem;
 }
+.modalProduct__container--content--list li {
+  user-select: none;
+}
 .modalProduct__container--content--list li:first-child {
   border-bottom: 0.1rem solid red;
   padding-block: 0.2rem;
