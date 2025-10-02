@@ -6,7 +6,7 @@
                 "name": "Hyperbolic Mass gh",
                 "price": [38500, 25000, 15500],
                 "weight": ["4kg", "2kg", "1kg"],
-                "category": "mass gainer",
+                "category": "ganho de massa",
                 "description": {
                     "synopsis": "The all-in-one mass gainer for extreme size, power and strength increases.",
                     "highlights": [
@@ -31,7 +31,7 @@
                 "name": "Hulk Gainer",
                 "price": [37000],
                 "weight": ["4kg"],
-                "category": "mass gainer",
+                "category": "ganho de massa",
                 "description": {
                     "synopsis": "bla bla bla",
                     "highlights": [],
@@ -50,7 +50,7 @@
                 "name": "Huge Anabolic Muscle",
                 "price": [37000],
                 "weight": ["4kg"],
-                "category": "mass gainer",
+                "category": "ganho de massa",
                 "description": {
                     "synopsis": "bla bla bla",
                     "highlights": [],
@@ -69,7 +69,7 @@
                 "name": "Hardcore Whey gh",
                 "price": [32000],
                 "weight": ["908g"],
-                "category": "protein",
+                "category": "proteína",
                 "description": {
                     "synopsis": "bla bla bla",
                     "highlights": [],
@@ -88,7 +88,7 @@
                 "name": "Whey Protein",
                 "price": [24000],
                 "weight": ["450g"],
-                "category": "protein",
+                "category": "proteína",
                 "description": {
                     "synopsis": "bla bla bla",
                     "highlights": [],
@@ -105,7 +105,7 @@
                 "name": "Whey Supreme",
                 "price": [28500],
                 "weight": ["908g"],
-                "category": "protein",
+                "category": "proteína",
                 "description": {
                     "synopsis": "bla bla bla",
                     "highlights": [],
@@ -122,7 +122,7 @@
                 "name": "Whey Protein Amino System",
                 "price": [24000],
                 "weight": ["454g"],
-                "category": "protein",
+                "category": "proteína",
                 "description": {
                     "synopsis": "bla bla bla",
                     "highlights": [],
@@ -139,7 +139,7 @@
                 "name": "Creatina 3-in-1",
                 "price": [19500],
                 "weight": ["200g"],
-                "category": "creatine",
+                "category": "creatina",
                 "description": {
                     "synopsis": "bla bla bla",
                     "highlights": [],
@@ -156,7 +156,7 @@
                 "name": "Creatina Pura Monohidratada",
                 "price": [19500, 30000],
                 "weight": ["200g", "410g"],
-                "category": "creatine",
+                "category": "creatina",
                 "description": {
                     "synopsis": "A forma micronizada de monohidrato de creatina pura para auxiliar no desempenho, crescimento e potência muscular.",
                     "highlights": [
@@ -180,7 +180,7 @@
                 "name": "Creatina Transport",
                 "price": [19500],
                 "weight": ["650g"],
-                "category": "creatine",
+                "category": "creatina",
                 "description": {
                     "synopsis": "Creatine Transport é um sistema avançado de fornecimento de creatina e recarga de glicogênio, projetado para otimizar o desempenho e aumentar a força e a resistência.",
                     "highlights": [
@@ -200,10 +200,10 @@
             },
             {
                 "id": 3343,
-                "name": "Crea Extreme",
+                "name": "Creatina Extreme",
                 "price": [19500],
                 "weight": ["800g"],
-                "category": "creatine",
+                "category": "creatina",
                 "description": {
                     "synopsis": "bla bla bla",
                     "highlights": [],
@@ -220,7 +220,7 @@
                 "name": "BCAA Amino",
                 "price": [18500],
                 "weight": ["180g"],
-                "category": "bcaa",
+                "category": "BCAA",
                 "description": {
                     "synopsis": "bla bla bla",
                     "highlights": [],
@@ -237,7 +237,7 @@
                 "name": "Cuts Burner",
                 "price": [18500],
                 "weight": ["90 Comp"],
-                "category": "fat-burner",
+                "category": "queimador de gordura",
                 "description": {
                     "synopsis": "bla bla bla",
                     "highlights": [],
@@ -254,7 +254,7 @@
                 "name": "Lipo Cut",
                 "price": [25500],
                 "weight": ["120 Comp"],
-                "category": "fat-burner",
+                "category": "queimador de gordura",
                 "description": {
                     "synopsis": "bla bla bla",
                     "highlights": [],
@@ -271,7 +271,7 @@
                 "name": "Omega 3",
                 "price": [12000],
                 "weight": ["30 Comp"],
-                "category": "health-support",
+                "category": "suporte à saúde",
                 "description": {
                     "synopsis": "bla bla bla",
                     "highlights": [],
@@ -288,7 +288,7 @@
                 "name": "Collagen Peptides",
                 "price": [16000],
                 "weight": ["30 Comp"],
-                "category": "health-support",
+                "category": "suporte à saúde",
                 "description": {
                     "synopsis": "bla bla bla",
                     "highlights": [],
@@ -305,7 +305,7 @@
                 "name": "Multi Vitamin Women",
                 "price": [16000],
                 "weight": ["30 Comp"],
-                "category": "health-support",
+                "category": "suporte à saúde",
                 "description": {
                     "synopsis": "bla bla bla",
                     "highlights": [],
@@ -322,7 +322,7 @@
                 "name": "Multi Vitamin Men",
                 "price": [16000],
                 "weight": ["30 Comp"],
-                "category": "health-support",
+                "category": "suporte à saúde",
                 "description": {
                     "synopsis": "bla bla bla",
                     "highlights": [],
@@ -339,7 +339,7 @@
                 "name": "Big Testo Booster",
                 "price": [18500],
                 "weight": ["90 Comp"],
-                "category": "testosterone-booster",
+                "category": "aumentador de testosterona",
                 "description": {
                     "synopsis": "bla bla bla",
                     "highlights": [],
@@ -356,7 +356,7 @@
                 "name": "Super Pump Beast",
                 "price": [20000],
                 "weight": ["500g"],
-                "category": "pre-workout",
+                "category": "pré-treino",
                 "description": {
                     "synopsis": "bla bla bla",
                     "highlights": [],

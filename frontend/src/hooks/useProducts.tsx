@@ -1,5 +1,3 @@
-import React from "react"
-
 export default async function useProducts() {
     async function getProducts() {
         const res = await fetch("http://localhost:5000/api/products", {

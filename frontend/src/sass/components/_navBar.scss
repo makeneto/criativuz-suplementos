@@ -1,75 +1,231 @@
-.hero_inform {
-    background-color: #d9180728;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-    padding: .4rem 1rem;
-    display: flex;
+$solidBorder: 1px solid #e7e7e7;
 
-    & p,
-    a {
-        font-size: 0.9rem;
-        color: black;
-        display: flex;
+.nav {
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    width: 100vw;
+    box-shadow: 0px 10px 16px 0px #00000024;
+
+    &_inform {
+        background-color: #f2e1df;
+        width: 100%;
+        justify-content: space-between;
         align-items: center;
-        gap: .3rem;
-
-        & svg {
-            width: 1rem;
-        }
-    }
-
-}
-
-.navBar {
-    background: #D91807 url('/red-cloud.png') no-repeat center center;
-    background-size: cover;
-    padding: .4rem 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    & img {
-        width: 9rem;
-    }
-
-    &__aside {
+        padding: .4rem 2rem .4rem 1rem;
         display: flex;
-        align-items: center;
-        gap: 1.2rem;
 
-        &--inputContainer {
-            display: flex;
-            gap: 0.7rem;
-            align-items: center;
-            background-color: white;
-            border-radius: 3rem;
-            width: 24rem;
-            padding: 0.2rem 0.8rem 0.2rem 0.4rem;
-
-            svg {
-                stroke: #3d0a0f;
-                width: 1.5rem;
-            }
-
-            & input {
-                flex: 1;
-                border: none;
-                outline: none;
-                padding: 0.3rem;
-                font-size: 1rem;
-            }
-        }
-
-        & p {
-            cursor: pointer;
-            color: white;
+        & p,
+        & a {
+            font-size: 0.9rem;
+            color: black;
             display: flex;
             align-items: center;
             gap: .3rem;
 
-            & svg {
+            svg {
                 width: 1rem;
+            }
+        }
+    }
+
+    &_bar {
+        background: #D91807 url('/red-cloud.png') no-repeat center center;
+        background-size: cover;
+        padding: .4rem 2rem .4rem 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &--category {
+            display: flex;
+        }
+
+        img {
+            margin-top: .5rem;
+            width: 9rem;
+        }
+
+        &__aside {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+
+            &--inputContainer {
+                display: flex;
+                gap: 0.7rem;
+                align-items: center;
+                background-color: white;
+                border-radius: 3rem;
+                width: 24rem;
+                padding: 0.2rem 0.8rem 0.2rem 0.4rem;
+
+                svg {
+                    stroke: #3d0a0f;
+                    width: 1.5rem;
+                }
+
+                input {
+                    flex: 1;
+                    border: none;
+                    outline: none;
+                    padding: 0.3rem;
+                    font-size: 1rem;
+                }
+            }
+
+            p {
+                cursor: pointer;
+                color: white;
+                display: flex;
+                align-items: center;
+                gap: .3rem;
+
+                svg {
+                    width: 1rem;
+                }
+            }
+        }
+
+        &__categories {
+            position: relative;
+            margin-left: 2rem;
+
+            &-btn {
+                text-transform: capitalize;
+                background: none;
+                border: none;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                font-weight: 500;
+                font-size: 1rem;
+                color: white;
+            }
+
+            &-list {
+                display: flex;
+                gap: 1rem;
+                list-style: none;
+                padding: 0;
+                margin: 0;
+
+                .nav_bar__category-item {
+                    position: relative;
+                }
+
+                li {
+                    padding: 0.5rem 1rem;
+                    transition: background 0.2s;
+
+                    a {
+                        color: white;
+                        display: block;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+
+        &__products-list,
+        &__products-list.nav_bar__products-list--right {
+            background: rgb(215, 2, 2);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            z-index: 20;
+            min-width: 220px;
+            padding: 0.5rem 0;
+            border-radius: 4px;
+            list-style: none;
+            position: absolute;
+            top: 110%;
+            left: 0;
+
+            li {
+                padding: 0.5rem 1rem;
+                transition: background 0.2s;
+
+                &:hover {
+                    background: #c01506;
+                }
+
+                a {
+                    color: white;
+                    display: block;
+                    text-decoration: none;
+                }
+            }
+        }
+
+        &__products-list.nav_bar__products-list--right {
+            left: 100%;
+            top: 0;
+            margin-left: 0.2rem;
+            z-index: 30;
+        }
+
+        &__search-dropdown {
+            position: absolute;
+            top: 110%;
+            left: 0;
+            width: 100%;
+            background: #fff;
+            border: 1px solid #eee;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            z-index: 100;
+            list-style: none;
+            padding: 1rem;
+            margin: 0;
+            border-radius: 0 0 8px 8px;
+
+            h5,
+            h6 {
+                font-size: 1rem;
+                font-weight: 600;
+            }
+
+            h5 {
+                padding-bottom: 0.8rem;
+                border-bottom: $solidBorder;
+            }
+
+            h6 {
+                padding-top: 0.8rem;
+                border-top: $solidBorder;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            li {
+                display: flex;
+                padding: 0.5rem 1rem;
+                gap: 0.7rem;
+                cursor: pointer;
+                transition: background 0.2s;
+
+                &:hover {
+                    background: #f5f5f5;
+                }
+
+                a {
+                    display: flex;
+                    align-items: center;
+                    width: 100%;
+                    color: #222;
+                    text-decoration: none;
+                    gap: 0.7rem;
+
+                    div {
+                        display: grid;
+                        justify-content: start;
+
+                        span:nth-child(2) {
+                            color: #D91807;
+                            font-weight: 600;
+                        }
+                    }
+                }
             }
         }
     }

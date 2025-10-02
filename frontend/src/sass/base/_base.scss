@@ -13,6 +13,10 @@ body {
     color: #3d0a0f;
 }
 
+::selection {
+    background-color: #ffb9c0;
+}
+
 a,
 button {
     cursor: pointer;
@@ -25,6 +29,10 @@ a {
 
 li {
     list-style: none;
+}
+
+input {
+    font-family: inherit;
 }
 
 button {

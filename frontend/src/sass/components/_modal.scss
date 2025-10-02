@@ -3,7 +3,7 @@ $solidBorder: 1px solid #e7e7e7;
 .modalOverlay {
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.67);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -58,9 +58,16 @@ $solidBorder: 1px solid #e7e7e7;
             overflow-y: auto;
             padding-right: .5rem;
 
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+
             & div:first-child {
                 display: grid;
-                gap: 0.4rem;
+                gap: 0.2rem;
                 padding-bottom: 1.2rem;
                 border-bottom: $solidBorder;
                 margin-bottom: 1rem;
@@ -78,7 +85,7 @@ $solidBorder: 1px solid #e7e7e7;
             }
 
             &--description {
-                margin-top: 1.2rem;
+                margin-top: .2rem;
                 display: -webkit-box;
                 -webkit-line-clamp: 3;
                 -webkit-box-orient: vertical;
