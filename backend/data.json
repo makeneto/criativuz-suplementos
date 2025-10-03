@@ -4,7 +4,7 @@
             {
                 "id": 6354,
                 "name": "Hyperbolic Mass gh",
-                "price": [38500, 25000, 15500],
+                "price": [38500, 25500, 15500],
                 "discountPrice": [0, 0, 0],
                 "weight": ["4kg", "2kg", "1kg"],
                 "category": "ganho de massa",
@@ -84,12 +84,12 @@
                     "https://i.postimg.cc/4yxr4F7y/hardcore-whey.webp"
                 ],
                 "bestSeller": true,
-                "flavours": [],
+                "flavours": ["Chocolate", "Baunilha", "Morango"],
                 "inStock": true
             },
             {
                 "id": 3329,
-                "name": "Whey Protein",
+                "name": "Whey Protein Concentrado",
                 "price": [24000],
                 "discountPrice": [0],
                 "weight": ["450g"],
@@ -107,7 +107,7 @@
             },
             {
                 "id": 9989,
-                "name": "Whey Supreme",
+                "name": "Whey Supremo",
                 "price": [28500],
                 "discountPrice": [0],
                 "weight": ["908g"],
@@ -120,7 +120,7 @@
                 },
                 "postImages": [],
                 "bestSeller": false,
-                "flavours": [],
+                "flavours": ["Morango"],
                 "inStock": true
             },
             {
@@ -154,7 +154,9 @@
                     "information": "",
                     "recommendedUse": ""
                 },
-                "postImages": [],
+                "postImages": [
+                    "https://i.postimg.cc/sXgk8c4v/creatine-3-in-1-200g.webp"
+                ],
                 "bestSeller": false,
                 "flavours": ["Sem sabor"],
                 "inStock": true
@@ -221,9 +223,11 @@
                     "information": "",
                     "recommendedUse": ""
                 },
-                "postImages": [],
+                "postImages": [
+                    "https://i.postimg.cc/6QgPjXTX/crea-extreme-800g.webp"
+                ],
                 "bestSeller": false,
-                "flavours": [],
+                "flavours": ["Coca Cola"],
                 "inStock": true
             },
             {
@@ -317,8 +321,8 @@
                 "inStock": true
             },
             {
-                "id": 4388,
-                "name": "Multi Vitamin Women",
+                "id": 4588,
+                "name": "Multi Vitamin Men",
                 "price": [16000],
                 "discountPrice": [0],
                 "weight": ["30 Comp"],
@@ -335,8 +339,8 @@
                 "inStock": true
             },
             {
-                "id": 4588,
-                "name": "Multi Vitamin Men",
+                "id": 4388,
+                "name": "Multi Vitamin Women",
                 "price": [16000],
                 "discountPrice": [0],
                 "weight": ["30 Comp"],

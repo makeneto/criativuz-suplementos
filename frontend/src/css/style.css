@@ -288,10 +288,13 @@ button:disabled {
   align-items: center;
   justify-content: space-between;
 }
+.nav_bar--firstChild {
+  display: flex;
+}
 .nav_bar--category {
   display: flex;
 }
-.nav_bar img {
+.nav_bar--logo {
   margin-top: 0.5rem;
   width: 9rem;
 }
@@ -419,8 +422,15 @@ button:disabled {
   border-bottom: 1px solid #e7e7e7;
 }
 .nav_bar__search-dropdown h6 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav_bar__search-dropdown .withProducts {
   padding-top: 0.8rem;
   border-top: 1px solid #e7e7e7;
+}
+.nav_bar__search-dropdown .noProducts {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -450,6 +460,13 @@ button:disabled {
 .nav_bar__search-dropdown li a div span:nth-child(2) {
   color: #D91807;
   font-weight: 600;
+}
+.nav_bar__search-dropdown .searchProductLogo {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-right: 0.7rem;
 }
 
 .sectionGrid {
