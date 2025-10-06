@@ -40,8 +40,8 @@ export default function ExtraCategories({
                         <li
                             key={cat}
                             className="nav_bar__extra-category-item"
-                            onMouseEnter={() => setOpenExtraCategory(cat)}
-                            onMouseLeave={() => setOpenExtraCategory(null)}
+                            onClick={() => setOpenExtraCategory(cat)}
+                            // onBlur={() => setOpenExtraCategory(null)}
                         >
                             <button
                                 className="nav_bar__categories-btn"

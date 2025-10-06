@@ -1,7 +1,6 @@
 export const MAIN_CATEGORIES = [
-    "ganho de massa",
     "proteína",
     "creatina",
-    "BCAA",
+    "ganho de massa",
     "suporte à saúde",
 ]

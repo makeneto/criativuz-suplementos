@@ -35,16 +35,20 @@
                 "weight": ["4kg"],
                 "category": "ganho de massa",
                 "description": {
-                    "synopsis": "bla bla bla",
-                    "highlights": [],
-                    "information": "",
+                    "synopsis": "NutriTech® Hulk Gainer é um suplemento calórico para ganho de peso desenvolvido para ajudar atletas e entusiastas do fitness a ganhar massa muscular. Com uma mistura de proteínas de digestão rápida e lenta, carboidratos complexos e gorduras saudáveis, Hulk Gainer fornece os nutrientes que seu corpo precisa para auxiliar no crescimento e recuperação muscular.",
+                    "highlights": [
+                        "Até 825 kcal por dose grande",
+                        "30 g de proteína por dose",
+                        "Alto teor de carboidratos (165 g por dose grande)"
+                    ],
+                    "information": "HULK GAINER utiliza a mistura PROVEN PROTEIN de proteínas de rápida digestão, como isolados e concentrados de proteína de soro de leite, proteínas de digestão média, como isolados de ervilha e arroz, e a proteína de digestão lenta, caseinato de cálcio, para maximizar a síntese de proteína e garantir que os níveis de retenção de proteína muscular permaneçam elevados por mais tempo .",
                     "recommendedUse": ""
                 },
                 "postImages": [
                     "https://i.postimg.cc/CLjjLL0V/hulk-gainer-4kg.webp"
                 ],
                 "bestSeller": true,
-                "flavours": [],
+                "flavours": ["Chocolate"],
                 "inStock": true
             },
             {
@@ -55,8 +59,12 @@
                 "weight": ["4kg"],
                 "category": "ganho de massa",
                 "description": {
-                    "synopsis": "bla bla bla",
-                    "highlights": [],
+                    "synopsis": "GANHE MÚSCULOS RÁPIDO",
+                    "highlights": [
+                        "Ganhe músculos rapidamente",
+                        "Aumenta a recuperação muscular",
+                        "Rico em calorias para crescimento muscular"
+                    ],
                     "information": "",
                     "recommendedUse": ""
                 },
@@ -64,7 +72,7 @@
                     "https://i.postimg.cc/J4wNLH9K/huge-anabolic-muscle.webp"
                 ],
                 "bestSeller": true,
-                "flavours": [],
+                "flavours": ["Chocolate"],
                 "inStock": true
             },
             {
@@ -75,10 +83,14 @@
                 "weight": ["908g"],
                 "category": "proteína",
                 "description": {
-                    "synopsis": "bla bla bla",
-                    "highlights": [],
-                    "information": "",
-                    "recommendedUse": ""
+                    "synopsis": "O USN Hardcore Whey gH é um suplemento para ganho de massa magra completo com proteína whey premium, creatina e um intensificador de testosterona.",
+                    "highlights": [
+                        "Força um estado de crescimento hiperacelerado",
+                        "Aumenta as fibras musculares magras, densas e fortes",
+                        "Transporte rápido e absorção de nutrientes"
+                    ],
+                    "information": "Hardcore Whey gH é uma fórmula exclusiva de proteína whey premium com teor ideal de aminoácidos. Contém também creatina e taurina para aumentar a força e a resistência. Tribulus Terrestris aumenta a potência muscular e ajuda você a atingir o seu máximo desempenho.",
+                    "recommendedUse": "Para uma porção de 27 g de proteína - Misture 1 colher (33 g) em 200–300 ml de água fria. Para uma porção dupla ideal de 54 g de proteína - Misture 2 colheres (66 g) em 400–600 ml de água fria. Misture em uma coqueteleira ou liquidificador por 30–40 segundos. Tome uma porção 30–45 minutos antes dos treinos e uma segunda porção dupla imediatamente depois. Em dias sem treino, tome uma dose dupla com o estômago vazio, 30 minutos antes do café da manhã e uma segunda dose entre o almoço e o jantar."
                 },
                 "postImages": [
                     "https://i.postimg.cc/4yxr4F7y/hardcore-whey.webp"
@@ -95,14 +107,18 @@
                 "weight": ["450g"],
                 "category": "proteína",
                 "description": {
-                    "synopsis": "bla bla bla",
-                    "highlights": [],
-                    "information": "",
-                    "recommendedUse": ""
+                    "synopsis": "O Whey Protein Concentrado é um suplemento para ganho de massa magra completo com proteína whey premium, creatina e um intensificador de testosterona.",
+                    "highlights": [
+                        "Força um estado de crescimento hiperacelerado",
+                        "Aumenta as fibras musculares magras, densas e fortes",
+                        "Transporte rápido e absorção de nutrientes"
+                    ],
+                    "information": "Hardcore Whey gH é uma fórmula exclusiva de proteína whey premium com teor ideal de aminoácidos. Contém também creatina e taurina para aumentar a força e a resistência. Tribulus Terrestris aumenta a potência muscular e ajuda você a atingir o seu máximo desempenho.",
+                    "recommendedUse": "Para uma porção de 27 g de proteína - Misture 1 colher (33 g) em 200–300 ml de água fria. Para uma porção dupla ideal de 54 g de proteína - Misture 2 colheres (66 g) em 400–600 ml de água fria. Misture em uma coqueteleira ou liquidificador por 30–40 segundos. Tome uma porção 30–45 minutos antes dos treinos e uma segunda porção dupla imediatamente depois. Em dias sem treino, tome uma dose dupla com o estômago vazio, 30 minutos antes do café da manhã e uma segunda dose entre o almoço e o jantar."
                 },
                 "postImages": [],
                 "bestSeller": false,
-                "flavours": [],
+                "flavours": ["Chocolate", "Morango"],
                 "inStock": true
             },
             {
@@ -113,10 +129,14 @@
                 "weight": ["908g"],
                 "category": "proteína",
                 "description": {
-                    "synopsis": "bla bla bla",
-                    "highlights": [],
-                    "information": "",
-                    "recommendedUse": ""
+                    "synopsis": "PROTEÍNA DE MÚSCULO MAGRA",
+                    "highlights": [
+                        "Aumenta a recuperação muscular",
+                        "Baixo em calorias para músculos magros",
+                        "Perfeito para dietas de baixa caloria"
+                    ],
+                    "information": "WHEY é rico em proteínas e pobre em carboidratos e gorduras, uma fórmula para músculos magros com dois objetivos: manter a massa muscular e conquistar o físico mais épico! Prepare-se para que toda a sua equipe sinta inveja do seu físico recém-esculpido quando você tirar a camisa na próxima festa na piscina.",
+                    "recommendedUse": "Misture 2 colheres de WHEY com 200 ml de água ou leite desnatado, usando um Black Bull Shaker e aproveite. Beba depois da academia e/ou no lugar de uma refeição. Para melhores resultados, use 1-2 porções por dia."
                 },
                 "postImages": [],
                 "bestSeller": false,
@@ -131,14 +151,14 @@
                 "weight": ["454g"],
                 "category": "proteína",
                 "description": {
-                    "synopsis": "bla bla bla",
+                    "synopsis": "Fórmula para absorção máxima e recuperação",
                     "highlights": [],
-                    "information": "",
-                    "recommendedUse": ""
+                    "information": "Proteína de soro de leite com aminoácidos absorção máxima e recuperação para crescimento muscular Com sistema de transporte de alto impacto",
+                    "recommendedUse": "Misture 2 colheres (40 g) com 150-200 ml de água fria e agite bem. Consuma 1-3 porcoes diárias como lanche entre as refeições, e após o treino."
                 },
                 "postImages": [],
                 "bestSeller": false,
-                "flavours": [],
+                "flavours": ["Chocolate", "Baunilha"],
                 "inStock": true
             },
             {
@@ -149,10 +169,14 @@
                 "weight": ["200g"],
                 "category": "creatina",
                 "description": {
-                    "synopsis": "bla bla bla",
-                    "highlights": [],
-                    "information": "",
-                    "recommendedUse": ""
+                    "synopsis": "USN 3 em 1 Creatina Monoidratada e Aminoácidos é um suplemento poderoso para impulsionar o desempenho atlético e o crescimento muscular. Combina creatina monoidratada micronizada com aminoácidos para aumentar o desenvolvimento muscular magro e a produção de energia.",
+                    "highlights": [
+                        "Apoia o crescimento muscular magro",
+                        "Apoia a produção de energia muscular",
+                        "Aumenta a intensidade e a resistência do treinamento muscular"
+                    ],
+                    "information": "A mistura de monoidrato de creatina micronizada e aminoácidos que promove o crescimento muscular magro e aumenta a produção de energia muscular, aumentando a intensidade e a resistência do treino.",
+                    "recommendedUse": "Misture ±1 colher (5,5 g) com 150 - 200 ml de água, proteína em pó ou suplemento para ganho de massa. Tome 1 a 2 porções diariamente, 30 minutos antes ou imediatamente após o exercício, ou em dias sem treino, após acordar. As porções podem ser dobradas, se necessário. Pode ser usado para carga de creatina. Observe que os efeitos benéficos da creatina só serão obtidos com uma ingestão diária de pelo menos 3 g de creatina."
                 },
                 "postImages": [
                     "https://i.postimg.cc/sXgk8c4v/creatine-3-in-1-200g.webp"
@@ -218,16 +242,20 @@
                 "weight": ["800g"],
                 "category": "creatina",
                 "description": {
-                    "synopsis": "bla bla bla",
+                    "synopsis": "CREATINA PARA MÚSCULO E FORÇA",
                     "highlights": [],
-                    "information": "",
-                    "recommendedUse": ""
+                    "information": "CREA EXTREME é rico em creatina e carboidratos, uma fórmula de transporte de creatina com três objetivos: ganhar massa muscular rapidamente, aumentar os ganhos de força e maximizar o desempenho muscular. O atleta mais esforçado da academia, prepare-se para quebrar todos os recordes pessoais, dia após dia, repetição após repetição.",
+                    "recommendedUse": "Misture 1 colher de CREA EXTREME com 500 ml de água ou sua bebida favorita, usando um Black Bull Shaker e aproveite. Beba durante ou antes da academia. Para melhores resultados, use 1 porção por dia."
                 },
                 "postImages": [
                     "https://i.postimg.cc/6QgPjXTX/crea-extreme-800g.webp"
                 ],
                 "bestSeller": false,
-                "flavours": ["Coca Cola"],
+                "flavours": [
+                    "Ganhe músculos rapidamente",
+                    "Aumentar os ganhos de força",
+                    "Maximizar o desempenho muscular"
+                ],
                 "inStock": true
             },
             {
@@ -238,14 +266,18 @@
                 "weight": ["180g"],
                 "category": "BCAA",
                 "description": {
-                    "synopsis": "bla bla bla",
-                    "highlights": [],
-                    "information": "",
+                    "synopsis": "RECONSTRUA MELHOR",
+                    "highlights": [
+                        "Aumenta a recuperação muscular",
+                        "Diminui a dor muscular",
+                        "Aumentar os esforços de queima de gordura"
+                    ],
+                    "information": "O BCAA é rico em aminoácidos de cadeia ramificada, uma fórmula de recuperação muscular com três objetivos: aumentar o crescimento muscular, reduzir a dor muscular após o treino e atuar em conjunto com HUGE ou WHEY para alcançar o físico que você busca! Se a academia é o seu clube, o BCAA é o seu coquetel.",
                     "recommendedUse": ""
                 },
                 "postImages": [],
                 "bestSeller": false,
-                "flavours": [],
+                "flavours": ["Coca Cola"],
                 "inStock": true
             },
             {
@@ -254,12 +286,16 @@
                 "price": [18500],
                 "discountPrice": [0],
                 "weight": ["90 Comp"],
-                "category": "queimador de gordura",
+                "category": "queima gordura",
                 "description": {
-                    "synopsis": "bla bla bla",
-                    "highlights": [],
-                    "information": "",
-                    "recommendedUse": ""
+                    "synopsis": "PERDA DE PESO HARDCORE",
+                    "highlights": [
+                        "Queime gordura rapidamente",
+                        "Absorve menos gordura",
+                        "Suprime a fome e os desejos"
+                    ],
+                    "information": "CUTS BURNER é rico em poderosos ingredientes termogênicos para perda de peso, uma fórmula de queima de gordura com quatro objetivos: eliminar gordura rapidamente, acelerar o metabolismo, reduzir a quantidade de gordura que você absorve e suprimir a fome e os desejos. Vamos ficar definidos: todos os músculos do mundo valem pouco se estiverem cobertos por camadas de gordura corporal.",
+                    "recommendedUse": "Tome 3 comprimidos de CUTS BURNER com 250 ml de água ou sua bebida favorita, usando um Black Bull Shaker. Beba na primeira refeição do dia (pode ser tomado sem alimentos) e certifique-se de beber bastante água ao longo do dia."
                 },
                 "postImages": [],
                 "bestSeller": false,
@@ -272,11 +308,11 @@
                 "price": [25500],
                 "discountPrice": [0],
                 "weight": ["120 Comp"],
-                "category": "queimador de gordura",
+                "category": "queima gordura",
                 "description": {
-                    "synopsis": "bla bla bla",
+                    "synopsis": "O Nutritech Lipocut é um poderoso queimador de gordura que ajuda você a perder peso e conquistar o corpo desejado. Contém uma mistura de ingredientes que aceleram o metabolismo, reduzem o apetite e aumentam a energia, tornando-o um suplemento ideal para quem busca eliminar quilos extras.",
                     "highlights": [],
-                    "information": "",
+                    "information": "O NUTRITECH LIPOCUT foi desenvolvido como um auxiliar no controle de peso sem estimulantes. Formulado com uma mistura lipotrópica exclusiva, sem cafeína, que visa combinar os benefícios potenciais desses ingredientes essenciais para influenciar positivamente seu programa de controle de peso, incluindo exercícios regulares e uma dieta com restrição calórica. O LIPOCUT não contém estimulantes nem substâncias proibidas, sendo adequado para consumo por atletas.",
                     "recommendedUse": ""
                 },
                 "postImages": [],
@@ -292,9 +328,9 @@
                 "weight": ["30 Comp"],
                 "category": "suporte à saúde",
                 "description": {
-                    "synopsis": "bla bla bla",
+                    "synopsis": "Cápsulas gelatinosas Vitatech Ômega 3. Suplemento de óleo de peixe com ácidos graxos essenciais, eficaz e de ação rápida. Promove a saúde do coração e do cérebro e ajuda a reduzir a inflamação. Cápsula gelatinosa de origem sustentável para consumo diário.",
                     "highlights": [],
-                    "information": "",
+                    "information": "Ômega 3 Pode combater a depressão e a ansiedade, melhorar a saúde ocular, promover a saúde cerebral durante a gravidez e no início da vida, reduzir os fatores de risco para doenças cardíacas, reduzir os sintomas da síndrome metabólica, combater a inflamação, combater doenças autoimunes, melhorar os transtornos mentais, reduzir a asma em crianças, reduzir a gordura no fígado e aliviar as dores menstruais.   Pode melhorar a saúde óssea e articular e melhorar o sono.",
                     "recommendedUse": ""
                 },
                 "postImages": [],
@@ -310,10 +346,10 @@
                 "weight": ["30 Comp"],
                 "category": "suporte à saúde",
                 "description": {
-                    "synopsis": "bla bla bla",
+                    "synopsis": "Cápsulas de colágeno Vitatech com peptídeos de colágeno de alta absorção clinicamente comprovados. Ação rápida e eficaz, que promove a saúde da pele, cabelos, unhas, articulações e ossos. Peptídeos de colágeno tipo I e II. Cápsula para tomar diariamente.",
                     "highlights": [],
-                    "information": "",
-                    "recommendedUse": ""
+                    "information": "Collagen Peptides Oferece múltiplos benefícios à saúde, atuando como blocos de construção para articulações, ossos e músculos saudáveis, bem como para a pele. O colágeno é um componente estrutural essencial",
+                    "recommendedUse": "Tome 1 cápsula por dia com água."
                 },
                 "postImages": [],
                 "bestSeller": false,
@@ -328,10 +364,10 @@
                 "weight": ["30 Comp"],
                 "category": "suporte à saúde",
                 "description": {
-                    "synopsis": "bla bla bla",
+                    "synopsis": "Comprimidos Vitatech Multivitamínico para Homens com Raiz de Maca. Suplemento vitamínico complexo eficaz e de ação rápida. Comprimido para tomar diariamente.",
                     "highlights": [],
-                    "information": "",
-                    "recommendedUse": ""
+                    "information": "Protege seus olhos da cegueira noturna e do declínio relacionado à idade. Pode reduzir o risco de certos tipos de câncer. Contribui para a saúde do sistema imunológico. Reduz o risco de acne. Contribui para a saúde óssea. Promove o crescimento e a reprodução saudáveis.",
+                    "recommendedUse": "Tome 1 comprimido por dia com o café da manhã."
                 },
                 "postImages": [],
                 "bestSeller": false,
@@ -346,10 +382,10 @@
                 "weight": ["30 Comp"],
                 "category": "suporte à saúde",
                 "description": {
-                    "synopsis": "bla bla bla",
+                    "synopsis": "Comprimidos Vitatech Multivitamínico para Mulheres com Extrato de Cranberry. Suplemento vitamínico complexo eficaz e de ação rápida. Comprimido para tomar diariamente.",
                     "highlights": [],
-                    "information": "",
-                    "recommendedUse": ""
+                    "information": "Protege seus olhos da cegueira noturna e do declínio relacionado à idade. Pode reduzir o risco de certos tipos de câncer. Contribui para a saúde do sistema imunológico. Reduz o risco de acne. Contribui para a saúde óssea. Promove o crescimento e a reprodução saudáveis.",
+                    "recommendedUse": "Tome 1 comprimido por dia com o café da manhã."
                 },
                 "postImages": [],
                 "bestSeller": false,
@@ -362,16 +398,20 @@
                 "price": [18500],
                 "discountPrice": [0],
                 "weight": ["90 Comp"],
-                "category": "aumentador de testosterona",
+                "category": "testosterona",
                 "description": {
-                    "synopsis": "bla bla bla",
-                    "highlights": [],
-                    "information": "",
+                    "synopsis": "POTÊNCIA DE DESEMPENHO MASCULINO",
+                    "highlights": [
+                        "Aumentar a massa muscular e a força",
+                        "Construir ossos mais fortes e densos",
+                        "Aumenta o desejo e a função sexual"
+                    ],
+                    "information": "BIG TEST é rico em poderosos ingredientes que aumentam a testosterona, uma fórmula de reforço de testosterona com quatro objetivos: aumentar a produção e a absorção de testosterona, aumentar a massa e a força muscular, construir ossos mais fortes e densos e aumentar o desejo e a função sexual. Sem barreiras, leve seu jogo para o próximo nível.",
                     "recommendedUse": ""
                 },
                 "postImages": [],
                 "bestSeller": false,
-                "flavours": [],
+                "flavours": [""],
                 "inStock": true
             },
             {
@@ -382,16 +422,20 @@
                 "weight": ["500g"],
                 "category": "pré-treino",
                 "description": {
-                    "synopsis": "bla bla bla",
-                    "highlights": [],
-                    "information": "",
-                    "recommendedUse": ""
+                    "synopsis": "O pré treino que é uma verdadeira bomba de volumização celular, potência e desempenho.",
+                    "highlights": [
+                        "Aumenta os ganhos de energia",
+                        "Melhora a recuperação",
+                        "Melhora o foco energético"
+                    ],
+                    "information": "Bombas musculares e volumização Potência e desempenho Energia e foco mental intenso",
+                    "recommendedUse": "Misture 2 colheres (25 g) com 200-250ml de água fria e mexa bem. Consuma 30-45 minutos antes do treino."
                 },
                 "postImages": [
                     "https://i.postimg.cc/kXrQmR0C/super-pump-beast.webp"
                 ],
                 "bestSeller": true,
-                "flavours": [],
+                "flavours": ["Cereja"],
                 "inStock": true
             }
         ]
