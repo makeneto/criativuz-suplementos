@@ -1,22 +1,28 @@
 import { Link, MapPinHouse, PhoneOutgoing, TruckElectric } from "lucide-react"
 import React from "react"
+import NextLink from "next/link"
 
 export default function InformBar() {
     return (
         <div className="nav_inform">
-            <Link href="tel:923801395">
+            <div>
                 <PhoneOutgoing />
-                923801395
-            </Link>
+                <NextLink href="tel:923801395">
+                    <p>923801395</p>
+                </NextLink>
+            </div>
 
-            <p>
+            <div>
                 <TruckElectric />
-                Entrega grátis para 90% de Luanda
-            </p>
-            <Link href="">
+                <p>Entrega grátis para 90% de Luanda</p>
+            </div>
+
+            <div>
                 <MapPinHouse />
-                Localização
-            </Link>
+                <NextLink href="/">
+                    <p>Localização</p>
+                </NextLink>
+            </div>
         </div>
     )
 }

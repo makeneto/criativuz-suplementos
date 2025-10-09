@@ -65,12 +65,12 @@ $solidBorder: 1px solid #e7e7e7;
             -ms-overflow-style: none;
             scrollbar-width: none;
 
-            & div:first-child {
+            & header {
                 display: grid;
                 gap: 0.2rem;
                 padding-bottom: 1.2rem;
-                border-bottom: $solidBorder;
                 margin-bottom: 1rem;
+                border-bottom: $solidBorder;
 
                 h2 {
                     font-size: 1.4rem;
@@ -85,7 +85,7 @@ $solidBorder: 1px solid #e7e7e7;
             }
 
             &--description {
-                margin-top: .2rem;
+                margin-top: .5rem;
                 display: -webkit-box;
                 -webkit-line-clamp: 3;
                 -webkit-box-orient: vertical;

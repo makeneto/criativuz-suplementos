@@ -1,6 +1,11 @@
+"use client"
+
 import { formatCurrency } from "@/utils/formatCurrency"
 import { X } from "lucide-react"
-import React, { useState } from "react"
+import ProductImage from "./ProductImage"
+import ProductOptions from "./ui/ProductOptions"
+import ProductQuantity from "./ui/ProductQuantity"
+import { useProductModal } from "@/hooks/useProductModal"
 
 interface ProductModalProps {
     product: any
@@ -20,24 +25,16 @@ export default function ProductModal({
     buttonLabel,
     onSubmit,
 }: ProductModalProps) {
-    const [qtd, setQtd] = useState<number>(1)
-    const [imageIndex, setImageIndex] = useState(0)
-    const [selectedWeight, setSelectedWeight] = useState(product.weight[0])
-    const [selectedFlavour, setSelectedFlavour] = useState(product.flavours[0])
-
-    function handleQtd(operation: string) {
-        setQtd((prev) => {
-            if (operation === "add") return prev + 1
-            if (operation === "subtract" && prev > 1) return prev - 1
-            return prev
-        })
-    }
-
-    const unitPrice = Array.isArray(product.price)
-        ? product.price[imageIndex] ?? product.price[0]
-        : product.price
-
-    const totalPrice = unitPrice * qtd
+    const {
+        qtd,
+        imageIndex,
+        selectedWeight,
+        selectedFlavour,
+        handleQtd,
+        selectWeight,
+        selectFlavour,
+        totalPrice,
+    } = useProductModal(product)
 
     function handleSubmit(e: React.FormEvent) {
         e.preventDefault()
@@ -60,81 +57,36 @@ export default function ProductModal({
                 </div>
 
                 <div className="modalProduct__container">
-                    <img
+                    <ProductImage
                         src={product.postImages[imageIndex]}
                         alt={product.name}
-                        className="modalProduct__container--image"
                     />
 
                     <div className="modalProduct__container--content">
-                        <div>
+                        <header>
                             <h2>{product.name}</h2>
                             <p>{formatCurrency(totalPrice)}</p>
-                        </div>
+                        </header>
 
                         <p className="modalProduct__container--content--description">
                             {product.description?.synopsis}
                         </p>
 
-                        <section>
-                            <ul className="modalProduct__container--content--list">
-                                <li>Peso</li>
-                                {product.weight.map((w: any, index: number) => (
-                                    <li
-                                        key={index}
-                                        onClick={() => {
-                                            setSelectedWeight(w)
-                                            setImageIndex(index)
-                                        }}
-                                        className={
-                                            selectedWeight === w ? "active" : ""
-                                        }
-                                    >
-                                        {w}
-                                    </li>
-                                ))}
-                            </ul>
-
-                            <ul className="modalProduct__container--content--list">
-                                <li>Sabor</li>
-                                {product.flavours.map(
-                                    (f: any, index: number) => (
-                                        <li
-                                            key={index}
-                                            onClick={() =>
-                                                setSelectedFlavour(f)
-                                            }
-                                            className={
-                                                selectedFlavour === f
-                                                    ? "active"
-                                                    : ""
-                                            }
-                                        >
-                                            {f}
-                                        </li>
-                                    )
-                                )}
-                            </ul>
-                        </section>
+                        <ProductOptions
+                            weights={product.weight}
+                            flavours={product.flavours}
+                            selectedWeight={selectedWeight}
+                            selectedFlavour={selectedFlavour}
+                            onSelectWeight={selectWeight}
+                            onSelectFlavour={selectFlavour}
+                        />
 
                         <div className="submitSection">
-                            <span>
-                                <button
-                                    type="button"
-                                    disabled={qtd === 1}
-                                    onClick={() => handleQtd("subtract")}
-                                >
-                                    -
-                                </button>
-                                <p>{qtd}</p>
-                                <button
-                                    type="button"
-                                    onClick={() => handleQtd("add")}
-                                >
-                                    +
-                                </button>
-                            </span>
-
+                            <ProductQuantity
+                                qtd={qtd}
+                                onAdd={() => handleQtd("add")}
+                                onSubtract={() => handleQtd("subtract")}
+                            />
                             <button type="submit">{buttonLabel}</button>
                         </div>
                     </div>

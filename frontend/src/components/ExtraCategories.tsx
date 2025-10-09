@@ -41,7 +41,6 @@ export default function ExtraCategories({
                             key={cat}
                             className="nav_bar__extra-category-item"
                             onClick={() => setOpenExtraCategory(cat)}
-                            // onBlur={() => setOpenExtraCategory(null)}
                         >
                             <button
                                 className="nav_bar__categories-btn"

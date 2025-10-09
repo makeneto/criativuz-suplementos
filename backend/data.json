@@ -69,7 +69,7 @@
                     "recommendedUse": ""
                 },
                 "postImages": [
-                    "https://i.postimg.cc/J4wNLH9K/huge-anabolic-muscle.webp"
+                    "https://i.postimg.cc/4NyqnqNh/huge-anabolic-muscle.webp"
                 ],
                 "bestSeller": true,
                 "flavours": ["Chocolate"],
@@ -100,28 +100,6 @@
                 "inStock": true
             },
             {
-                "id": 3329,
-                "name": "Whey Protein Concentrado",
-                "price": [24000],
-                "discountPrice": [0],
-                "weight": ["450g"],
-                "category": "proteína",
-                "description": {
-                    "synopsis": "O Whey Protein Concentrado é um suplemento para ganho de massa magra completo com proteína whey premium, creatina e um intensificador de testosterona.",
-                    "highlights": [
-                        "Força um estado de crescimento hiperacelerado",
-                        "Aumenta as fibras musculares magras, densas e fortes",
-                        "Transporte rápido e absorção de nutrientes"
-                    ],
-                    "information": "Hardcore Whey gH é uma fórmula exclusiva de proteína whey premium com teor ideal de aminoácidos. Contém também creatina e taurina para aumentar a força e a resistência. Tribulus Terrestris aumenta a potência muscular e ajuda você a atingir o seu máximo desempenho.",
-                    "recommendedUse": "Para uma porção de 27 g de proteína - Misture 1 colher (33 g) em 200–300 ml de água fria. Para uma porção dupla ideal de 54 g de proteína - Misture 2 colheres (66 g) em 400–600 ml de água fria. Misture em uma coqueteleira ou liquidificador por 30–40 segundos. Tome uma porção 30–45 minutos antes dos treinos e uma segunda porção dupla imediatamente depois. Em dias sem treino, tome uma dose dupla com o estômago vazio, 30 minutos antes do café da manhã e uma segunda dose entre o almoço e o jantar."
-                },
-                "postImages": [],
-                "bestSeller": false,
-                "flavours": ["Chocolate", "Morango"],
-                "inStock": true
-            },
-            {
                 "id": 9989,
                 "name": "Whey Supremo",
                 "price": [28500],
@@ -138,7 +116,9 @@
                     "information": "WHEY é rico em proteínas e pobre em carboidratos e gorduras, uma fórmula para músculos magros com dois objetivos: manter a massa muscular e conquistar o físico mais épico! Prepare-se para que toda a sua equipe sinta inveja do seu físico recém-esculpido quando você tirar a camisa na próxima festa na piscina.",
                     "recommendedUse": "Misture 2 colheres de WHEY com 200 ml de água ou leite desnatado, usando um Black Bull Shaker e aproveite. Beba depois da academia e/ou no lugar de uma refeição. Para melhores resultados, use 1-2 porções por dia."
                 },
-                "postImages": [],
+                "postImages": [
+                    "https://i.postimg.cc/VvvwfNVm/whey-supreme.webp"
+                ],
                 "bestSeller": false,
                 "flavours": ["Morango"],
                 "inStock": true
@@ -156,7 +136,9 @@
                     "information": "Proteína de soro de leite com aminoácidos absorção máxima e recuperação para crescimento muscular Com sistema de transporte de alto impacto",
                     "recommendedUse": "Misture 2 colheres (40 g) com 150-200 ml de água fria e agite bem. Consuma 1-3 porcoes diárias como lanche entre as refeições, e após o treino."
                 },
-                "postImages": [],
+                "postImages": [
+                    "https://i.postimg.cc/9002mfN6/whey-protein-amino-system.webp"
+                ],
                 "bestSeller": false,
                 "flavours": ["Chocolate", "Baunilha"],
                 "inStock": true
@@ -228,7 +210,7 @@
                     "recommendedUse": "For muscle building, mix 2 scoops (43 g) with 300–350 ml of cold water. For creatine loading, drink 4 servings daily for 5 days, then maintain with 1–2 servings per day. For maintenance, take 1 serving before and 1 serving directly after your workout. Remember to have at least 10–12 large glasses of water per day. For sprinting, take 1 serving before training or an event."
                 },
                 "postImages": [
-                    "https://i.postimg.cc/Yqc6HLJ3/creatine-transport-650g.webp"
+                    "https://i.postimg.cc/c1gLY9HZ/creatine-transport.png"
                 ],
                 "bestSeller": true,
                 "flavours": ["Uva"],
@@ -275,8 +257,10 @@
                     "information": "O BCAA é rico em aminoácidos de cadeia ramificada, uma fórmula de recuperação muscular com três objetivos: aumentar o crescimento muscular, reduzir a dor muscular após o treino e atuar em conjunto com HUGE ou WHEY para alcançar o físico que você busca! Se a academia é o seu clube, o BCAA é o seu coquetel.",
                     "recommendedUse": ""
                 },
-                "postImages": [],
-                "bestSeller": false,
+                "postImages": [
+                    "https://i.postimg.cc/rp1S8VB1/bcaa-aminos.webp"
+                ],
+                "bestSeller": true,
                 "flavours": ["Coca Cola"],
                 "inStock": true
             },
@@ -315,7 +299,7 @@
                     "information": "O NUTRITECH LIPOCUT foi desenvolvido como um auxiliar no controle de peso sem estimulantes. Formulado com uma mistura lipotrópica exclusiva, sem cafeína, que visa combinar os benefícios potenciais desses ingredientes essenciais para influenciar positivamente seu programa de controle de peso, incluindo exercícios regulares e uma dieta com restrição calórica. O LIPOCUT não contém estimulantes nem substâncias proibidas, sendo adequado para consumo por atletas.",
                     "recommendedUse": ""
                 },
-                "postImages": [],
+                "postImages": ["https://i.postimg.cc/8Cdw5B2X/lipocut.png"],
                 "bestSeller": false,
                 "flavours": [],
                 "inStock": true
@@ -333,7 +317,7 @@
                     "information": "Ômega 3 Pode combater a depressão e a ansiedade, melhorar a saúde ocular, promover a saúde cerebral durante a gravidez e no início da vida, reduzir os fatores de risco para doenças cardíacas, reduzir os sintomas da síndrome metabólica, combater a inflamação, combater doenças autoimunes, melhorar os transtornos mentais, reduzir a asma em crianças, reduzir a gordura no fígado e aliviar as dores menstruais.   Pode melhorar a saúde óssea e articular e melhorar o sono.",
                     "recommendedUse": ""
                 },
-                "postImages": [],
+                "postImages": ["https://i.postimg.cc/ZqPjRFGX/omega-3.png"],
                 "bestSeller": false,
                 "flavours": [],
                 "inStock": true
@@ -351,7 +335,9 @@
                     "information": "Collagen Peptides Oferece múltiplos benefícios à saúde, atuando como blocos de construção para articulações, ossos e músculos saudáveis, bem como para a pele. O colágeno é um componente estrutural essencial",
                     "recommendedUse": "Tome 1 cápsula por dia com água."
                 },
-                "postImages": [],
+                "postImages": [
+                    "https://i.postimg.cc/1z0Mtck6/collagen-peptides.png"
+                ],
                 "bestSeller": false,
                 "flavours": [],
                 "inStock": true
@@ -369,7 +355,9 @@
                     "information": "Protege seus olhos da cegueira noturna e do declínio relacionado à idade. Pode reduzir o risco de certos tipos de câncer. Contribui para a saúde do sistema imunológico. Reduz o risco de acne. Contribui para a saúde óssea. Promove o crescimento e a reprodução saudáveis.",
                     "recommendedUse": "Tome 1 comprimido por dia com o café da manhã."
                 },
-                "postImages": [],
+                "postImages": [
+                    "https://i.postimg.cc/FKbGRgML/multi-vitamin-men.png"
+                ],
                 "bestSeller": false,
                 "flavours": [],
                 "inStock": true
@@ -387,7 +375,9 @@
                     "information": "Protege seus olhos da cegueira noturna e do declínio relacionado à idade. Pode reduzir o risco de certos tipos de câncer. Contribui para a saúde do sistema imunológico. Reduz o risco de acne. Contribui para a saúde óssea. Promove o crescimento e a reprodução saudáveis.",
                     "recommendedUse": "Tome 1 comprimido por dia com o café da manhã."
                 },
-                "postImages": [],
+                "postImages": [
+                    "https://i.postimg.cc/Bv5N6crC/multi-vitamin-women.png"
+                ],
                 "bestSeller": false,
                 "flavours": [],
                 "inStock": true
@@ -409,7 +399,7 @@
                     "information": "BIG TEST é rico em poderosos ingredientes que aumentam a testosterona, uma fórmula de reforço de testosterona com quatro objetivos: aumentar a produção e a absorção de testosterona, aumentar a massa e a força muscular, construir ossos mais fortes e densos e aumentar o desejo e a função sexual. Sem barreiras, leve seu jogo para o próximo nível.",
                     "recommendedUse": ""
                 },
-                "postImages": [],
+                "postImages": ["https://i.postimg.cc/wMMzqBGK/Big-test.webp"],
                 "bestSeller": false,
                 "flavours": [""],
                 "inStock": true

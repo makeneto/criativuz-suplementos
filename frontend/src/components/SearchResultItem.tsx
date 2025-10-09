@@ -2,6 +2,7 @@
 
 import Link from "next/link"
 import { formatCurrency } from "@/utils/formatCurrency"
+import Image from "next/image"
 
 export default function SearchResultItem({
     prod,
@@ -18,6 +19,7 @@ export default function SearchResultItem({
                     alt={prod.name}
                     className="searchProductLogo"
                 />
+
                 <div>
                     <span style={{ fontWeight: 500 }}>{prod.name}</span>
                     <span>

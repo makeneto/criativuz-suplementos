@@ -16,7 +16,7 @@ $solidBorder: 1px solid #e7e7e7;
         display: flex;
 
         & p,
-        & a {
+        & div {
             font-size: 0.9rem;
             color: black;
             display: flex;
@@ -252,8 +252,8 @@ $solidBorder: 1px solid #e7e7e7;
             }
 
             .searchProductLogo {
-                width: 40px;
-                height: 40px;
+                width: 3.6rem;
+                height: 3.6rem;
                 object-fit: cover;
                 border-radius: 4px;
                 margin-right: 0.7rem;

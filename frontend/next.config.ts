@@ -1,7 +1,10 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from "next"
 
 const nextConfig: NextConfig = {
-  /* config options here */
-};
+    images: {
+        domains: ["i.postimg.cc", "github.com"],
+        formats: ["image/avif", "image/webp"],
+    },
+}
 
-export default nextConfig;
+export default nextConfig

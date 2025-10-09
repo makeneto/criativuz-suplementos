@@ -2,7 +2,7 @@
 import CategoriesMenu from "./CategoriesMenu"
 import InformBar from "./InformBar"
 import UserActions from "./UserActions"
-import NavLogo from "./NavLogo"
+import NavLogo from "./ui/NavLogo"
 
 export default function NavBar() {
     return (

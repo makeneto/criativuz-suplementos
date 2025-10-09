@@ -1,11 +1,12 @@
 import BestSellers from "@/components/BestSellers"
 import GridCategory from "@/components/GridCategory"
-import Header from "@/components/Header"
+import HeroCarousel from "@/components/HeroCarousel"
+import { slides } from "@/data/slides"
 
 export default async function Home() {
     return (
         <>
-            <Header />
+            <HeroCarousel slides={slides} />
             <BestSellers />
             <GridCategory />
         </>

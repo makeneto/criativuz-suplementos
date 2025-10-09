@@ -1,0 +1,120 @@
+.heroCarousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100dvh;
+
+    &__slides {
+        display: flex;
+        transition: transform 0.7s ease-in-out;
+    }
+
+    &__slide {
+        position: relative;
+        min-width: 100%;
+        height: 100%;
+
+        @media (min-width: 768px) {
+            height: 100dvh;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 1rem;
+        }
+    }
+
+    &__overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.226);
+    }
+
+    &__content {
+        max-width: 32rem;
+        padding: 3rem;
+        background-color: white;
+
+        position: absolute;
+        top: 50%;
+        left: 5%;
+        transform: translateY(-50%);
+
+        h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            line-height: 2.7rem;
+        }
+
+        p {
+            margin-top: 0.3rem;
+            font-size: 1.125rem;
+        }
+    }
+
+    &__button {
+        margin-top: 1.6rem;
+        display: inline-block;
+        background: #5f0101;
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 0rem;
+        text-decoration: none;
+        transition: background 0.3s ease;
+
+        &:hover {
+            background: #910202;
+        }
+    }
+
+    &__nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(255, 255, 255, 0.7);
+        padding: 0.5rem 1rem;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 1.5rem;
+        line-height: 1;
+        border: none;
+        transition: background 0.3s;
+
+        &:hover {
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        &--prev {
+            left: 1rem;
+        }
+
+        &--next {
+            right: 1rem;
+        }
+    }
+
+    &__indicators {
+        position: absolute;
+        bottom: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 0.5rem;
+
+        .heroCarousel__indicator {
+            width: 1.7rem;
+            height: 0.1rem;
+            border-radius: 1px;
+            background: #9ca3af;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s;
+
+            &.active {
+                background: #fff;
+            }
+        }
+    }
+}
