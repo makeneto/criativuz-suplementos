@@ -33,6 +33,7 @@ input {
 }
 
 button {
+  border: none;
   font-family: inherit;
   user-select: none;
 }
