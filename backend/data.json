@@ -4,6 +4,7 @@
             {
                 "id": 6354,
                 "name": "Hyperbolic Mass gh",
+                "brand": "USN",
                 "price": [38500, 25500, 15500],
                 "discountPrice": [0, 0, 0],
                 "weight": ["4kg", "2kg", "1kg"],
@@ -30,6 +31,7 @@
             {
                 "id": 2552,
                 "name": "Hulk Gainer",
+                "brand": "NutriTech",
                 "price": [37000],
                 "discountPrice": [0],
                 "weight": ["4kg"],
@@ -54,12 +56,13 @@
             {
                 "id": 3342,
                 "name": "Huge Anabolic Muscle",
+                "brand": "Black Bull",
                 "price": [37000],
                 "discountPrice": [0],
                 "weight": ["4kg"],
                 "category": "ganho de massa",
                 "description": {
-                    "synopsis": "GANHE MÚSCULOS RÁPIDO",
+                    "synopsis": "O Huge Anabolic Muscle da Black Bull dá-te aquela força bruta que o corpo precisa — ajuda-te a ganhar massa, recuperar mais rápido e chegar firme no próximo treino. É pra quem não foge do ferro!",
                     "highlights": [
                         "Ganhe músculos rapidamente",
                         "Aumenta a recuperação muscular",
@@ -78,6 +81,7 @@
             {
                 "id": 8872,
                 "name": "Hardcore Whey gh",
+                "brand": "USN",
                 "price": [32000],
                 "discountPrice": [0],
                 "weight": ["908g"],
@@ -102,12 +106,13 @@
             {
                 "id": 9989,
                 "name": "Whey Supremo",
+                "brand": "Black Bull",
                 "price": [28500],
                 "discountPrice": [0],
                 "weight": ["908g"],
                 "category": "proteína",
                 "description": {
-                    "synopsis": "PROTEÍNA DE MÚSCULO MAGRA",
+                    "synopsis": "Whey Supremo é pra quem leva o treino a sério. Ajuda-te a crescer limpo, ganhar músculo de verdade e manter o corpo firme. Força e foco em cada scoop!",
                     "highlights": [
                         "Aumenta a recuperação muscular",
                         "Baixo em calorias para músculos magros",
@@ -126,6 +131,7 @@
             {
                 "id": 7763,
                 "name": "Whey Protein Amino System",
+                "brand": "USN",
                 "price": [24000],
                 "discountPrice": [0],
                 "weight": ["454g"],
@@ -146,6 +152,7 @@
             {
                 "id": 5424,
                 "name": "Creatina 3-in-1",
+                "brand": "USN",
                 "price": [19500],
                 "discountPrice": [0],
                 "weight": ["200g"],
@@ -170,6 +177,7 @@
             {
                 "id": 3524,
                 "name": "Creatina Pura Monohidratada",
+                "brand": "USN",
                 "price": [19500, 30000],
                 "discountPrice": [0, 0],
                 "weight": ["200g", "410g"],
@@ -195,6 +203,7 @@
             {
                 "id": 2239,
                 "name": "Creatina Transport",
+                "brand": "USN",
                 "price": [19500],
                 "discountPrice": [0],
                 "weight": ["650g"],
@@ -219,12 +228,13 @@
             {
                 "id": 3343,
                 "name": "Creatina Extreme",
+                "brand": "Black Bull",
                 "price": [19500],
                 "discountPrice": [0],
                 "weight": ["800g"],
                 "category": "creatina",
                 "description": {
-                    "synopsis": "CREATINA PARA MÚSCULO E FORÇA",
+                    "synopsis": "Crea Extreme dá-te mais força, explosão e resistência pra levantares pesado e cresceres de verdade — porque no treino, potência é tudo.",
                     "highlights": [],
                     "information": "CREA EXTREME é rico em creatina e carboidratos, uma fórmula de transporte de creatina com três objetivos: ganhar massa muscular rapidamente, aumentar os ganhos de força e maximizar o desempenho muscular. O atleta mais esforçado da academia, prepare-se para quebrar todos os recordes pessoais, dia após dia, repetição após repetição.",
                     "recommendedUse": "Misture 1 colher de CREA EXTREME com 500 ml de água ou sua bebida favorita, usando um Black Bull Shaker e aproveite. Beba durante ou antes da academia. Para melhores resultados, use 1 porção por dia."
@@ -243,18 +253,19 @@
             {
                 "id": 2238,
                 "name": "BCAA Amino",
+                "brand": "Black Bull",
                 "price": [18500],
                 "discountPrice": [0],
                 "weight": ["180g"],
                 "category": "BCAA",
                 "description": {
-                    "synopsis": "RECONSTRUA MELHOR",
+                    "synopsis": "Recupera, cresce e domina! O BCAA Aminos da Black Bull acelera a regeneração muscular, reduz o cansaço e impulsiona teus resultados a cada treino.",
                     "highlights": [
                         "Aumenta a recuperação muscular",
                         "Diminui a dor muscular",
                         "Aumentar os esforços de queima de gordura"
                     ],
-                    "information": "O BCAA é rico em aminoácidos de cadeia ramificada, uma fórmula de recuperação muscular com três objetivos: aumentar o crescimento muscular, reduzir a dor muscular após o treino e atuar em conjunto com HUGE ou WHEY para alcançar o físico que você busca! Se a academia é o seu clube, o BCAA é o seu coquetel.",
+                    "information": "O BCAA é rico em aminoácidos de cadeia ramificada, uma fórmula de recuperação muscular com três objetivos: aumentar o crescimento muscular, reduzir a dor muscular após o treino e atuar em conjunto com HUGE ou WHEY para alcançar o físico que você busca! Se a academia é o seu clube, o BCAA é o seu cocktail.",
                     "recommendedUse": ""
                 },
                 "postImages": [
@@ -267,12 +278,13 @@
             {
                 "id": 4488,
                 "name": "Cuts Burner",
+                "brand": "Black Bull",
                 "price": [18500],
                 "discountPrice": [0],
                 "weight": ["90 Comp"],
                 "category": "queima gordura",
                 "description": {
-                    "synopsis": "PERDA DE PESO HARDCORE",
+                    "synopsis": "Cuts Burner da Black Bull é o aliado perfeito para quem busca acelerar a queima de gordura e definir o corpo com mais eficiência.",
                     "highlights": [
                         "Queime gordura rapidamente",
                         "Absorve menos gordura",
@@ -281,7 +293,9 @@
                     "information": "CUTS BURNER é rico em poderosos ingredientes termogênicos para perda de peso, uma fórmula de queima de gordura com quatro objetivos: eliminar gordura rapidamente, acelerar o metabolismo, reduzir a quantidade de gordura que você absorve e suprimir a fome e os desejos. Vamos ficar definidos: todos os músculos do mundo valem pouco se estiverem cobertos por camadas de gordura corporal.",
                     "recommendedUse": "Tome 3 comprimidos de CUTS BURNER com 250 ml de água ou sua bebida favorita, usando um Black Bull Shaker. Beba na primeira refeição do dia (pode ser tomado sem alimentos) e certifique-se de beber bastante água ao longo do dia."
                 },
-                "postImages": [],
+                "postImages": [
+                    "https://i.postimg.cc/d0hkr1yY/cuts-burner.webp"
+                ],
                 "bestSeller": false,
                 "flavours": [],
                 "inStock": true
@@ -289,6 +303,7 @@
             {
                 "id": 4188,
                 "name": "Lipo Cut",
+                "brand": "NutriTech",
                 "price": [25500],
                 "discountPrice": [0],
                 "weight": ["120 Comp"],
@@ -307,6 +322,7 @@
             {
                 "id": 4189,
                 "name": "Omega 3",
+                "brand": "VitaTech",
                 "price": [12000],
                 "discountPrice": [0],
                 "weight": ["30 Comp"],
@@ -325,6 +341,7 @@
             {
                 "id": 4288,
                 "name": "Collagen Peptides",
+                "brand": "VitaTech",
                 "price": [16000],
                 "discountPrice": [0],
                 "weight": ["30 Comp"],
@@ -345,6 +362,7 @@
             {
                 "id": 4588,
                 "name": "Multi Vitamin Men",
+                "brand": "VitaTech",
                 "price": [16000],
                 "discountPrice": [0],
                 "weight": ["30 Comp"],
@@ -365,6 +383,7 @@
             {
                 "id": 4388,
                 "name": "Multi Vitamin Women",
+                "brand": "VitaTech",
                 "price": [16000],
                 "discountPrice": [0],
                 "weight": ["30 Comp"],
@@ -385,12 +404,13 @@
             {
                 "id": 8844,
                 "name": "Big Testo Booster",
+                "brand": "Black Bull",
                 "price": [18500],
                 "discountPrice": [0],
                 "weight": ["90 Comp"],
                 "category": "testosterona",
                 "description": {
-                    "synopsis": "POTÊNCIA DE DESEMPENHO MASCULINO",
+                    "synopsis": "Big Testo Booster da Black Bull é um poderoso estimulante natural de testosterona desenvolvido para quem busca mais força, energia e desempenho nos treinos.",
                     "highlights": [
                         "Aumentar a massa muscular e a força",
                         "Construir ossos mais fortes e densos",
@@ -407,6 +427,7 @@
             {
                 "id": 5556,
                 "name": "Super Pump Beast",
+                "brand": "USN",
                 "price": [20000],
                 "discountPrice": [0],
                 "weight": ["500g"],

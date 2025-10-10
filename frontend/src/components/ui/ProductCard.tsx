@@ -55,8 +55,23 @@ export default function ProductCard({ products }: any) {
                                 </div>
                             </div>
                         </div>
+
                         <p>{p.name}</p>
-                        <h3>{formatCurrency(p.price[0] || p.price)}</h3>
+                        <h3
+                            style={{
+                                color:
+                                    p.discountPrice[0] > 0 ||
+                                    p.discountPrice > 0
+                                        ? "#c20303dd"
+                                        : "",
+                            }}
+                        >
+                            {p.discountPrice[0] > 0
+                                ? formatCurrency(
+                                      p.discountPrice[0] || p.discountPrice
+                                  )
+                                : formatCurrency(p.price[0] || p.price)}
+                        </h3>
                     </li>
                 ))}
             </ul>

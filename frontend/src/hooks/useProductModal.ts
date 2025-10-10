@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { formatCurrency } from "@/utils/formatCurrency"
 
 export function useProductModal(product: any) {
     const [qtd, setQtd] = useState<number>(1)
@@ -24,11 +25,25 @@ export function useProductModal(product: any) {
 
     const selectFlavour = (flavour: string) => setSelectedFlavour(flavour)
 
-    const unitPrice = Array.isArray(product.price)
+    const basePrice = Array.isArray(product.price)
         ? product.price[imageIndex] ?? product.price[0]
         : product.price
 
-    const totalPrice = unitPrice * qtd
+    const discountValue = Array.isArray(product.discountPrice)
+        ? product.discountPrice[imageIndex] ?? null
+        : product.discountPrice ?? null
+
+    const effectivePrice =
+        discountValue && discountValue > 0 ? discountValue : basePrice
+
+    const totalBasePrice = basePrice * qtd
+    const totalDiscountPrice = effectivePrice * qtd
+
+    const formattedPrice = formatCurrency(totalBasePrice)
+    const formattedDiscountPrice =
+        discountValue && discountValue > 0
+            ? formatCurrency(totalDiscountPrice)
+            : null
 
     return {
         qtd,
@@ -38,7 +53,9 @@ export function useProductModal(product: any) {
         handleQtd,
         selectWeight,
         selectFlavour,
-        unitPrice,
-        totalPrice,
+        basePrice,
+        effectivePrice,
+        formattedPrice,
+        formattedDiscountPrice,
     }
 }
