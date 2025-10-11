@@ -1,6 +1,6 @@
 {
-    "products": {
-        "all": [
+    "all": {
+        "products": [
             {
                 "id": 6354,
                 "name": "Hyperbolic Mass gh",
@@ -75,7 +75,7 @@
                     "https://i.postimg.cc/4NyqnqNh/huge-anabolic-muscle.webp"
                 ],
                 "bestSeller": true,
-                "flavours": ["Chocolate"],
+                "flavours": ["Chocolate", "Baunilha"],
                 "inStock": true
             },
             {
@@ -194,7 +194,7 @@
                 },
                 "postImages": [
                     "https://i.postimg.cc/WbRGvqQX/creatina-mono-200g.webp",
-                    "https://i.postimg.cc/tRzjnDyX/creatina-mono-410g.webp"
+                    "https://i.postimg.cc/tghXKpYr/creatina-mono-410g.webp"
                 ],
                 "bestSeller": true,
                 "flavours": ["Sem sabor"],
@@ -222,7 +222,7 @@
                     "https://i.postimg.cc/c1gLY9HZ/creatine-transport.png"
                 ],
                 "bestSeller": true,
-                "flavours": ["Uva"],
+                "flavours": ["Uva", "Laranja"],
                 "inStock": true
             },
             {
@@ -243,11 +243,57 @@
                     "https://i.postimg.cc/6QgPjXTX/crea-extreme-800g.webp"
                 ],
                 "bestSeller": false,
-                "flavours": [
-                    "Ganhe músculos rapidamente",
-                    "Aumentar os ganhos de força",
-                    "Maximizar o desempenho muscular"
+                "flavours": ["Coca Cola"],
+                "inStock": true
+            },
+            {
+                "id": 3123,
+                "name": "Glutamina Pura 9000",
+                "brand": "USN",
+                "price": [19500],
+                "discountPrice": [0],
+                "weight": ["150g"],
+                "category": "glutamina",
+                "description": {
+                    "synopsis": "O suplemento de aminoácidos que ajuda você a se recuperar mais rápido e reduz a dor após treinos intensos.",
+                    "highlights": [
+                        "Aumenta a resistência",
+                        "Acelera a recuperação",
+                        "Reduz o ácido láctico (reduz a rigidez)"
+                    ],
+                    "information": "Seu corpo decompõe e perde glutamina rapidamente durante atividades físicas intensas. Este aminoácido condicionalmente essencial ajuda você a se recuperar mais rapidamente, pois reduz o ácido lático, que causa rigidez e dor. Também é um bom reforço imunológico.",
+                    "recommendedUse": "Misture ±1 colher (4,5 g) de USN Pure Glutamine 9000 com 400–500 ml de água, bebida proteica ou suco de sua escolha. Tome uma porção antes do treino e outra após o treino. Para melhores resultados, tome a última porção antes de dormir."
+                },
+                "postImages": [
+                    "https://i.postimg.cc/N01g3B5d/glutamine-9000.webp"
                 ],
+                "bestSeller": false,
+                "flavours": ["Sem sabor"],
+                "inStock": true
+            },
+            {
+                "id": 9087,
+                "name": "L-Glutamina",
+                "brand": "NPL",
+                "price": [19500],
+                "discountPrice": [0],
+                "weight": ["150g"],
+                "category": "glutamina",
+                "description": {
+                    "synopsis": "O suplemento de aminoácidos que ajuda você a se recuperar mais rápido e reduz a dor após treinos intensos.",
+                    "highlights": [
+                        "Aumenta a resistência",
+                        "Acelera a recuperação",
+                        "Reduz o ácido láctico (reduz a rigidez)"
+                    ],
+                    "information": "A L-glutamina é o aminoácido mais abundante no corpo humano. A suplementação de glutamina pode preservar o tecido muscular magro e melhorar a recuperação. Treinamentos intensos, bem como estresse físico e mental, podem causar queda rápida dos níveis de glutamina, o que pode impactar negativamente o desempenho e a recuperação do treino. Além disso, a suplementação de glutamina pode auxiliar a função imunológica e a saúde intestinal, principalmente em períodos de estresse.",
+                    "recommendedUse": "Misture 1 colher medidora cheia (5 g) com água de 1 a 3 vezes ao dia, de preferência com o estômago vazio. Consuma 1 porção com 150 a 250 ml de água antes de dormir."
+                },
+                "postImages": [
+                    "https://i.postimg.cc/PqmtgTP3/100-l-glutamine.webp"
+                ],
+                "bestSeller": false,
+                "flavours": ["Sem sabor"],
                 "inStock": true
             },
             {
@@ -269,10 +315,10 @@
                     "recommendedUse": ""
                 },
                 "postImages": [
-                    "https://i.postimg.cc/rp1S8VB1/bcaa-aminos.webp"
+                    "https://i.postimg.cc/1ts9P2qY/bcaa-aminos.webp"
                 ],
                 "bestSeller": true,
-                "flavours": ["Coca Cola"],
+                "flavours": ["Uva"],
                 "inStock": true
             },
             {
@@ -425,6 +471,31 @@
                 "inStock": true
             },
             {
+                "id": 1188,
+                "name": "Qhush Hyperdrive",
+                "brand": "USN",
+                "price": [16500],
+                "discountPrice": [0],
+                "weight": ["210g"],
+                "category": "pré-treino",
+                "description": {
+                    "synopsis": "Qhush Hyperdrive é um suplemento pré-treino projetado para dar energia concentrada, aumentar foco e resistência, melhorar o desempenho muscular e acelerar a recuperação, tudo isso sem causar queda brusca de energia.",
+                    "highlights": [
+                        "Melhora a energia, o foco e a resistência",
+                        "Aumenta o desempenho muscular",
+                        "Melhora a recuperação"
+                    ],
+                    "information": "Hyperdrive é uma linha de pré-treinos que oferece potência e desempenho concentrados, foco intenso e recuperação rápida, com o benefício adicional de não causar queda de energia. É adequado para homens e mulheres. A linha conta com três fórmulas diferentes para atender às necessidades individuais.",
+                    "recommendedUse": "Para treinos padrão: misture 1 colher medidora (5,3 g) com 150–200 ml de água e mexa ou agite bem. Para um treino extremo: misture 2 colheres (10,5 g) com 250–300 ml de água e mexa ou agite bem. Tome 30–45 minutos antes do treino."
+                },
+                "postImages": [
+                    "https://i.postimg.cc/N0RqPD5k/qhush-hyperdrive.webp"
+                ],
+                "bestSeller": true,
+                "flavours": ["Super heat", "Hyperdrive gaming"],
+                "inStock": true
+            },
+            {
                 "id": 5556,
                 "name": "Super Pump Beast",
                 "brand": "USN",
@@ -445,9 +516,36 @@
                 "postImages": [
                     "https://i.postimg.cc/kXrQmR0C/super-pump-beast.webp"
                 ],
-                "bestSeller": true,
+                "bestSeller": false,
                 "flavours": ["Cereja"],
                 "inStock": true
+            }
+        ],
+        "brands": [
+            {
+                "id": 1,
+                "name": "USN",
+                "urlToImage": "https://i.postimg.cc/MGBzRRVq/USN-Logo.png"
+            },
+            {
+                "id": 2,
+                "name": "Black Bull",
+                "urlToImage": "https://i.postimg.cc/FsLKQ2CY/black-bull-logo.webp"
+            },
+            {
+                "id": 3,
+                "name": "NPL",
+                "urlToImage": "https://i.postimg.cc/xTzdSWp1/npl-logo.webp"
+            },
+            {
+                "id": 4,
+                "name": "NutriTech",
+                "urlToImage": "https://i.postimg.cc/JhXRJJZW/nutritech-logo.png"
+            },
+            {
+                "id": 5,
+                "name": "VitaTech",
+                "urlToImage": "https://i.postimg.cc/RC80yMd3/vitatech-logo.webp"
             }
         ]
     }

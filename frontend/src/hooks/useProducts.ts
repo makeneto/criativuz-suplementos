@@ -1,6 +1,6 @@
 export default async function useProducts() {
     async function getProducts() {
-        const res = await fetch("http://localhost:5000/api/products", {
+        const res = await fetch("http://localhost:5000/api/all", {
             cache: "no-store",
         })
         if (!res.ok) {

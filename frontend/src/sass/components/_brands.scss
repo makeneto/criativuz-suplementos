@@ -1,0 +1,38 @@
+.brandsSection {
+    width: 70%;
+    margin: 10rem auto 12rem;
+    text-align: center;
+
+    & p {
+        width: 60%;
+        margin: 1rem auto;
+        font-size: 1.2rem;
+    }
+
+    & ul {
+        margin-top: 4rem;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        align-items: center;
+        gap: 5rem;
+
+        & img {
+            height: 3.5rem;
+            filter: grayscale(100%);
+            transition: filter 0.3s;
+            cursor: pointer;
+        }
+
+        & .blackBullBrand {
+            height: 6rem;
+        }
+
+        & .nplBrand {
+            height: 4.6rem;
+        }
+
+        & img:hover {
+            filter: none;
+        }
+    }
+}

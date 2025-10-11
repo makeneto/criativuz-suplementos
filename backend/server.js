@@ -18,8 +18,8 @@ app.get("/", (req, res) => {
 })
 
 // Rota de produtos (puxando do data.json)
-app.get("/api/products", (req, res) => {
-    res.json(data.products)
+app.get("/api/all", (req, res) => {
+    res.json(data.all)
 })
 
 const PORT = process.env.PORT || 5000

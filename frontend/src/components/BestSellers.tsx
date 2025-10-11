@@ -2,8 +2,8 @@ import useProducts from "@/hooks/useProducts"
 import ProductCard from "./ui/ProductCard"
 
 export default async function BestSellers() {
-    const products = await useProducts()
-    const allProducts = products.all
+    const supplements = await useProducts()
+    const allProducts = supplements.products
     const bestSellers = allProducts.filter((p: any) => p.bestSeller)
 
     return (

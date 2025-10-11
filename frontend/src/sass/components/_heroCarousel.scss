@@ -22,50 +22,57 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 1rem;
         }
     }
 
     &__overlay {
         position: absolute;
         inset: 0;
-        background: rgba(0, 0, 0, 0.226);
+        background: linear-gradient(to right, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.525) 20%, rgba(0, 0, 0, 0) 100%);
     }
 
     &__content {
-        max-width: 32rem;
+        max-width: 40%;
         padding: 3rem;
-        background-color: white;
+        color: white;
 
         position: absolute;
         top: 50%;
-        left: 5%;
+        left: 2%;
         transform: translateY(-50%);
 
-        h2 {
-            font-size: 2rem;
-            font-weight: 700;
-            line-height: 2.7rem;
+        & h5 {
+            font-weight: 500;
+            font-size: 1.1rem;
         }
 
-        p {
-            margin-top: 0.3rem;
-            font-size: 1.125rem;
+        & h2 {
+            font-size: 4.6rem;
+            line-height: 5.3rem;
+        }
+
+        & p {
+            margin-top: 0.8rem;
+            font-size: 1.5rem;
         }
     }
 
     &__button {
-        margin-top: 1.6rem;
+        margin-top: 2.5rem;
         display: inline-block;
-        background: #5f0101;
-        color: white;
-        padding: 0.5rem 1rem;
+        background: white;
+        padding: 0.6rem 1rem;
         border-radius: 0rem;
-        text-decoration: none;
         transition: background 0.3s ease;
 
+        & span {
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.2rem;
+        }
+
         &:hover {
-            background: #910202;
+            background: rgb(231, 231, 231);
         }
     }
 

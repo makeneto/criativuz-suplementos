@@ -3,7 +3,7 @@ $solidBorder: 1px solid #e7e7e7;
 .modalOverlay {
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.67);
+    background: rgba(0, 0, 0, 0.5);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -20,6 +20,7 @@ $solidBorder: 1px solid #e7e7e7;
     height: 29.7rem;
     padding: 1.3rem;
     display: flex;
+    box-shadow: 0 0 1rem 0.4rem rgba(0, 0, 0, 0.155);
 
     &__container {
         display: flex;
