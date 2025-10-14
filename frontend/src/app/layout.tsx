@@ -2,10 +2,12 @@ import type { Metadata } from "next"
 import { Poppins } from "next/font/google"
 import "../css/style.css"
 import NavBar from "@/components/NavBar"
+import WhatsAppButton from "@/components/WhatsAppButton"
+import Footer from "@/components/Footer"
 
 const poppins = Poppins({
     subsets: ["latin"],
-    weight: ["400", "500", "600", "700"], 
+    weight: ["400", "500", "600", "700"],
     variable: "--font-poppins",
 })
 
@@ -24,6 +26,8 @@ export default function RootLayout({
             <body className={`${poppins.variable} antialiased`}>
                 <NavBar />
                 {children}
+                <WhatsAppButton />
+                <Footer />
             </body>
         </html>
     )

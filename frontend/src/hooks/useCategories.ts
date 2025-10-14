@@ -16,7 +16,7 @@ export function useCategories() {
     useEffect(() => {
         async function fetchProducts() {
             const result = await useProducts()
-            setProducts(result?.all || [])
+            setProducts(result?.products || [])
         }
         fetchProducts()
     }, [])

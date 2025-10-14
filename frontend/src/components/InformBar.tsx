@@ -1,5 +1,4 @@
-import { Link, MapPinHouse, PhoneOutgoing, TruckElectric } from "lucide-react"
-import React from "react"
+import { MapPinHouse, PhoneOutgoing, TruckElectric } from "lucide-react"
 import NextLink from "next/link"
 
 export default function InformBar() {

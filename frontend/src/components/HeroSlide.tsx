@@ -1,5 +1,3 @@
-import React from "react"
-
 interface SlideProps {
     imageUrl: string
     title: string

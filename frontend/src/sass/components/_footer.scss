@@ -1,0 +1,65 @@
+.footer {
+    background: #D91807 url('/images/red-cloud.png') no-repeat center center;
+    background-size: cover;
+    color: white;
+    padding: 5rem 10rem 2rem;
+    display: grid;
+    gap: 5rem;
+
+    &__logo {
+        width: auto;
+        height: 2.3rem;
+    }
+
+    &__content,
+    &__links {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__about {
+        width: 30%;
+    }
+
+    &__description {
+        &-text {
+            margin: 2.2rem 0;
+            line-height: 2rem;
+        }
+    }
+
+    &__socials {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        & svg {
+            width: 1.8rem;
+            height: 1.8rem;
+            stroke: white;
+        }
+    }
+
+    &__links {
+        gap: 5rem;
+    }
+
+    &__title {
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+
+    &__list {
+        display: grid;
+        gap: 0.8rem;
+
+        & li {
+            cursor: pointer;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}

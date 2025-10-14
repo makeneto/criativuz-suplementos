@@ -1,5 +1,3 @@
-import React from "react"
-
 export default function GridCategory() {
     return (
         <div className="gridCategory">

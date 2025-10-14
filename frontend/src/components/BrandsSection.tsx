@@ -1,5 +1,4 @@
 import useProducts from "@/hooks/useProducts"
-import React from "react"
 import BrandsItem from "./BrandsItem"
 
 export default async function BrandsSection() {

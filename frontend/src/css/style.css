@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: white;
   font-family: var(--font-poppins), sans-serif;
@@ -83,14 +87,65 @@ button:disabled {
   filter: none;
 }
 
-.gridCategory {
-  width: 85vw;
-  height: 67dvh;
-  margin: 10rem auto;
+.footer {
+  background: #D91807 url("/images/red-cloud.png") no-repeat center center;
+  background-size: cover;
+  color: white;
+  padding: 5rem 10rem 2rem;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  gap: 5rem;
+}
+.footer__logo {
+  width: auto;
+  height: 2.3rem;
+}
+.footer__content, .footer__links {
+  display: flex;
+  justify-content: space-between;
+}
+.footer__about {
+  width: 30%;
+}
+.footer__description-text {
+  margin: 2.2rem 0;
+  line-height: 2rem;
+}
+.footer__socials {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.footer__socials svg {
+  width: 1.8rem;
+  height: 1.8rem;
+  stroke: white;
+}
+.footer__links {
+  gap: 5rem;
+}
+.footer__title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+.footer__list {
+  display: grid;
+  gap: 0.8rem;
+}
+.footer__list li {
+  cursor: pointer;
+}
+.footer__list li:hover {
+  text-decoration: underline;
+}
+
+.gridCategory {
   grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 8px;
+  height: 67dvh;
+  margin: 10rem;
+  display: grid;
 }
 .gridCategory div:first-child {
   grid-row: span 2/span 2;
@@ -437,7 +492,7 @@ button:disabled {
   width: 1rem;
 }
 .nav_bar {
-  background: #D91807 url("/red-cloud.png") no-repeat center center;
+  background: #D91807 url("/images/red-cloud.png") no-repeat center center;
   background-size: cover;
   padding: 0.4rem 2rem 0.4rem 1rem;
   display: flex;
@@ -707,6 +762,65 @@ button:disabled {
 .sectionGrid__list--view--controls div svg {
   width: 1.2rem;
   transition: all 0.2s ease-in;
+}
+
+.whatsapp-btn {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.whatsapp-btn.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.whatsapp-btn.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+}
+.whatsapp-btn .whatsapp-icon {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  letter-spacing: 0.8px;
+  border-radius: 50%;
+  transition: all 0.3s;
+}
+.whatsapp-btn .whatsapp-bg {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: #00d757;
+  z-index: -1;
+  border-radius: 50%;
+  pointer-events: none;
+  transition: all 0.3s;
+}
+.whatsapp-btn:hover .whatsapp-bg {
+  transform: rotate(35deg);
+  transform-origin: bottom;
+}
+.whatsapp-btn:hover .whatsapp-icon {
+  backdrop-filter: blur(4px);
+  background-color: rgba(156, 156, 156, 0.466);
+}
+.whatsapp-btn:active {
+  transform: translate(0, 2px);
 }
 
 /*# sourceMappingURL=style.css.map */
