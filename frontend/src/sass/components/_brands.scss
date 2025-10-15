@@ -1,6 +1,6 @@
 .brandsSection {
     width: 70%;
-    margin: 10rem auto 12rem;
+    margin: 10rem auto 15rem;
     text-align: center;
 
     & p {
@@ -17,7 +17,7 @@
         gap: 5rem;
 
         & img {
-            height: 3.5rem;
+            height: 3rem;
             filter: grayscale(100%);
             transition: filter 0.3s;
             cursor: pointer;

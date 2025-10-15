@@ -1,7 +1,7 @@
 "use client"
 import { useState } from "react"
 import { formatCurrency } from "@/utils/formatCurrency"
-import { Eye, Heart, ShoppingCart } from "lucide-react"
+import { Eye, Heart, ShoppingBag, ShoppingCart } from "lucide-react"
 import ProductModal from "../ProductModal"
 
 export default function ProductCard({ products }: any) {
@@ -35,7 +35,7 @@ export default function ProductCard({ products }: any) {
                                         })
                                     }}
                                 >
-                                    <Eye className="cursor-pointer" />
+                                    <ShoppingBag className="cursor-pointer" />
                                 </div>
 
                                 <div

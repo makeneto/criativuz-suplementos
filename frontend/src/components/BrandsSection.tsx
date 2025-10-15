@@ -7,7 +7,10 @@ export default async function BrandsSection() {
 
     return (
         <section className="brandsSection">
-            <h1>Força Que Vem das Melhores Marcas</h1>
+            <h1>
+                Força que vem das{" "}
+                <span className="lightTag">Melhores Marcas</span>
+            </h1>
             <p>
                 Na <span className="lightTag">Criativuz Suplementos</span>, só
                 trabalhamos com marcas de confiança, reconhecidas pela qualidade

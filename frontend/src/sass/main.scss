@@ -2,6 +2,7 @@
 
 @use "base/base";
 
+@use "components/aboutSection";
 @use "components/brands";
 @use "components/footer";
 @use "components/grid";
@@ -9,4 +10,5 @@
 @use "components/_productModal";
 @use "components/navBar";
 @use "components/productList";
+@use "components/stepSection";
 @use "components/whatsAppButton";

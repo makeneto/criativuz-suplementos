@@ -1,0 +1,22 @@
+.stepSection {
+    margin: 0 18rem 15rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: space-between;
+    gap: 4rem;
+}
+
+.step {
+    display: grid;
+    gap: 0.4rem;
+
+    &__num {
+        font-size: 5rem;
+        color: rgba(128, 128, 128, 0.508);
+        line-height: 5rem;
+    }
+
+    &__title {
+        font-size: 1.3rem;
+    }
+}

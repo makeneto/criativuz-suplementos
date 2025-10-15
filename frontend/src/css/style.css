@@ -54,9 +54,13 @@ button:disabled {
   background-color: red;
 }
 
+.about {
+  margin-bottom: 15rem;
+}
+
 .brandsSection {
   width: 70%;
-  margin: 10rem auto 12rem;
+  margin: 10rem auto 15rem;
   text-align: center;
 }
 .brandsSection p {
@@ -72,7 +76,7 @@ button:disabled {
   gap: 5rem;
 }
 .brandsSection ul img {
-  height: 3.5rem;
+  height: 3rem;
   filter: grayscale(100%);
   transition: filter 0.3s;
   cursor: pointer;
@@ -144,7 +148,7 @@ button:disabled {
   grid-template-columns: repeat(3, 1fr);
   gap: 8px;
   height: 67dvh;
-  margin: 10rem;
+  margin: 0 10rem 15rem;
   display: grid;
 }
 .gridCategory div:first-child {
@@ -688,7 +692,7 @@ button:disabled {
 }
 
 .sectionGrid {
-  margin: 10rem 18rem 0;
+  margin: 0 18rem 15rem;
 }
 .sectionGrid__title {
   font-size: 1.8rem;
@@ -762,6 +766,27 @@ button:disabled {
 .sectionGrid__list--view--controls div svg {
   width: 1.2rem;
   transition: all 0.2s ease-in;
+}
+
+.stepSection {
+  margin: 0 18rem 15rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: space-between;
+  gap: 4rem;
+}
+
+.step {
+  display: grid;
+  gap: 0.4rem;
+}
+.step__num {
+  font-size: 5rem;
+  color: rgba(128, 128, 128, 0.508);
+  line-height: 5rem;
+}
+.step__title {
+  font-size: 1.3rem;
 }
 
 .whatsapp-btn {
