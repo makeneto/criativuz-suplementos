@@ -24,11 +24,11 @@ body {
 a,
 button {
     cursor: pointer;
+    color: inherit;
 }
 
 a {
     text-decoration: none;
-    color: black;
 }
 
 li {
@@ -43,6 +43,7 @@ button {
     border: none;
     font-family: inherit;
     user-select: none;
+    font-size: inherit;
 
     &:disabled {
         filter: brightness(90%);

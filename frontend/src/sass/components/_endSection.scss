@@ -1,7 +1,8 @@
-.about {
+.end {
     margin-block: 15rem 15rem;
-    margin-inline: 12rem 8rem;
+    margin-inline: 8rem 12rem;
     display: flex;
+    justify-content: flex-end;
     position: relative;
 
     &_image,
@@ -11,15 +12,16 @@
 
     &_image {
         height: 44rem;
-        background: #80808020 url('/images/about.webp');
+        background: #80808020 url('/images/performance.webp') top/cover no-repeat;
     }
 
     &_content {
         background: rgba(128, 128, 128, .125);
-        padding: 11rem 8rem 11rem 12rem;
+        padding: 11rem 12rem 11rem 8rem;
         position: absolute;
         top: -5rem;
-        right: 5rem;
+        left: 5rem;
+        z-index: 2;
 
         & h1 {
             font-weight: 700;

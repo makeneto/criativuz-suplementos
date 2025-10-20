@@ -21,11 +21,11 @@ body {
 a,
 button {
   cursor: pointer;
+  color: inherit;
 }
 
 a {
   text-decoration: none;
-  color: black;
 }
 
 li {
@@ -40,6 +40,7 @@ button {
   border: none;
   font-family: inherit;
   user-select: none;
+  font-size: inherit;
 }
 button:disabled {
   filter: brightness(90%);
@@ -55,12 +56,37 @@ button:disabled {
 }
 
 .about {
-  margin-bottom: 15rem;
+  margin-block: 15rem 15rem;
+  margin-inline: 12rem 8rem;
+  display: flex;
+  position: relative;
+}
+.about_image, .about_content {
+  width: 50rem;
+}
+.about_image {
+  height: 44rem;
+  background: rgba(128, 128, 128, 0.1254901961) url("/images/about.webp");
+}
+.about_content {
+  background: rgba(128, 128, 128, 0.125);
+  padding: 11rem 8rem 11rem 12rem;
+  position: absolute;
+  top: -5rem;
+  right: 5rem;
+}
+.about_content h1 {
+  font-weight: 700;
+  line-height: 2.6rem;
+  margin-bottom: 1rem;
+}
+.about_content p:not(:first-of-type) {
+  margin-top: 0.8rem;
 }
 
 .brandsSection {
   width: 70%;
-  margin: 10rem auto 15rem;
+  margin: 12rem auto 18rem;
   text-align: center;
 }
 .brandsSection p {
@@ -91,8 +117,39 @@ button:disabled {
   filter: none;
 }
 
+.end {
+  margin-block: 15rem 15rem;
+  margin-inline: 8rem 12rem;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+}
+.end_image, .end_content {
+  width: 50rem;
+}
+.end_image {
+  height: 44rem;
+  background: rgba(128, 128, 128, 0.1254901961) url("/images/performance.webp") top/cover no-repeat;
+}
+.end_content {
+  background: rgba(128, 128, 128, 0.125);
+  padding: 11rem 12rem 11rem 8rem;
+  position: absolute;
+  top: -5rem;
+  left: 5rem;
+  z-index: 2;
+}
+.end_content h1 {
+  font-weight: 700;
+  line-height: 2.6rem;
+  margin-bottom: 1rem;
+}
+.end_content p:not(:first-of-type) {
+  margin-top: 0.8rem;
+}
+
 .footer {
-  background: #D91807 url("/images/red-cloud.png") no-repeat center center;
+  background: #D91807 url("/images/red-cloud.webp") no-repeat center center;
   background-size: cover;
   color: white;
   padding: 5rem 10rem 2rem;
@@ -143,41 +200,75 @@ button:disabled {
   text-decoration: underline;
 }
 
-.gridCategory {
-  grid-template-rows: repeat(4, 1fr);
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
-  height: 67dvh;
-  margin: 0 10rem 15rem;
+.gallery {
+  width: 100%;
+  height: 80dvh;
+  margin-bottom: 19rem;
   display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 2px;
 }
-.gridCategory div:first-child {
-  grid-row: span 2/span 2;
-  background-color: rgb(255, 140, 0);
+.gallery div:first-child {
+  grid-row: span 3/span 3;
+  background: url("/images/arnould-s.webp") top center;
+  background-size: cover;
 }
-.gridCategory div:nth-child(2) {
+.gallery div:nth-child(2) {
   grid-row: span 2/span 2;
   grid-column-start: 1;
-  grid-row-start: 3;
-  background-color: aqua;
+  grid-row-start: 4;
+  background: url("/images/franco-columbu.webp") top center;
+  background-size: cover;
 }
-.gridCategory div:nth-child(3) {
+.gallery div:nth-child(3) {
+  grid-row: span 3/span 3;
+  grid-column-start: 2;
+  grid-row-start: 3;
+  background: url("/images/kevin-l.webp") top center;
+  background-size: cover;
+}
+.gallery div:nth-child(4) {
   grid-row: span 2/span 2;
   grid-column-start: 2;
   grid-row-start: 1;
-  background-color: rgb(43, 255, 0);
+  background: url("/images/jay-c.webp") top center;
+  background-size: cover;
 }
-.gridCategory div:nth-child(4) {
-  grid-row: span 2/span 2;
-  grid-column-start: 2;
-  grid-row-start: 3;
-  background-color: rgb(187, 0, 255);
-}
-.gridCategory div:last-child {
-  grid-row: span 4/span 4;
+.gallery div:nth-child(5) {
+  grid-row: span 5/span 5;
   grid-column-start: 3;
   grid-row-start: 1;
-  background-color: rgb(0, 8, 255);
+  background: url("/images/ronnie-c.webp") top center;
+  background-size: cover;
+}
+.gallery div:nth-child(6) {
+  grid-row: span 3/span 3;
+  grid-column-start: 5;
+  grid-row-start: 1;
+  background: url("/images/phil-heath.webp") top center;
+  background-size: cover;
+}
+.gallery div:nth-child(7) {
+  grid-row: span 2/span 2;
+  grid-column-start: 5;
+  grid-row-start: 4;
+  background: url("/images/frank-zane.webp") top center;
+  background-size: cover;
+}
+.gallery div:nth-child(8) {
+  grid-row: span 3/span 3;
+  grid-column-start: 4;
+  grid-row-start: 3;
+  background: url("/images/cbum.webp") top center;
+  background-size: cover;
+}
+.gallery div:last-child {
+  grid-row: span 2/span 2;
+  grid-column-start: 4;
+  grid-row-start: 1;
+  background: url("/images/dorian-yates.webp") top center;
+  background-size: cover;
 }
 
 .heroCarousel {
@@ -235,6 +326,7 @@ button:disabled {
   margin-top: 2.5rem;
   display: inline-block;
   background: white;
+  color: #250609;
   padding: 0.6rem 1rem;
   border-radius: 0rem;
   transition: background 0.3s ease;
@@ -496,7 +588,7 @@ button:disabled {
   width: 1rem;
 }
 .nav_bar {
-  background: #D91807 url("/images/red-cloud.png") no-repeat center center;
+  background: #D91807 url("/images/red-cloud.webp") no-repeat center center;
   background-size: cover;
   padding: 0.4rem 2rem 0.4rem 1rem;
   display: flex;
