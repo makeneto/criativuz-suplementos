@@ -156,36 +156,39 @@ $solidBorder: 1px solid #e7e7e7;
     gap: 1rem;
 
     & span {
-        background-color: #3d0a0f24;
-        padding: .6rem .7rem;
+        border-block: 1px solid #3d0a0f;
         display: flex;
         align-items: center;
         color: #3d0a0f;
 
         & button[type="button"] {
             background-color: white;
-            width: 2rem;
-            height: 2rem;
+            border-inline: 1px solid #3d0a0f;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
             color: #3d0a0f;
             font-size: 1.5rem;
-            border: none;
+            padding: 0.2rem 1rem;
+            transition: all .2s ease-in;
+
+            &:hover {
+                filter: brightness(95%);
+            }
 
             &:disabled {
-                filter: brightness(96%);
+                filter: brightness(95%);
                 cursor: not-allowed;
             }
         }
 
         & p {
             font-weight: 500;
-            width: 0.8rem;
+            width: 2rem;
             margin-inline: 1.2rem;
             text-align: center;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
         }
     }
 

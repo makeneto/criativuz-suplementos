@@ -58,3 +58,19 @@ button {
 .darkTag {
     background-color: red;
 }
+
+.bordered {
+    position: relative;
+    display: inline-block;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0.1em;
+        left: 0;
+        width: 100%;
+        height: 0.3em;
+        background-color: #ffb9c0;
+        z-index: -1;
+    }
+}

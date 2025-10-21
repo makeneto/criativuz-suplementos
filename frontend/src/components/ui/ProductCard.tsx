@@ -3,6 +3,7 @@ import { useState } from "react"
 import { formatCurrency } from "@/utils/formatCurrency"
 import { Eye, Heart, ShoppingBag, ShoppingCart } from "lucide-react"
 import ProductModal from "../ProductModal"
+import Link from "next/link"
 
 export default function ProductCard({ products }: any) {
     const [selectedProduct, setSelectedProduct] = useState<any>(null)
@@ -22,7 +23,7 @@ export default function ProductCard({ products }: any) {
         <>
             <ul className="sectionGrid__list">
                 {products.map((p: any) => (
-                    <li key={p.id}>
+                    <Link href={`/products/${p.id}`} key={p.id}>
                         <div className="sectionGrid__list--view">
                             <img src={p.postImages[0]} alt={`Product Image`} />
                             <div className="sectionGrid__list--view--controls">
@@ -72,7 +73,7 @@ export default function ProductCard({ products }: any) {
                                   )
                                 : formatCurrency(p.price[0] || p.price)}
                         </h3>
-                    </li>
+                    </Link>
                 ))}
             </ul>
 

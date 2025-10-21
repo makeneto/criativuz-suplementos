@@ -51,9 +51,6 @@ importers:
       sass:
         specifier: ^1.93.2
         version: 1.93.2
-      tailwindcss:
-        specifier: ^4
-        version: 4.1.14
       typescript:
         specifier: ^5
         version: 5.9.2

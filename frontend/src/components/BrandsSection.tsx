@@ -7,11 +7,9 @@ export default async function BrandsSection() {
 
     return (
         <section className="brandsSection">
-            <h1>
-                Força que vem das{" "}
-                <span className="lightTag">Melhores Marcas</span>
-            </h1>
-            <p>
+            <p className="intro__category">Brands</p>
+            <h1>Resultado das Melhores Marcas</h1>
+            <p className="brandsSection__description">
                 Na <span className="lightTag">Criativuz Suplementos</span>, só
                 trabalhamos com marcas de confiança, reconhecidas pela qualidade
                 e eficácia. Produtos testados e aprovados por atletas e

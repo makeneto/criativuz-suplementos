@@ -7,7 +7,7 @@ export default function AboutSection() {
             <div className="about_image"></div>
             <div className="about_content">
                 <h1>
-                    Sobre a <span className="lightTag">Criativuz</span>
+                    Sobre a <span className="bordered">Criativuz</span>
                 </h1>
 
                 <p>

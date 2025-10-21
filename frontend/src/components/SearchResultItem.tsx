@@ -13,7 +13,7 @@ export default function SearchResultItem({
 }) {
     return (
         <li key={prod.id}>
-            <Link href={`/produto/${prod.id}`} onClick={onClick}>
+            <Link href={`/products/${prod.id}`} onClick={onClick}>
                 <img
                     src={prod.postImages?.[0] || "/placeholder.png"}
                     alt={prod.name}

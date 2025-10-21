@@ -9,7 +9,7 @@ export function useSearchProducts() {
     useEffect(() => {
         async function fetchProducts() {
             const result = await useProducts()
-            setProducts(result?.all || [])
+            setProducts(result?.products || [])
         }
         fetchProducts()
     }, [])

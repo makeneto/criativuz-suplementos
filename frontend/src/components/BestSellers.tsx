@@ -1,5 +1,6 @@
 import useProducts from "@/hooks/useProducts"
 import ProductCard from "./ui/ProductCard"
+import IntroSection from "./IntroSection"
 
 export default async function BestSellers() {
     const supplements = await useProducts()
@@ -8,7 +9,10 @@ export default async function BestSellers() {
 
     return (
         <section className="sectionGrid">
-            <h1 className="sectionGrid__title">Mais Vendidos</h1>
+            <IntroSection
+                category="Bestsellers"
+                title="Mais Vendidos"
+            />
             <ProductCard products={bestSellers} />
         </section>
     )

@@ -1,13 +1,8 @@
 .sectionGrid {
-    margin: 0 18rem 15rem;
-
-    &__title {
-        font-size: 1.8rem;
-        text-align: center;
-    }
+    margin: 0 18rem 11rem;
 
     &__list {
-        margin-top: 4rem;
+        margin-top: 3rem;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: repeat(2, 1fr);
@@ -15,7 +10,7 @@
         column-gap: 1rem;
         row-gap: 2rem;
 
-        & li {
+        & a {
             list-style: none;
             padding: 0 2rem 1rem;
             cursor: pointer;
