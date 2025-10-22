@@ -1,3 +1,5 @@
+"use client"
+
 import useProducts from "@/hooks/useProducts"
 import Image from "next/image"
 
@@ -7,11 +9,22 @@ interface ProductPageProps {
     }
 }
 
-export default async function ProductPage({ params }: ProductPageProps) {
-    const supplements = await useProducts()
-    const allProducts = supplements.products
+export default function ProductPage({ params }: ProductPageProps) {
+    const { data, isPending, error } = useProducts()
 
-    // Procurar o produto correspondente ao ID da rota
+    if (isPending) {
+        return <div>Carregando produto...</div>
+    }
+
+    if (error) {
+        return (
+            <div className="text-center mt-20 text-xl text-red-400">
+                Erro ao carregar produtos.
+            </div>
+        )
+    }
+
+    const allProducts = data?.products || []
     const product = allProducts.find((p: any) => p.id === Number(params.id))
 
     if (!product) {

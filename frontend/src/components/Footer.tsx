@@ -1,12 +1,15 @@
+"use client"
+
 import useProducts from "@/hooks/useProducts"
 import { Facebook, Instagram } from "lucide-react"
 import Link from "next/link"
 
-export default async function Footer() {
-    const all = await useProducts()
-    const brands = all.brands
+export default function Footer() {
+    const { data, isPending } = useProducts()
     const now = new Date()
     const currentYear = now.getFullYear()
+
+    const brands = data?.brands || []
 
     return (
         <footer className="footer">
@@ -51,9 +54,13 @@ export default async function Footer() {
                     <div className="footer__column">
                         <h2 className="footer__title">Marcas</h2>
                         <ul className="footer__list">
-                            {brands.map((brand: any) => (
-                                <li key={brand.name}>{brand.name}</li>
-                            ))}
+                            {isPending ? (
+                                <li>Carregando marcas...</li>
+                            ) : (
+                                brands.map((brand: any) => (
+                                    <li key={brand.name}>{brand.name}</li>
+                                ))
+                            )}
                         </ul>
                     </div>
 

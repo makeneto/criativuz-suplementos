@@ -5,6 +5,7 @@ import WhatsAppButton from "@/components/WhatsAppButton"
 import Footer from "@/components/Footer"
 
 import "../css/style.css"
+import ReactQueryProvider from "@/components/ReactQueryProvider"
 
 const poppins = Poppins({
     subsets: ["latin"],
@@ -14,7 +15,8 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
     title: "Criativuz Suplementos",
-    description: "Quem Cresce Natural é Planta - Resultados não vêm só do treino",
+    description:
+        "Quem Cresce Natural é Planta - Resultados não vêm só do treino",
 }
 
 export default function RootLayout({
@@ -25,10 +27,12 @@ export default function RootLayout({
     return (
         <html lang="pt-BR">
             <body className={`${poppins.variable} antialiased`}>
-                <NavBar />
-                {children}
-                <WhatsAppButton />
-                <Footer />
+                <ReactQueryProvider >
+                    <NavBar />
+                    {children}
+                    <WhatsAppButton />
+                    <Footer />
+                </ReactQueryProvider>
             </body>
         </html>
     )
