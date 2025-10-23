@@ -1,7 +1,19 @@
 "use client"
 
+import {
+    Accordion,
+    AccordionContent,
+    AccordionItem,
+    AccordionTrigger,
+} from "@/components/ui/accordion"
+
+import ProductImage from "@/components/ProductImage"
+import ProductOptions from "@/components/ui/ProductOptions"
+import ProductQuantity from "@/components/ui/ProductQuantity"
+import { useProductLogic } from "@/hooks/useProductLogic"
 import useProducts from "@/hooks/useProducts"
-import Image from "next/image"
+import { Atom } from "lucide-react"
+import { Calendar22 } from "@/components/OrderDate"
 
 interface ProductPageProps {
     params: {
@@ -11,97 +23,135 @@ interface ProductPageProps {
 
 export default function ProductPage({ params }: ProductPageProps) {
     const { data, isPending, error } = useProducts()
-
-    if (isPending) {
-        return <div>Carregando produto...</div>
-    }
-
-    if (error) {
-        return (
-            <div className="text-center mt-20 text-xl text-red-400">
-                Erro ao carregar produtos.
-            </div>
-        )
-    }
-
     const allProducts = data?.products || []
     const product = allProducts.find((p: any) => p.id === Number(params.id))
 
-    if (!product) {
+    if (isPending) {
         return (
-            <div className="text-center mt-20 text-xl text-gray-400">
-                Produto não encontrado.
+            <div className="productPage">
+                <p>Carregando produto...</p>
             </div>
         )
     }
 
+    if (!product) {
+        return <div className="productPage">Produto não encontrado.</div>
+    }
+
+    const {
+        imageIndex,
+        qtd,
+        formattedPrice,
+        formattedDiscountPrice,
+        selectedWeight,
+        selectedFlavour,
+        handleQtd,
+        handleSelectWeight,
+        handleSelectFlavour,
+        handleSubmit,
+    } = useProductLogic({
+        product,
+        buttonLabel: "Adicionar ao Carrinho",
+        onSubmit: (data) => console.log("Produto adicionado:", data),
+    })
+
     return (
-        <section className="productPage text-zinc-100 w-4/5 mx-auto my-20">
-            {/* Header */}
-            <div className="flex flex-col md:flex-row gap-10">
-                <Image
-                    src={product.postImages[0]}
-                    alt={product.name}
-                    width={400}
-                    height={400}
-                    className="rounded-2xl object-cover"
-                />
+        <section className="productPage">
+            <div className="productPage">
+                <div className="productPage__container">
+                    <ProductImage
+                        isProductPage={true}
+                        src={product.postImages[imageIndex]}
+                        alt={product.name}
+                    />
 
-                <div className="flex flex-col justify-center gap-3">
-                    <h1 className="text-3xl font-bold">{product.name}</h1>
-                    <h3 className="text-zinc-400 uppercase tracking-widest">
-                        {product.brand}
-                    </h3>
-                    <p className="text-zinc-300 leading-relaxed">
-                        {product.description.synopsis}
-                    </p>
-                    <p className="text-xl font-semibold text-emerald-400 mt-2">
-                        {product.price[0].toLocaleString()} Kz
-                    </p>
+                    <form
+                        className="productPage__container--content"
+                        onSubmit={handleSubmit}
+                    >
+                        <header>
+                            <h2>{product.name}</h2>
+                            {formattedDiscountPrice ? (
+                                <div>
+                                    <p>{formattedDiscountPrice}</p>
+                                    <span>{formattedPrice}</span>
+                                </div>
+                            ) : (
+                                <p>{formattedPrice}</p>
+                            )}
+                        </header>
 
-                    <div className="flex gap-2 mt-4 flex-wrap">
-                        {product.flavours.map((flavour: string, i: number) => (
-                            <span
-                                key={i}
-                                className="px-3 py-1 bg-zinc-800 rounded-full text-sm"
-                            >
-                                {flavour}
-                            </span>
-                        ))}
-                    </div>
-                </div>
-            </div>
-
-            {/* Detalhes */}
-            <div className="mt-16 space-y-10">
-                <div>
-                    <h2 className="text-2xl font-semibold mb-3">Destaques</h2>
-                    <ul className="list-disc pl-6 space-y-2 text-zinc-300">
-                        {product.description.highlights.map(
-                            (item: string, index: number) => (
-                                <li key={index}>{item}</li>
-                            )
-                        )}
-                    </ul>
-                </div>
-
-                <div>
-                    <h2 className="text-2xl font-semibold mb-3">Informações</h2>
-                    <p className="text-zinc-300 leading-relaxed">
-                        {product.description.information}
-                    </p>
-                </div>
-
-                {product.description.recommendedUse && (
-                    <div>
-                        <h2 className="text-2xl font-semibold mb-3">
-                            Como usar
-                        </h2>
-                        <p className="text-zinc-300 leading-relaxed">
-                            {product.description.recommendedUse}
+                        <p className="productPage__container--content--description">
+                            {product.description?.synopsis}
                         </p>
-                    </div>
-                )}
+
+                        <ProductOptions
+                            isProductPage={true}
+                            weights={product.weight}
+                            flavours={product.flavours}
+                            selectedWeight={selectedWeight}
+                            selectedFlavour={selectedFlavour}
+                            onSelectWeight={handleSelectWeight}
+                            onSelectFlavour={handleSelectFlavour}
+                        />
+
+                        <Calendar22 />
+
+                        <div className="productSubmitSection">
+                            <div>
+                                <ProductQuantity
+                                    qtd={qtd}
+                                    onAdd={() => handleQtd("add")}
+                                    onSubtract={() => handleQtd("subtract")}
+                                />
+                                <button type="submit" className="order">
+                                    Adicionar ao Carrinho
+                                </button>
+                            </div>
+
+                            <button type="button" className="cart">
+                                Encomendar
+                            </button>
+                        </div>
+
+                        <div className="productPage__details">
+                            <ul className="productPage__details--highlights">
+                                {product.description.highlights.map(
+                                    (item: string, index: number) => (
+                                        <li key={index}>
+                                            <Atom />
+                                            {item}
+                                        </li>
+                                    )
+                                )}
+                            </ul>
+
+                            <Accordion
+                                type="single"
+                                defaultValue="item-1"
+                                collapsible
+                            >
+                                <AccordionItem value="item-1">
+                                    <AccordionTrigger>
+                                        Informações
+                                    </AccordionTrigger>
+                                    <AccordionContent>
+                                        {product.description.information}
+                                    </AccordionContent>
+                                </AccordionItem>
+
+                                <AccordionItem value="item-2">
+                                    <AccordionTrigger>
+                                        Como usar?
+                                    </AccordionTrigger>
+                                    <AccordionContent>
+                                        {product.description.recommendedUse}
+                                    </AccordionContent>
+                                </AccordionItem>
+                            </Accordion>
+                        </div>
+                    </form>
+                </div>
             </div>
         </section>
     )

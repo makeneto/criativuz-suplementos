@@ -1,4 +1,5 @@
 interface ProductOptionsProps {
+    isProductPage?: boolean
     weights: string[]
     flavours?: string[]
     selectedWeight: string
@@ -8,6 +9,7 @@ interface ProductOptionsProps {
 }
 
 export default function ProductOptions({
+    isProductPage,
     weights,
     flavours,
     selectedWeight,
@@ -18,7 +20,9 @@ export default function ProductOptions({
     return (
         <section>
             <ul className="modalProduct__container--content--list">
-                <li>Peso</li>
+                <li style={{ fontSize: isProductPage ? "1.1rem" : "" }}>
+                    Peso
+                </li>
                 {weights.map((w, index) => (
                     <li
                         key={index}
@@ -32,7 +36,9 @@ export default function ProductOptions({
 
             {flavours && flavours.length > 0 && (
                 <ul className="modalProduct__container--content--list">
-                    <li>Sabor</li>
+                    <li style={{ fontSize: isProductPage ? "1.1rem" : "" }}>
+                        Sabor
+                    </li>
                     {flavours.map((f, index) => (
                         <li
                             key={index}

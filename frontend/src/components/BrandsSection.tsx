@@ -2,22 +2,11 @@
 
 import useProducts from "@/hooks/useProducts"
 import BrandsItem from "./BrandsItem"
+import Spinner from "./ui/Spinner"
 
 export default function BrandsSection() {
     const { data, isPending } = useProducts()
     const brands = data?.brands || []
-
-    if (isPending) {
-        return (
-            <section className="brandsSection">
-                <p className="intro__category">Brands</p>
-                <h1>Resultado das Melhores Marcas</h1>
-                <p className="brandsSection__description">
-                    Carregando marcas...
-                </p>
-            </section>
-        )
-    }
 
     return (
         <section className="brandsSection">
@@ -30,7 +19,7 @@ export default function BrandsSection() {
                 especialistas para garantir os melhores resultados.
             </p>
 
-            <BrandsItem brands={brands} />
+            {isPending ? <Spinner /> : <BrandsItem brands={brands} />}
         </section>
     )
 }

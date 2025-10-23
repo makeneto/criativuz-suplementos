@@ -5,6 +5,7 @@ import WhatsAppButton from "@/components/WhatsAppButton"
 import Footer from "@/components/Footer"
 
 import "../css/style.css"
+import "../css/global.css"
 import ReactQueryProvider from "@/components/ReactQueryProvider"
 
 const poppins = Poppins({
@@ -27,7 +28,7 @@ export default function RootLayout({
     return (
         <html lang="pt-BR">
             <body className={`${poppins.variable} antialiased`}>
-                <ReactQueryProvider >
+                <ReactQueryProvider>
                     <NavBar />
                     {children}
                     <WhatsAppButton />

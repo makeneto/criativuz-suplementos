@@ -1,14 +1,21 @@
 interface ProductImageProps {
     src: string
     alt: string
+    isProductPage?: boolean
 }
 
-export default function ProductImage({ src, alt }: ProductImageProps) {
+export default function ProductImage({
+    src,
+    alt,
+    isProductPage,
+}: ProductImageProps) {
     return (
         <img
             src={src}
             alt={alt}
-            className="modalProduct__container--image"
+            className={`${
+                isProductPage ? "productPage" : "modalProduct"
+            }__container--image`}
             style={{ backgroundColor: "#fff" }}
         />
     )

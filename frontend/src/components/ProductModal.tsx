@@ -4,7 +4,7 @@ import { X } from "lucide-react"
 import ProductImage from "./ProductImage"
 import ProductOptions from "./ui/ProductOptions"
 import ProductQuantity from "./ui/ProductQuantity"
-import { useProductModalLogic } from "@/hooks/useProductModalLogic"
+import { useProductLogic } from "@/hooks/useProductLogic"
 
 interface ProductModalProps {
     product: any
@@ -35,11 +35,11 @@ export default function ProductModal({
         handleSelectWeight,
         handleSelectFlavour,
         handleSubmit,
-    } = useProductModalLogic({ product, buttonLabel, onSubmit, setProduct })
+    } = useProductLogic({ product, buttonLabel, onSubmit, setProduct })
 
     return (
         <div className="modalOverlay">
-            <form className="modalProduct" onSubmit={handleSubmit}>
+            <div className="modalProduct">
                 <button
                     type="button"
                     onClick={() => setProduct(null)}
@@ -54,7 +54,10 @@ export default function ProductModal({
                         alt={product.name}
                     />
 
-                    <div className="modalProduct__container--content">
+                    <form
+                        className="modalProduct__container--content"
+                        onSubmit={handleSubmit}
+                    >
                         <header>
                             <h2>{product.name}</h2>
                             {formattedDiscountPrice ? (
@@ -88,9 +91,9 @@ export default function ProductModal({
                             />
                             <button type="submit">{buttonLabel}</button>
                         </div>
-                    </div>
+                    </form>
                 </div>
-            </form>
+            </div>
         </div>
     )
 }

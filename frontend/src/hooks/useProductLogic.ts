@@ -4,23 +4,24 @@ import { useProductModal } from "@/hooks/useProductModal"
 import { sendWhatsAppMessage } from "@/utils/sendWhatsAppMessage"
 import { formatCurrency } from "@/utils/formatCurrency"
 
-interface UseProductModalLogicProps {
+interface UseProductLogicProps {
     product: any
     buttonLabel: string
-    onSubmit: (data: {
+    onSubmit?: (data: {
         product: any
         qtd: number
         weight: string
         flavour: string
     }) => void
-    setProduct: (value: any) => void
+    setProduct?: (value: any) => void
 }
 
-export function useProductModalLogic({
+export function useProductLogic({
     product,
     buttonLabel,
     onSubmit,
-}: UseProductModalLogicProps) {
+    setProduct,
+}: UseProductLogicProps) {
     const {
         qtd,
         imageIndex,
@@ -35,7 +36,7 @@ export function useProductModalLogic({
     } = useProductModal(product)
 
     const formattedTotal = formattedDiscountPrice || formattedPrice
-    
+
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault()
 
@@ -53,12 +54,16 @@ export function useProductModalLogic({
                 total: formattedTotal,
             })
         } else {
-            onSubmit({
+            onSubmit?.({
                 product,
                 qtd,
                 weight: selectedWeight,
                 flavour: selectedFlavour,
             })
+        }
+
+        if (setProduct) {
+            setProduct(null)
         }
     }
 

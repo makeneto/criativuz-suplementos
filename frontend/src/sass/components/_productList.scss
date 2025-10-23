@@ -10,16 +10,20 @@
         column-gap: 1rem;
         row-gap: 2rem;
 
-        & a {
+        & li {
             list-style: none;
             padding: 0 2rem 1rem;
-            cursor: pointer;
             transition: all .2s ease-in;
             text-align: center;
 
-            & p {
+            & .productName {
                 margin-top: 0.3rem;
                 font-size: 1.1rem;
+                transition: all .2s ease-in;
+
+                &:hover {
+                    color: rgb(118, 0, 0);
+                }
             }
 
             & h3 {
@@ -57,6 +61,7 @@
                 transition: all .3s ease-in-out;
 
                 & div {
+                    cursor: pointer;
                     border-radius: 50%;
                     width: 2.5rem;
                     height: 2.5rem;

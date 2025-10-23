@@ -23,9 +23,14 @@ export default function ProductCard({ products }: any) {
         <>
             <ul className="sectionGrid__list">
                 {products.map((p: any) => (
-                    <Link href={`/products/${p.id}`} key={p.id}>
+                    <li>
                         <div className="sectionGrid__list--view">
-                            <img src={p.postImages[0]} alt={`Product Image`} />
+                            <Link href={`/products/${p.id}`} key={p.id}>
+                                <img
+                                    src={p.postImages[0]}
+                                    alt={`Product Image`}
+                                />
+                            </Link>
                             <div className="sectionGrid__list--view--controls">
                                 <div
                                     onClick={() => {
@@ -57,7 +62,13 @@ export default function ProductCard({ products }: any) {
                             </div>
                         </div>
 
-                        <p>{p.name}</p>
+                        <Link
+                            href={`/products/${p.id}`}
+                            key={p.id}
+                            className="productName"
+                        >
+                            {p.name}
+                        </Link>
                         <h3
                             style={{
                                 color:
@@ -73,7 +84,7 @@ export default function ProductCard({ products }: any) {
                                   )
                                 : formatCurrency(p.price[0] || p.price)}
                         </h3>
-                    </Link>
+                    </li>
                 ))}
             </ul>
 
