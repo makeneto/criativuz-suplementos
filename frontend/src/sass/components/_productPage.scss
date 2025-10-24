@@ -2,22 +2,23 @@ $solidBorder: 1px solid #e7e7e7;
 
 .productPage {
     background-color: white;
-    margin: 5rem 6rem;
+    margin: 10rem 6rem;
     display: flex;
     justify-content: center;
 
     &__container {
-        display: flex;
         align-items: flex-start;
         gap: 5rem;
-        width: 100%;
+        margin-inline: 2rem 13rem;
+        display: flex;
         position: relative;
 
         &--image {
-            flex: 0 0 30%;
-            position: sticky;
-            top: 6rem;
+            width: 55%;
             align-self: flex-start;
+            position: -webkit-sticky;
+            position: sticky;
+            top: 12%;
 
             img {
                 width: 100%;
@@ -169,7 +170,7 @@ $solidBorder: 1px solid #e7e7e7;
             background-color: transparent;
             color: #3d0a0f;
             border: 1px solid #3d0a0f;
-            padding-inline: 2rem;
+            padding-inline: 1rem;
 
             &:hover {
                 background-color: red;
@@ -193,7 +194,7 @@ $solidBorder: 1px solid #e7e7e7;
 
     &__details {
         &--highlights {
-            background-color: rgba(128, 128, 128, 0.179);
+            background-color: rgba(128, 128, 128, 0.134);
             padding: 2rem;
             display: grid;
             gap: 0.8rem;

@@ -11,7 +11,7 @@ export default function BrandsSection() {
     return (
         <section className="brandsSection">
             <p className="intro__category">Brands</p>
-            <h1>Resultado das Melhores Marcas</h1>
+            <h1 className="font-medium ">Resultado das Melhores Marcas</h1>
             <p className="brandsSection__description">
                 Na <span className="lightTag">Criativuz Suplementos</span>, só
                 trabalhamos com marcas de confiança, reconhecidas pela qualidade

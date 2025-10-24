@@ -91,6 +91,7 @@ button:disabled {
   right: 5rem;
 }
 .about_content h1 {
+  font-size: 2em;
   font-weight: 700;
   line-height: 2.6rem;
   margin-bottom: 1rem;
@@ -112,6 +113,8 @@ button:disabled {
   text-transform: uppercase;
 }
 .brandsSection h1 {
+  font-size: 2em;
+  font-weight: 700;
   margin-top: 0.5rem;
 }
 .brandsSection__description {
@@ -165,8 +168,9 @@ button:disabled {
   z-index: 2;
 }
 .end_content h1 {
+  font-size: 2em;
   font-weight: 700;
-  line-height: 2.6rem;
+  line-height: 2.5rem;
   margin-bottom: 1rem;
 }
 .end_content p:not(:first-of-type) {
@@ -335,8 +339,8 @@ button:disabled {
   left: 2%;
   transform: translateY(-50%);
 }
-.heroCarousel__content h5 {
-  font-weight: 500;
+.heroCarousel__content h2 {
+  font-weight: 700;
   font-size: 1.1rem;
 }
 .heroCarousel__content h2 {
@@ -421,6 +425,7 @@ button:disabled {
 }
 .intro__title {
   font-size: 2em;
+  font-weight: 700;
 }
 .intro__description {
   font-size: 1.2rem;
@@ -443,7 +448,6 @@ button:disabled {
   top: auto;
   left: auto;
   width: 45%;
-  height: 29.7rem;
   padding: 1.3rem;
   display: flex;
   box-shadow: 0 0 1rem 0.4rem rgba(0, 0, 0, 0.155);
@@ -477,9 +481,7 @@ button:disabled {
 }
 .modalProduct__container--content {
   flex: 1;
-  display: flex;
   flex-direction: column;
-  overflow-y: auto;
   padding-right: 0.5rem;
 }
 .modalProduct__container--content::-webkit-scrollbar {
@@ -525,6 +527,7 @@ button:disabled {
   display: grid;
   gap: 1.5rem;
   margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 .modalProduct__container--content--list {
   display: flex;
@@ -553,10 +556,12 @@ button:disabled {
   color: white;
   border: 0.1rem solid transparent;
 }
+.modalProduct__container--content .calendarSection {
+  padding-left: 0.1rem;
+  margin-bottom: 1rem;
+}
 
 .submitSection {
-  position: sticky;
-  bottom: 0;
   background: white;
   padding-top: 1rem;
   margin-top: auto;
@@ -610,22 +615,23 @@ button:disabled {
 
 .productPage {
   background-color: white;
-  margin: 5rem 6rem;
+  margin: 10rem 6rem;
   display: flex;
   justify-content: center;
 }
 .productPage__container {
-  display: flex;
   align-items: flex-start;
   gap: 5rem;
-  width: 100%;
+  margin-inline: 2rem 13rem;
+  display: flex;
   position: relative;
 }
 .productPage__container--image {
-  flex: 0 0 30%;
-  position: sticky;
-  top: 6rem;
+  width: 55%;
   align-self: flex-start;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 12%;
 }
 .productPage__container--image img {
   width: 100%;
@@ -754,7 +760,7 @@ button:disabled {
   background-color: transparent;
   color: #3d0a0f;
   border: 1px solid #3d0a0f;
-  padding-inline: 2rem;
+  padding-inline: 1rem;
 }
 .productPage .productSubmitSection .order:hover {
   background-color: red;
@@ -772,7 +778,7 @@ button:disabled {
   background-color: rgb(216, 0, 0);
 }
 .productPage__details--highlights {
-  background-color: rgba(128, 128, 128, 0.179);
+  background-color: rgba(128, 128, 128, 0.134);
   padding: 2rem;
   display: grid;
   gap: 0.8rem;
@@ -793,7 +799,6 @@ button:disabled {
   top: 0;
   z-index: 999;
   width: 100vw;
-  box-shadow: 0px 10px 16px 0px rgba(0, 0, 0, 0.1411764706);
 }
 .nav_inform {
   background-color: #f2e1df;
@@ -1102,9 +1107,11 @@ button:disabled {
   font-size: 5rem;
   color: rgba(128, 128, 128, 0.508);
   line-height: 5rem;
+  font-weight: 700;
 }
 .step__title {
   font-size: 1.3rem;
+  font-weight: 600;
 }
 
 .whatsapp-btn {

@@ -1,13 +1,22 @@
 "use client"
 
+import * as React from "react"
 import { X } from "lucide-react"
 import ProductImage from "./ProductImage"
 import ProductOptions from "./ui/ProductOptions"
 import ProductQuantity from "./ui/ProductQuantity"
 import { useProductLogic } from "@/hooks/useProductLogic"
+import { Calendar22 } from "./Calendar22"
 
 interface ProductModalProps {
-    product: any
+    product: {
+        name: string
+        brand: string
+        description?: { synopsis?: string }
+        postImages: string[]
+        weight: string[]
+        flavours: string[]
+    }
     setProduct: (value: any) => void
     buttonLabel: string
     onSubmit: (data: {
@@ -24,6 +33,8 @@ export default function ProductModal({
     buttonLabel,
     onSubmit,
 }: ProductModalProps) {
+    const [deliveryDate, setDeliveryDate] = React.useState<Date | undefined>()
+
     const {
         imageIndex,
         qtd,
@@ -35,7 +46,13 @@ export default function ProductModal({
         handleSelectWeight,
         handleSelectFlavour,
         handleSubmit,
-    } = useProductLogic({ product, buttonLabel, onSubmit, setProduct })
+    } = useProductLogic({
+        product,
+        buttonLabel,
+        onSubmit,
+        setProduct,
+        deliveryDate,
+    })
 
     return (
         <div className="modalOverlay">
@@ -70,9 +87,11 @@ export default function ProductModal({
                             )}
                         </header>
 
-                        <p className="modalProduct__container--content--description">
-                            {product.description?.synopsis}
-                        </p>
+                        {product.description?.synopsis && (
+                            <p className="modalProduct__container--content--description">
+                                {product.description.synopsis}
+                            </p>
+                        )}
 
                         <ProductOptions
                             weights={product.weight}
@@ -82,6 +101,13 @@ export default function ProductModal({
                             onSelectWeight={handleSelectWeight}
                             onSelectFlavour={handleSelectFlavour}
                         />
+
+                        <div className="calendarSection">
+                            <Calendar22
+                                date={deliveryDate}
+                                setDate={setDeliveryDate}
+                            />
+                        </div>
 
                         <div className="submitSection">
                             <ProductQuantity

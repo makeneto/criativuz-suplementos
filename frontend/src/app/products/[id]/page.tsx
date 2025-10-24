@@ -13,7 +13,8 @@ import ProductQuantity from "@/components/ui/ProductQuantity"
 import { useProductLogic } from "@/hooks/useProductLogic"
 import useProducts from "@/hooks/useProducts"
 import { Atom } from "lucide-react"
-import { Calendar22 } from "@/components/OrderDate"
+import { Calendar22 } from "@/components/Calendar22"
+import { useEffect, useState } from "react"
 
 interface ProductPageProps {
     params: {
@@ -22,9 +23,11 @@ interface ProductPageProps {
 }
 
 export default function ProductPage({ params }: ProductPageProps) {
-    const { data, isPending, error } = useProducts()
+    const { data, isPending } = useProducts()
     const allProducts = data?.products || []
     const product = allProducts.find((p: any) => p.id === Number(params.id))
+
+    const [deliveryDate, setDeliveryDate] = useState<Date | undefined>()
 
     if (isPending) {
         return (
@@ -51,107 +54,122 @@ export default function ProductPage({ params }: ProductPageProps) {
         handleSubmit,
     } = useProductLogic({
         product,
-        buttonLabel: "Adicionar ao Carrinho",
-        onSubmit: (data) => console.log("Produto adicionado:", data),
+        buttonLabel: "Encomendar",
+        deliveryDate,
     })
+
+    const handleOrder = (e: React.MouseEvent) => {
+        e.preventDefault()
+        handleSubmit({
+            preventDefault: () => {},
+            type: "submit",
+        } as unknown as React.FormEvent)
+    }
+
+    useEffect(() => {
+        document.title = `Criativuz | ${product.name}`
+    }, [product?.name])
 
     return (
         <section className="productPage">
-            <div className="productPage">
-                <div className="productPage__container">
-                    <ProductImage
+            <div className="productPage__container">
+                <ProductImage
+                    isProductPage={true}
+                    src={product.postImages[imageIndex]}
+                    alt={product.name}
+                />
+
+                <form
+                    className="productPage__container--content"
+                    onSubmit={handleSubmit}
+                >
+                    <header>
+                        <h2>{product.name}</h2>
+                        {formattedDiscountPrice ? (
+                            <div>
+                                <p>{formattedDiscountPrice}</p>
+                                <span>{formattedPrice}</span>
+                            </div>
+                        ) : (
+                            <p>{formattedPrice}</p>
+                        )}
+                    </header>
+
+                    <p className="productPage__container--content--description">
+                        {product.description?.synopsis}
+                    </p>
+
+                    <ProductOptions
                         isProductPage={true}
-                        src={product.postImages[imageIndex]}
-                        alt={product.name}
+                        weights={product.weight}
+                        flavours={product.flavours}
+                        selectedWeight={selectedWeight}
+                        selectedFlavour={selectedFlavour}
+                        onSelectWeight={handleSelectWeight}
+                        onSelectFlavour={handleSelectFlavour}
                     />
 
-                    <form
-                        className="productPage__container--content"
-                        onSubmit={handleSubmit}
-                    >
-                        <header>
-                            <h2>{product.name}</h2>
-                            {formattedDiscountPrice ? (
-                                <div>
-                                    <p>{formattedDiscountPrice}</p>
-                                    <span>{formattedPrice}</span>
-                                </div>
-                            ) : (
-                                <p>{formattedPrice}</p>
-                            )}
-                        </header>
+                    <div className="productSubmitSection">
+                        <div style={{ marginBottom: "1rem" }}>
+                            <ProductQuantity
+                                qtd={qtd}
+                                onAdd={() => handleQtd("add")}
+                                onSubtract={() => handleQtd("subtract")}
+                            />
+                            <Calendar22
+                                date={deliveryDate}
+                                setDate={setDeliveryDate}
+                            />
+                        </div>
 
-                        <p className="productPage__container--content--description">
-                            {product.description?.synopsis}
-                        </p>
+                        <div>
+                            <button type="button" className="order">
+                                Add ao Carrinho
+                            </button>
 
-                        <ProductOptions
-                            isProductPage={true}
-                            weights={product.weight}
-                            flavours={product.flavours}
-                            selectedWeight={selectedWeight}
-                            selectedFlavour={selectedFlavour}
-                            onSelectWeight={handleSelectWeight}
-                            onSelectFlavour={handleSelectFlavour}
-                        />
-
-                        <Calendar22 />
-
-                        <div className="productSubmitSection">
-                            <div>
-                                <ProductQuantity
-                                    qtd={qtd}
-                                    onAdd={() => handleQtd("add")}
-                                    onSubtract={() => handleQtd("subtract")}
-                                />
-                                <button type="submit" className="order">
-                                    Adicionar ao Carrinho
-                                </button>
-                            </div>
-
-                            <button type="button" className="cart">
+                            <button
+                                type="submit"
+                                className="cart"
+                                onClick={handleOrder}
+                            >
                                 Encomendar
                             </button>
                         </div>
+                    </div>
 
-                        <div className="productPage__details">
-                            <ul className="productPage__details--highlights">
-                                {product.description.highlights.map(
-                                    (item: string, index: number) => (
-                                        <li key={index}>
-                                            <Atom />
-                                            {item}
-                                        </li>
-                                    )
-                                )}
-                            </ul>
+                    <div className="productPage__details">
+                        <ul className="productPage__details--highlights">
+                            {product.description.highlights.map(
+                                (item: string, index: number) => (
+                                    <li key={index}>
+                                        <Atom />
+                                        {item}
+                                    </li>
+                                )
+                            )}
+                        </ul>
 
-                            <Accordion
-                                type="single"
-                                defaultValue="item-1"
-                                collapsible
-                            >
-                                <AccordionItem value="item-1">
-                                    <AccordionTrigger>
-                                        Informações
-                                    </AccordionTrigger>
-                                    <AccordionContent>
-                                        {product.description.information}
-                                    </AccordionContent>
-                                </AccordionItem>
+                        <Accordion
+                            type="single"
+                            defaultValue="item-1"
+                            collapsible
+                        >
+                            <AccordionItem value="item-1">
+                                <AccordionTrigger>Informações</AccordionTrigger>
+                                <AccordionContent>
+                                    {product.description.information}
+                                </AccordionContent>
+                            </AccordionItem>
 
-                                <AccordionItem value="item-2">
-                                    <AccordionTrigger>
-                                        Como usar?
-                                    </AccordionTrigger>
-                                    <AccordionContent>
-                                        {product.description.recommendedUse}
-                                    </AccordionContent>
-                                </AccordionItem>
-                            </Accordion>
-                        </div>
-                    </form>
-                </div>
+                            <AccordionItem value="item-2">
+                                <AccordionTrigger>Como usar?</AccordionTrigger>
+                                <AccordionContent>
+                                    {product.description.recommendedUse}
+                                </AccordionContent>
+                            </AccordionItem>
+                        </Accordion>
+                    </div>
+                </form>
             </div>
         </section>
     )

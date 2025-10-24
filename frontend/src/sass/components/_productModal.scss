@@ -17,7 +17,6 @@ $solidBorder: 1px solid #e7e7e7;
     top: auto;
     left: auto;
     width: 45%;
-    height: 29.7rem;
     padding: 1.3rem;
     display: flex;
     box-shadow: 0 0 1rem 0.4rem rgba(0, 0, 0, 0.155);
@@ -54,9 +53,7 @@ $solidBorder: 1px solid #e7e7e7;
 
         &--content {
             flex: 1;
-            display: flex;
             flex-direction: column;
-            overflow-y: auto;
             padding-right: .5rem;
 
             &::-webkit-scrollbar {
@@ -108,6 +105,7 @@ $solidBorder: 1px solid #e7e7e7;
                 display: grid;
                 gap: 1.5rem;
                 margin-top: 1.5rem;
+                margin-bottom: 1.5rem;
             }
 
             &--list {
@@ -142,13 +140,16 @@ $solidBorder: 1px solid #e7e7e7;
                 }
 
             }
+
+            .calendarSection {
+                padding-left: 0.1rem;
+                margin-bottom: 1rem;
+            }
         }
     }
 }
 
 .submitSection {
-    position: sticky;
-    bottom: 0;
     background: white;
     padding-top: 1rem;
     margin-top: auto;

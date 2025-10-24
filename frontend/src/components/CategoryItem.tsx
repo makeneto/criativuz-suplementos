@@ -29,7 +29,7 @@ export default function CategoryItem({
                 <ul className="nav_bar__products-list">
                     {products.map((prod) => (
                         <li key={prod.id}>
-                            <Link href={`/produto/${prod.id}`}>
+                            <Link href={`/products/${prod.id}`}>
                                 {prod.name}
                             </Link>
                         </li>

@@ -7,6 +7,7 @@ export function sendWhatsAppMessage({
     price,
     qtd,
     total,
+    deliveryDate,
 }: {
     phone: string
     product: string
@@ -16,6 +17,7 @@ export function sendWhatsAppMessage({
     price: string | number
     qtd: number
     total: string
+    deliveryDate?: string
 }) {
     const boxEmoji = "\u{1F4E6}"
 
@@ -32,6 +34,7 @@ Olá, gostaria de fazer uma encomenda com os seguintes detalhes:
 *Quantidade:* ${qtd} Unidades
 
 *Total:* ${total}
+*Data de entrega:* ${deliveryDate}
 
 Por favor, confirma a disponibilidade e o prazo de entrega.
 Fico a aguardar o retorno.

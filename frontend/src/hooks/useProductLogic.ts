@@ -3,10 +3,11 @@
 import { useProductModal } from "@/hooks/useProductModal"
 import { sendWhatsAppMessage } from "@/utils/sendWhatsAppMessage"
 import { formatCurrency } from "@/utils/formatCurrency"
+import { formatOrderDate } from "@/utils/formatOrderDate"
 
 interface UseProductLogicProps {
     product: any
-    buttonLabel: string
+    buttonLabel?: string
     onSubmit?: (data: {
         product: any
         qtd: number
@@ -14,6 +15,7 @@ interface UseProductLogicProps {
         flavour: string
     }) => void
     setProduct?: (value: any) => void
+    deliveryDate?: Date
 }
 
 export function useProductLogic({
@@ -21,6 +23,7 @@ export function useProductLogic({
     buttonLabel,
     onSubmit,
     setProduct,
+    deliveryDate,
 }: UseProductLogicProps) {
     const {
         qtd,
@@ -40,7 +43,10 @@ export function useProductLogic({
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault()
 
-        const isOrder = buttonLabel.toLowerCase() === "encomendar"
+        const isOrder =
+            buttonLabel?.toLowerCase() === "encomendar" || e.type === "click"
+
+        const today = new Date()
 
         if (isOrder) {
             sendWhatsAppMessage({
@@ -52,6 +58,7 @@ export function useProductLogic({
                 price: formatCurrency(effectivePrice),
                 qtd,
                 total: formattedTotal,
+                deliveryDate: formatOrderDate(deliveryDate || today),
             })
         } else {
             onSubmit?.({
@@ -62,9 +69,7 @@ export function useProductLogic({
             })
         }
 
-        if (setProduct) {
-            setProduct(null)
-        }
+        setProduct?.(null)
     }
 
     return {

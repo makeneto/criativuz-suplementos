@@ -4,8 +4,8 @@ import NavBar from "@/components/NavBar"
 import WhatsAppButton from "@/components/WhatsAppButton"
 import Footer from "@/components/Footer"
 
-import "../css/style.css"
 import "../css/global.css"
+import "../css/style.css"
 import ReactQueryProvider from "@/components/ReactQueryProvider"
 
 const poppins = Poppins({
