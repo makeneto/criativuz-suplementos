@@ -1,0 +1,45 @@
+.productGallery {
+    width: 55%;
+    align-self: flex-start;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 12%;
+
+    &--main {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        display: block;
+    }
+
+    &__options {
+        margin-top: 2rem;
+        display: flex;
+        gap: 1rem;
+    }
+
+    &__thumb {
+        border: 1px solid transparent;
+        padding: 0.3rem;
+        width: auto;
+        height: 7rem;
+        cursor: pointer;
+        transition: border 0.2s ease-in;
+
+        &--active {
+            border: 1px solid #bebebe;
+            cursor: not-allowed;
+        }
+
+        &--inactive {
+            cursor: pointer;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+    }
+}

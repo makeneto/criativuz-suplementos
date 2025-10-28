@@ -1,45 +1,50 @@
 "use client"
 
-import {
-    Accordion,
-    AccordionContent,
-    AccordionItem,
-    AccordionTrigger,
-} from "@/components/ui/accordion"
-
+import React, { useState, useEffect } from "react"
 import ProductImage from "@/components/ProductImage"
 import ProductOptions from "@/components/ui/ProductOptions"
-import ProductQuantity from "@/components/ui/ProductQuantity"
 import { useProductLogic } from "@/hooks/useProductLogic"
 import useProducts from "@/hooks/useProducts"
-import { Atom } from "lucide-react"
-import { Calendar22 } from "@/components/Calendar22"
-import { useEffect, useState } from "react"
+import ProductHeader from "@/components/ProductHeader"
+import ProductDescription from "@/components/ProductDescription"
+import ProductActions from "@/components/ProductActions"
+import ProductDetails from "@/components/ProductDetails"
+import Spinner from "@/components/ui/Spinner"
+import Image from "next/image"
+import ProductGallery from "@/components/ProductGallery"
 
 interface ProductPageProps {
-    params: {
-        id: string
-    }
+    params: Promise<{ id: string }>
 }
 
 export default function ProductPage({ params }: ProductPageProps) {
+    const { id } = React.use(params)
     const { data, isPending } = useProducts()
-    const allProducts = data?.products || []
-    const product = allProducts.find((p: any) => p.id === Number(params.id))
+    const products = data?.products ?? []
+    const product = products.find((p: any) => p.id === Number(id))
 
     const [deliveryDate, setDeliveryDate] = useState<Date | undefined>()
 
-    if (isPending) {
+    useEffect(() => {
+        if (product) document.title = `Criativuz | ${product.name}`
+    }, [product])
+
+    if (isPending)
         return (
-            <div className="productPage">
-                <p>Carregando produto...</p>
+            <div
+                className="productPage"
+                style={{
+                    height: "100dvh",
+                    display: "flex",
+                    alignItems: "start",
+                }}
+            >
+                <Spinner size="64" />
             </div>
         )
-    }
 
-    if (!product) {
+    if (!product)
         return <div className="productPage">Produto não encontrado.</div>
-    }
 
     const {
         imageIndex,
@@ -58,49 +63,35 @@ export default function ProductPage({ params }: ProductPageProps) {
         deliveryDate,
     })
 
-    const handleOrder = (e: React.MouseEvent) => {
+    const handleOrderClick = (e: React.MouseEvent) => {
         e.preventDefault()
-        handleSubmit({
-            preventDefault: () => {},
-            type: "submit",
-        } as unknown as React.FormEvent)
+        handleSubmit({ preventDefault() {}, type: "submit" } as React.FormEvent)
     }
-
-    useEffect(() => {
-        document.title = `Criativuz | ${product.name}`
-    }, [product?.name])
 
     return (
         <section className="productPage">
             <div className="productPage__container">
-                <ProductImage
-                    isProductPage={true}
+                <ProductGallery
+                    isProductPage
                     src={product.postImages[imageIndex]}
                     alt={product.name}
+                    product={product}
                 />
 
                 <form
                     className="productPage__container--content"
                     onSubmit={handleSubmit}
                 >
-                    <header>
-                        <h2>{product.name}</h2>
-                        {formattedDiscountPrice ? (
-                            <div>
-                                <p>{formattedDiscountPrice}</p>
-                                <span>{formattedPrice}</span>
-                            </div>
-                        ) : (
-                            <p>{formattedPrice}</p>
-                        )}
-                    </header>
+                    <ProductHeader
+                        name={product.name}
+                        price={formattedPrice}
+                        discountPrice={formattedDiscountPrice ?? undefined}
+                    />
 
-                    <p className="productPage__container--content--description">
-                        {product.description?.synopsis}
-                    </p>
+                    <ProductDescription text={product.description?.synopsis} />
 
                     <ProductOptions
-                        isProductPage={true}
+                        isProductPage
                         weights={product.weight}
                         flavours={product.flavours}
                         selectedWeight={selectedWeight}
@@ -109,66 +100,20 @@ export default function ProductPage({ params }: ProductPageProps) {
                         onSelectFlavour={handleSelectFlavour}
                     />
 
-                    <div className="productSubmitSection">
-                        <div style={{ marginBottom: "1rem" }}>
-                            <ProductQuantity
-                                qtd={qtd}
-                                onAdd={() => handleQtd("add")}
-                                onSubtract={() => handleQtd("subtract")}
-                            />
-                            <Calendar22
-                                date={deliveryDate}
-                                setDate={setDeliveryDate}
-                            />
-                        </div>
+                    <ProductActions
+                        qtd={qtd}
+                        onAdd={() => handleQtd("add")}
+                        onSubtract={() => handleQtd("subtract")}
+                        deliveryDate={deliveryDate}
+                        setDeliveryDate={setDeliveryDate}
+                        onOrder={handleOrderClick}
+                    />
 
-                        <div>
-                            <button type="button" className="order">
-                                Add ao Carrinho
-                            </button>
-
-                            <button
-                                type="submit"
-                                className="cart"
-                                onClick={handleOrder}
-                            >
-                                Encomendar
-                            </button>
-                        </div>
-                    </div>
-
-                    <div className="productPage__details">
-                        <ul className="productPage__details--highlights">
-                            {product.description.highlights.map(
-                                (item: string, index: number) => (
-                                    <li key={index}>
-                                        <Atom />
-                                        {item}
-                                    </li>
-                                )
-                            )}
-                        </ul>
-
-                        <Accordion
-                            type="single"
-                            defaultValue="item-1"
-                            collapsible
-                        >
-                            <AccordionItem value="item-1">
-                                <AccordionTrigger>Informações</AccordionTrigger>
-                                <AccordionContent>
-                                    {product.description.information}
-                                </AccordionContent>
-                            </AccordionItem>
-
-                            <AccordionItem value="item-2">
-                                <AccordionTrigger>Como usar?</AccordionTrigger>
-                                <AccordionContent>
-                                    {product.description.recommendedUse}
-                                </AccordionContent>
-                            </AccordionItem>
-                        </Accordion>
-                    </div>
+                    <ProductDetails
+                        highlights={product.description.highlights}
+                        info={product.description.information}
+                        usage={product.description.recommendedUse}
+                    />
                 </form>
             </div>
         </section>

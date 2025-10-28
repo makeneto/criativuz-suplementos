@@ -1,32 +1,14 @@
 $solidBorder: 1px solid #e7e7e7;
 
 .productPage {
-    background-color: white;
-    margin: 10rem 6rem;
-    display: flex;
-    justify-content: center;
+    margin-block: 10rem 6rem;
 
     &__container {
         align-items: flex-start;
         gap: 5rem;
-        margin-inline: 2rem 13rem;
+        margin-inline: 10rem 15rem;
         display: flex;
         position: relative;
-
-        &--image {
-            width: 55%;
-            align-self: flex-start;
-            position: -webkit-sticky;
-            position: sticky;
-            top: 12%;
-
-            img {
-                width: 100%;
-                height: auto;
-                object-fit: contain;
-                display: block;
-            }
-        }
 
         &--content {
             flex: 1;

@@ -19,10 +19,8 @@ export function sendWhatsAppMessage({
     total: string
     deliveryDate?: string
 }) {
-    const boxEmoji = "\u{1F4E6}"
-
     const message = `
-${boxEmoji} *ENCOMENDA - CRIATIVUZ SUPLEMENTOS*
+*ENCOMENDA - CRIATIVUZ SUPLEMENTOS*
 
 Olá, gostaria de fazer uma encomenda com os seguintes detalhes:
 
