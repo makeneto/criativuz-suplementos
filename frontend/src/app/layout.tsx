@@ -1,12 +1,14 @@
 import type { Metadata } from "next"
+import ReactQueryProvider from "@/components/ReactQueryProvider"
 import { Poppins } from "next/font/google"
+
 import NavBar from "@/components/NavBar"
 import WhatsAppButton from "@/components/WhatsAppButton"
 import Footer from "@/components/Footer"
 
 import "../css/global.css"
 import "../css/style.css"
-import ReactQueryProvider from "@/components/ReactQueryProvider"
+import { ReduxProvider } from "@/redux/ReduxProvider"
 
 const poppins = Poppins({
     subsets: ["latin"],
@@ -28,12 +30,14 @@ export default function RootLayout({
     return (
         <html lang="pt-BR">
             <body className={`${poppins.variable} antialiased`}>
-                <ReactQueryProvider>
-                    <NavBar />
-                    {children}
-                    <WhatsAppButton />
-                    <Footer />
-                </ReactQueryProvider>
+                <ReduxProvider>
+                    <ReactQueryProvider>
+                        <NavBar />
+                        {children}
+                        <WhatsAppButton />
+                        <Footer />
+                    </ReactQueryProvider>
+                </ReduxProvider>
             </body>
         </html>
     )

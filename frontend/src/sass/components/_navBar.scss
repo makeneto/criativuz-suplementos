@@ -77,15 +77,37 @@ $solidBorder: 1px solid #e7e7e7;
                 }
             }
 
-            p {
+            & p,
+            & .userAction {
                 cursor: pointer;
                 color: white;
                 display: flex;
                 align-items: center;
                 gap: .3rem;
+                transition: all .2s ease;
 
                 svg {
                     width: 1rem;
+                }
+
+                &:hover {
+                    color: rgb(222, 222, 222);
+                }
+            }
+
+            & .userAction {
+                & p {
+                    position: relative;
+
+                    & span {
+                        display: flex;
+                        justify-content: center;
+                        position: absolute;
+                        top: -26%;
+                        right: -19%;
+                        background-color: white;
+                        color: red;
+                    }
                 }
             }
         }

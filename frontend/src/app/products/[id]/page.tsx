@@ -1,7 +1,8 @@
 "use client"
 
 import React, { useState, useEffect } from "react"
-import ProductImage from "@/components/ProductImage"
+import { useAppDispatch } from "@/redux/hooks"
+import { addToCart } from "@/redux/slices/cartSlice"
 import ProductOptions from "@/components/ui/ProductOptions"
 import { useProductLogic } from "@/hooks/useProductLogic"
 import useProducts from "@/hooks/useProducts"
@@ -10,7 +11,6 @@ import ProductDescription from "@/components/ProductDescription"
 import ProductActions from "@/components/ProductActions"
 import ProductDetails from "@/components/ProductDetails"
 import Spinner from "@/components/ui/Spinner"
-import Image from "next/image"
 import ProductGallery from "@/components/ProductGallery"
 
 interface ProductPageProps {
@@ -24,6 +24,7 @@ export default function ProductPage({ params }: ProductPageProps) {
     const product = products.find((p: any) => p.id === Number(id))
 
     const [deliveryDate, setDeliveryDate] = useState<Date | undefined>()
+    const dispatch = useAppDispatch()
 
     useEffect(() => {
         if (product) document.title = `Criativuz | ${product.name}`
@@ -63,9 +64,39 @@ export default function ProductPage({ params }: ProductPageProps) {
         deliveryDate,
     })
 
+    // Função para enviar pedido
     const handleOrderClick = (e: React.MouseEvent) => {
         e.preventDefault()
         handleSubmit({ preventDefault() {}, type: "submit" } as React.FormEvent)
+    }
+
+    // Função para adicionar ao carrinho
+    const handleAddToCart = () => {
+        if (!product) return
+        if (!selectedFlavour || !selectedWeight) {
+            alert("Selecione o sabor e o peso antes de adicionar ao carrinho")
+            return
+        }
+
+        const imageIndex = product.weight.indexOf(selectedWeight)
+        const price = Array.isArray(product.price)
+            ? product.price[imageIndex]
+            : product.price
+        const image = product.postImages[imageIndex]
+
+        dispatch(
+            addToCart({
+                id: product.id.toString(),
+                name: product.name,
+                image,
+                price,
+                flavour: selectedFlavour,
+                category: product.category,
+                quantity: qtd,
+            })
+        )
+
+        alert(`${product.name} adicionado ao carrinho! 🛒`)
     }
 
     return (
@@ -107,6 +138,7 @@ export default function ProductPage({ params }: ProductPageProps) {
                         deliveryDate={deliveryDate}
                         setDeliveryDate={setDeliveryDate}
                         onOrder={handleOrderClick}
+                        onAddToCart={handleAddToCart} // ✅ adicionada
                     />
 
                     <ProductDetails

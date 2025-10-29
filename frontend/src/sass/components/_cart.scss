@@ -1,0 +1,115 @@
+$solidBorder: 1px solid #d3d3d3;
+
+.cartItem {
+    padding-bottom: 1rem;
+    margin-bottom: 0.2rem;
+
+    &:not(:last-child) {
+        border-bottom: $solidBorder;
+    }
+
+    &--category {
+        width: fit-content;
+        padding-inline: 0.3rem;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        color: rgb(141, 141, 141);
+    }
+
+    &__main {
+        display: flex;
+        gap: 1rem;
+    }
+
+    &__content {
+        width: 100%;
+        display: grid;
+        gap: 0.4rem;
+
+        & h1 {
+            font-weight: 600;
+        }
+
+        &--details {
+            display: flex;
+            gap: 1rem;
+
+            & p {
+                font-size: 0.84rem;
+                color: gray;
+
+                & span {
+                    color: #250609;
+                    font-weight: 600;
+                }
+            }
+        }
+
+        & .tag {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            background-color: rgba(172, 255, 47, 0.333);
+            color: green;
+            padding-inline: 0.5rem;
+            border-radius: .2rem;
+            width: fit-content;
+            font-size: 0.8rem;
+
+            & svg {
+                width: 0.85rem;
+                color: green;
+            }
+        }
+
+        & .operations {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            & h2 {
+                font-weight: 600;
+                font-size: 0.9rem;
+            }
+        }
+
+        & .options {
+            margin-top: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 0.8rem;
+            color: gray;
+            font-size: 0.8rem;
+
+            & p {
+                transition: all .2s ease;
+                cursor: pointer;
+
+                &:hover {
+                    color: #250609
+                }
+            }
+
+            &--trash {
+                padding: 0.2rem;
+                cursor: pointer;
+
+                & svg {
+                    width: 0.9rem;
+                    height: 0.9rem;
+                    color: gray;
+                    cursor: pointer;
+                    transition: all .2s ease;
+                }
+
+                &:hover {
+                    & svg {
+                        color: #250609;
+                    }
+                }
+            }
+        }
+    }
+}

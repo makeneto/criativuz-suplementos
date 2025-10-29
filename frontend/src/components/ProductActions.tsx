@@ -1,5 +1,15 @@
-import ProductQuantity from "@/components/ui/ProductQuantity"
-import { Calendar22 } from "@/components/Calendar22"
+import { Calendar22 } from "./Calendar22"
+import ProductQuantity from "./ui/ProductQuantity"
+
+interface ProductActionsProps {
+    qtd: number
+    onAdd: () => void
+    onSubtract: () => void
+    deliveryDate?: Date
+    setDeliveryDate: (date: Date | undefined) => void
+    onOrder: (e: React.MouseEvent) => void
+    onAddToCart: () => void
+}
 
 export default function ProductActions({
     qtd,
@@ -8,14 +18,8 @@ export default function ProductActions({
     deliveryDate,
     setDeliveryDate,
     onOrder,
-}: {
-    qtd: number
-    onAdd: () => void
-    onSubtract: () => void
-    deliveryDate?: Date
-    setDeliveryDate: (date: Date | undefined) => void
-    onOrder: (e: React.MouseEvent) => void
-}) {
+    onAddToCart,
+}: ProductActionsProps) {
     return (
         <div className="productSubmitSection">
             <div className="mb-4">
@@ -28,7 +32,7 @@ export default function ProductActions({
             </div>
 
             <div>
-                <button type="button" className="order">
+                <button type="button" className="order" onClick={onAddToCart}>
                     Add ao Carrinho
                 </button>
                 <button type="submit" className="cart" onClick={onOrder}>

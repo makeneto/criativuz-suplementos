@@ -1,5 +1,6 @@
+import Cart from "./Cart"
 import SearchBar from "./SearchBar"
-import { Headset, Heart, ShoppingCart } from "lucide-react"
+import { Headset, Heart } from "lucide-react"
 
 export default function UserActions() {
     return (
@@ -13,10 +14,7 @@ export default function UserActions() {
                 <Heart />
                 Favoritos
             </p>
-            <p>
-                <ShoppingCart />
-                Carrinho
-            </p>
+            <Cart />
         </aside>
     )
 }
