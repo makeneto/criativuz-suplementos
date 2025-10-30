@@ -4,14 +4,14 @@ import { useEffect, useRef, useState } from "react"
 import { useSearchProducts } from "@/hooks/useSearchProducts"
 
 export function useFilteredProducts() {
-    const products = useSearchProducts()
+    const { products, isPending } = useSearchProducts()
     const [searchTerm, setSearchTerm] = useState("")
     const [showSearchDropdown, setShowSearchDropdown] = useState(false)
     const inputRef = useRef<HTMLInputElement>(null)
 
     const filteredProducts =
-        searchTerm.length > 0
-            ? products.filter((p) =>
+        searchTerm.length > 0 && Array.isArray(products)
+            ? products.filter((p: any) =>
                   p.name?.toLowerCase().includes(searchTerm.toLowerCase())
               )
             : []
@@ -40,5 +40,6 @@ export function useFilteredProducts() {
         showSearchDropdown,
         setShowSearchDropdown,
         filteredProducts,
+        isPending, // ✅ include loading state
     }
 }

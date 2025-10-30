@@ -5,7 +5,7 @@ import ProductCard from "./ui/ProductCard"
 import IntroSection from "./IntroSection"
 import Spinner from "./ui/Spinner"
 
-export default function BestSellers() {
+export default function Bestsellers() {
     const { data, isPending } = useProducts()
 
     const allProducts = data?.products || []

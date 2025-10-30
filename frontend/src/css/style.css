@@ -175,6 +175,7 @@ button:disabled {
 .cartItem__content--details {
   display: flex;
   gap: 1rem;
+  margin-bottom: 0.2rem;
 }
 .cartItem__content--details p {
   font-size: 0.84rem;
@@ -194,6 +195,7 @@ button:disabled {
   border-radius: 0.2rem;
   width: fit-content;
   font-size: 0.8rem;
+  margin-bottom: 1rem;
 }
 .cartItem__content .tag svg {
   width: 0.85rem;
@@ -651,6 +653,8 @@ button:disabled {
   border: 0.1rem solid transparent;
 }
 .modalProduct__container--content .calendarSection {
+  display: flex;
+  gap: 1rem;
   padding-left: 0.1rem;
   margin-bottom: 1rem;
 }
@@ -662,13 +666,40 @@ button:disabled {
   display: flex;
   gap: 1rem;
 }
-.submitSection span {
+.submitSection button {
+  flex: 1;
+  text-transform: uppercase;
+  font-size: 1rem;
+  transition: all 0.2s ease-in;
+  padding-block: 0.6rem;
+}
+.submitSection button:first-child {
+  color: #3d0a0f;
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid #3d0a0f;
+}
+.submitSection button:first-child:hover {
+  border: 1px solid transparent;
+  background-color: red;
+  color: white;
+}
+.submitSection button:last-child {
+  background-color: red;
+  color: white;
+  border: none;
+}
+.submitSection button:last-child:hover {
+  background-color: rgb(216, 0, 0);
+}
+
+.qtdControl {
   border-block: 1px solid #3d0a0f;
   display: flex;
   align-items: center;
   color: #3d0a0f;
+  gap: 0 !important;
 }
-.submitSection span button[type=button] {
+.qtdControl button[type=button] {
   background-color: white;
   border-inline: 1px solid #3d0a0f;
   display: flex;
@@ -677,34 +708,54 @@ button:disabled {
   cursor: pointer;
   color: #3d0a0f;
   font-size: 1.5rem;
-  padding: 0.2rem 1rem;
+  padding-inline: 1rem;
   transition: all 0.2s ease-in;
 }
-.submitSection span button[type=button]:hover {
+.qtdControl button[type=button]:hover {
   filter: brightness(95%);
 }
-.submitSection span button[type=button]:disabled {
+.qtdControl button[type=button]:disabled {
   filter: brightness(95%);
   cursor: not-allowed;
 }
-.submitSection span p {
+.qtdControl p {
   font-weight: 500;
   width: 2rem;
   margin-inline: 1.2rem;
   text-align: center;
   font-size: 1.3rem;
 }
-.submitSection button[type=submit] {
-  flex: 1;
-  background-color: red;
-  color: white;
-  border: none;
-  text-transform: uppercase;
+
+.qtdSmallControl {
+  border: 1px solid #3d0a0f;
+  display: flex;
+  align-items: center;
+  color: #3d0a0f;
+  gap: 0 !important;
+}
+.qtdSmallControl button[type=button] {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #3d0a0f;
   font-size: 1rem;
+  padding: 0.2rem 0.6rem;
   transition: all 0.2s ease-in;
 }
-.submitSection button[type=submit]:hover {
-  background-color: rgb(216, 0, 0);
+.qtdSmallControl button[type=button]:hover {
+  filter: brightness(95%);
+}
+.qtdSmallControl button[type=button]:disabled {
+  filter: brightness(95%);
+  cursor: not-allowed;
+}
+.qtdSmallControl p {
+  font-weight: 500;
+  margin-inline: 1.2rem;
+  text-align: center;
+  font-size: 0.8rem;
 }
 
 .productPage {

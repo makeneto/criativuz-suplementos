@@ -9,6 +9,7 @@ import Footer from "@/components/Footer"
 import "../css/global.css"
 import "../css/style.css"
 import { ReduxProvider } from "@/redux/ReduxProvider"
+import { Toaster } from "sonner"
 
 const poppins = Poppins({
     subsets: ["latin"],
@@ -34,6 +35,7 @@ export default function RootLayout({
                     <ReactQueryProvider>
                         <NavBar />
                         {children}
+                        <Toaster />
                         <WhatsAppButton />
                         <Footer />
                     </ReactQueryProvider>

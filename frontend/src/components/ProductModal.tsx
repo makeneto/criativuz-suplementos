@@ -45,10 +45,10 @@ export default function ProductModal({
         handleQtd,
         handleSelectWeight,
         handleSelectFlavour,
-        handleSubmit,
+        handleAddToCart, // 👈 here
+        handleOrder, // 👈 and here
     } = useProductLogic({
         product,
-        buttonLabel,
         onSubmit,
         setProduct,
         deliveryDate,
@@ -71,10 +71,7 @@ export default function ProductModal({
                         alt={product.name}
                     />
 
-                    <form
-                        className="modalProduct__container--content"
-                        onSubmit={handleSubmit}
-                    >
+                    <form className="modalProduct__container--content">
                         <header>
                             <h2>{product.name}</h2>
                             {formattedDiscountPrice ? (
@@ -103,6 +100,11 @@ export default function ProductModal({
                         />
 
                         <div className="calendarSection">
+                            <ProductQuantity
+                                qtd={qtd}
+                                onAdd={() => handleQtd("add")}
+                                onSubtract={() => handleQtd("subtract")}
+                            />
                             <Calendar22
                                 date={deliveryDate}
                                 setDate={setDeliveryDate}
@@ -110,12 +112,13 @@ export default function ProductModal({
                         </div>
 
                         <div className="submitSection">
-                            <ProductQuantity
-                                qtd={qtd}
-                                onAdd={() => handleQtd("add")}
-                                onSubtract={() => handleQtd("subtract")}
-                            />
-                            <button type="submit">{buttonLabel}</button>
+                            <button type="button" onClick={handleAddToCart}>
+                                Add ao carrinho
+                            </button>
+
+                            <button type="button" onClick={handleOrder}>
+                                Encomendar
+                            </button>
                         </div>
                     </form>
                 </div>

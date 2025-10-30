@@ -1,6 +1,9 @@
 "use client"
 
 import React, { useState, useEffect } from "react"
+import { v4 as uuidv4 } from "uuid"
+import { toast } from "sonner"
+
 import { useAppDispatch } from "@/redux/hooks"
 import { addToCart } from "@/redux/slices/cartSlice"
 import ProductOptions from "@/components/ui/ProductOptions"
@@ -64,39 +67,33 @@ export default function ProductPage({ params }: ProductPageProps) {
         deliveryDate,
     })
 
-    // Função para enviar pedido
     const handleOrderClick = (e: React.MouseEvent) => {
         e.preventDefault()
         handleSubmit({ preventDefault() {}, type: "submit" } as React.FormEvent)
     }
 
-    // Função para adicionar ao carrinho
     const handleAddToCart = () => {
-        if (!product) return
-        if (!selectedFlavour || !selectedWeight) {
-            alert("Selecione o sabor e o peso antes de adicionar ao carrinho")
-            return
+        const flavour = selectedFlavour || product.flavours?.[0]
+        const weight = selectedWeight || product.weight?.[0]
+        const index = product.weight?.indexOf(weight)
+        const price = product.price?.[index ?? 0] || product.price?.[0] || 0
+        const image =
+            product.postImages?.[index ?? 0] || product.postImages?.[0]
+
+        const item = {
+            id: uuidv4(),
+            name: product.name,
+            image,
+            price,
+            flavour,
+            weight,
+            category: product.category,
+            quantity: qtd,
         }
 
-        const imageIndex = product.weight.indexOf(selectedWeight)
-        const price = Array.isArray(product.price)
-            ? product.price[imageIndex]
-            : product.price
-        const image = product.postImages[imageIndex]
+        dispatch(addToCart(item))
 
-        dispatch(
-            addToCart({
-                id: product.id.toString(),
-                name: product.name,
-                image,
-                price,
-                flavour: selectedFlavour,
-                category: product.category,
-                quantity: qtd,
-            })
-        )
-
-        alert(`${product.name} adicionado ao carrinho! 🛒`)
+        toast.success(`${product.name} adicionado ao carrinho.`)
     }
 
     return (

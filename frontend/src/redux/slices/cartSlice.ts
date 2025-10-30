@@ -8,6 +8,7 @@ interface CartItem {
     image: string
     price: number
     flavour: string
+    weight: string
     category: string
     quantity: number
 }
@@ -38,7 +39,8 @@ const cartSlice = createSlice({
         addToCart: (state, action: PayloadAction<CartItem>) => {
             const existing = state.items.find(
                 (i) =>
-                    i.id === action.payload.id &&
+                    i.name === action.payload.name &&
+                    i.weight === action.payload.weight &&
                     i.flavour === action.payload.flavour
             )
 

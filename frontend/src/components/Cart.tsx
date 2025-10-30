@@ -26,7 +26,7 @@ export default function Cart() {
                     <ShoppingCart className="w-5 h-5" />
                     <p>
                         Carrinho
-                        {cartItems.length && (
+                        {cartItems.length > 0 && (
                             <Badge
                                 className="h-5 min-w-5 rounded-full px-1 font-mono tabular-nums"
                                 variant="destructive"

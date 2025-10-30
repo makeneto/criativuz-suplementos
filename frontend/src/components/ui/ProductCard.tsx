@@ -1,7 +1,14 @@
 "use client"
 import { useState } from "react"
 import { formatCurrency } from "@/utils/formatCurrency"
-import { Eye, Heart, ShoppingBag, ShoppingCart } from "lucide-react"
+import {
+    Eye,
+    Heart,
+    Info,
+    ShoppingBag,
+    ShoppingCart,
+    Store,
+} from "lucide-react"
 import ProductModal from "../ProductModal"
 import Link from "next/link"
 
@@ -9,13 +16,7 @@ export default function ProductCard({ products }: any) {
     const [selectedProduct, setSelectedProduct] = useState<any>(null)
     const [modalConfig, setModalConfig] = useState<any>(null)
 
-    function handleEncomendar(data: any) {
-        console.log("Encomendando produto:", data)
-        setSelectedProduct(null)
-    }
-
-    function handleAddToCart(data: any) {
-        console.log("Adicionando ao carrinho:", data)
+    function handleShowProductModal() {
         setSelectedProduct(null)
     }
 
@@ -36,28 +37,22 @@ export default function ProductCard({ products }: any) {
                                     onClick={() => {
                                         setSelectedProduct(p)
                                         setModalConfig({
-                                            buttonLabel: "Encomendar",
-                                            onSubmit: handleEncomendar,
-                                        })
-                                    }}
-                                >
-                                    <ShoppingBag className="cursor-pointer" />
-                                </div>
-
-                                <div
-                                    onClick={() => {
-                                        setSelectedProduct(p)
-                                        setModalConfig({
                                             buttonLabel: "Add ao carrinho",
-                                            onSubmit: handleAddToCart,
+                                            onSubmit: handleShowProductModal,
                                         })
                                     }}
                                 >
-                                    <ShoppingCart className="cursor-pointer" />
+                                    <Store className="cursor-pointer" />
                                 </div>
 
                                 <div>
                                     <Heart />
+                                </div>
+
+                                <div>
+                                    <Link href={`/products/${p.id}`}>
+                                        <Info />
+                                    </Link>
                                 </div>
                             </div>
                         </div>

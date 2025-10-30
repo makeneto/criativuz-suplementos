@@ -2,15 +2,17 @@ interface ProductQuantityProps {
     qtd: number
     onAdd: () => void
     onSubtract: () => void
+    isSmall?: boolean
 }
 
 export default function ProductQuantity({
     qtd,
     onAdd,
     onSubtract,
+    isSmall = false,
 }: ProductQuantityProps) {
     return (
-        <span>
+        <div className={!isSmall ? "qtdControl" : "qtdSmallControl"}>
             <button type="button" disabled={qtd === 1} onClick={onSubtract}>
                 -
             </button>
@@ -18,6 +20,6 @@ export default function ProductQuantity({
             <button type="button" onClick={onAdd}>
                 +
             </button>
-        </span>
+        </div>
     )
 }

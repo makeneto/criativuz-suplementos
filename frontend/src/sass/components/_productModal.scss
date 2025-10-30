@@ -142,6 +142,8 @@ $solidBorder: 1px solid #e7e7e7;
             }
 
             .calendarSection {
+                display: flex;
+                gap: 1rem;
                 padding-left: 0.1rem;
                 margin-bottom: 1rem;
             }
@@ -156,54 +158,107 @@ $solidBorder: 1px solid #e7e7e7;
     display: flex;
     gap: 1rem;
 
-    & span {
-        border-block: 1px solid #3d0a0f;
-        display: flex;
-        align-items: center;
-        color: #3d0a0f;
-
-        & button[type="button"] {
-            background-color: white;
-            border-inline: 1px solid #3d0a0f;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            color: #3d0a0f;
-            font-size: 1.5rem;
-            padding: 0.2rem 1rem;
-            transition: all .2s ease-in;
-
-            &:hover {
-                filter: brightness(95%);
-            }
-
-            &:disabled {
-                filter: brightness(95%);
-                cursor: not-allowed;
-            }
-        }
-
-        & p {
-            font-weight: 500;
-            width: 2rem;
-            margin-inline: 1.2rem;
-            text-align: center;
-            font-size: 1.3rem;
-        }
-    }
-
-    & button[type="submit"] {
+    & button {
         flex: 1;
-        background-color: red;
-        color: white;
-        border: none;
         text-transform: uppercase;
         font-size: 1rem;
         transition: all .2s ease-in;
+        padding-block: 0.6rem;
+    }
+
+    & button:first-child {
+        color: #3d0a0f;
+        background-color: rgba(0, 0, 0, 0);
+        border: 1px solid #3d0a0f;
+
+        &:hover {
+            border: 1px solid transparent;
+            background-color: red;
+            color: white;
+        }
+    }
+
+    & button:last-child {
+        background-color: red;
+        color: white;
+        border: none;
 
         &:hover {
             background-color: rgb(216, 0, 0);
         }
+    }
+}
+
+.qtdControl {
+    border-block: 1px solid #3d0a0f;
+    display: flex;
+    align-items: center;
+    color: #3d0a0f;
+    gap: 0 !important;
+
+    & button[type="button"] {
+        background-color: white;
+        border-inline: 1px solid #3d0a0f;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        color: #3d0a0f;
+        font-size: 1.5rem;
+        padding-inline: 1rem;
+        transition: all .2s ease-in;
+
+        &:hover {
+            filter: brightness(95%);
+        }
+
+        &:disabled {
+            filter: brightness(95%);
+            cursor: not-allowed;
+        }
+    }
+
+    & p {
+        font-weight: 500;
+        width: 2rem;
+        margin-inline: 1.2rem;
+        text-align: center;
+        font-size: 1.3rem;
+    }
+}
+
+.qtdSmallControl {
+    border: 1px solid #3d0a0f;
+    display: flex;
+    align-items: center;
+    color: #3d0a0f;
+    gap: 0 !important;
+
+    & button[type="button"] {
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        color: #3d0a0f;
+        font-size: 1rem;
+        padding: .2rem 0.6rem;
+        transition: all .2s ease-in;
+
+        &:hover {
+            filter: brightness(95%);
+        }
+
+        &:disabled {
+            filter: brightness(95%);
+            cursor: not-allowed;
+        }
+    }
+
+    & p {
+        font-weight: 500;
+        margin-inline: 1.2rem;
+        text-align: center;
+        font-size: 0.8rem;
     }
 }

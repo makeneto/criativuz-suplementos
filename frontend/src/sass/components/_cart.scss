@@ -34,6 +34,7 @@ $solidBorder: 1px solid #d3d3d3;
         &--details {
             display: flex;
             gap: 1rem;
+            margin-bottom: 0.2rem;
 
             & p {
                 font-size: 0.84rem;
@@ -56,6 +57,7 @@ $solidBorder: 1px solid #d3d3d3;
             border-radius: .2rem;
             width: fit-content;
             font-size: 0.8rem;
+            margin-bottom: 1rem;
 
             & svg {
                 width: 0.85rem;
