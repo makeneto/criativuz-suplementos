@@ -1,5 +1,53 @@
 $solidBorder: 1px solid #d3d3d3;
 
+.cartLength {
+    color: grey;
+    font-weight: normal;
+    font-size: 0.87rem;
+}
+
+.closeSheetButton {
+    padding: 0.2rem;
+    border: 1px solid transparent;
+    transition: border .2s ease-in;
+
+    & svg {
+        transition: color .2s ease-in;
+    }
+
+    &:hover {
+        border: 1px solid rgb(144, 22, 22);
+
+        svg {
+            color: rgb(144, 22, 22);
+        }
+    }
+}
+
+.vewAllLink {
+    color: #2836d2;
+    font-weight: 400;
+    font-size: 0.9rem;
+    transition: all .2s ease-in;
+
+    &:hover {
+        color: #021db1;
+    }
+}
+
+.noItem {
+    flex: 1;
+    position: relative;
+
+    & p {
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
 .cartItem {
     padding-bottom: 1rem;
     margin-bottom: 0.2rem;

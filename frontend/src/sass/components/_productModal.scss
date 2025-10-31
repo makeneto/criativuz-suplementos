@@ -158,7 +158,9 @@ $solidBorder: 1px solid #e7e7e7;
     display: flex;
     gap: 1rem;
 
-    & button {
+    & button,
+    & a {
+        text-align: center;
         flex: 1;
         text-transform: uppercase;
         font-size: 1rem;
@@ -166,7 +168,8 @@ $solidBorder: 1px solid #e7e7e7;
         padding-block: 0.6rem;
     }
 
-    & button:first-child {
+    & button:first-child,
+    & a {
         color: #3d0a0f;
         background-color: rgba(0, 0, 0, 0);
         border: 1px solid #3d0a0f;

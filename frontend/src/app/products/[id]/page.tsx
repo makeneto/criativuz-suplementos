@@ -135,7 +135,7 @@ export default function ProductPage({ params }: ProductPageProps) {
                         deliveryDate={deliveryDate}
                         setDeliveryDate={setDeliveryDate}
                         onOrder={handleOrderClick}
-                        onAddToCart={handleAddToCart} // ✅ adicionada
+                        onAddToCart={handleAddToCart}
                     />
 
                     <ProductDetails

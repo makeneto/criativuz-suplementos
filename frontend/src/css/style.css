@@ -145,6 +145,49 @@ button:disabled {
   filter: none;
 }
 
+.cartLength {
+  color: grey;
+  font-weight: normal;
+  font-size: 0.87rem;
+}
+
+.closeSheetButton {
+  padding: 0.2rem;
+  border: 1px solid transparent;
+  transition: border 0.2s ease-in;
+}
+.closeSheetButton svg {
+  transition: color 0.2s ease-in;
+}
+.closeSheetButton:hover {
+  border: 1px solid rgb(144, 22, 22);
+}
+.closeSheetButton:hover svg {
+  color: rgb(144, 22, 22);
+}
+
+.vewAllLink {
+  color: #2836d2;
+  font-weight: 400;
+  font-size: 0.9rem;
+  transition: all 0.2s ease-in;
+}
+.vewAllLink:hover {
+  color: #021db1;
+}
+
+.noItem {
+  flex: 1;
+  position: relative;
+}
+.noItem p {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .cartItem {
   padding-bottom: 1rem;
   margin-bottom: 0.2rem;
@@ -666,19 +709,20 @@ button:disabled {
   display: flex;
   gap: 1rem;
 }
-.submitSection button {
+.submitSection button, .submitSection a {
+  text-align: center;
   flex: 1;
   text-transform: uppercase;
   font-size: 1rem;
   transition: all 0.2s ease-in;
   padding-block: 0.6rem;
 }
-.submitSection button:first-child {
+.submitSection button:first-child, .submitSection a {
   color: #3d0a0f;
   background-color: rgba(0, 0, 0, 0);
   border: 1px solid #3d0a0f;
 }
-.submitSection button:first-child:hover {
+.submitSection button:first-child:hover, .submitSection a:hover {
   border: 1px solid transparent;
   background-color: red;
   color: white;

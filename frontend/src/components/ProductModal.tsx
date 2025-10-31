@@ -1,12 +1,14 @@
 "use client"
 
-import * as React from "react"
 import { X } from "lucide-react"
+import Link from "next/link"
+import { useState } from "react"
 import ProductImage from "./ProductImage"
 import ProductOptions from "./ui/ProductOptions"
 import ProductQuantity from "./ui/ProductQuantity"
 import { useProductLogic } from "@/hooks/useProductLogic"
 import { Calendar22 } from "./Calendar22"
+import { useIsInCart } from "@/hooks/useIsInCart"
 
 interface ProductModalProps {
     product: {
@@ -30,10 +32,9 @@ interface ProductModalProps {
 export default function ProductModal({
     product,
     setProduct,
-    buttonLabel,
     onSubmit,
 }: ProductModalProps) {
-    const [deliveryDate, setDeliveryDate] = React.useState<Date | undefined>()
+    const [deliveryDate, setDeliveryDate] = useState<Date | undefined>()
 
     const {
         imageIndex,
@@ -45,14 +46,35 @@ export default function ProductModal({
         handleQtd,
         handleSelectWeight,
         handleSelectFlavour,
-        handleAddToCart, // 👈 here
-        handleOrder, // 👈 and here
+        handleAddToCart,
+        handleOrder,
     } = useProductLogic({
         product,
         onSubmit,
         setProduct,
         deliveryDate,
     })
+
+    const itemData =
+        selectedWeight && selectedFlavour
+            ? {
+                  id: "",
+                  name: product.name,
+                  image: product.postImages[0],
+                  price: 0,
+                  flavour: selectedFlavour,
+                  weight: selectedWeight,
+                  category: "unknown",
+                  quantity: 1,
+              }
+            : null
+
+    const isInCart = useIsInCart(itemData)
+
+    const handleAddClick = () => {
+        handleAddToCart()
+        window.dispatchEvent(new Event("cartUpdated"))
+    }
 
     return (
         <div className="modalOverlay">
@@ -112,9 +134,23 @@ export default function ProductModal({
                         </div>
 
                         <div className="submitSection">
-                            <button type="button" onClick={handleAddToCart}>
-                                Add ao carrinho
-                            </button>
+                            {isInCart ? (
+                                <Link
+                                    href="/cart"
+                                    className="goToCartButton"
+                                    onClick={() => setProduct(null)}
+                                >
+                                    Ir no carrinho
+                                </Link>
+                            ) : (
+                                <button
+                                    type="button"
+                                    onClick={handleAddClick}
+                                    className="addToCartButton"
+                                >
+                                    Add ao carrinho
+                                </button>
+                            )}
 
                             <button type="button" onClick={handleOrder}>
                                 Encomendar
