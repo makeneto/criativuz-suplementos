@@ -1,4 +1,4 @@
-import Cart from "./Cart"
+import Cart from "./CartSheet"
 import SearchBar from "./SearchBar"
 import { Headset, Heart } from "lucide-react"
 

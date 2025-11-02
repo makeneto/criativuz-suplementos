@@ -27,7 +27,6 @@ export default function CartItem({ item }: ItemsProps) {
     const { id, image, name, weight, flavour, price, quantity } = item
     const { qtd, handleQtd } = useCartQuantity(id, quantity)
 
-    // Framer Motion variants
     const variants = {
         hidden: { opacity: 0, x: -50 },
         visible: { opacity: 1, x: 0 },
@@ -64,7 +63,7 @@ export default function CartItem({ item }: ItemsProps) {
                             </p>
                         </div>
 
-                        <div className="tag">
+                        <div className="tag" style={{ marginBottom: "1rem" }}>
                             <TruckElectric />
                             Entrega grátis
                         </div>

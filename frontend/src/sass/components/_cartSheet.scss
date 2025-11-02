@@ -35,19 +35,6 @@ $solidBorder: 1px solid #d3d3d3;
     }
 }
 
-.noItem {
-    flex: 1;
-    position: relative;
-
-    & p {
-        width: 100%;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-}
-
 .cartItem {
     padding-bottom: 1rem;
     margin-bottom: 0.2rem;
@@ -92,24 +79,6 @@ $solidBorder: 1px solid #d3d3d3;
                     color: #250609;
                     font-weight: 600;
                 }
-            }
-        }
-
-        & .tag {
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-            background-color: rgba(172, 255, 47, 0.333);
-            color: green;
-            padding-inline: 0.5rem;
-            border-radius: .2rem;
-            width: fit-content;
-            font-size: 0.8rem;
-            margin-bottom: 1rem;
-
-            & svg {
-                width: 0.85rem;
-                color: green;
             }
         }
 
@@ -161,5 +130,23 @@ $solidBorder: 1px solid #d3d3d3;
                 }
             }
         }
+    }
+}
+
+.tag {
+    display: flex;
+    align-items: center;
+    align-self: center;
+    gap: 0.4rem;
+    background-color: rgba(172, 255, 47, 0.333);
+    color: green;
+    padding-inline: 0.5rem;
+    border-radius: .2rem;
+    width: fit-content;
+    font-size: 0.8rem;
+
+    & svg {
+        width: 0.85rem;
+        color: green;
     }
 }
