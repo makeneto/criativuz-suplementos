@@ -1,15 +1,6 @@
-export function sendWhatsAppMessage({
-    phone,
-    product,
-    brand,
-    weight,
-    flavour,
-    price,
-    qtd,
-    total,
-    deliveryDate,
-}: {
-    phone: string
+import { WHATSAPP_NUMBER } from "@/constants/whatsappNumber"
+
+interface SendWhatsAppMessageProps {
     product: string
     brand: string
     weight: string
@@ -18,7 +9,18 @@ export function sendWhatsAppMessage({
     qtd: number
     total: string
     deliveryDate?: string
-}) {
+}
+
+export function sendWhatsAppMessage({
+    product,
+    brand,
+    weight,
+    flavour,
+    price,
+    qtd,
+    total,
+    deliveryDate,
+}: SendWhatsAppMessageProps) {
     const message = `
 *ENCOMENDA - CRIATIVUZ SUPLEMENTOS*
 
@@ -39,7 +41,7 @@ Fico a aguardar o retorno.
 `
 
     const encodedMessage = encodeURIComponent(message)
-    const whatsappUrl = `https://wa.me/${phone}?text=${encodedMessage}`
+    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`
 
     window.open(whatsappUrl, "_blank")
 }

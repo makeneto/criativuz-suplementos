@@ -10,11 +10,12 @@ import {
 } from "@/components/ui/sheet"
 import { ShoppingCart, X } from "lucide-react"
 import { useSelector } from "react-redux"
-import { Badge } from "./ui/badge"
-import CartItem from "./CartItem"
+
 import { RootState } from "@/redux/store"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
+import { Badge } from "../ui/badge"
+import CartItem from "./CartItem"
 
 export default function CartSheet() {
     const cartItems = useSelector((state: RootState) => state.cart.items)

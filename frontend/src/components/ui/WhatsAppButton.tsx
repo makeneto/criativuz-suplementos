@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { useScrollVisibility } from "@/hooks/useScrollVisibility"
-import WhatsAppIcon from "./ui/WhatsAppIcon"
+import WhatsAppIcon from "./WhatsAppIcon"
 
 export default function WhatsAppButton() {
     const isVisible = useScrollVisibility(200)

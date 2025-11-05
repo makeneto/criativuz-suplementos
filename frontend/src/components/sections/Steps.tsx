@@ -1,4 +1,4 @@
-import StepItem from "./StepItem"
+import StepItem from "../ui/StepItem"
 
 export default function Steps() {
     return (

@@ -2,7 +2,7 @@
 
 import useProducts from "@/hooks/useProducts"
 import BrandsItem from "./BrandsItem"
-import Spinner from "./ui/Spinner"
+import Spinner from "../ui/Spinner"
 
 export default function BrandsSection() {
     const { data, isPending } = useProducts()

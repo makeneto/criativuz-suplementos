@@ -9,12 +9,12 @@ import { addToCart } from "@/redux/slices/cartSlice"
 import ProductOptions from "@/components/ui/ProductOptions"
 import { useProductLogic } from "@/hooks/useProductLogic"
 import useProducts from "@/hooks/useProducts"
-import ProductHeader from "@/components/ProductHeader"
-import ProductDescription from "@/components/ProductDescription"
-import ProductActions from "@/components/ProductActions"
-import ProductDetails from "@/components/ProductDetails"
+import ProductHeader from "@/components/product/ProductHeader"
+import ProductDescription from "@/components/product/ProductDescription"
+import ProductActions from "@/components/product/ProductActions"
+import ProductDetails from "@/components/product/ProductDetails"
 import Spinner from "@/components/ui/Spinner"
-import ProductGallery from "@/components/ProductGallery"
+import ProductGallery from "@/components/product/ProductGallery"
 
 interface ProductPageProps {
     params: Promise<{ id: string }>

@@ -3,21 +3,25 @@
 import React, { useState } from "react"
 import { useSelector, useDispatch } from "react-redux"
 import { RootState } from "@/redux/store"
-import { ArrowLeft, Search, Trash, TruckElectric, X } from "lucide-react"
+import { ArrowLeft, Trash, TruckElectric } from "lucide-react"
 import { removeFromCart } from "@/redux/slices/cartSlice"
 import { motion, AnimatePresence } from "framer-motion"
 import { formatCurrency } from "@/utils/formatCurrency"
-import { Calendar22 } from "@/components/Calendar22"
-import EmptyCart from "@/components/EmptyCart"
+import { Calendar22 } from "@/components/ui/Calendar22"
+import EmptyCart from "@/components/cart/EmptyCart"
 import { useRouter } from "next/navigation"
+import ProductQuantity from "@/components/ui/ProductQuantity"
+import { useCartQuantity } from "@/hooks/useCartQuantity"
+import { sendWhatsAppOrder } from "@/utils/sendWhatsAppOrder"
 import Link from "next/link"
 
 export default function Cart() {
     const router = useRouter()
     const dispatch = useDispatch()
     const cartItems = useSelector((state: RootState) => state.cart.items)
-
     const [deliveryDate, setDeliveryDate] = useState<Date | undefined>()
+
+    const { whatsappUrl } = sendWhatsAppOrder(cartItems, deliveryDate)
 
     const totalGeral = cartItems.reduce(
         (acc, item) => acc + item.price * item.quantity,
@@ -51,6 +55,7 @@ export default function Cart() {
                         <thead>
                             <tr>
                                 <th>Produto</th>
+                                <th></th>
                                 <th>Preço</th>
                                 <th>Quantidade</th>
                                 <th>Total</th>
@@ -59,87 +64,110 @@ export default function Cart() {
 
                         <tbody>
                             <AnimatePresence mode="popLayout">
-                                {cartItems.map((item) => (
-                                    <motion.tr
-                                        key={item.id}
-                                        className="cartItem"
-                                        variants={variants}
-                                        initial="hidden"
-                                        animate="visible"
-                                        exit="exit"
-                                        layout
-                                    >
-                                        <td className="cartTable__product">
-                                            <div className="product__imageWrapper">
-                                                {item.image && (
-                                                    <img
-                                                        src={item.image}
-                                                        alt={item.name}
-                                                        className="product__image"
-                                                    />
-                                                )}
+                                {cartItems.map((item) => {
+                                    const { qtd, handleQtd } = useCartQuantity(
+                                        item.id,
+                                        item.quantity
+                                    )
 
-                                                <button
-                                                    className="product__removeBtn"
-                                                    onClick={() =>
-                                                        dispatch(
-                                                            removeFromCart(
-                                                                item.id
+                                    return (
+                                        <motion.tr
+                                            key={item.id}
+                                            className="cartItem"
+                                            variants={variants}
+                                            initial="hidden"
+                                            animate="visible"
+                                            exit="exit"
+                                            layout
+                                        >
+                                            <td className="cartTable__product">
+                                                <div className="product__imageWrapper">
+                                                    {item.image && (
+                                                        <img
+                                                            src={item.image}
+                                                            alt={item.name}
+                                                            className="product__image"
+                                                        />
+                                                    )}
+
+                                                    <button
+                                                        className="product__removeBtn"
+                                                        onClick={() =>
+                                                            dispatch(
+                                                                removeFromCart(
+                                                                    item.id
+                                                                )
                                                             )
-                                                        )
-                                                    }
-                                                    title="Remover produto"
-                                                >
-                                                    <Trash size={16} />
-                                                </button>
-                                            </div>
+                                                        }
+                                                        title="Remover produto"
+                                                    >
+                                                        <Trash size={16} />
+                                                    </button>
+                                                </div>
 
-                                            <div className="product__intro">
-                                                <div className="product__info">
-                                                    <p className="product__name">
-                                                        {item.name}
-                                                    </p>
-                                                    <div className="product__details">
-                                                        {item.weight && (
-                                                            <p className="product__detail">
-                                                                Peso:{" "}
-                                                                <span>
-                                                                    {
-                                                                        item.weight
-                                                                    }
-                                                                </span>
-                                                            </p>
-                                                        )}
-                                                        {item.flavour && (
-                                                            <p className="product__detail">
-                                                                Sabor:{" "}
-                                                                <span>
-                                                                    {
-                                                                        item.flavour
-                                                                    }
-                                                                </span>
-                                                            </p>
-                                                        )}
+                                                <div className="product__intro">
+                                                    <div className="product__info">
+                                                        <p className="product__name">
+                                                            {item.name}
+                                                        </p>
+                                                        <div className="product__details">
+                                                            {item.weight && (
+                                                                <p className="product__detail">
+                                                                    Peso:{" "}
+                                                                    <span>
+                                                                        {
+                                                                            item.weight
+                                                                        }
+                                                                    </span>
+                                                                </p>
+                                                            )}
+                                                            {item.flavour && (
+                                                                <p className="product__detail">
+                                                                    Sabor:{" "}
+                                                                    <span>
+                                                                        {
+                                                                            item.flavour
+                                                                        }
+                                                                    </span>
+                                                                </p>
+                                                            )}
+                                                        </div>
                                                     </div>
                                                 </div>
+                                            </td>
+
+                                            <td>
                                                 <div className="tag">
                                                     <TruckElectric size={14} />
                                                     <span>Entrega grátis</span>
                                                 </div>
-                                            </div>
-                                        </td>
+                                            </td>
 
-                                        <td>{formatCurrency(item.price)}</td>
+                                            <td>
+                                                {formatCurrency(item.price)}
+                                            </td>
 
-                                        <td>{item.quantity}</td>
+                                            <td>
+                                                <ProductQuantity
+                                                    isSmall={true}
+                                                    qtd={qtd}
+                                                    onAdd={() =>
+                                                        handleQtd("add")
+                                                    }
+                                                    onSubtract={() =>
+                                                        handleQtd("subtract")
+                                                    }
+                                                />
+                                            </td>
 
-                                        <td>
-                                            {formatCurrency(
-                                                item.price * item.quantity
-                                            )}
-                                        </td>
-                                    </motion.tr>
-                                ))}
+                                            <td>
+                                                {formatCurrency(
+                                                    item.price * qtd
+                                                )}
+                                            </td>
+                                        </motion.tr>
+                                    )
+                                })}
                             </AnimatePresence>
                         </tbody>
                     </table>
@@ -158,9 +186,13 @@ export default function Cart() {
                         </div>
 
                         <span>
-                            <button type="button" className="orderCart">
+                            <Link
+                                href={whatsappUrl}
+                                type="button"
+                                className="orderCart"
+                            >
                                 Encomendar
-                            </button>
+                            </Link>
                             <p>© {currentYear} Criativuz Suplementos.</p>
                         </span>
                     </section>

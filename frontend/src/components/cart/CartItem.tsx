@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux"
 import { removeFromCart } from "@/redux/slices/cartSlice"
 import { Trash, TruckElectric } from "lucide-react"
 import { formatCurrency } from "@/utils/formatCurrency"
-import ProductQuantity from "./ui/ProductQuantity"
+import ProductQuantity from "../ui/ProductQuantity"
 import { useCartQuantity } from "@/hooks/useCartQuantity"
 import { motion, AnimatePresence } from "framer-motion"
 

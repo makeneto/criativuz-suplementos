@@ -2,7 +2,7 @@
 
 import { useRef, useState } from "react"
 import useProducts from "@/hooks/useProducts"
-import { MAIN_CATEGORIES } from "@/constants/categories"
+import { MAIN_CATEGORIES } from "@/constants/mainCategories"
 import { Product } from "@/interfaces/interfaces"
 
 export function useCategories() {
@@ -28,7 +28,7 @@ export function useCategories() {
 
     const extraCategories = allCategories.filter(
         (cat: any) => !MAIN_CATEGORIES.includes(cat.toLowerCase())
-    )
+    ) as string[]
 
     return {
         dropdownRef,

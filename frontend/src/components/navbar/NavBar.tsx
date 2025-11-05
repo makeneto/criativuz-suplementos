@@ -1,10 +1,11 @@
 "use client"
 
 import { useEffect, useState } from "react"
+
+import InformBar from "../sections/InformBar"
+import UserActions from "../product/UserActions"
+import NavLogo from "./NavLogo"
 import CategoriesMenu from "./CategoriesMenu"
-import InformBar from "./InformBar"
-import UserActions from "./UserActions"
-import NavLogo from "./ui/NavLogo"
 
 export default function NavBar() {
     const [hasShadow, setHasShadow] = useState(false)

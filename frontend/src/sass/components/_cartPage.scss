@@ -17,11 +17,11 @@
             display: flex;
             align-items: center;
             gap: .3rem;
-            transition: gap .2s ease-out;
+            transition: gap .1s ease-out;
             cursor: pointer;
 
             &:hover {
-                gap: .6rem;
+                gap: .4rem;
             }
 
         }
@@ -51,7 +51,6 @@
                     color: #3B7302;
                 }
             }
-
         }
 
         & span {
@@ -60,12 +59,11 @@
             justify-content: flex-end;
         }
 
-
-
         .orderCart {
             background-color: red;
             border: none;
             font-size: 1rem;
+            text-align: center;
             transition: all .2s ease-in;
             height: fit-content;
             color: white;
@@ -83,6 +81,7 @@
     width: 100%;
     border-collapse: collapse;
     text-align: left;
+    table-layout: fixed;
 
     thead {
         border-bottom: 1px solid #e5e7eb;
@@ -91,6 +90,7 @@
             font-weight: 700;
             font-size: 1.12rem;
             padding: 1.4rem 1.4rem 1.4rem 0;
+            white-space: nowrap;
         }
     }
 
@@ -98,6 +98,9 @@
         tr>td {
             padding: 1.4rem 1.4rem 1.4rem 0;
             vertical-align: middle;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
         }
 
         tr:not(:last-child) {
@@ -109,8 +112,41 @@
         display: flex;
         align-items: center;
         gap: 1rem;
+        width: 100%;
+        min-width: 20rem;
     }
+
+    th:nth-child(1),
+    td:nth-child(1) {
+        width: 35%;
+    }
+
+    th:nth-child(2),
+    td:nth-child(2) {
+        width: 25%;
+    }
+
+    th:nth-child(3),
+    td:nth-child(3) {
+        width: 15%;
+    }
+
+    th:nth-child(4),
+    td:nth-child(4) {
+        width: 15%;
+    }
+
+    th:nth-child(5),
+    td:nth-child(5) {
+        width: 13%;
+    }
+
+    td:nth-child(5) {
+        font-weight: 500;
+    }
+
 }
+
 
 .product {
     &__imageWrapper {
@@ -157,7 +193,6 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding-right: 10rem;
     }
 
     &__info {

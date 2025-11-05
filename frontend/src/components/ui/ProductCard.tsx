@@ -9,7 +9,7 @@ import {
     ShoppingCart,
     Store,
 } from "lucide-react"
-import ProductModal from "../ProductModal"
+import ProductModal from "../product/ProductModal"
 import Link from "next/link"
 
 export default function ProductCard({ products }: any) {

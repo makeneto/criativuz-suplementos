@@ -1,5 +1,5 @@
-import { Calendar22 } from "./Calendar22"
-import ProductQuantity from "./ui/ProductQuantity"
+import { Calendar22 } from "../ui/Calendar22"
+import ProductQuantity from "../ui/ProductQuantity"
 
 interface ProductActionsProps {
     qtd: number

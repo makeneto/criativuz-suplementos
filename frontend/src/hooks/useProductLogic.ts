@@ -50,7 +50,6 @@ export function useProductLogic({
         const today = new Date()
 
         sendWhatsAppMessage({
-            phone: "244945336003",
             product: product.name,
             brand: product.brand,
             weight: selectedWeight || product.weight?.[0],

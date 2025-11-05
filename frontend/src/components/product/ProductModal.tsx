@@ -4,10 +4,10 @@ import { X } from "lucide-react"
 import Link from "next/link"
 import { useState } from "react"
 import ProductImage from "./ProductImage"
-import ProductOptions from "./ui/ProductOptions"
-import ProductQuantity from "./ui/ProductQuantity"
+import ProductOptions from "../ui/ProductOptions"
+import ProductQuantity from "../ui/ProductQuantity"
 import { useProductLogic } from "@/hooks/useProductLogic"
-import { Calendar22 } from "./Calendar22"
+import { Calendar22 } from "../ui/Calendar22"
 import { useIsInCart } from "@/hooks/useIsInCart"
 
 interface ProductModalProps {

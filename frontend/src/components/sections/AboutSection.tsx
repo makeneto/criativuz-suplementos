@@ -1,5 +1,4 @@
 import React from "react"
-import WhatsAppIcon from "./ui/WhatsAppIcon"
 
 export default function AboutSection() {
     return (

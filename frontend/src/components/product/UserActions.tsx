@@ -1,6 +1,6 @@
-import Cart from "./CartSheet"
-import SearchBar from "./SearchBar"
+import SearchBar from "../navbar/SearchBar"
 import { Headset, Heart } from "lucide-react"
+import CartSheet from "../cart/CartSheet"
 
 export default function UserActions() {
     return (
@@ -14,7 +14,7 @@ export default function UserActions() {
                 <Heart />
                 Favoritos
             </p>
-            <Cart />
+            <CartSheet />
         </aside>
     )
 }
