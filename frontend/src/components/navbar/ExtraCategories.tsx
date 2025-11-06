@@ -3,6 +3,7 @@
 import Link from "next/link"
 import { ChevronDown, ChevronRight } from "lucide-react"
 import { Product } from "@/interfaces/interfaces"
+import { Activity } from "react"
 
 interface Props {
     categories: string[]
@@ -34,7 +35,7 @@ export default function ExtraCategories({
                 Mais <ChevronDown size={16} />
             </button>
 
-            {openCategory === "mais" && (
+            <Activity mode={openCategory === "mais" ? "visible" : "hidden"}>
                 <ul className="nav_bar__products-list">
                     {categories.map((cat) => (
                         <li
@@ -53,7 +54,13 @@ export default function ExtraCategories({
                                 {formatCategory(cat)} <ChevronRight size={14} />
                             </button>
 
-                            {openExtraCategory === cat && (
+                            <Activity
+                                mode={
+                                    openExtraCategory === cat
+                                        ? "visible"
+                                        : "hidden"
+                                }
+                            >
                                 <ul className="nav_bar__products-list nav_bar__products-list--right">
                                     {getProductsByCategory(cat).map((prod) => (
                                         <li key={prod.id}>
@@ -63,11 +70,11 @@ export default function ExtraCategories({
                                         </li>
                                     ))}
                                 </ul>
-                            )}
+                            </Activity>
                         </li>
                     ))}
                 </ul>
-            )}
+            </Activity>
         </li>
     )
 }

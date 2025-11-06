@@ -3,6 +3,7 @@
 import { useCategories } from "@/hooks/useCategories"
 import CategoryItem from "./CategoryItem"
 import ExtraCategories from "./ExtraCategories"
+import { Activity } from "react"
 
 export default function CategoriesMenu() {
     const {
@@ -33,7 +34,9 @@ export default function CategoriesMenu() {
                     />
                 ))}
 
-                {extraCategories.length > 0 && (
+                <Activity
+                    mode={extraCategories.length > 0 ? "visible" : "hidden"}
+                >
                     <ExtraCategories
                         categories={extraCategories}
                         openCategory={openCategory}
@@ -43,7 +46,7 @@ export default function CategoriesMenu() {
                         getProductsByCategory={getProductsByCategory}
                         formatCategory={formatCategory}
                     />
-                )}
+                </Activity>
             </ul>
         </div>
     )

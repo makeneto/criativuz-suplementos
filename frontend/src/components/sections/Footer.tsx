@@ -58,7 +58,14 @@ export default function Footer() {
                                 <li>Carregando marcas...</li>
                             ) : (
                                 brands.map((brand: any) => (
-                                    <li key={brand.name}>{brand.name}</li>
+                                    <Link
+                                        href={`/search?query=${encodeURIComponent(
+                                            brand.name
+                                        )}`}
+                                        key={brand.name}
+                                    >
+                                        {brand.name}
+                                    </Link>
                                 ))
                             )}
                         </ul>
@@ -67,23 +74,89 @@ export default function Footer() {
                     <div className="footer__column">
                         <h2 className="footer__title">Produtos</h2>
                         <ul className="footer__list">
-                            <li>Proteínas e Ganhos Musculares</li>
-                            <li>Creatina e Aminoácidos</li>
-                            <li>Emagrecimento e Termogênicos</li>
-                            <li>Suporte à Saúde</li>
+                            <Link
+                                href={`/search?query=${encodeURIComponent(
+                                    "Proteina, ganho de massa"
+                                )}`}
+                            >
+                                Proteínas e Ganhos Musculares
+                            </Link>
+                            <Link
+                                href={`/search?query=${encodeURIComponent(
+                                    "creatina, glutamina"
+                                )}`}
+                            >
+                                Creatina e Aminoácidos
+                            </Link>
+                            <Link
+                                href={`/search?query=${encodeURIComponent(
+                                    "queima gordura"
+                                )}`}
+                            >
+                                Emagrecimento e Termogênicos
+                            </Link>
+                            <Link
+                                href={`/search?query=${encodeURIComponent(
+                                    "suporte à saúde"
+                                )}`}
+                            >
+                                Suporte à Saúde
+                            </Link>
                         </ul>
                     </div>
 
                     <div className="footer__column">
                         <h2 className="footer__title">Categorias</h2>
                         <ul className="footer__list">
-                            <li>Proteínas</li>
-                            <li>Creatina</li>
-                            <li>Pré-Treinos</li>
-                            <li>Ganhos Musculares</li>
-                            <li>Testosterona</li>
-                            <li>Aminoácidos</li>
-                            <li>Emagrecedores</li>
+                            <Link
+                                href={`/search?query=${encodeURIComponent(
+                                    "proteína"
+                                )}`}
+                            >
+                                Proteínas
+                            </Link>
+                            <Link
+                                href={`/search?query=${encodeURIComponent(
+                                    "creatina"
+                                )}`}
+                            >
+                                Creatina
+                            </Link>
+                            <Link
+                                href={`/search?query=${encodeURIComponent(
+                                    "pré-treino"
+                                )}`}
+                            >
+                                Pré-Treinos
+                            </Link>
+                            <Link
+                                href={`/search?query=${encodeURIComponent(
+                                    "ganho de massa"
+                                )}`}
+                            >
+                                Ganhos Musculares
+                            </Link>
+                            <Link
+                                href={`/search?query=${encodeURIComponent(
+                                    "testosterona"
+                                )}`}
+                            >
+                                Testosterona
+                            </Link>
+                            <Link
+                                href={`/search?query=${encodeURIComponent(
+                                    "creatina, glutamina"
+                                )}`}
+                            >
+                                Aminoácidos
+                            </Link>
+                            <Link
+                                href={`/search?query=${encodeURIComponent(
+                                    "queima gordura"
+                                )}`}
+                            >
+                                Emagrecedores
+                            </Link>
                         </ul>
                     </div>
                 </div>

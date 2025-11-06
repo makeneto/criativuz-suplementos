@@ -2,7 +2,7 @@
 
 import { X } from "lucide-react"
 import Link from "next/link"
-import { useState } from "react"
+import { Activity, useState } from "react"
 import ProductImage from "./ProductImage"
 import ProductOptions from "../ui/ProductOptions"
 import ProductQuantity from "../ui/ProductQuantity"
@@ -106,11 +106,17 @@ export default function ProductModal({
                             )}
                         </header>
 
-                        {product.description?.synopsis && (
+                        <Activity
+                            mode={
+                                product.description?.synopsis
+                                    ? "visible"
+                                    : "hidden"
+                            }
+                        >
                             <p className="modalProduct__container--content--description">
-                                {product.description.synopsis}
+                                {product.description?.synopsis}
                             </p>
-                        )}
+                        </Activity>
 
                         <ProductOptions
                             weights={product.weight}

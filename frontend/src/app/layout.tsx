@@ -25,12 +25,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
     children,
-}: Readonly<{
-    children: React.ReactNode
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
     return (
         <html lang="pt-BR">
-            <body className={`${poppins.variable} antialiased`}>
+            <body className={poppins.className + " antialiased"}>
                 <ReduxProvider>
                     <ReactQueryProvider>
                         <NavBar />

@@ -11,9 +11,14 @@ export function useFilteredProducts() {
 
     const filteredProducts =
         searchTerm.length > 0 && Array.isArray(products)
-            ? products.filter((p: any) =>
-                  p.name?.toLowerCase().includes(searchTerm.toLowerCase())
-              )
+            ? products.filter((p: any) => {
+                  const term = searchTerm.toLowerCase()
+                  return (
+                      p.name?.toLowerCase().includes(term) ||
+                      p.category?.toLowerCase().includes(term) ||
+                      p.brand?.toLowerCase().includes(term)
+                  )
+              })
             : []
 
     useEffect(() => {
@@ -40,6 +45,6 @@ export function useFilteredProducts() {
         showSearchDropdown,
         setShowSearchDropdown,
         filteredProducts,
-        isPending, // ✅ include loading state
+        isPending,
     }
 }

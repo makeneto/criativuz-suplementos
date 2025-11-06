@@ -3,6 +3,7 @@
 import Link from "next/link"
 import { ChevronDown } from "lucide-react"
 import { Product } from "@/interfaces/interfaces"
+import { Activity } from "react"
 
 interface Props {
     category: string
@@ -25,7 +26,7 @@ export default function CategoryItem({
                 {formatCategory(category)} <ChevronDown size={16} />
             </button>
 
-            {isOpen && (
+            <Activity mode={isOpen ? "visible" : "hidden"}>
                 <ul className="nav_bar__products-list">
                     {products.map((prod) => (
                         <li key={prod.id}>
@@ -35,7 +36,7 @@ export default function CategoryItem({
                         </li>
                     ))}
                 </ul>
-            )}
+            </Activity>
         </li>
     )
 }

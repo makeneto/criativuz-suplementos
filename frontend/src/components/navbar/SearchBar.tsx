@@ -2,10 +2,13 @@
 
 import { Search, ArrowUpRight } from "lucide-react"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 import SearchResultItem from "./SearchResultItem"
 import { useFilteredProducts } from "@/hooks/useFilteredProducts"
+import { Activity } from "react"
 
 export default function SearchBar() {
+    const router = useRouter()
     const {
         inputRef,
         searchTerm,
@@ -15,13 +18,26 @@ export default function SearchBar() {
         filteredProducts,
     } = useFilteredProducts()
 
+    const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+        if (e.key === "Enter") {
+            const query = searchTerm.trim()
+
+            if (!query) return
+
+            router.push(`/search?query=${encodeURIComponent(query)}`)
+            setShowSearchDropdown(false)
+        }
+    }
+
     return (
         <div
             className="nav_bar__aside--inputContainer"
             style={{ position: "relative" }}
             ref={inputRef}
         >
-            <Search />
+            <Link href={`/search?query=${encodeURIComponent(searchTerm)}`}>
+                <Search />
+            </Link>
             <input
                 type="text"
                 placeholder="Procurar suplementos, acessórios..."
@@ -33,24 +49,36 @@ export default function SearchBar() {
                 onFocus={() => {
                     if (searchTerm.length > 0) setShowSearchDropdown(true)
                 }}
+                onKeyDown={handleKeyDown}
             />
 
-            {showSearchDropdown && searchTerm.length > 0 && (
+            <Activity
+                mode={
+                    showSearchDropdown && searchTerm.length > 0
+                        ? "visible"
+                        : "hidden"
+                }
+            >
                 <ul className="nav_bar__search-dropdown">
-                    {filteredProducts.length > 0 && (
-                        <>
-                            <h5>Produtos</h5>
-                            {filteredProducts.slice(0, 4).map((prod: any) => (
-                                <SearchResultItem
-                                    key={prod.id}
-                                    prod={prod}
-                                    onClick={() => setShowSearchDropdown(false)}
-                                />
-                            ))}
-                        </>
-                    )}
+                    <Activity
+                        mode={
+                            filteredProducts.length > 0 ? "visible" : "hidden"
+                        }
+                    >
+                        <h5>Produtos</h5>
+                        {filteredProducts.slice(0, 4).map((prod: any) => (
+                            <SearchResultItem
+                                key={prod.id}
+                                prod={prod}
+                                onClick={() => setShowSearchDropdown(false)}
+                            />
+                        ))}
+                    </Activity>
 
-                    <Link href="/">
+                    <Link
+                        href={`/search?query=${encodeURIComponent(searchTerm)}`}
+                        onClick={() => setShowSearchDropdown(false)}
+                    >
                         <h6
                             className={
                                 filteredProducts.length > 0
@@ -63,7 +91,7 @@ export default function SearchBar() {
                         </h6>
                     </Link>
                 </ul>
-            )}
+            </Activity>
         </div>
     )
 }

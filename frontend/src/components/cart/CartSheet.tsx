@@ -13,7 +13,7 @@ import { useSelector } from "react-redux"
 
 import { RootState } from "@/redux/store"
 import { useRouter } from "next/navigation"
-import { useState } from "react"
+import { Activity, useState } from "react"
 import { Badge } from "../ui/badge"
 import CartItem from "./CartItem"
 
@@ -30,14 +30,14 @@ export default function CartSheet() {
                     <ShoppingCart className="w-5 h-5" />
                     <p>
                         Carrinho
-                        {cartLength > 0 && (
+                        <Activity mode={cartLength > 0 ? "visible" : "hidden"}>
                             <Badge
                                 className="h-5 min-w-5 rounded-full px-1 font-mono tabular-nums"
                                 variant="destructive"
                             >
                                 {cartLength}
                             </Badge>
-                        )}
+                        </Activity>
                     </p>
                 </div>
             </SheetTrigger>
@@ -46,9 +46,9 @@ export default function CartSheet() {
                 <SheetHeader>
                     <SheetTitle className="text-lg font-semibold">
                         Carrinho{" "}
-                        {cartLength > 0 && (
+                        <Activity mode={cartLength > 0 ? "visible" : "hidden"}>
                             <span className="cartLength">({cartLength})</span>
-                        )}
+                        </Activity>
                     </SheetTitle>
 
                     {cartLength > 0 ? (

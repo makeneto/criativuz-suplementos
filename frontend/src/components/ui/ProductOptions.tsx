@@ -1,3 +1,5 @@
+import { Activity } from "react"
+
 interface ProductOptionsProps {
     isProductPage?: boolean
     weights: string[]
@@ -34,12 +36,14 @@ export default function ProductOptions({
                 ))}
             </ul>
 
-            {flavours && flavours.length > 0 && (
+            <Activity
+                mode={flavours && flavours.length > 0 ? "visible" : "hidden"}
+            >
                 <ul className="modalProduct__container--content--list">
                     <li style={{ fontSize: isProductPage ? "1.1rem" : "" }}>
                         Sabor
                     </li>
-                    {flavours.map((f, index) => (
+                    {flavours?.map((f, index) => (
                         <li
                             key={index}
                             onClick={() => onSelectFlavour(f)}
@@ -49,7 +53,7 @@ export default function ProductOptions({
                         </li>
                     ))}
                 </ul>
-            )}
+            </Activity>
         </section>
     )
 }

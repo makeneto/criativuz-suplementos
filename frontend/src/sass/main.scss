@@ -4,7 +4,6 @@
 
 @use "components/aboutSection";
 @use "components/brands";
-@use "components/cartPage";
 @use "components/cartSheet";
 @use "components/endSection";
 @use "components/footer";
@@ -12,9 +11,12 @@
 @use "components/heroCarousel";
 @use "components/introSection";
 @use "components/productModal";
-@use "components/productPage";
 @use "components/navBar";
 @use "components/productList";
 @use "components/stepSection";
 @use "components/whatsAppButton";
 @use "components/productGallery";
+
+@use "pages/cartPage";
+@use "pages/productPage";
+@use "pages/searchPage";

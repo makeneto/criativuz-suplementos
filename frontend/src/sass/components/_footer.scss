@@ -54,7 +54,8 @@
         display: grid;
         gap: 0.8rem;
 
-        & li {
+        & li,
+        & a {
             cursor: pointer;
 
             &:hover {

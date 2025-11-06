@@ -1,18 +1,20 @@
 "use client"
-import { useState } from "react"
+import { Activity, useState } from "react"
 import { formatCurrency } from "@/utils/formatCurrency"
-import {
-    Eye,
-    Heart,
-    Info,
-    ShoppingBag,
-    ShoppingCart,
-    Store,
-} from "lucide-react"
+import { Heart, Info, Store } from "lucide-react"
 import ProductModal from "../product/ProductModal"
 import Link from "next/link"
+import TextPrice from "./TextPrice"
 
-export default function ProductCard({ products }: any) {
+interface ProductCartProps {
+    products: any
+    isThree?: boolean
+}
+
+export default function ProductCard({
+    products,
+    isThree = false,
+}: ProductCartProps) {
     const [selectedProduct, setSelectedProduct] = useState<any>(null)
     const [modalConfig, setModalConfig] = useState<any>(null)
 
@@ -22,7 +24,12 @@ export default function ProductCard({ products }: any) {
 
     return (
         <>
-            <ul className="sectionGrid__list">
+            <ul
+                className={"sectionGrid__list"}
+                style={{
+                    gridTemplateColumns: `repeat(${isThree ? 3 : 4}, 1fr)`,
+                }}
+            >
                 {products.map((p: any) => (
                     <li>
                         <div className="sectionGrid__list--view">
@@ -64,33 +71,24 @@ export default function ProductCard({ products }: any) {
                         >
                             {p.name}
                         </Link>
-                        <h3
-                            style={{
-                                color:
-                                    p.discountPrice[0] > 0 ||
-                                    p.discountPrice > 0
-                                        ? "#c20303dd"
-                                        : "",
-                            }}
-                        >
-                            {p.discountPrice[0] > 0
-                                ? formatCurrency(
-                                      p.discountPrice[0] || p.discountPrice
-                                  )
-                                : formatCurrency(p.price[0] || p.price)}
-                        </h3>
+
+                        <TextPrice product={p} isThree={isThree} />
                     </li>
                 ))}
             </ul>
 
-            {selectedProduct && modalConfig && (
-                <ProductModal
-                    product={selectedProduct}
-                    setProduct={setSelectedProduct}
-                    buttonLabel={modalConfig.buttonLabel}
-                    onSubmit={modalConfig.onSubmit}
-                />
-            )}
+            <Activity
+                mode={selectedProduct && modalConfig ? "visible" : "hidden"}
+            >
+                {selectedProduct && modalConfig && (
+                    <ProductModal
+                        product={selectedProduct}
+                        setProduct={setSelectedProduct}
+                        buttonLabel={modalConfig.buttonLabel}
+                        onSubmit={modalConfig.onSubmit}
+                    />
+                )}
+            </Activity>
         </>
     )
 }

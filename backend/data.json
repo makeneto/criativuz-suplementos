@@ -5,9 +5,9 @@
                 "id": 6354,
                 "name": "Hyperbolic Mass gh",
                 "brand": "USN",
-                "price": [38500, 25500, 15500],
+                "price": [15500, 25500, 38500],
                 "discountPrice": [0, 0, 0],
-                "weight": ["4kg", "2kg", "1kg"],
+                "weight": ["1kg", "2kg", "4kg"],
                 "category": "ganho de massa",
                 "description": {
                     "synopsis": "O suplemento completo para ganho de massa muscular, ideal para aumentos extremos de tamanho, potência e força.",
@@ -20,9 +20,9 @@
                     "recommendedUse": "Para começar: adicione ± 2 colheres (150 g) a 375-450 ml de água fria ou leite de creme completo. Após uma semana: adicione ± 4 colheres (300 g) com 750-900 ml de água ou leite creme completo (dividido entre 2 pequenos agitadores). Pegue 300 g completo que serve uma vez ao dia ou como doses divididas. Use como uma bebida de recuperação pós-treinamento e/ou entre as refeições."
                 },
                 "postImages": [
-                    "https://i.postimg.cc/vHRrsxph/hyperbolic-4kg.webp",
+                    "https://i.postimg.cc/0jyL5HMM/hyperbolic-1kg.webp",
                     "https://i.postimg.cc/Qtzb9QHP/hyperbolic-2kg.webp",
-                    "https://i.postimg.cc/0jyL5HMM/hyperbolic-1kg.webp"
+                    "https://i.postimg.cc/vHRrsxph/hyperbolic-4kg.webp"
                 ],
                 "bestSeller": true,
                 "flavours": ["Chocolate", "Baunilha", "Morango"],
@@ -176,7 +176,7 @@
             },
             {
                 "id": 3524,
-                "name": "Creatina Pura Monohidratada",
+                "name": "Creatina Pura Mono",
                 "brand": "USN",
                 "price": [19500, 30000],
                 "discountPrice": [0, 0],
