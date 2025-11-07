@@ -12,7 +12,7 @@ module.exports = {
 				sm: 'calc(var(--radius) - 4px)'
 			},
 			boxShadow: {
-				around: '0 0 3px rgba(0, 0, 0, 0.15)',
+				around: '0 0 3.5px rgba(0, 0, 0, 0.15)',
 			},
 			border: {
 				patter: '1px solid black'

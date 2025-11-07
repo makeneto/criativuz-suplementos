@@ -1,4 +1,30 @@
 .searchPage {
     margin-block: 12rem;
     margin-inline: 18rem;
+
+    & main {
+        display: grid;
+        grid-template-columns: 25% 75%;
+        gap: 3rem;
+        position: relative;
+
+        & aside {
+            position: sticky;
+            top: 15%;
+            align-self: start;
+        }
+    }
+}
+
+.topFilter {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 2rem;
+}
+
+.filterBy {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
 }

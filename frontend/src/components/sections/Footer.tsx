@@ -45,9 +45,11 @@ export default function Footer() {
                     <div className="footer__column">
                         <h2 className="footer__title">Sobre nós</h2>
                         <ul className="footer__list">
-                            <li>Quem Somos</li>
-                            <li>Mais Vendidos</li>
-                            <li>Contacto</li>
+                            <Link href="/#about">Quem Somos</Link>
+                            <Link href="/#bestseller">Mais Vendidos</Link>
+                            <Link href="tel:244923801395" target="_blank">
+                                Contacto
+                            </Link>
                         </ul>
                     </div>
 
@@ -76,28 +78,28 @@ export default function Footer() {
                         <ul className="footer__list">
                             <Link
                                 href={`/search?query=${encodeURIComponent(
-                                    "Proteina, ganho de massa"
+                                    "Proteína, Ganho de Massa"
                                 )}`}
                             >
                                 Proteínas e Ganhos Musculares
                             </Link>
                             <Link
                                 href={`/search?query=${encodeURIComponent(
-                                    "creatina, glutamina"
+                                    "Creatina, Glutamina"
                                 )}`}
                             >
                                 Creatina e Aminoácidos
                             </Link>
                             <Link
                                 href={`/search?query=${encodeURIComponent(
-                                    "queima gordura"
+                                    "Queima gordura"
                                 )}`}
                             >
                                 Emagrecimento e Termogênicos
                             </Link>
                             <Link
                                 href={`/search?query=${encodeURIComponent(
-                                    "suporte à saúde"
+                                    "Suporte à Saúde"
                                 )}`}
                             >
                                 Suporte à Saúde
@@ -110,49 +112,49 @@ export default function Footer() {
                         <ul className="footer__list">
                             <Link
                                 href={`/search?query=${encodeURIComponent(
-                                    "proteína"
+                                    "Proteína"
                                 )}`}
                             >
                                 Proteínas
                             </Link>
                             <Link
                                 href={`/search?query=${encodeURIComponent(
-                                    "creatina"
+                                    "Creatina"
                                 )}`}
                             >
                                 Creatina
                             </Link>
                             <Link
                                 href={`/search?query=${encodeURIComponent(
-                                    "pré-treino"
+                                    "Pré-treino"
                                 )}`}
                             >
                                 Pré-Treinos
                             </Link>
                             <Link
                                 href={`/search?query=${encodeURIComponent(
-                                    "ganho de massa"
+                                    "Ganho de Massa"
                                 )}`}
                             >
                                 Ganhos Musculares
                             </Link>
                             <Link
                                 href={`/search?query=${encodeURIComponent(
-                                    "testosterona"
+                                    "Testosterona"
                                 )}`}
                             >
                                 Testosterona
                             </Link>
                             <Link
                                 href={`/search?query=${encodeURIComponent(
-                                    "creatina, glutamina"
+                                    "Creatina, Glutamina"
                                 )}`}
                             >
                                 Aminoácidos
                             </Link>
                             <Link
                                 href={`/search?query=${encodeURIComponent(
-                                    "queima gordura"
+                                    "Queima gordura"
                                 )}`}
                             >
                                 Emagrecedores
