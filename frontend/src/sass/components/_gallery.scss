@@ -8,7 +8,7 @@
     grid-template-rows: repeat(5, 1fr);
     gap: 2px;
 
-    & div {
+    & a {
         &:first-child {
             grid-row: span 3 / span 3;
             background: url('/images/arnould-s.webp') top center;

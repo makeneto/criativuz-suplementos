@@ -1,7 +1,7 @@
 "use client"
 
 import useProducts from "@/hooks/useProducts"
-import { Facebook, Instagram } from "lucide-react"
+import { Facebook, Instagram, Mail } from "lucide-react"
 import Link from "next/link"
 
 export default function Footer() {
@@ -31,11 +31,14 @@ export default function Footer() {
                         </p>
 
                         <div className="footer__socials">
+                            <Link href="https://mailto:">
+                                <Mail size={30} />
+                            </Link>
                             <Link href="https://www.instagram.com/criativuz_suplementos">
-                                <Instagram />
+                                <Instagram size={27} />
                             </Link>
                             <Link href="https://www.facebook.com/profile.php?id=100092004847808">
-                                <Facebook />
+                                <Facebook size={27} />
                             </Link>
                         </div>
                     </div>

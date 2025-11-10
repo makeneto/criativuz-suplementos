@@ -29,6 +29,31 @@
                 "inStock": true
             },
             {
+                "id": 6769,
+                "name": "Hyper Gain Mass",
+                "brand": "NPL",
+                "price": [38500],
+                "discountPrice": [0],
+                "weight": ["4kg"],
+                "category": "ganho de massa",
+                "description": {
+                    "synopsis": "Hyper Gain Mass é um suplemento hipercalórico para ganho de massa, com mais de 1350 calorias por porção, desenvolvido para otimizar o crescimento muscular e aumentar a síntese de proteína muscular.",
+                    "highlights": [
+                        "Ganho de Massa",
+                        "Tamanho e resistência",
+                        "Mais de 1.350 calorias"
+                    ],
+                    "information": "Hyper Gain Mass é um suplemento hipercalórico desenvolvido para otimizar o crescimento muscular e aumentar a síntese proteica. Hyper Gain é formulado para pessoas com dificuldade em ganhar massa muscular. Com mais de 1.350 calorias por porção, este shake hipercalórico fornece energia suficiente para promover o ganho de massa muscular , força e volume.",
+                    "recommendedUse": "Misture de 3 a 6 colheres-medida rasas (175 a 350 g) com 250 a 500 ml de água fria ou leite integral e consuma de 1 a 3 vezes ao dia. Recomenda-se o uso de uma porção completa por dia (6 colheres-medida) dividida em doses."
+                },
+                "postImages": [
+                    "https://i.postimg.cc/qR3pPSBf/hyper-gain-mass-4kg.webp"
+                ],
+                "bestSeller": false,
+                "flavours": ["Chocolate", "Baunilha", "Morango"],
+                "inStock": true
+            },
+            {
                 "id": 2552,
                 "name": "Hulk Gainer",
                 "brand": "NutriTech",

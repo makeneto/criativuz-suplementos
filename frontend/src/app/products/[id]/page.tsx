@@ -38,9 +38,11 @@ export default function ProductPage({ params }: ProductPageProps) {
             <div
                 className="productPage"
                 style={{
-                    height: "100dvh",
+                    height: "70dvh",
+                    paddingTop: "10rem",
                     display: "flex",
                     alignItems: "start",
+                    justifyContent: "center",
                 }}
             >
                 <Spinner size="64" />

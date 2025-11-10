@@ -331,11 +331,9 @@ button:disabled {
 .footer__socials {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 .footer__socials svg {
-  width: 1.8rem;
-  height: 1.8rem;
   stroke: white;
 }
 .footer__links {
@@ -366,61 +364,61 @@ button:disabled {
   grid-template-rows: repeat(5, 1fr);
   gap: 2px;
 }
-.gallery div:first-child {
+.gallery a:first-child {
   grid-row: span 3/span 3;
   background: url("/images/arnould-s.webp") top center;
   background-size: cover;
 }
-.gallery div:nth-child(2) {
+.gallery a:nth-child(2) {
   grid-row: span 2/span 2;
   grid-column-start: 1;
   grid-row-start: 4;
   background: url("/images/franco-columbu.webp") top center;
   background-size: cover;
 }
-.gallery div:nth-child(3) {
+.gallery a:nth-child(3) {
   grid-row: span 3/span 3;
   grid-column-start: 2;
   grid-row-start: 3;
   background: url("/images/kevin-l.webp") top center;
   background-size: cover;
 }
-.gallery div:nth-child(4) {
+.gallery a:nth-child(4) {
   grid-row: span 2/span 2;
   grid-column-start: 2;
   grid-row-start: 1;
   background: url("/images/jay-c.webp") top center;
   background-size: cover;
 }
-.gallery div:nth-child(5) {
+.gallery a:nth-child(5) {
   grid-row: span 5/span 5;
   grid-column-start: 3;
   grid-row-start: 1;
   background: url("/images/ronnie-c.webp") top center;
   background-size: cover;
 }
-.gallery div:nth-child(6) {
+.gallery a:nth-child(6) {
   grid-row: span 3/span 3;
   grid-column-start: 5;
   grid-row-start: 1;
   background: url("/images/phil-heath.webp") top center;
   background-size: cover;
 }
-.gallery div:nth-child(7) {
+.gallery a:nth-child(7) {
   grid-row: span 2/span 2;
   grid-column-start: 5;
   grid-row-start: 4;
   background: url("/images/frank-zane.webp") top center;
   background-size: cover;
 }
-.gallery div:nth-child(8) {
+.gallery a:nth-child(8) {
   grid-row: span 3/span 3;
   grid-column-start: 4;
   grid-row-start: 3;
   background: url("/images/cbum.webp") top center;
   background-size: cover;
 }
-.gallery div:last-child {
+.gallery a:last-child {
   grid-row: span 2/span 2;
   grid-column-start: 4;
   grid-row-start: 1;

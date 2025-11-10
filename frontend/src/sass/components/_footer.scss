@@ -31,11 +31,9 @@
     &__socials {
         display: flex;
         align-items: center;
-        gap: 1rem;
+        gap: 1.5rem;
 
         & svg {
-            width: 1.8rem;
-            height: 1.8rem;
             stroke: white;
         }
     }
