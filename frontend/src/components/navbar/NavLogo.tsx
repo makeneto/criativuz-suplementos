@@ -2,7 +2,7 @@ import Link from "next/link"
 
 export default function NavLogo() {
     return (
-        <Link href="/">
+        <Link prefetch href="/">
             <img
                 src="/icons/criativuz-logo.png"
                 alt="Criativuz Logo"

@@ -15,7 +15,7 @@ export interface Product {
     description: ProductDescription
     postImages: string[]
     bestSeller: boolean
-    flavours: string[]
+    flavors: string[]
     inStock: boolean
 }
 

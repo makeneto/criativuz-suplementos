@@ -6,7 +6,7 @@ export default function InformBar() {
         <div className="nav_inform">
             <div>
                 <PhoneOutgoing />
-                <NextLink href="tel:244923801395">
+                <NextLink prefetch href="tel:244923801395">
                     <p>923801395</p>
                 </NextLink>
             </div>
@@ -18,7 +18,7 @@ export default function InformBar() {
 
             <div>
                 <MapPinHouse />
-                <NextLink href="/">
+                <NextLink prefetch href="/">
                     <p>Localização</p>
                 </NextLink>
             </div>

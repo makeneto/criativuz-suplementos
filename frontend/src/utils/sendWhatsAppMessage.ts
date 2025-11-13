@@ -4,7 +4,7 @@ interface SendWhatsAppMessageProps {
     product: string
     brand: string
     weight: string
-    flavour: string
+    flavor: string
     price: string | number
     qtd: number
     total: string
@@ -15,7 +15,7 @@ export function sendWhatsAppMessage({
     product,
     brand,
     weight,
-    flavour,
+    flavor,
     price,
     qtd,
     total,
@@ -29,7 +29,7 @@ Olá, gostaria de fazer uma encomenda com os seguintes detalhes:
 *Produto:* ${product}
 *Marca:* ${brand}
 *Peso:* ${weight}
-*Sabor:* ${flavour}
+*Sabor:* ${flavor}
 *Preço Unitário:* ${price}
 *Quantidade:* ${qtd} Unidades
 

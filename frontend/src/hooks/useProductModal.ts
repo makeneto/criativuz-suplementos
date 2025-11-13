@@ -7,8 +7,8 @@ export function useProductModal(product: any) {
     const [qtd, setQtd] = useState<number>(1)
     const [imageIndex, setImageIndex] = useState(0)
     const [selectedWeight, setSelectedWeight] = useState(product.weight?.[0])
-    const [selectedFlavour, setSelectedFlavour] = useState(
-        product.flavours?.[0] || ""
+    const [selectedFlavor, setSelectedFlavor] = useState(
+        product.flavors?.[0] || ""
     )
 
     const handleQtd = (type: "add" | "subtract") =>
@@ -23,7 +23,7 @@ export function useProductModal(product: any) {
         setImageIndex(index)
     }
 
-    const selectFlavour = (flavour: string) => setSelectedFlavour(flavour)
+    const selectFlavor = (flavor: string) => setSelectedFlavor(flavor)
 
     const basePrice = Array.isArray(product.price)
         ? product.price[imageIndex] ?? product.price[0]
@@ -49,10 +49,10 @@ export function useProductModal(product: any) {
         qtd,
         imageIndex,
         selectedWeight,
-        selectedFlavour,
+        selectedFlavor,
         handleQtd,
         selectWeight,
-        selectFlavour,
+        selectFlavor,
         basePrice,
         effectivePrice,
         formattedPrice,

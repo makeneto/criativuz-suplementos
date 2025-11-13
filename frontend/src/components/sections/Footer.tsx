@@ -15,7 +15,7 @@ export default function Footer() {
         <footer className="footer">
             <section className="footer__content">
                 <div className="footer__about">
-                    <Link href="/">
+                    <Link prefetch href="/">
                         <img
                             src="/icons/criativuz-logo.png"
                             alt="Criativuz Logo"
@@ -48,8 +48,12 @@ export default function Footer() {
                     <div className="footer__column">
                         <h2 className="footer__title">Sobre nós</h2>
                         <ul className="footer__list">
-                            <Link href="/#about">Quem Somos</Link>
-                            <Link href="/#bestseller">Mais Vendidos</Link>
+                            <Link prefetch href="/#about">
+                                Quem Somos
+                            </Link>
+                            <Link prefetch href="/#bestseller">
+                                Mais Vendidos
+                            </Link>
                             <Link href="tel:244923801395" target="_blank">
                                 Contacto
                             </Link>

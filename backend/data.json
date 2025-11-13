@@ -25,7 +25,7 @@
                     "https://i.postimg.cc/vHRrsxph/hyperbolic-4kg.webp"
                 ],
                 "bestSeller": true,
-                "flavours": ["Chocolate", "Baunilha", "Morango"],
+                "flavors": ["Chocolate", "Baunilha", "Morango"],
                 "inStock": true
             },
             {
@@ -50,7 +50,7 @@
                     "https://i.postimg.cc/qR3pPSBf/hyper-gain-mass-4kg.webp"
                 ],
                 "bestSeller": false,
-                "flavours": ["Chocolate", "Baunilha", "Morango"],
+                "flavors": ["Chocolate", "Baunilha", "Morango"],
                 "inStock": true
             },
             {
@@ -75,7 +75,7 @@
                     "https://i.postimg.cc/CLjjLL0V/hulk-gainer-4kg.webp"
                 ],
                 "bestSeller": true,
-                "flavours": ["Chocolate"],
+                "flavors": ["Chocolate"],
                 "inStock": true
             },
             {
@@ -100,7 +100,7 @@
                     "https://i.postimg.cc/4NyqnqNh/huge-anabolic-muscle.webp"
                 ],
                 "bestSeller": true,
-                "flavours": ["Chocolate", "Baunilha"],
+                "flavors": ["Chocolate", "Baunilha"],
                 "inStock": true
             },
             {
@@ -125,7 +125,7 @@
                     "https://i.postimg.cc/4yxr4F7y/hardcore-whey.webp"
                 ],
                 "bestSeller": true,
-                "flavours": ["Chocolate", "Baunilha", "Morango"],
+                "flavors": ["Chocolate", "Baunilha", "Morango"],
                 "inStock": true
             },
             {
@@ -150,7 +150,7 @@
                     "https://i.postimg.cc/VvvwfNVm/whey-supreme.webp"
                 ],
                 "bestSeller": false,
-                "flavours": ["Morango"],
+                "flavors": ["Morango"],
                 "inStock": true
             },
             {
@@ -171,7 +171,7 @@
                     "https://i.postimg.cc/9002mfN6/whey-protein-amino-system.webp"
                 ],
                 "bestSeller": false,
-                "flavours": ["Chocolate", "Baunilha"],
+                "flavors": ["Chocolate", "Baunilha"],
                 "inStock": true
             },
             {
@@ -196,7 +196,7 @@
                     "https://i.postimg.cc/sXgk8c4v/creatine-3-in-1-200g.webp"
                 ],
                 "bestSeller": false,
-                "flavours": ["Sem sabor"],
+                "flavors": ["Sem sabor"],
                 "inStock": true
             },
             {
@@ -222,7 +222,7 @@
                     "https://i.postimg.cc/tghXKpYr/creatina-mono-410g.webp"
                 ],
                 "bestSeller": true,
-                "flavours": ["Sem sabor"],
+                "flavors": ["Sem sabor"],
                 "inStock": true
             },
             {
@@ -247,7 +247,7 @@
                     "https://i.postimg.cc/c1gLY9HZ/creatine-transport.png"
                 ],
                 "bestSeller": true,
-                "flavours": ["Uva", "Laranja", "Melancia"],
+                "flavors": ["Uva", "Laranja", "Melancia"],
                 "inStock": true
             },
             {
@@ -268,7 +268,7 @@
                     "https://i.postimg.cc/6QgPjXTX/crea-extreme-800g.webp"
                 ],
                 "bestSeller": false,
-                "flavours": ["Coca Cola", "Mirtilo"],
+                "flavors": ["Coca Cola", "Mirtilo"],
                 "inStock": true
             },
             {
@@ -293,7 +293,7 @@
                     "https://i.postimg.cc/N01g3B5d/glutamine-9000.webp"
                 ],
                 "bestSeller": false,
-                "flavours": ["Sem sabor"],
+                "flavors": ["Sem sabor"],
                 "inStock": true
             },
             {
@@ -318,7 +318,7 @@
                     "https://i.postimg.cc/PqmtgTP3/100-l-glutamine.webp"
                 ],
                 "bestSeller": false,
-                "flavours": ["Sem sabor"],
+                "flavors": ["Sem sabor"],
                 "inStock": true
             },
             {
@@ -343,7 +343,7 @@
                     "https://i.postimg.cc/1ts9P2qY/bcaa-aminos.webp"
                 ],
                 "bestSeller": true,
-                "flavours": ["Uva"],
+                "flavors": ["Uva"],
                 "inStock": true
             },
             {
@@ -368,7 +368,7 @@
                     "https://i.postimg.cc/d0hkr1yY/cuts-burner.webp"
                 ],
                 "bestSeller": false,
-                "flavours": [],
+                "flavors": [],
                 "inStock": true
             },
             {
@@ -387,7 +387,7 @@
                 },
                 "postImages": ["https://i.postimg.cc/8Cdw5B2X/lipocut.png"],
                 "bestSeller": false,
-                "flavours": [],
+                "flavors": [],
                 "inStock": true
             },
             {
@@ -406,7 +406,7 @@
                 },
                 "postImages": ["https://i.postimg.cc/ZqPjRFGX/omega-3.png"],
                 "bestSeller": false,
-                "flavours": [],
+                "flavors": [],
                 "inStock": true
             },
             {
@@ -427,7 +427,7 @@
                     "https://i.postimg.cc/1z0Mtck6/collagen-peptides.png"
                 ],
                 "bestSeller": false,
-                "flavours": [],
+                "flavors": [],
                 "inStock": true
             },
             {
@@ -448,7 +448,7 @@
                     "https://i.postimg.cc/FKbGRgML/multi-vitamin-men.png"
                 ],
                 "bestSeller": false,
-                "flavours": [],
+                "flavors": [],
                 "inStock": true
             },
             {
@@ -469,7 +469,7 @@
                     "https://i.postimg.cc/Bv5N6crC/multi-vitamin-women.png"
                 ],
                 "bestSeller": false,
-                "flavours": [],
+                "flavors": [],
                 "inStock": true
             },
             {
@@ -492,7 +492,7 @@
                 },
                 "postImages": ["https://i.postimg.cc/wMMzqBGK/Big-test.webp"],
                 "bestSeller": false,
-                "flavours": [],
+                "flavors": [],
                 "inStock": true
             },
             {
@@ -517,7 +517,7 @@
                     "https://i.postimg.cc/N0RqPD5k/qhush-hyperdrive.webp"
                 ],
                 "bestSeller": true,
-                "flavours": ["Super heat", "Hyperdrive gaming"],
+                "flavors": ["Super heat", "Hyperdrive gaming"],
                 "inStock": true
             },
             {
@@ -542,7 +542,7 @@
                     "https://i.postimg.cc/kXrQmR0C/super-pump-beast.webp"
                 ],
                 "bestSeller": false,
-                "flavours": ["Cereja"],
+                "flavors": ["Cereja"],
                 "inStock": true
             }
         ],

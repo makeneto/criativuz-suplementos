@@ -136,7 +136,7 @@ export default function Cart() {
 
                                                             <Activity
                                                                 mode={
-                                                                    item.flavour
+                                                                    item.flavor
                                                                         ? "visible"
                                                                         : "hidden"
                                                                 }
@@ -145,7 +145,7 @@ export default function Cart() {
                                                                     Sabor:{" "}
                                                                     <span>
                                                                         {
-                                                                            item.flavour
+                                                                            item.flavor
                                                                         }
                                                                     </span>
                                                                 </p>

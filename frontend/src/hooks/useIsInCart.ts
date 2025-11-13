@@ -19,7 +19,7 @@ export function useIsInCart(item: CartItem | null) {
                     (i) =>
                         i.name === item.name &&
                         i.weight === item.weight &&
-                        i.flavour === item.flavour
+                        i.flavor === item.flavor
                 )
                 setIsInCart(exists)
             } catch {
@@ -47,7 +47,7 @@ export function useIsInCart(item: CartItem | null) {
             window.removeEventListener("cartUpdated", handleCartChange)
             localStorage.setItem = originalSetItem
         }
-    }, [item?.name, item?.weight, item?.flavour])
+    }, [item?.name, item?.weight, item?.flavor])
 
     return isInCart
 }

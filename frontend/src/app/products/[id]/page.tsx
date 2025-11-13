@@ -58,10 +58,10 @@ export default function ProductPage({ params }: ProductPageProps) {
         formattedPrice,
         formattedDiscountPrice,
         selectedWeight,
-        selectedFlavour,
+        selectedFlavor,
         handleQtd,
         handleSelectWeight,
-        handleSelectFlavour,
+        handleSelectFlavor,
         handleSubmit,
     } = useProductLogic({
         product,
@@ -75,7 +75,7 @@ export default function ProductPage({ params }: ProductPageProps) {
     }
 
     const handleAddToCart = () => {
-        const flavour = selectedFlavour || product.flavours?.[0]
+        const flavor = selectedFlavor || product.flavors?.[0]
         const weight = selectedWeight || product.weight?.[0]
         const index = product.weight?.indexOf(weight)
         const price = product.price?.[index ?? 0] || product.price?.[0] || 0
@@ -87,7 +87,7 @@ export default function ProductPage({ params }: ProductPageProps) {
             name: product.name,
             image,
             price,
-            flavour,
+            flavor,
             weight,
             category: product.category,
             quantity: qtd,
@@ -123,11 +123,11 @@ export default function ProductPage({ params }: ProductPageProps) {
                     <ProductOptions
                         isProductPage
                         weights={product.weight}
-                        flavours={product.flavours}
+                        flavors={product.flavors}
                         selectedWeight={selectedWeight}
-                        selectedFlavour={selectedFlavour}
+                        selectedFlavor={selectedFlavor}
                         onSelectWeight={handleSelectWeight}
-                        onSelectFlavour={handleSelectFlavour}
+                        onSelectFlavor={handleSelectFlavor}
                     />
 
                     <ProductActions

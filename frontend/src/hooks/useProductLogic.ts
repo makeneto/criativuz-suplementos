@@ -17,7 +17,7 @@ interface UseProductLogicProps {
         product: any
         qtd: number
         weight: string
-        flavour: string
+        flavor: string
     }) => void
     setProduct?: (value: any) => void
     deliveryDate?: Date
@@ -35,10 +35,10 @@ export function useProductLogic({
         qtd,
         imageIndex,
         selectedWeight,
-        selectedFlavour,
+        selectedFlavor,
         handleQtd,
         selectWeight,
-        selectFlavour,
+        selectFlavor,
         effectivePrice,
         formattedPrice,
         formattedDiscountPrice,
@@ -53,7 +53,7 @@ export function useProductLogic({
             product: product.name,
             brand: product.brand,
             weight: selectedWeight || product.weight?.[0],
-            flavour: selectedFlavour || product.flavours?.[0],
+            flavor: selectedFlavor || product.flavors?.[0],
             price: formatCurrency(effectivePrice),
             qtd,
             total: formattedTotal,
@@ -62,7 +62,7 @@ export function useProductLogic({
     }
 
     const handleAddToCart = () => {
-        const flavour = selectedFlavour || product.flavours?.[0]
+        const flavor = selectedFlavor || product.flavors?.[0]
         const weight = selectedWeight || product.weight?.[0]
         const index = product.weight?.indexOf(weight)
         const price = product.price?.[index ?? 0] || product.price?.[0] || 0
@@ -74,7 +74,7 @@ export function useProductLogic({
             name: product.name,
             image,
             price,
-            flavour,
+            flavor,
             weight,
             category: product.category,
             quantity: qtd,
@@ -99,7 +99,7 @@ export function useProductLogic({
                 product,
                 qtd,
                 weight: selectedWeight,
-                flavour: selectedFlavour,
+                flavor: selectedFlavor,
             })
         }
 
@@ -113,10 +113,10 @@ export function useProductLogic({
         formattedDiscountPrice,
         formattedTotal,
         selectedWeight,
-        selectedFlavour,
+        selectedFlavor,
         handleQtd,
         handleSelectWeight: selectWeight,
-        handleSelectFlavour: selectFlavour,
+        handleSelectFlavor: selectFlavor,
         handleOrder,
         handleAddToCart,
         handleSubmit,

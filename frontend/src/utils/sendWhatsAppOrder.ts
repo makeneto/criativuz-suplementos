@@ -9,7 +9,7 @@ export interface CartItem {
     price: number
     quantity: number
     weight?: string
-    flavour?: string
+    flavor?: string
 }
 
 export function sendWhatsAppOrder(cartItems: CartItem[], deliveryDate?: Date) {
@@ -24,7 +24,7 @@ export function sendWhatsAppOrder(cartItems: CartItem[], deliveryDate?: Date) {
                 `${index + 1}️⃣`,
                 `*Produto*: ${item.name}`,
                 `*Peso*: ${item.weight || "N/A"}`,
-                `*Sabor*: ${item.flavour || "N/A"}`,
+                `*Sabor*: ${item.flavor || "N/A"}`,
                 `*Preço Unitário*: ${formatCurrency(item.price)}`,
                 `*Quantidade*: ${item.quantity}`,
                 `*Total*: ${formatCurrency(item.price * item.quantity)}`,

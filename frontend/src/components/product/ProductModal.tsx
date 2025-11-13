@@ -17,7 +17,7 @@ interface ProductModalProps {
         description?: { synopsis?: string }
         postImages: string[]
         weight: string[]
-        flavours: string[]
+        flavors: string[]
     }
     setProduct: (value: any) => void
     buttonLabel: string
@@ -25,7 +25,7 @@ interface ProductModalProps {
         product: any
         qtd: number
         weight: string
-        flavour: string
+        flavor: string
     }) => void
 }
 
@@ -42,10 +42,10 @@ export default function ProductModal({
         formattedPrice,
         formattedDiscountPrice,
         selectedWeight,
-        selectedFlavour,
+        selectedFlavor,
         handleQtd,
         handleSelectWeight,
-        handleSelectFlavour,
+        handleSelectFlavor,
         handleAddToCart,
         handleOrder,
     } = useProductLogic({
@@ -56,13 +56,13 @@ export default function ProductModal({
     })
 
     const itemData =
-        selectedWeight && selectedFlavour
+        selectedWeight && selectedFlavor
             ? {
                   id: "",
                   name: product.name,
                   image: product.postImages[0],
                   price: 0,
-                  flavour: selectedFlavour,
+                  flavor: selectedFlavor,
                   weight: selectedWeight,
                   category: "unknown",
                   quantity: 1,
@@ -120,11 +120,11 @@ export default function ProductModal({
 
                         <ProductOptions
                             weights={product.weight}
-                            flavours={product.flavours}
+                            flavors={product.flavors}
                             selectedWeight={selectedWeight}
-                            selectedFlavour={selectedFlavour}
+                            selectedFlavor={selectedFlavor}
                             onSelectWeight={handleSelectWeight}
-                            onSelectFlavour={handleSelectFlavour}
+                            onSelectFlavor={handleSelectFlavor}
                         />
 
                         <div className="calendarSection">
@@ -142,6 +142,7 @@ export default function ProductModal({
                         <div className="submitSection">
                             {isInCart ? (
                                 <Link
+                                    prefetch
                                     href="/cart"
                                     className="goToCartButton"
                                     onClick={() => setProduct(null)}

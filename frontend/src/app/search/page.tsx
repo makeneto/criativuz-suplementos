@@ -54,11 +54,11 @@ export default function SearchPage() {
         })
     })
 
-    const flavourOptions = useMemo(() => {
-        const flavours = filteredProducts
-            .flatMap((product: any) => product.flavours || [])
+    const flavorOptions = useMemo(() => {
+        const flavors = filteredProducts
+            .flatMap((product: any) => product.flavors || [])
             .filter(Boolean)
-        return Array.from(new Set(flavours))
+        return Array.from(new Set(flavors))
     }, [filteredProducts])
 
     if (isPending) return <p>Carregando...</p>
@@ -74,7 +74,7 @@ export default function SearchPage() {
         <div className="searchPage">
             <main>
                 <aside>
-                    <SearchFilter filterContent={flavourOptions as string[]} />
+                    <SearchFilter filterContent={flavorOptions as string[]} />
                 </aside>
 
                 <div>

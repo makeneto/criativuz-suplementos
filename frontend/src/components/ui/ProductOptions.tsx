@@ -3,21 +3,21 @@ import { Activity } from "react"
 interface ProductOptionsProps {
     isProductPage?: boolean
     weights: string[]
-    flavours?: string[]
+    flavors?: string[]
     selectedWeight: string
-    selectedFlavour: string
+    selectedFlavor: string
     onSelectWeight: (w: string, i: number) => void
-    onSelectFlavour: (f: string) => void
+    onSelectFlavor: (f: string) => void
 }
 
 export default function ProductOptions({
     isProductPage,
     weights,
-    flavours,
+    flavors,
     selectedWeight,
-    selectedFlavour,
+    selectedFlavor,
     onSelectWeight,
-    onSelectFlavour,
+    onSelectFlavor,
 }: ProductOptionsProps) {
     return (
         <section>
@@ -37,17 +37,17 @@ export default function ProductOptions({
             </ul>
 
             <Activity
-                mode={flavours && flavours.length > 0 ? "visible" : "hidden"}
+                mode={flavors && flavors.length > 0 ? "visible" : "hidden"}
             >
                 <ul className="modalProduct__container--content--list">
                     <li style={{ fontSize: isProductPage ? "1.1rem" : "" }}>
                         Sabor
                     </li>
-                    {flavours?.map((f, index) => (
+                    {flavors?.map((f, index) => (
                         <li
                             key={index}
-                            onClick={() => onSelectFlavour(f)}
-                            className={selectedFlavour === f ? "active" : ""}
+                            onClick={() => onSelectFlavor(f)}
+                            className={selectedFlavor === f ? "active" : ""}
                         >
                             {f}
                         </li>

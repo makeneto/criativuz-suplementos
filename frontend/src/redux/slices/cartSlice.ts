@@ -7,7 +7,7 @@ export interface CartItem {
     name: string
     image: string
     price: number
-    flavour: string
+    flavor: string
     weight: string
     category: string
     quantity: number
@@ -17,7 +17,6 @@ interface CartState {
     items: CartItem[]
 }
 
-// Função segura para pegar os itens do carrinho no localStorage
 const getInitialCart = (): CartItem[] => {
     if (typeof window === "undefined") return []
     try {
@@ -41,7 +40,7 @@ const cartSlice = createSlice({
                 (i) =>
                     i.name === action.payload.name &&
                     i.weight === action.payload.weight &&
-                    i.flavour === action.payload.flavour
+                    i.flavor === action.payload.flavor
             )
 
             if (existing) {

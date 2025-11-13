@@ -1,6 +1,7 @@
 import SearchBar from "../navbar/SearchBar"
 import { Headset, Heart } from "lucide-react"
 import CartSheet from "../cart/CartSheet"
+import FavoriteSheet from "../favorite/FavoriteSheet"
 
 export default function UserActions() {
     return (
@@ -10,10 +11,7 @@ export default function UserActions() {
                 <Headset />
                 Ajuda
             </p>
-            <p>
-                <Heart />
-                Favoritos
-            </p>
+            <FavoriteSheet />
             <CartSheet />
         </aside>
     )

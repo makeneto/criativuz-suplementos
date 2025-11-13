@@ -1,5 +1,3 @@
-"use client"
-
 import {
     Sheet,
     SheetTrigger,
@@ -8,18 +6,20 @@ import {
     SheetTitle,
     SheetClose,
 } from "@/components/ui/sheet"
-import { ShoppingCart, X } from "lucide-react"
+import { Heart, X } from "lucide-react"
 
+import { useAppSelector } from "@/redux/hooks"
 import { RootState } from "@/redux/store"
 import { useRouter } from "next/navigation"
 import { Activity, useState } from "react"
 import { Badge } from "../ui/badge"
-import CartItem from "./CartItem"
-import { useAppSelector } from "@/redux/hooks"
+import FavoriteItem from "./FavoriteItem"
 
-export default function CartSheet() {
-    const cartItems = useAppSelector((state: RootState) => state.cart.items)
-    const { length: cartLength } = cartItems
+export default function FavoriteSheet() {
+    const favoriteItems = useAppSelector(
+        (state: RootState) => state.favorites.items
+    )
+    const { length: favoriteLength } = favoriteItems
     const [open, setOpen] = useState(false)
     const router = useRouter()
 
@@ -27,15 +27,17 @@ export default function CartSheet() {
         <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild>
                 <div className="userAction">
-                    <ShoppingCart className="w-5 h-5" />
+                    <Heart className="w-5 h-5" />
                     <p>
-                        Carrinho
-                        <Activity mode={cartLength > 0 ? "visible" : "hidden"}>
+                        Favoritos
+                        <Activity
+                            mode={favoriteLength > 0 ? "visible" : "hidden"}
+                        >
                             <Badge
                                 className="h-5 min-w-5 rounded-full px-1 font-mono tabular-nums"
                                 variant="destructive"
                             >
-                                {cartLength}
+                                {favoriteLength}
                             </Badge>
                         </Activity>
                     </p>
@@ -45,17 +47,21 @@ export default function CartSheet() {
             <SheetContent>
                 <SheetHeader>
                     <SheetTitle className="text-lg font-semibold">
-                        Carrinho{" "}
-                        <Activity mode={cartLength > 0 ? "visible" : "hidden"}>
-                            <span className="cartLength">({cartLength})</span>
+                        Favoritos{" "}
+                        <Activity
+                            mode={favoriteLength > 0 ? "visible" : "hidden"}
+                        >
+                            <span className="favoriteLength">
+                                ({favoriteLength})
+                            </span>
                         </Activity>
                     </SheetTitle>
 
-                    {cartLength > 0 ? (
+                    {favoriteLength > 0 ? (
                         <button
                             onClick={() => {
                                 setOpen(false)
-                                router.push("/cart")
+                                router.push("/favorite")
                             }}
                             className="vewAllLink"
                         >
@@ -69,16 +75,16 @@ export default function CartSheet() {
                 </SheetHeader>
 
                 <div className="mt-8 flex flex-col gap-4 h-[87%]">
-                    {cartLength === 0 ? (
-                        <div className="miniEmptyCart">
+                    {favoriteLength === 0 ? (
+                        <div className="miniEmptyfavorite">
                             <img
                                 src="/images/empty-cart.webp"
-                                alt="Empty Cart"
+                                alt="Empty favorite"
                             />
                         </div>
                     ) : (
-                        cartItems.map((item) => (
-                            <CartItem key={item.id} item={item} />
+                        favoriteItems.map((item) => (
+                            <FavoriteItem key={item.id} item={item} />
                         ))
                     )}
                 </div>

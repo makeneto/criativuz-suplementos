@@ -1,32 +1,28 @@
 import React from "react"
 import { useDispatch } from "react-redux"
-import { removeFromCart } from "@/redux/slices/cartSlice"
+// import { removeFromFavorite } from "@/redux/slices/FavoriteSlice"
 import { Trash, TruckElectric } from "lucide-react"
 import { formatCurrency } from "@/utils/formatCurrency"
 import ProductQuantity from "../ui/ProductQuantity"
-import { useCartQuantity } from "@/hooks/useCartQuantity"
 import { motion, AnimatePresence } from "framer-motion"
-import { addToFavorites, FavoriteItem } from "@/redux/slices/favoriteSlice"
+// import { addToFavorites, FavoriteItem } from "@/redux/slices/favoriteSlice"
 
-interface CartItemProps {
+interface FavoriteItemProps {
     id: string
     image: string
     name: string
     weight: string
     flavor: string
-    category: string
     price: number
-    quantity: number
 }
 
 interface ItemsProps {
-    item: CartItemProps
+    item: FavoriteItemProps
 }
 
-export default function CartItem({ item }: ItemsProps) {
+export default function FavoriteItem({ item }: ItemsProps) {
     const dispatch = useDispatch()
-    const { id, image, name, weight, flavor, price, quantity } = item
-    const { qtd, handleQtd } = useCartQuantity(id, quantity)
+    const { id, image, name, weight, flavor, price } = item
 
     const variants = {
         hidden: { opacity: 0, x: -50 },
@@ -34,42 +30,40 @@ export default function CartItem({ item }: ItemsProps) {
         exit: { opacity: 0, x: 50, transition: { duration: 0.3 } },
     }
 
-    const handleMovetoFavorites = (item: FavoriteItem) => {
-        dispatch(
-            addToFavorites({
-                id: item.id,
-                image: item.image,
-                name: item.name,
-                weight: item.weight,
-                flavor: item.flavor,
-                price: item.price,
-            })
-        )
-        removeFromCart(item.id)
-    }
+    // const handleMovetoFavorites = (item: FavoriteItem) => {
+    //     dispatch(
+    //         addToFavorites({
+    //             id: item.id,
+    //             name: item.name,
+    //             weight: item.weight,
+    //             flavor: item.flavor,
+    //             price: item.price,
+    //         })
+    //     )
+    // }
 
     return (
         <AnimatePresence>
             <motion.div
                 key={id}
-                className="cartItem"
+                className="FavoriteItem"
                 initial="hidden"
                 animate="visible"
                 exit="exit"
                 variants={variants}
                 layout
             >
-                <div className="cartItem__main">
+                <div className="FavoriteItem__main">
                     <img
                         src={image}
                         alt={name}
                         className="w-[6rem] h-[6rem] object-cover"
                     />
 
-                    <div className="cartItem__content">
+                    <div className="FavoriteItem__content">
                         <h1>{name}</h1>
 
-                        <div className="cartItem__content--details">
+                        <div className="FavoriteItem__content--details">
                             <p>
                                 Peso: <span>{weight}</span>
                             </p>
@@ -83,24 +77,16 @@ export default function CartItem({ item }: ItemsProps) {
                             Entrega grátis
                         </div>
 
-                        <div className="operations">
-                            <ProductQuantity
-                                isSmall={true}
-                                qtd={qtd}
-                                onAdd={() => handleQtd("add")}
-                                onSubtract={() => handleQtd("subtract")}
-                            />
-                            <h2>{formatCurrency(price * qtd)}</h2>
-                        </div>
-
                         <div className="options">
-                            <p onClick={() => handleMovetoFavorites(item)}>
+                            <p
+                            //  onClick={() => handleMovetoFavorites(item)}
+                            >
                                 Mover para os Favoritos
                             </p>{" "}
                             |
                             <button
                                 type="button"
-                                onClick={() => dispatch(removeFromCart(id))}
+                                // onClick={() => dispatch(removeFromFavorite(id))}
                                 className="options--trash"
                             >
                                 <Trash />

@@ -2,7 +2,16 @@ import type { NextConfig } from "next"
 
 const nextConfig: NextConfig = {
     images: {
-        domains: ["i.postimg.cc", "github.com"],
+        remotePatterns: [
+            {
+                protocol: "https",
+                hostname: "i.postimg.cc",
+            },
+            {
+                protocol: "https",
+                hostname: "github.com",
+            },
+        ],
         formats: ["image/avif", "image/webp"],
     },
 }
