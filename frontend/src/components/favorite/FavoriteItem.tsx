@@ -46,24 +46,24 @@ export default function FavoriteItem({ item }: ItemsProps) {
         <AnimatePresence>
             <motion.div
                 key={id}
-                className="FavoriteItem"
+                className="cartItem"
                 initial="hidden"
                 animate="visible"
                 exit="exit"
                 variants={variants}
                 layout
             >
-                <div className="FavoriteItem__main">
+                <div className="cartItem__main">
                     <img
                         src={image}
                         alt={name}
                         className="w-[6rem] h-[6rem] object-cover"
                     />
 
-                    <div className="FavoriteItem__content">
+                    <div className="cartItem__content">
                         <h1>{name}</h1>
 
-                        <div className="FavoriteItem__content--details">
+                        <div className="cartItem__content--details">
                             <p>
                                 Peso: <span>{weight}</span>
                             </p>
@@ -77,16 +77,11 @@ export default function FavoriteItem({ item }: ItemsProps) {
                             Entrega grátis
                         </div>
 
-                        <div className="options">
-                            <p
-                            //  onClick={() => handleMovetoFavorites(item)}
-                            >
-                                Mover para os Favoritos
-                            </p>{" "}
-                            |
+                        <div className="operations">
+                            <h2>{formatCurrency(price)}</h2>
                             <button
                                 type="button"
-                                // onClick={() => dispatch(removeFromFavorite(id))}
+                                // onClick={() => dispatch(removeFromCart(id))}
                                 className="options--trash"
                             >
                                 <Trash />

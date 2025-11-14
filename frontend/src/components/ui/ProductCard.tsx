@@ -5,6 +5,8 @@ import { Heart, Info, Store } from "lucide-react"
 import ProductModal from "../product/ProductModal"
 import Link from "next/link"
 import TextPrice from "./TextPrice"
+import { useAddToFavorites } from "@/hooks/useAddToFavorite"
+import { useID } from "@/hooks/useID"
 
 interface ProductCartProps {
     products: any
@@ -15,6 +17,8 @@ export default function ProductCard({
     products,
     isThree = false,
 }: ProductCartProps) {
+    const { add } = useAddToFavorites()
+    const randomId = useID()
     const [selectedProduct, setSelectedProduct] = useState<any>(null)
     const [modalConfig, setModalConfig] = useState<any>(null)
 
@@ -33,7 +37,10 @@ export default function ProductCard({
                 {products.map((p: any) => (
                     <li>
                         <div className="sectionGrid__list--view">
-                            <Link href={`/products/${p.id}`} key={p.id}>
+                            <Link
+                                href={`/products/${p.id}`}
+                                key={`${p.id}-${randomId}`}
+                            >
                                 <img
                                     src={p.postImages[0]}
                                     alt={`Product Image`}
@@ -53,7 +60,7 @@ export default function ProductCard({
                                 </div>
 
                                 <div>
-                                    <Heart />
+                                    <Heart onClick={() => add(products)} />
                                 </div>
 
                                 <div>

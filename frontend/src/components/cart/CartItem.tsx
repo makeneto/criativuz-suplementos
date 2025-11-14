@@ -7,6 +7,7 @@ import ProductQuantity from "../ui/ProductQuantity"
 import { useCartQuantity } from "@/hooks/useCartQuantity"
 import { motion, AnimatePresence } from "framer-motion"
 import { addToFavorites, FavoriteItem } from "@/redux/slices/favoriteSlice"
+import { useAddToFavorites } from "@/hooks/useAddToFavorite"
 
 interface CartItemProps {
     id: string
@@ -27,25 +28,12 @@ export default function CartItem({ item }: ItemsProps) {
     const dispatch = useDispatch()
     const { id, image, name, weight, flavor, price, quantity } = item
     const { qtd, handleQtd } = useCartQuantity(id, quantity)
+    const { add } = useAddToFavorites()
 
     const variants = {
         hidden: { opacity: 0, x: -50 },
         visible: { opacity: 1, x: 0 },
         exit: { opacity: 0, x: 50, transition: { duration: 0.3 } },
-    }
-
-    const handleMovetoFavorites = (item: FavoriteItem) => {
-        dispatch(
-            addToFavorites({
-                id: item.id,
-                image: item.image,
-                name: item.name,
-                weight: item.weight,
-                flavor: item.flavor,
-                price: item.price,
-            })
-        )
-        removeFromCart(item.id)
     }
 
     return (
@@ -94,7 +82,7 @@ export default function CartItem({ item }: ItemsProps) {
                         </div>
 
                         <div className="options">
-                            <p onClick={() => handleMovetoFavorites(item)}>
+                            <p onClick={() => add(item)}>
                                 Mover para os Favoritos
                             </p>{" "}
                             |

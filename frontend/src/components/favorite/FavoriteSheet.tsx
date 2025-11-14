@@ -47,13 +47,9 @@ export default function FavoriteSheet() {
             <SheetContent>
                 <SheetHeader>
                     <SheetTitle className="text-lg font-semibold">
-                        Favoritos{" "}
-                        <Activity
-                            mode={favoriteLength > 0 ? "visible" : "hidden"}
-                        >
-                            <span className="favoriteLength">
-                                ({favoriteLength})
-                            </span>
+                        Favorito{" "}
+                        <Activity mode={favoriteLength > 0 ? "visible" : "hidden"}>
+                            <span className="cartLength">({favoriteLength})</span>
                         </Activity>
                     </SheetTitle>
 
