@@ -1,6 +1,5 @@
 "use client"
 import { Activity, useState } from "react"
-import { formatCurrency } from "@/utils/formatCurrency"
 import { Heart, Info, Store } from "lucide-react"
 import ProductModal from "../product/ProductModal"
 import Link from "next/link"
