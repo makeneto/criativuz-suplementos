@@ -5,7 +5,6 @@ import Link from "next/link"
 import { useRouter } from "next/navigation"
 import SearchResultItem from "./SearchResultItem"
 import { useFilteredProducts } from "@/hooks/useFilteredProducts"
-import { Activity } from "react"
 
 export default function SearchBar() {
     const router = useRouter()
@@ -21,13 +20,13 @@ export default function SearchBar() {
     const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
         if (e.key === "Enter") {
             const query = searchTerm.trim()
-
             if (!query) return
-
             router.push(`/search?query=${encodeURIComponent(query)}`)
             setShowSearchDropdown(false)
         }
     }
+
+    const showDropdown = showSearchDropdown && searchTerm.length > 0
 
     return (
         <div
@@ -38,6 +37,7 @@ export default function SearchBar() {
             <Link href={`/search?query=${encodeURIComponent(searchTerm)}`}>
                 <Search />
             </Link>
+
             <input
                 type="text"
                 placeholder="Procurar suplementos, acessórios..."
@@ -52,28 +52,21 @@ export default function SearchBar() {
                 onKeyDown={handleKeyDown}
             />
 
-            <Activity
-                mode={
-                    showSearchDropdown && searchTerm.length > 0
-                        ? "visible"
-                        : "hidden"
-                }
-            >
+            {showDropdown && (
                 <ul className="nav_bar__search-dropdown">
-                    <Activity
-                        mode={
-                            filteredProducts.length > 0 ? "visible" : "hidden"
-                        }
-                    >
-                        <h5>Produtos</h5>
-                        {filteredProducts.slice(0, 4).map((prod: any) => (
-                            <SearchResultItem
-                                key={prod.id}
-                                prod={prod}
-                                onClick={() => setShowSearchDropdown(false)}
-                            />
-                        ))}
-                    </Activity>
+                    {filteredProducts.length > 0 && (
+                        <>
+                            <h5>Produtos</h5>
+
+                            {filteredProducts.slice(0, 4).map((prod: any) => (
+                                <SearchResultItem
+                                    key={prod.id}
+                                    prod={prod}
+                                    onClick={() => setShowSearchDropdown(false)}
+                                />
+                            ))}
+                        </>
+                    )}
 
                     <Link
                         href={`/search?query=${encodeURIComponent(searchTerm)}`}
@@ -91,7 +84,7 @@ export default function SearchBar() {
                         </h6>
                     </Link>
                 </ul>
-            </Activity>
+            )}
         </div>
     )
 }

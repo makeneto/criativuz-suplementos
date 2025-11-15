@@ -1,6 +1,6 @@
 "use client"
 
-import { Activity, useState } from "react"
+import { useState } from "react"
 import { useSelector, useDispatch } from "react-redux"
 import { RootState } from "@/redux/store"
 import { ArrowLeft, Trash, TruckElectric } from "lucide-react"
@@ -82,19 +82,13 @@ export default function Cart() {
                                         >
                                             <td className="cartTable__product">
                                                 <div className="product__imageWrapper">
-                                                    <Activity
-                                                        mode={
-                                                            item.image
-                                                                ? "visible"
-                                                                : "hidden"
-                                                        }
-                                                    >
+                                                    {item.image && (
                                                         <img
                                                             src={item.image}
                                                             alt={item.name}
                                                             className="product__image"
                                                         />
-                                                    </Activity>
+                                                    )}
 
                                                     <button
                                                         className="product__removeBtn"
@@ -117,13 +111,7 @@ export default function Cart() {
                                                             {item.name}
                                                         </p>
                                                         <div className="product__details">
-                                                            <Activity
-                                                                mode={
-                                                                    item.weight
-                                                                        ? "visible"
-                                                                        : "hidden"
-                                                                }
-                                                            >
+                                                            {item.weight && (
                                                                 <p className="product__detail">
                                                                     Peso:{" "}
                                                                     <span>
@@ -132,15 +120,9 @@ export default function Cart() {
                                                                         }
                                                                     </span>
                                                                 </p>
-                                                            </Activity>
+                                                            )}
 
-                                                            <Activity
-                                                                mode={
-                                                                    item.flavor
-                                                                        ? "visible"
-                                                                        : "hidden"
-                                                                }
-                                                            >
+                                                            {item.flavor && (
                                                                 <p className="product__detail">
                                                                     Sabor:{" "}
                                                                     <span>
@@ -149,7 +131,7 @@ export default function Cart() {
                                                                         }
                                                                     </span>
                                                                 </p>
-                                                            </Activity>
+                                                            )}
                                                         </div>
                                                     </div>
                                                 </div>

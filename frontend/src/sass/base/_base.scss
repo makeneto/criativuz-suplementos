@@ -59,6 +59,18 @@ button {
     background-color: red;
 }
 
+.productPrice {
+    margin-top: 0.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .3rem;
+
+    & span {
+        font-weight: 600;
+    }
+}
+
 .bordered {
     position: relative;
     display: inline-block;

@@ -1,4 +1,4 @@
-import HeroSection from "@/components/sections/HeroSection"
+import Hero from "@/components/sections/Hero"
 import BrandsSection from "@/components/brands/BrandsSection"
 import Steps from "@/components/sections/Steps"
 import Gallery from "@/components/sections/Gallery"
@@ -9,7 +9,7 @@ import AboutSection from "@/components/sections/AboutSection"
 export default async function Home() {
     return (
         <>
-            <HeroSection />
+            <Hero />
             <BrandsSection />
             <AboutSection />
             <Bestsellers />

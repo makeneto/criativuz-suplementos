@@ -19,8 +19,3 @@ export interface Product {
     inStock: boolean
 }
 
-export interface ProductsResponse {
-    products: {
-        all: Product[]
-    }
-}

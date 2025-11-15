@@ -8,14 +8,14 @@
 @use "components/endSection";
 @use "components/footer";
 @use "components/gallery";
-@use "components/heroCarousel";
 @use "components/introSection";
-@use "components/productModal";
+@use "components/mainHero"; 
 @use "components/navBar";
+@use "components/productGallery";
 @use "components/productList";
+@use "components/productModal";
 @use "components/stepSection";
 @use "components/whatsAppButton";
-@use "components/productGallery";
 
 @use "pages/cartPage";
 @use "pages/productPage";

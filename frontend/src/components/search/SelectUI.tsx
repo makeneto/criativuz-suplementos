@@ -6,7 +6,6 @@ import {
     SelectTrigger,
     SelectValue,
 } from "@/components/ui/select"
-import { Activity } from "react"
 
 interface SelectUIProps {
     name: string
@@ -21,9 +20,7 @@ export default function SelectUI({
 }: SelectUIProps) {
     return (
         <div className="filterBy">
-            <Activity mode={isFilterBy ? "visible" : "hidden"}>
-                <p className="font-medium mt-1">Filtrar por: </p>
-            </Activity>
+            {isFilterBy && <p className="font-medium mt-1">Filtrar por: </p>}
 
             <Select>
                 <SelectTrigger className="w-[180px]">

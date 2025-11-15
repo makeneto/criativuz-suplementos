@@ -3,7 +3,7 @@
 import Link from "next/link"
 import { ChevronDown } from "lucide-react"
 import { Product } from "@/interfaces/interfaces"
-import { Activity } from "react"
+import { motion } from "framer-motion"
 
 interface Props {
     category: string
@@ -23,10 +23,19 @@ export default function CategoryItem({
     return (
         <li className="nav_bar__category-item">
             <button className="nav_bar__categories-btn" onClick={onToggle}>
-                {formatCategory(category)} <ChevronDown size={16} />
+                {formatCategory(category)}
+                <ChevronDown size={16} />
             </button>
 
-            <Activity mode={isOpen ? "visible" : "hidden"}>
+            <motion.div
+                initial={{ height: 0, opacity: 0 }}
+                animate={{
+                    height: isOpen ? "auto" : 0,
+                    opacity: isOpen ? 1 : 0,
+                }}
+                transition={{ duration: 0.2 }}
+                style={{ overflow: "hidden" }}
+            >
                 <ul className="nav_bar__products-list">
                     {products.map((prod) => (
                         <li key={prod.id}>
@@ -36,7 +45,7 @@ export default function CategoryItem({
                         </li>
                     ))}
                 </ul>
-            </Activity>
+            </motion.div>
         </li>
     )
 }

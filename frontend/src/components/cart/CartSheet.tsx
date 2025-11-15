@@ -12,16 +12,18 @@ import { ShoppingCart, X } from "lucide-react"
 
 import { RootState } from "@/redux/store"
 import { useRouter } from "next/navigation"
-import { Activity, useState } from "react"
+import { useState } from "react"
 import { Badge } from "../ui/badge"
-import CartItem from "./CartItem"
+import CartSheetItem from "./CartSheetItem"
 import { useAppSelector } from "@/redux/hooks"
+import { useID } from "@/hooks/useID"
 
 export default function CartSheet() {
     const cartItems = useAppSelector((state: RootState) => state.cart.items)
     const { length: cartLength } = cartItems
     const [open, setOpen] = useState(false)
     const router = useRouter()
+    const randomId = useID()
 
     return (
         <Sheet open={open} onOpenChange={setOpen}>
@@ -30,14 +32,14 @@ export default function CartSheet() {
                     <ShoppingCart className="w-5 h-5" />
                     <p>
                         Carrinho
-                        <Activity mode={cartLength > 0 ? "visible" : "hidden"}>
+                        {cartLength > 0 && (
                             <Badge
                                 className="h-5 min-w-5 rounded-full px-1 font-mono tabular-nums"
                                 variant="destructive"
                             >
                                 {cartLength}
                             </Badge>
-                        </Activity>
+                        )}
                     </p>
                 </div>
             </SheetTrigger>
@@ -46,9 +48,9 @@ export default function CartSheet() {
                 <SheetHeader>
                     <SheetTitle className="text-lg font-semibold">
                         Carrinho{" "}
-                        <Activity mode={cartLength > 0 ? "visible" : "hidden"}>
+                        {cartLength > 0 && (
                             <span className="cartLength">({cartLength})</span>
-                        </Activity>
+                        )}
                     </SheetTitle>
 
                     {cartLength > 0 ? (
@@ -68,17 +70,20 @@ export default function CartSheet() {
                     )}
                 </SheetHeader>
 
-                <div className="mt-8 flex flex-col gap-4 h-[87%]">
+                <div className="mt-5 flex flex-col h-[87%]">
                     {cartLength === 0 ? (
-                        <div className="miniEmptyCart">
+                        <div className="miniEmptySheet">
                             <img
                                 src="/images/empty-cart.webp"
-                                alt="Empty Cart"
+                                alt="Empty Sheet"
                             />
                         </div>
                     ) : (
                         cartItems.map((item) => (
-                            <CartItem key={item.id} item={item} />
+                            <CartSheetItem
+                                key={`${item.id}-${randomId}`}
+                                item={item}
+                            />
                         ))
                     )}
                 </div>

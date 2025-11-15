@@ -35,21 +35,24 @@ $solidBorder: 1px solid #d3d3d3;
     }
 }
 
-.cartItem {
-    padding-bottom: 1rem;
-    margin-bottom: 0.2rem;
+.sheetItem {
+    padding-bottom: 2rem;
+    position: relative;
 
-    &:not(:last-child) {
-        border-bottom: $solidBorder;
+    &:not(:first-child) {
+        padding-top: 2rem;
     }
 
-    &--category {
-        width: fit-content;
-        padding-inline: 0.3rem;
-        margin-bottom: 1rem;
-        text-transform: uppercase;
-        font-size: 0.8rem;
-        color: rgb(141, 141, 141);
+    &:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 20%;
+        height: 1px;
+        background: #d3d3d38f;
+        transform: translateX(-50%);
+        border-radius: 9999px;
     }
 
     &__main {
@@ -88,7 +91,6 @@ $solidBorder: 1px solid #d3d3d3;
             justify-content: space-between;
 
             & h2 {
-                font-weight: 600;
                 font-size: 0.9rem;
             }
         }

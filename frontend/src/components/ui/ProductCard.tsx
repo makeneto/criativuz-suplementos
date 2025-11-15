@@ -1,5 +1,5 @@
 "use client"
-import { Activity, useState } from "react"
+import { useState } from "react"
 import { Heart, Info, Store } from "lucide-react"
 import ProductModal from "../product/ProductModal"
 import Link from "next/link"
@@ -16,10 +16,10 @@ export default function ProductCard({
     products,
     isThree = false,
 }: ProductCartProps) {
-    const { add } = useAddToFavorites()
     const randomId = useID()
     const [selectedProduct, setSelectedProduct] = useState<any>(null)
     const [modalConfig, setModalConfig] = useState<any>(null)
+    const { add } = useAddToFavorites()
 
     function handleShowProductModal() {
         setSelectedProduct(null)
@@ -34,12 +34,9 @@ export default function ProductCard({
                 }}
             >
                 {products.map((p: any) => (
-                    <li>
+                    <li key={`${p.id}-${randomId}`}>
                         <div className="sectionGrid__list--view">
-                            <Link
-                                href={`/products/${p.id}`}
-                                key={`${p.id}-${randomId}`}
-                            >
+                            <Link href={`/products/${p.id}`}>
                                 <img
                                     src={p.postImages[0]}
                                     alt={`Product Image`}
@@ -59,7 +56,7 @@ export default function ProductCard({
                                 </div>
 
                                 <div>
-                                    <Heart onClick={() => add(products)} />
+                                    <Heart onClick={() => add(p)} />
                                 </div>
 
                                 <div>
@@ -78,23 +75,19 @@ export default function ProductCard({
                             {p.name}
                         </Link>
 
-                        <TextPrice product={p} isThree={isThree} />
+                        <TextPrice product={p} />
                     </li>
                 ))}
             </ul>
 
-            <Activity
-                mode={selectedProduct && modalConfig ? "visible" : "hidden"}
-            >
-                {selectedProduct && modalConfig && (
-                    <ProductModal
-                        product={selectedProduct}
-                        setProduct={setSelectedProduct}
-                        buttonLabel={modalConfig.buttonLabel}
-                        onSubmit={modalConfig.onSubmit}
-                    />
-                )}
-            </Activity>
+            {selectedProduct && modalConfig && (
+                <ProductModal
+                    product={selectedProduct}
+                    setProduct={setSelectedProduct}
+                    buttonLabel={modalConfig.buttonLabel}
+                    onSubmit={modalConfig.onSubmit}
+                />
+            )}
         </>
     )
 }

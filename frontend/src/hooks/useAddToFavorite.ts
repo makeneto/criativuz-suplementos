@@ -8,11 +8,10 @@ export function useAddToFavorites() {
         dispatch(
             addToFavorites({
                 id: item.id,
-                image: item.image,
+                postImages: item.postImages,
                 name: item.name,
-                weight: item.weight,
-                flavor: item.flavor,
                 price: item.price,
+                discountPrice: item.discountPrice,
             })
         )
     }

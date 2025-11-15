@@ -11,17 +11,20 @@ import { Heart, X } from "lucide-react"
 import { useAppSelector } from "@/redux/hooks"
 import { RootState } from "@/redux/store"
 import { useRouter } from "next/navigation"
-import { Activity, useState } from "react"
+import { useState } from "react"
 import { Badge } from "../ui/badge"
-import FavoriteItem from "./FavoriteItem"
+import FavoriteSheetItem from "./FavoriteSheetItem"
+import { useID } from "@/hooks/useID"
 
 export default function FavoriteSheet() {
     const favoriteItems = useAppSelector(
         (state: RootState) => state.favorites.items
     )
+
     const { length: favoriteLength } = favoriteItems
     const [open, setOpen] = useState(false)
     const router = useRouter()
+    const randomId = useID()
 
     return (
         <Sheet open={open} onOpenChange={setOpen}>
@@ -30,16 +33,14 @@ export default function FavoriteSheet() {
                     <Heart className="w-5 h-5" />
                     <p>
                         Favoritos
-                        <Activity
-                            mode={favoriteLength > 0 ? "visible" : "hidden"}
-                        >
+                        {favoriteLength > 0 && (
                             <Badge
                                 className="h-5 min-w-5 rounded-full px-1 font-mono tabular-nums"
                                 variant="destructive"
                             >
                                 {favoriteLength}
                             </Badge>
-                        </Activity>
+                        )}
                     </p>
                 </div>
             </SheetTrigger>
@@ -47,32 +48,22 @@ export default function FavoriteSheet() {
             <SheetContent>
                 <SheetHeader>
                     <SheetTitle className="text-lg font-semibold">
-                        Favorito{" "}
-                        <Activity mode={favoriteLength > 0 ? "visible" : "hidden"}>
-                            <span className="cartLength">({favoriteLength})</span>
-                        </Activity>
+                        Favoritos{" "}
+                        {favoriteLength > 0 && (
+                            <span className="cartLength">
+                                ({favoriteLength})
+                            </span>
+                        )}
                     </SheetTitle>
 
-                    {favoriteLength > 0 ? (
-                        <button
-                            onClick={() => {
-                                setOpen(false)
-                                router.push("/favorite")
-                            }}
-                            className="vewAllLink"
-                        >
-                            Ver todos
-                        </button>
-                    ) : (
-                        <SheetClose className="closeSheetButton">
-                            <X size={20} />
-                        </SheetClose>
-                    )}
+                    <SheetClose className="closeSheetButton">
+                        <X size={20} />
+                    </SheetClose>
                 </SheetHeader>
 
-                <div className="mt-8 flex flex-col gap-4 h-[87%]">
+                <div className="mt-5 flex flex-col gap-4 h-[87%]">
                     {favoriteLength === 0 ? (
-                        <div className="miniEmptyfavorite">
+                        <div className="miniEmptySheet">
                             <img
                                 src="/images/empty-cart.webp"
                                 alt="Empty favorite"
@@ -80,7 +71,10 @@ export default function FavoriteSheet() {
                         </div>
                     ) : (
                         favoriteItems.map((item) => (
-                            <FavoriteItem key={item.id} item={item} />
+                            <FavoriteSheetItem
+                                key={`${item.id}-${randomId}`}
+                                item={item}
+                            />
                         ))
                     )}
                 </div>

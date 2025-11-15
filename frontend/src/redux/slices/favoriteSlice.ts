@@ -4,11 +4,10 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 
 export interface FavoriteItem {
     id: string
-    image: string
+    postImages: string
     name: string
-    weight: string
-    flavor: string
-    price: number
+    price: number | number[]
+    discountPrice: number | number[]
 }
 
 interface FavoriteState {

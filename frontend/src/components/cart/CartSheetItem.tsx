@@ -6,8 +6,8 @@ import { formatCurrency } from "@/utils/formatCurrency"
 import ProductQuantity from "../ui/ProductQuantity"
 import { useCartQuantity } from "@/hooks/useCartQuantity"
 import { motion, AnimatePresence } from "framer-motion"
-import { addToFavorites, FavoriteItem } from "@/redux/slices/favoriteSlice"
 import { useAddToFavorites } from "@/hooks/useAddToFavorite"
+import { normalizeFavorite } from "@/utils/normalizeFavorite"
 
 interface CartItemProps {
     id: string
@@ -17,6 +17,7 @@ interface CartItemProps {
     flavor: string
     category: string
     price: number
+    discountPrice: number
     quantity: number
 }
 
@@ -40,24 +41,24 @@ export default function CartItem({ item }: ItemsProps) {
         <AnimatePresence>
             <motion.div
                 key={id}
-                className="cartItem"
+                className="sheetItem"
                 initial="hidden"
                 animate="visible"
                 exit="exit"
                 variants={variants}
                 layout
             >
-                <div className="cartItem__main">
+                <div className="sheetItem__main">
                     <img
                         src={image}
                         alt={name}
                         className="w-[6rem] h-[6rem] object-cover"
                     />
 
-                    <div className="cartItem__content">
+                    <div className="sheetItem__content">
                         <h1>{name}</h1>
 
-                        <div className="cartItem__content--details">
+                        <div className="sheetItem__content--details">
                             <p>
                                 Peso: <span>{weight}</span>
                             </p>
@@ -78,11 +79,13 @@ export default function CartItem({ item }: ItemsProps) {
                                 onAdd={() => handleQtd("add")}
                                 onSubtract={() => handleQtd("subtract")}
                             />
-                            <h2>{formatCurrency(price * qtd)}</h2>
+                            <h2 className="font-semibold">
+                                {formatCurrency(price * qtd)}
+                            </h2>
                         </div>
 
                         <div className="options">
-                            <p onClick={() => add(item)}>
+                            <p onClick={() => add(normalizeFavorite(item))}>
                                 Mover para os Favoritos
                             </p>{" "}
                             |
