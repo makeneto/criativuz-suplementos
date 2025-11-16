@@ -10,6 +10,7 @@ import {
 interface SelectUIProps {
     name: string
     isFilterBy?: boolean
+    isLabel?: boolean
     content: string[]
 }
 
@@ -17,6 +18,7 @@ export default function SelectUI({
     name,
     content,
     isFilterBy = false,
+    isLabel = false,
 }: SelectUIProps) {
     return (
         <div className="filterBy">
@@ -25,12 +27,13 @@ export default function SelectUI({
             <Select>
                 <SelectTrigger className="w-[180px]">
                     <SelectValue
-                        placeholder={isFilterBy ? name : `Escolha um ${name}`}
+                        placeholder={
+                            isFilterBy || isLabel ? name : `Escolha um ${name}`
+                        }
                     />
                 </SelectTrigger>
                 <SelectContent>
                     <SelectGroup>
-                        {/* <SelectLabel>{name}</SelectLabel> */}
                         {content.map((item, index) => (
                             <SelectItem value={item} key={index}>
                                 {item}

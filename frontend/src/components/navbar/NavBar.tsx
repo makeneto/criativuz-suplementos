@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react"
 
 import InformBar from "../sections/InformBar"
-import UserActions from "../product/UserActions"
+import UserActions from "./UserActions"
 import NavLogo from "./NavLogo"
 import CategoriesMenu from "./CategoriesMenu"
 

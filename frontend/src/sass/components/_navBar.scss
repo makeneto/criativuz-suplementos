@@ -80,6 +80,7 @@ $solidBorder: 1px solid #e7e7e7;
             & p,
             & .userAction {
                 cursor: pointer;
+                user-select: none;
                 color: white;
                 display: flex;
                 align-items: center;
@@ -91,7 +92,7 @@ $solidBorder: 1px solid #e7e7e7;
                 }
 
                 &:hover {
-                    color: rgb(222, 222, 222);
+                    color: rgb(236, 236, 236);
                 }
             }
 

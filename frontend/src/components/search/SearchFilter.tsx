@@ -4,6 +4,7 @@ import {
     AccordionItem,
     AccordionTrigger,
 } from "../ui/accordion"
+import RangePrice from "../ui/RangePrice"
 import Availability from "./Availability"
 import SelectUI from "./SelectUI"
 
@@ -30,7 +31,9 @@ export default function SearchFilter({ filterContent }: SearchFilterProps) {
 
             <AccordionItem value="item-3">
                 <AccordionTrigger>Preço</AccordionTrigger>
-                <AccordionContent>Teste 2</AccordionContent>
+                <AccordionContent>
+                    <RangePrice />
+                </AccordionContent>
             </AccordionItem>
         </Accordion>
     )

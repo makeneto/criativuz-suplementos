@@ -17,7 +17,7 @@ interface CartItemProps {
     flavor: string
     category: string
     price: number
-    discountPrice: number
+    discountPrice?: number
     quantity: number
 }
 

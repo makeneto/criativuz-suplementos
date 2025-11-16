@@ -19,7 +19,8 @@ body {
 }
 
 a,
-button {
+button,
+label {
   cursor: pointer;
   color: inherit;
 }
@@ -610,6 +611,7 @@ button:disabled {
 }
 .nav_bar__aside p, .nav_bar__aside .userAction {
   cursor: pointer;
+  user-select: none;
   color: white;
   display: flex;
   align-items: center;
@@ -620,7 +622,7 @@ button:disabled {
   width: 1rem;
 }
 .nav_bar__aside p:hover, .nav_bar__aside .userAction:hover {
-  color: rgb(222, 222, 222);
+  color: rgb(236, 236, 236);
 }
 .nav_bar__aside .userAction p {
   position: relative;

@@ -10,7 +10,6 @@ import { Heart, X } from "lucide-react"
 
 import { useAppSelector } from "@/redux/hooks"
 import { RootState } from "@/redux/store"
-import { useRouter } from "next/navigation"
 import { useState } from "react"
 import { Badge } from "../ui/badge"
 import FavoriteSheetItem from "./FavoriteSheetItem"
@@ -23,7 +22,6 @@ export default function FavoriteSheet() {
 
     const { length: favoriteLength } = favoriteItems
     const [open, setOpen] = useState(false)
-    const router = useRouter()
     const randomId = useID()
 
     return (
