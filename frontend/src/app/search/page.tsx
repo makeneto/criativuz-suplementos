@@ -85,8 +85,10 @@ export default function SearchPage() {
                             isFilterBy={true}
                         />
                         <p className="resultsLength mt-1 text-sm text-zinc-500">
-                            {filteredProducts.length} Resultado
-                            {filteredProducts.length > 1 ? "s" : ""}
+                            {filteredProducts.length}{" "}
+                            {`Resultado${
+                                filteredProducts.length > 1 ? "s" : ""
+                            }`}
                         </p>
                     </div>
 
