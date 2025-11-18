@@ -12,6 +12,8 @@ interface SelectUIProps {
     isFilterBy?: boolean
     isLabel?: boolean
     content: string[]
+    value?: string
+    onValueChange?: (value: string) => void
 }
 
 export default function SelectUI({
@@ -19,12 +21,14 @@ export default function SelectUI({
     content,
     isFilterBy = false,
     isLabel = false,
+    value,
+    onValueChange,
 }: SelectUIProps) {
     return (
         <div className="filterBy">
             {isFilterBy && <p className="font-medium mt-1">Filtrar por: </p>}
 
-            <Select>
+            <Select value={value} onValueChange={onValueChange}>
                 <SelectTrigger className="w-[180px]">
                     <SelectValue
                         placeholder={
@@ -32,6 +36,7 @@ export default function SelectUI({
                         }
                     />
                 </SelectTrigger>
+
                 <SelectContent>
                     <SelectGroup>
                         {content.map((item, index) => (

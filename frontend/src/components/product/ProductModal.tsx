@@ -1,6 +1,6 @@
 "use client"
 
-import { X } from "lucide-react"
+import { Heart, HeartOff, X } from "lucide-react"
 import Link from "next/link"
 import { useState } from "react"
 import ProductImage from "./ProductImage"
@@ -9,6 +9,7 @@ import ProductQuantity from "../ui/ProductQuantity"
 import { useProductLogic } from "@/hooks/useProductLogic"
 import { Calendar22 } from "../ui/Calendar22"
 import { useIsInCart } from "@/hooks/useIsInCart"
+import useFavoriteHelpers from "@/hooks/useFavoriteHelpers"
 
 interface ProductModalProps {
     product: {
@@ -18,6 +19,11 @@ interface ProductModalProps {
         postImages: string[]
         weight: string[]
         flavors: string[]
+        // possível id (pode ser id, _id, productId, etc.)
+        id?: string
+        _id?: string
+        productId?: string
+        product?: { id?: string }
     }
     setProduct: (value: any) => void
     buttonLabel: string
@@ -35,6 +41,7 @@ export default function ProductModal({
     onSubmit,
 }: ProductModalProps) {
     const [deliveryDate, setDeliveryDate] = useState<Date | undefined>()
+    const { addFavorite, isFavoriteFor } = useFavoriteHelpers()
 
     const {
         imageIndex,
@@ -55,10 +62,23 @@ export default function ProductModal({
         deliveryDate,
     })
 
+    const normalizeId = (v: any) =>
+        v === null || v === undefined ? "" : String(v)
+
+    const prodId =
+        normalizeId(
+            product?.id ??
+                product?._id ??
+                product?.productId ??
+                product?.product?.id
+        ) ?? ""
+
+    const isFavorite = isFavoriteFor(product)
+
     const itemData =
         selectedWeight && selectedFlavor
             ? {
-                  id: "",
+                  id: prodId || "",
                   name: product.name,
                   image: product.postImages[0],
                   price: 0,
@@ -85,6 +105,17 @@ export default function ProductModal({
                     className="modalProduct__container--closeButton"
                 >
                     <X size={20} />
+                </button>
+
+                <button
+                    type="button"
+                    onClick={() => addFavorite(product as any)}
+                    className={`productFav ${
+                        isFavorite ? "activatedFav" : "deactivatedFav"
+                    }`}
+                    aria-pressed={isFavorite}
+                >
+                    {isFavorite ? <HeartOff /> : <Heart />}
                 </button>
 
                 <div className="modalProduct__container">

@@ -17,31 +17,38 @@ $solidBorder: 1px solid #e7e7e7;
             flex-direction: column;
 
             header {
-                display: grid;
-                gap: 0.2rem;
-                padding-bottom: 1.8rem;
-                margin-bottom: 1.8rem;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
                 border-bottom: $solidBorder;
 
-                h2 {
-                    font-size: 1.7rem;
-                    font-weight: 500;
-                }
+                padding-bottom: 1.8rem;
+                margin-bottom: 1.8rem;
 
-                p {
-                    color: #c20303dd;
-                    font-weight: 600;
-                    font-size: 1.3rem;
-                }
+                & div {
+                    display: grid;
+                    gap: 0.2rem;
 
-                div {
-                    display: flex;
-                    align-items: center;
-                    gap: 0.7rem;
+                    h2 {
+                        font-size: 1.7rem;
+                        font-weight: 500;
+                    }
 
-                    span {
-                        text-decoration: line-through;
-                        color: rgb(155, 153, 153);
+                    p {
+                        color: #c20303dd;
+                        font-weight: 600;
+                        font-size: 1.3rem;
+                    }
+
+                    div {
+                        display: flex;
+                        align-items: center;
+                        gap: 0.7rem;
+
+                        span {
+                            text-decoration: line-through;
+                            color: rgb(155, 153, 153);
+                        }
                     }
                 }
             }
@@ -87,6 +94,51 @@ $solidBorder: 1px solid #e7e7e7;
                         border: .1rem solid transparent;
                     }
                 }
+            }
+        }
+    }
+
+    .productItem {
+        cursor: pointer;
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all .2s ease-in;
+
+        & svg {
+            width: 1.2rem;
+            transition: all .2s ease-in;
+        }
+
+    }
+
+    .activatedItem {
+        background-color: red;
+
+        & svg {
+            stroke: white;
+        }
+
+        &:hover {
+            background-color: white;
+
+            & svg {
+                stroke: red;
+            }
+        }
+    }
+
+    .deactivatedItem {
+        background-color: white;
+
+        &:hover {
+            background-color: red;
+
+            & svg {
+                stroke: white;
             }
         }
     }

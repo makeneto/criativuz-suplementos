@@ -113,7 +113,7 @@ export default function ProductPage({ params }: ProductPageProps) {
                     onSubmit={handleSubmit}
                 >
                     <ProductHeader
-                        name={product.name}
+                        product={product}
                         price={formattedPrice}
                         discountPrice={formattedDiscountPrice ?? undefined}
                     />

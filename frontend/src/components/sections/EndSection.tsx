@@ -16,8 +16,8 @@ export default function EndSection() {
                     Alimenta a tua performance, fortalece o teu futuro e vive
                     com vitalidade por muito mais tempo. Com a Criativuz, cada
                     dose é um passo rumo a uma vida com mais força, foco e
-                    longevidade. O teu corpo merece o melhor — e o{" "}
-                    <span className="lightTag">melhor está aqui</span>.
+                    longevidade. O teu corpo merece o melhor — e {" "}
+                    <span className="lightTag">o melhor está aqui</span>.
                 </p>
             </div>
             <div className="end_image"></div>

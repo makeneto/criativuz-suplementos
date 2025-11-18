@@ -873,25 +873,39 @@ button:disabled {
 }
 .sectionGrid__list--view--controls div {
   cursor: pointer;
-  border-radius: 50%;
   width: 2.5rem;
   height: 2.5rem;
+  border-radius: 50%;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.0784313725);
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: white;
-  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.0784313725);
   transition: all 0.2s ease-in;
-}
-.sectionGrid__list--view--controls div:hover {
-  background-color: red;
-}
-.sectionGrid__list--view--controls div:hover svg {
-  stroke: white;
 }
 .sectionGrid__list--view--controls div svg {
   width: 1.2rem;
   transition: all 0.2s ease-in;
+}
+.sectionGrid__list--view--controls .activated {
+  background-color: red;
+}
+.sectionGrid__list--view--controls .activated svg {
+  stroke: white;
+}
+.sectionGrid__list--view--controls .activated:hover {
+  background-color: white;
+}
+.sectionGrid__list--view--controls .activated:hover svg {
+  stroke: red;
+}
+.sectionGrid__list--view--controls .deactivated {
+  background-color: white;
+}
+.sectionGrid__list--view--controls .deactivated:hover {
+  background-color: red;
+}
+.sectionGrid__list--view--controls .deactivated:hover svg {
+  stroke: white;
 }
 
 .modalOverlay {
@@ -902,6 +916,46 @@ button:disabled {
   align-items: center;
   justify-content: center;
   z-index: 999;
+}
+
+.productFav {
+  position: absolute;
+  cursor: pointer;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.0784313725);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease-in;
+}
+.productFav svg {
+  width: 1.2rem;
+  transition: all 0.2s ease-in;
+}
+
+.activatedFav {
+  background-color: red;
+}
+.activatedFav svg {
+  stroke: white;
+}
+.activatedFav:hover {
+  background-color: white;
+}
+.activatedFav:hover svg {
+  stroke: red;
+}
+
+.deactivatedFav {
+  background-color: white;
+}
+.deactivatedFav:hover {
+  background-color: red;
+}
+.deactivatedFav:hover svg {
+  stroke: white;
 }
 
 .modalProduct {
@@ -1429,27 +1483,32 @@ button:disabled {
   flex-direction: column;
 }
 .productPage__container--content header {
-  display: grid;
-  gap: 0.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #e7e7e7;
   padding-bottom: 1.8rem;
   margin-bottom: 1.8rem;
-  border-bottom: 1px solid #e7e7e7;
 }
-.productPage__container--content header h2 {
+.productPage__container--content header div {
+  display: grid;
+  gap: 0.2rem;
+}
+.productPage__container--content header div h2 {
   font-size: 1.7rem;
   font-weight: 500;
 }
-.productPage__container--content header p {
+.productPage__container--content header div p {
   color: rgba(194, 3, 3, 0.8666666667);
   font-weight: 600;
   font-size: 1.3rem;
 }
-.productPage__container--content header div {
+.productPage__container--content header div div {
   display: flex;
   align-items: center;
   gap: 0.7rem;
 }
-.productPage__container--content header div span {
+.productPage__container--content header div div span {
   text-decoration: line-through;
   color: rgb(155, 153, 153);
 }
@@ -1488,6 +1547,41 @@ button:disabled {
   background-color: #3d0a0f;
   color: white;
   border: 0.1rem solid transparent;
+}
+.productPage .productItem {
+  cursor: pointer;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease-in;
+}
+.productPage .productItem svg {
+  width: 1.2rem;
+  transition: all 0.2s ease-in;
+}
+.productPage .activatedItem {
+  background-color: red;
+}
+.productPage .activatedItem svg {
+  stroke: white;
+}
+.productPage .activatedItem:hover {
+  background-color: white;
+}
+.productPage .activatedItem:hover svg {
+  stroke: red;
+}
+.productPage .deactivatedItem {
+  background-color: white;
+}
+.productPage .deactivatedItem:hover {
+  background-color: red;
+}
+.productPage .deactivatedItem:hover svg {
+  stroke: white;
 }
 .productPage .productSubmitSection {
   width: fit-content;

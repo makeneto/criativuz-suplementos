@@ -3,8 +3,8 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 
 export interface FavoriteItem {
-    id: string
-    postImages: string
+    id: string | number
+    postImages: string[]
     name: string
     price: number | number[]
     discountPrice: number | number[]
@@ -18,7 +18,7 @@ const getInitialFavorites = (): FavoriteItem[] => {
     if (typeof window === "undefined") return []
     try {
         const stored = localStorage.getItem("criativFavorites")
-        return stored ? JSON.parse(stored) : []
+        return stored ? (JSON.parse(stored) as FavoriteItem[]) : []
     } catch {
         return []
     }
@@ -33,7 +33,9 @@ const favoriteSlice = createSlice({
     initialState,
     reducers: {
         addToFavorites: (state, action: PayloadAction<FavoriteItem>) => {
-            const exists = state.items.some((i) => i.id === action.payload.id)
+            const exists = state.items.some(
+                (i) => String(i.id) === String(action.payload.id)
+            )
 
             if (!exists) {
                 state.items.unshift(action.payload)
@@ -44,8 +46,13 @@ const favoriteSlice = createSlice({
             }
         },
 
-        removeFromFavorites: (state, action: PayloadAction<string>) => {
-            state.items = state.items.filter((i) => i.id !== action.payload)
+        removeFromFavorites: (
+            state,
+            action: PayloadAction<string | number>
+        ) => {
+            state.items = state.items.filter(
+                (i) => String(i.id) !== String(action.payload)
+            )
             localStorage.setItem(
                 "criativFavorites",
                 JSON.stringify(state.items)

@@ -2,7 +2,7 @@
 
 import SearchFilter from "@/components/search/SearchFilter"
 import SelectUI from "@/components/search/SelectUI"
-import ProductCard from "@/components/ui/ProductCard"
+import ProductCard from "@/components/product/ProductCard"
 import useProducts from "@/hooks/useProducts"
 import { useSearchParams } from "next/navigation"
 import { useEffect, useMemo } from "react"

@@ -57,15 +57,39 @@
 
                 & div {
                     cursor: pointer;
-                    border-radius: 50%;
                     width: 2.5rem;
                     height: 2.5rem;
+                    border-radius: 50%;
+                    box-shadow: 0 15px 25px #00000014;
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    background-color: white;
-                    box-shadow: 0 15px 25px #00000014;
                     transition: all .2s ease-in;
+
+                    & svg {
+                        width: 1.2rem;
+                        transition: all .2s ease-in;
+                    }
+                }
+
+                .activated {
+                    background-color: red;
+
+                    & svg {
+                        stroke: white;
+                    }
+
+                    &:hover {
+                        background-color: white;
+
+                        & svg {
+                            stroke: red;
+                        }
+                    }
+                }
+
+                .deactivated {
+                    background-color: white;
 
                     &:hover {
                         background-color: red;
@@ -73,11 +97,6 @@
                         & svg {
                             stroke: white;
                         }
-                    }
-
-                    & svg {
-                        width: 1.2rem;
-                        transition: all .2s ease-in;
                     }
                 }
             }

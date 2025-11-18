@@ -1,7 +1,7 @@
 "use client"
 
 import useProducts from "@/hooks/useProducts"
-import ProductCard from "../ui/ProductCard"
+import ProductCard from "../product/ProductCard"
 import IntroSection from "./IntroSection"
 import Spinner from "../ui/Spinner"
 
