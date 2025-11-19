@@ -1,0 +1,87 @@
+input[type="range"] {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 8px;
+    border-radius: 4px;
+    background: #ddd;
+    outline: none;
+
+    &::-webkit-slider {
+        &-runnable-track {
+            height: 8px;
+            border-radius: 4px;
+            background: linear-gradient(to right, rgb(243, 182, 207) 0%, red 100%);
+        }
+
+        &-thumb {
+            -webkit-appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #fff;
+            border: 2px solid red;
+            cursor: pointer;
+            margin-top: -5px;
+            transition: background 0.2s, transform 0.2s;
+
+            &:hover {
+                background: red;
+                transform: scale(1.1);
+            }
+        }
+    }
+
+    &::-moz-range {
+        &-track {
+            height: 8px;
+            border-radius: 4px;
+            background: linear-gradient(to right, red, #6366f1);
+        }
+
+        &-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #fff;
+            border: 2px solid red;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.2s;
+
+            &:hover {
+                background: red;
+                transform: scale(1.1);
+            }
+        }
+    }
+
+    &::-ms {
+        &-track {
+            width: 100%;
+            height: 8px;
+            background: transparent;
+            border-color: transparent;
+            color: transparent;
+        }
+
+        &-fill {
+            &-lower {
+                background: red;
+                border-radius: 4px;
+            }
+
+            &-upper {
+                background: #ddd;
+                border-radius: 4px;
+            }
+        }
+
+        &-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #fff;
+            border: 2px solid red;
+            cursor: pointer;
+        }
+    }
+}

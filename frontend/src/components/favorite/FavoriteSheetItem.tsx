@@ -6,7 +6,7 @@ import { removeFromFavorites } from "@/redux/slices/favoriteSlice"
 import TextPrice from "../ui/TextPrice"
 
 interface FavoriteItemProps {
-    id: string
+    id: string | number
     postImages: string[] | string
     name: string
 }

@@ -9,13 +9,16 @@
 @use "components/footer";
 @use "components/gallery";
 @use "components/introSection";
-@use "components/mainHero"; 
+@use "components/mainHero";
 @use "components/navBar";
 @use "components/productGallery";
 @use "components/productList";
 @use "components/productModal";
 @use "components/stepSection";
 @use "components/whatsAppButton";
+
+
+@use "components/ui/inputRange";
 
 @use "pages/cartPage";
 @use "pages/productPage";

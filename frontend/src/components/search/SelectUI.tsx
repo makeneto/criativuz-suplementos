@@ -12,8 +12,8 @@ interface SelectUIProps {
     isFilterBy?: boolean
     isLabel?: boolean
     content: string[]
-    value?: string
-    onValueChange?: (value: string) => void
+    selected?: string | null
+    onSelect?: (value: string | null) => void
 }
 
 export default function SelectUI({
@@ -21,14 +21,24 @@ export default function SelectUI({
     content,
     isFilterBy = false,
     isLabel = false,
-    value,
-    onValueChange,
+    selected,
+    onSelect,
 }: SelectUIProps) {
     return (
         <div className="filterBy">
             {isFilterBy && <p className="font-medium mt-1">Filtrar por: </p>}
 
-            <Select value={value} onValueChange={onValueChange}>
+            <Select
+                value={selected ?? undefined}
+                onValueChange={(val) => {
+                    if (!onSelect) return
+                    if (val === selected) {
+                        onSelect(null)
+                    } else {
+                        onSelect(val)
+                    }
+                }}
+            >
                 <SelectTrigger className="w-[180px]">
                     <SelectValue
                         placeholder={
