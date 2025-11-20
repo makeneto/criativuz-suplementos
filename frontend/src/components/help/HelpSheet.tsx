@@ -1,5 +1,14 @@
 "use client"
 
+import { useState } from "react"
+import { Controller, useForm } from "react-hook-form"
+import {
+    Field,
+    FieldSeparator,
+    FieldSet,
+    FieldLegend,
+    FieldError,
+} from "../ui/field"
 import {
     Sheet,
     SheetTrigger,
@@ -9,20 +18,10 @@ import {
     SheetClose,
 } from "@/components/ui/sheet"
 import { Headset, X } from "lucide-react"
-import { Controller, useForm } from "react-hook-form"
-
-import { useState } from "react"
 import { Label } from "../ui/label"
 import { Input } from "../ui/input"
 import SelectUI from "../search/SelectUI"
 import { Textarea } from "../ui/textarea"
-import {
-    Field,
-    FieldSeparator,
-    FieldSet,
-    FieldLegend,
-    FieldError,
-} from "../ui/field"
 import { RadioGroup, RadioGroupItem } from "../ui/radio-group"
 import { Button } from "../ui/button"
 import { useSupportForm } from "@/hooks/useSupportForm"
@@ -44,8 +43,6 @@ type FormValues = {
     nome: string
     email: string
     telefone?: string
-    categoria: string
-    urgencia: string
     mensagem: string
     contatoPreferencia: string
 }
@@ -56,42 +53,40 @@ export default function HelpSheet() {
         onClose: () => setOpen(false),
     })
 
+    const [category, setCategory] = useState("Outra")
+    const [urgency, setUrgency] = useState("Alta")
+
     const {
         register,
         handleSubmit,
-        control,
         reset,
-        setValue,
+        control,
         formState: { errors },
     } = useForm<FormValues>({
         defaultValues: {
             nome: "",
             email: "",
             telefone: "",
-            categoria: "Outra",
-            urgencia: "Média",
             mensagem: "",
             contatoPreferencia: "Email",
         },
     })
 
     const handleReset = () => {
-        reset({
-            nome: "",
-            email: "",
-            telefone: "",
-            categoria: "Outra",
-            urgencia: "Média",
-            mensagem: "",
-            contatoPreferencia: "Email",
-        })
+        reset()
+        setCategory("Outra")
+        setUrgency("Alta")
     }
 
     const onSubmit = async (data: FormValues) => {
         try {
-            await submitSupport(data)
-            handleReset()
+            await submitSupport({
+                ...data,
+                categoria: category,
+                urgencia: urgency,
+            })
 
+            handleReset()
             setOpen(false)
         } catch (e) {
             console.error(e)
@@ -128,7 +123,6 @@ export default function HelpSheet() {
                         <Input
                             type="text"
                             id="nome"
-                            aria-invalid={!!errors.nome}
                             {...register("nome", {
                                 required: "Nome é obrigatório",
                                 minLength: {
@@ -146,7 +140,6 @@ export default function HelpSheet() {
                         <Input
                             type="email"
                             id="email"
-                            aria-invalid={!!errors.email}
                             {...register("email", {
                                 required: "Email é obrigatório",
                                 pattern: {
@@ -164,9 +157,7 @@ export default function HelpSheet() {
                         <Input
                             type="text"
                             id="telefone"
-                            inputMode="numeric"
                             maxLength={9}
-                            aria-invalid={!!errors.telefone}
                             {...register("telefone", {
                                 required: "Telefone é obrigatório",
                                 pattern: {
@@ -182,71 +173,23 @@ export default function HelpSheet() {
                     </Field>
 
                     <div className="flex gap-5">
-                        <Field
-                            className="flex-1"
-                            data-invalid={!!errors.categoria}
-                        >
-                            <Label htmlFor="categoria">
-                                <span className="mb-[-3] pl-1">Categoria</span>
-                            </Label>
-                            <Controller
-                                control={control}
-                                name="categoria"
-                                rules={{ required: "Escolha uma categoria" }}
-                                render={({ field, fieldState }) => (
-                                    <>
-                                        <SelectUI
-                                            name={field.value}
-                                            content={SUPPORT_CATEGORIES}
-                                            isLabel={true}
-                                            onValueChange={(v) => {
-                                                field.onChange(v)
-                                                setValue("categoria", v)
-                                            }}
-                                        />
-                                        {fieldState.error && (
-                                            <FieldError
-                                                errors={[fieldState.error]}
-                                            />
-                                        )}
-                                    </>
-                                )}
+                        <Field className="flex-1">
+                            <Label>Categoria</Label>
+                            <SelectUI
+                                name={category}
+                                content={SUPPORT_CATEGORIES}
+                                isLabel={true}
+                                onSelect={(cat) => setCategory(cat)}
                             />
                         </Field>
 
-                        <Field
-                            className="flex-1"
-                            data-invalid={!!errors.urgencia}
-                        >
-                            <Label htmlFor="urgencia">
-                                <span className="mb-[-3] pl-1">
-                                    Nível de urgência
-                                </span>
-                            </Label>
-                            <Controller
-                                control={control}
-                                name="urgencia"
-                                rules={{
-                                    required: "Escolha o nível de urgência",
-                                }}
-                                render={({ field, fieldState }) => (
-                                    <>
-                                        <SelectUI
-                                            name={field.value}
-                                            content={URGENCY}
-                                            isLabel={true}
-                                            onValueChange={(v) => {
-                                                field.onChange(v)
-                                                setValue("urgencia", v)
-                                            }}
-                                        />
-                                        {fieldState.error && (
-                                            <FieldError
-                                                errors={[fieldState.error]}
-                                            />
-                                        )}
-                                    </>
-                                )}
+                        <Field className="flex-1">
+                            <Label>Nível de urgência</Label>
+                            <SelectUI
+                                name={urgency}
+                                content={URGENCY}
+                                isLabel={true}
+                                onSelect={(urgency) => setUrgency(urgency)}
                             />
                         </Field>
                     </div>
@@ -255,7 +198,6 @@ export default function HelpSheet() {
                         <Label htmlFor="mensagem">Descrição do problema</Label>
                         <Textarea
                             id="mensagem"
-                            aria-invalid={!!errors.mensagem}
                             {...register("mensagem", {
                                 required: "Descrição é obrigatória",
                                 minLength: {
@@ -265,9 +207,6 @@ export default function HelpSheet() {
                             })}
                             placeholder="Explique seu problema detalhadamente."
                         />
-                        {errors.mensagem && (
-                            <FieldError errors={[errors.mensagem]} />
-                        )}
                     </Field>
 
                     <FieldSeparator />
@@ -277,47 +216,45 @@ export default function HelpSheet() {
                             Escolha onde receberá a mensagem
                         </FieldLegend>
 
-                        <Field data-invalid={false}>
-                            <Controller
-                                control={control}
-                                name="contatoPreferencia"
-                                defaultValue="Email"
-                                render={({ field }) => (
-                                    <RadioGroup
-                                        value={field.value}
-                                        onValueChange={field.onChange}
-                                        name="contacto"
-                                    >
-                                        <div className="flex items-center gap-3 mt-3">
-                                            <RadioGroupItem
-                                                value="Email"
-                                                id="network1"
-                                            />
-                                            <label
-                                                htmlFor="network1"
-                                                className="text-sm"
-                                            >
-                                                Email
-                                            </label>
-                                        </div>
-                                        <div className="flex items-center gap-3">
-                                            <RadioGroupItem
-                                                value="WhatsApp"
-                                                id="network2"
-                                            />
-                                            <label
-                                                htmlFor="network2"
-                                                className="text-sm"
-                                            >
-                                                WhatsApp
-                                            </label>
-                                        </div>
-                                    </RadioGroup>
-                                )}
-                            />
-                        </Field>
+                        <Controller
+                            control={control}
+                            name="contatoPreferencia"
+                            defaultValue="Email"
+                            render={({ field }) => (
+                                <RadioGroup
+                                    value={field.value}
+                                    onValueChange={field.onChange}
+                                >
+                                    <div className="flex items-center gap-3 mt-3">
+                                        <RadioGroupItem
+                                            value="Email"
+                                            id="network1"
+                                        />
+                                        <label
+                                            htmlFor="network1"
+                                            className="text-sm"
+                                        >
+                                            Email
+                                        </label>
+                                    </div>
+                                    <div className="flex items-center gap-3">
+                                        <RadioGroupItem
+                                            value="WhatsApp"
+                                            id="network2"
+                                        />
+                                        <label
+                                            htmlFor="network2"
+                                            className="text-sm"
+                                        >
+                                            WhatsApp
+                                        </label>
+                                    </div>
+                                </RadioGroup>
+                            )}
+                        />
                     </FieldSet>
 
+                    {/* BOTÕES */}
                     <Field orientation="horizontal">
                         <Button
                             type="button"
@@ -326,7 +263,6 @@ export default function HelpSheet() {
                         >
                             Limpar
                         </Button>
-
                         <Button type="submit" disabled={sending}>
                             {sending ? "Enviando..." : "Enviar"}
                         </Button>

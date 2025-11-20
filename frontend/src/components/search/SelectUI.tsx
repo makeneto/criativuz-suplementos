@@ -13,7 +13,8 @@ interface SelectUIProps {
     isLabel?: boolean
     content: string[]
     selected?: string | null
-    onSelect?: (value: string | null) => void
+    isCapitalize?: boolean
+    onSelect?: (value: string) => void
 }
 
 export default function SelectUI({
@@ -22,6 +23,7 @@ export default function SelectUI({
     isFilterBy = false,
     isLabel = false,
     selected,
+    isCapitalize = false,
     onSelect,
 }: SelectUIProps) {
     return (
@@ -32,14 +34,12 @@ export default function SelectUI({
                 value={selected ?? undefined}
                 onValueChange={(val) => {
                     if (!onSelect) return
-                    if (val === selected) {
-                        onSelect(null)
-                    } else {
-                        onSelect(val)
-                    }
+                    onSelect(val)
                 }}
             >
-                <SelectTrigger className="w-[180px]">
+                <SelectTrigger
+                    className={`w-[180px] ${isCapitalize ? "capitalize" : ""}`}
+                >
                     <SelectValue
                         placeholder={
                             isFilterBy || isLabel ? name : `Escolha um ${name}`
@@ -50,7 +50,11 @@ export default function SelectUI({
                 <SelectContent>
                     <SelectGroup>
                         {content.map((item, index) => (
-                            <SelectItem value={item} key={index}>
+                            <SelectItem
+                                value={item}
+                                key={index}
+                                className={isCapitalize ? "capitalize" : ""}
+                            >
                                 {item}
                             </SelectItem>
                         ))}

@@ -7,6 +7,7 @@ import useProducts from "@/hooks/useProducts"
 import { useSearchParams } from "next/navigation"
 import { useEffect, useMemo, useState } from "react"
 import ShowNoProducts from "@/components/search/ShowNoProducts"
+import { GOALS } from "@/components/search/UserGoals"
 
 const FILTER_BY = ["Preço, baixo ao alto", "Preço, alto ao baixo"]
 
@@ -17,27 +18,32 @@ export default function SearchPage() {
     const { data, isPending } = useProducts()
     const allProducts = data?.products || []
 
+    // Estados de filtros
     const [selectedFlavor, setSelectedFlavor] = useState<string | null>(null)
     const [sortBy, setSortBy] = useState<string | null>(null)
+    const [currentPrice, setCurrentPrice] = useState(0)
+    const [selectedMaxPrice, setSelectedMaxPrice] = useState(0)
+    const [selectedGoals, setSelectedGoals] = useState<string[]>([])
+    const [selectedBrands, setSelectedBrands] = useState<string[]>([])
+    const [selectedCategory, setSelectedCategory] = useState<string | null>(
+        null
+    )
 
-    // Slider
-    const [currentPrice, setCurrentPrice] = useState(0) // Slider em movimento
-    const [selectedMaxPrice, setSelectedMaxPrice] = useState(0) // Valor final aplicado
-
+    // Título da página
     useEffect(() => {
         document.title = query
             ? `Criativuz busca por ${query}`
             : `Criativuz — Buscar produtos`
     }, [query])
 
-    const searchGroups = useMemo(() => {
-        return query
-            .split(",")
-            .map((group) => group.trim())
-            .filter((group) => group.length > 0)
-    }, [query])
-
+    // Produtos filtrados pela busca textual
     const filteredByQuery = useMemo(() => {
+        if (!query) return allProducts
+        const searchGroups = query
+            .split(",")
+            .map((g) => g.trim())
+            .filter((g) => g.length > 0)
+
         return allProducts.filter((product: any) => {
             const name = product.name.toLowerCase()
             const category = product.category?.toLowerCase() || ""
@@ -59,80 +65,118 @@ export default function SearchPage() {
                 )
             })
         })
-    }, [allProducts, searchGroups])
+    }, [allProducts, query])
 
-    // Todos os preços como array para min e max
-    const allPrices = useMemo(() => {
-        return filteredByQuery
-            .flatMap((p: any) => (Array.isArray(p.price) ? p.price : [p.price]))
-            .filter(Number.isFinite)
+    // Opções de sabores e marcas disponíveis (antes do filtro de preço)
+    const flavorOptions = useMemo(() => {
+        const flavors = filteredByQuery
+            .flatMap((p: any) => p.flavors || [])
+            .filter(Boolean) as string[]
+        return ["Todos", ...Array.from(new Set(flavors))]
     }, [filteredByQuery])
 
-    const minPrice = 0 // sempre 0 como você pediu
-    const maxPrice = useMemo(() => {
-        return allPrices.length ? Math.max(...allPrices) : 0
-    }, [allPrices])
+    const allBrands = useMemo(() => {
+        const brands = filteredByQuery
+            .map((p: any) => p.brand)
+            .filter((b: any): b is string => !!b)
+        return Array.from(new Set(brands)).sort()
+    }, [filteredByQuery])
 
-    // Inicializa slider
+    // 1️⃣ Filtragem inicial: Objetivo → Marca → Categoria → Sabor
+    const prePriceFilteredProducts = useMemo(() => {
+        return (
+            filteredByQuery
+                // Objetivo → filtra por categorias mapeadas dos objetivos selecionados
+                .filter((p: any) => {
+                    if (!selectedGoals.length) return true
+                    const categoriesFromGoals = selectedGoals.flatMap(
+                        (goal) => GOALS[goal] || []
+                    )
+                    return categoriesFromGoals.some(
+                        (cat) => p.category?.toLowerCase() === cat.toLowerCase()
+                    )
+                })
+                // Marca → filtra pelos brands selecionados
+                .filter(
+                    (p: any) =>
+                        !selectedBrands.length ||
+                        selectedBrands.includes(p.brand)
+                )
+                // Categoria → filtra pela categoria selecionada (dropdown)
+                .filter((p: any) =>
+                    !selectedCategory || selectedCategory === "Todas"
+                        ? true
+                        : p.category === selectedCategory
+                )
+                // Sabor → filtra pelo flavor selecionado
+                .filter((p: any) =>
+                    !selectedFlavor || selectedFlavor === "Todos"
+                        ? true
+                        : p.flavors?.includes(selectedFlavor)
+                )
+        )
+    }, [
+        filteredByQuery,
+        selectedGoals,
+        selectedBrands,
+        selectedCategory,
+        selectedFlavor,
+    ])
+
+    // 2️⃣ CategoryOptions dinâmico baseado no conjunto pré-preço
+    const categoryOptions = useMemo(() => {
+        const categories = prePriceFilteredProducts
+            .map((p: any) => p.category)
+            .filter((c: any): c is string => !!c)
+        return ["Todas", ...Array.from(new Set(categories))]
+    }, [prePriceFilteredProducts])
+
+    // 3️⃣ Preço máximo adaptável
+    const maxPrice = useMemo(() => {
+        const prices = prePriceFilteredProducts
+            .flatMap((p: any) => (Array.isArray(p.price) ? p.price : [p.price]))
+            .filter(Number.isFinite)
+        return prices.length ? Math.max(...prices) : 0
+    }, [prePriceFilteredProducts])
+
     useEffect(() => {
         setCurrentPrice(maxPrice)
         setSelectedMaxPrice(maxPrice)
     }, [maxPrice])
 
-    // Filtra produtos pelo maxPrice selecionado
-    const filteredByPrice = useMemo(() => {
-        return filteredByQuery.filter((p: any) => {
-            const prices = Array.isArray(p.price) ? p.price : [p.price]
-            return prices.some((price: number) => price <= selectedMaxPrice)
-        })
-    }, [filteredByQuery, selectedMaxPrice])
-
-    // Filtra por sabor
-    const filteredByFlavor = useMemo(() => {
-        if (!selectedFlavor || selectedFlavor === "Todos")
-            return filteredByPrice
-        return filteredByPrice.filter((p: any) =>
-            p.flavors?.includes(selectedFlavor)
-        )
-    }, [filteredByPrice, selectedFlavor])
-
-    // Ordena
+    // 4️⃣ Filtragem final considerando preço
     const finalProducts = useMemo(() => {
-        const sorted = [...filteredByFlavor]
-        if (sortBy === "Preço, baixo ao alto")
-            sorted.sort((a, b) => {
-                const aPrice = Array.isArray(a.price)
-                    ? Math.min(...a.price)
-                    : a.price
-                const bPrice = Array.isArray(b.price)
-                    ? Math.min(...b.price)
-                    : b.price
-                return aPrice - bPrice
-            })
-        if (sortBy === "Preço, alto ao baixo")
-            sorted.sort((a, b) => {
-                const aPrice = Array.isArray(a.price)
-                    ? Math.min(...a.price)
-                    : a.price
-                const bPrice = Array.isArray(b.price)
-                    ? Math.min(...b.price)
-                    : b.price
-                return bPrice - aPrice
-            })
-        return sorted
-    }, [filteredByFlavor, sortBy])
+        return prePriceFilteredProducts.filter((p: any) => {
+            const prices = Array.isArray(p.price) ? p.price : [p.price]
+            return prices.some((price: any) => price <= selectedMaxPrice)
+        })
+    }, [prePriceFilteredProducts, selectedMaxPrice])
 
-    // Sabores
-    const flavorOptions = useMemo<string[]>(() => {
-        const flavors: string[] = filteredByQuery
-            .flatMap((p: any) => p.flavors || [])
-            .filter(Boolean)
-        return ["Todos", ...Array.from(new Set(flavors))]
-    }, [filteredByQuery])
+    // Ordenação final
+    const sortedProducts = useMemo(() => {
+        const sorted = [...finalProducts]
+        if (sortBy === "Preço, baixo ao alto") {
+            sorted.sort(
+                (a, b) =>
+                    Math.min(
+                        ...(Array.isArray(a.price) ? a.price : [a.price])
+                    ) -
+                    Math.min(...(Array.isArray(b.price) ? b.price : [b.price]))
+            )
+        }
+        if (sortBy === "Preço, alto ao baixo") {
+            sorted.sort(
+                (a, b) =>
+                    Math.min(
+                        ...(Array.isArray(b.price) ? b.price : [b.price])
+                    ) -
+                    Math.min(...(Array.isArray(a.price) ? a.price : [a.price]))
+            )
+        }
+        return sorted
+    }, [finalProducts, sortBy])
 
     if (isPending) return <p>Carregando...</p>
-
-    const showNoProducts = filteredByPrice.length === 0
 
     return (
         <div className="searchPage">
@@ -140,40 +184,41 @@ export default function SearchPage() {
                 <SelectUI
                     name="Relevância"
                     content={FILTER_BY}
-                    isFilterBy={true}
+                    isFilterBy
                     onSelect={setSortBy}
                 />
                 <p className="resultsLength mt-1 text-sm text-zinc-500">
-                    {finalProducts.length} Resultado
-                    {finalProducts.length > 1 ? "s" : ""}
+                    {sortedProducts.length} Resultado
+                    {sortedProducts.length > 1 && "s"}
                 </p>
             </div>
 
-            <main>
+            <main className="flex gap-6">
                 <aside>
                     <SearchFilter
                         filterContent={flavorOptions}
                         selected={selectedFlavor}
                         onSelect={setSelectedFlavor}
-                        minPrice={minPrice}
+                        minPrice={0}
                         maxPrice={maxPrice}
                         value={currentPrice}
                         onChange={setCurrentPrice}
                         onChangeEnd={setSelectedMaxPrice}
+                        selectedGoals={selectedGoals}
+                        onChangeGoals={setSelectedGoals}
+                        availableBrands={allBrands}
+                        selectedBrands={selectedBrands}
+                        onChangeBrands={setSelectedBrands}
+                        selectedCategory={selectedCategory}
+                        onChangeCategory={setSelectedCategory}
+                        categoryOptions={categoryOptions}
                     />
                 </aside>
 
-                {showNoProducts ? (
+                {sortedProducts.length === 0 ? (
                     <ShowNoProducts notFoundPrice={selectedMaxPrice} />
                 ) : (
-                    <ProductCard
-                        products={
-                            finalProducts.length
-                                ? finalProducts
-                                : filteredByQuery
-                        }
-                        isThree={true}
-                    />
+                    <ProductCard products={sortedProducts} isThree />
                 )}
             </main>
         </div>

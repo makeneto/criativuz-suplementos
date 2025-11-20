@@ -1,4 +1,3 @@
-// SearchFilter.tsx
 "use client"
 
 import {
@@ -8,8 +7,9 @@ import {
     AccordionTrigger,
 } from "../ui/accordion"
 import RangePrice from "../ui/RangePrice"
-import Availability from "./Availability"
+import BrandsFound from "./BrandsFound"
 import SelectUI from "./SelectUI"
+import UserGoals from "./UserGoals"
 
 interface SearchFilterProps {
     filterContent: string[]
@@ -20,6 +20,17 @@ interface SearchFilterProps {
     value: number
     onChange: (v: number) => void
     onChangeEnd: (v: number) => void
+
+    selectedGoals: string[]
+    onChangeGoals: (values: string[]) => void
+
+    selectedBrands: string[]
+    onChangeBrands: (values: string[]) => void
+    availableBrands: string[] | any
+
+    categoryOptions: string[] | any
+    selectedCategory: string | null
+    onChangeCategory: (value: string | null) => void
 }
 
 export default function SearchFilter({
@@ -31,21 +42,57 @@ export default function SearchFilter({
     value,
     onChange,
     onChangeEnd,
+    selectedGoals,
+    onChangeGoals,
+    selectedBrands,
+    onChangeBrands,
+    availableBrands,
+    categoryOptions,
+    selectedCategory,
+    onChangeCategory,
 }: SearchFilterProps) {
     return (
         <Accordion type="single" defaultValue="item-1" collapsible>
-            <AccordionItem value="item-1">
-                <AccordionTrigger>Disponibilidade</AccordionTrigger>
-                <AccordionContent>
-                    <Availability />
+            <AccordionItem value="item-2">
+                <AccordionTrigger>Objetivo</AccordionTrigger>
+                <AccordionContent className="pl-4">
+                    <UserGoals
+                        selectedGoals={selectedGoals}
+                        onChange={onChangeGoals}
+                    />
                 </AccordionContent>
             </AccordionItem>
 
-            <AccordionItem value="item-2">
+            <AccordionItem value="item-3">
+                <AccordionTrigger>Marca</AccordionTrigger>
+                <AccordionContent className="pl-4">
+                    <BrandsFound
+                        selectedBrands={selectedBrands}
+                        onChange={onChangeBrands}
+                        availableBrands={availableBrands}
+                    />
+                </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-4">
+                <AccordionTrigger>Categoria</AccordionTrigger>
+                <AccordionContent>
+                    <SelectUI
+                        name="Todas"
+                        content={categoryOptions}
+                        isLabel={true}
+                        isCapitalize={true}
+                        selected={selectedCategory ?? selected}
+                        onSelect={onChangeCategory}
+                    />
+                </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-5">
                 <AccordionTrigger>Sabor</AccordionTrigger>
                 <AccordionContent>
                     <SelectUI
-                        name="sabor"
+                        name="Sabor"
                         content={filterContent}
                         selected={selected}
                         onSelect={onSelect}
@@ -53,7 +100,7 @@ export default function SearchFilter({
                 </AccordionContent>
             </AccordionItem>
 
-            <AccordionItem value="item-3">
+            <AccordionItem value="item-6">
                 <AccordionTrigger>Preço</AccordionTrigger>
                 <AccordionContent>
                     <RangePrice

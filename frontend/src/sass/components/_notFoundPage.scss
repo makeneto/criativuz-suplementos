@@ -1,0 +1,38 @@
+.notFoundPage {
+    background: url('/images/red-cloud.webp') center center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100dvh;
+    position: relative;
+
+    & div {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+
+        & h1 {
+            font-size: 10rem;
+            font-weight: 700;
+        }
+
+        & p {
+            margin-bottom: 2rem;
+        }
+
+        & a {
+            background-color: white;
+            color: #220000;
+            padding: .6rem 1.3rem;
+            font-size: 1.1rem;
+            border: 1px solid white;
+            transition: all .2s ease-in;
+
+            &:hover {
+                background-color: transparent;
+                color: white;
+            }
+        }
+    }
+}

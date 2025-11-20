@@ -144,6 +144,7 @@ button:disabled {
 }
 .brandsSection ul img {
   height: 3rem;
+  object-fit: contain;
   filter: grayscale(100%);
   transition: filter 0.3s;
 }
@@ -779,6 +780,40 @@ button:disabled {
   margin-right: 0.7rem;
 }
 
+.notFoundPage {
+  background: url("/images/red-cloud.webp") center center;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100dvh;
+  position: relative;
+}
+.notFoundPage div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+.notFoundPage div h1 {
+  font-size: 10rem;
+  font-weight: 700;
+}
+.notFoundPage div p {
+  margin-bottom: 2rem;
+}
+.notFoundPage div a {
+  background-color: white;
+  color: #220000;
+  padding: 0.6rem 1.3rem;
+  font-size: 1.1rem;
+  border: 1px solid white;
+  transition: all 0.2s ease-in;
+}
+.notFoundPage div a:hover {
+  background-color: transparent;
+  color: white;
+}
+
 .productGallery {
   width: 55%;
   align-self: flex-start;
@@ -1204,6 +1239,83 @@ button:disabled {
   font-weight: 600;
 }
 
+.testimonials__grid {
+  width: 70%;
+  margin-top: -12rem;
+  margin-inline: auto;
+  margin-bottom: 15rem;
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+.testimonials__item {
+  border: 1px solid rgba(169, 169, 169, 0.226);
+  display: grid;
+  justify-content: center;
+  border-radius: 0.4rem;
+}
+.testimonials__item--1 {
+  padding: 3rem;
+  grid-column: span 2/span 2;
+  grid-row: span 4/span 4;
+  gap: 2.5rem;
+  border: none;
+}
+.testimonials__item--1 img {
+  height: 2rem;
+  object-fit: contain;
+}
+.testimonials__item--2 {
+  padding: 2rem;
+  grid-column: span 2/span 2;
+  grid-row: span 2/span 2;
+  grid-column-start: 3;
+  gap: 2rem;
+}
+.testimonials__item--3 {
+  grid-row: span 2/span 2;
+  grid-column-start: 3;
+  grid-row-start: 3;
+}
+.testimonials__item--4 {
+  grid-row: span 2/span 2;
+  grid-column-start: 4;
+  grid-row-start: 3;
+}
+.testimonials__item--1 h1, .testimonials__item--2 h1 {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+.testimonials__item--3, .testimonials__item--4 {
+  padding: 1.5rem;
+  gap: 2rem;
+}
+.testimonials__author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.testimonials__avatar {
+  background-color: rgba(38, 38, 38, 0.1176470588);
+  width: 3rem;
+  height: 3rem;
+  object-fit: contain;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.testimonials__info {
+  display: grid;
+  justify-content: center;
+  font-size: 0.9rem;
+}
+.testimonials__name {
+  font-style: italic;
+  font-weight: 600;
+}
+
 .whatsapp-btn {
   position: fixed;
   bottom: 1rem;
@@ -1261,6 +1373,15 @@ button:disabled {
 }
 .whatsapp-btn:active {
   transform: translate(0, 2px);
+}
+
+.checkboxRed {
+  border: 1px solid red;
+}
+.checkboxRed[data-state=checked] {
+  background-color: red;
+  color: white;
+  border-color: red;
 }
 
 input[type=range] {

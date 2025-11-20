@@ -11,13 +11,16 @@
 @use "components/introSection";
 @use "components/mainHero";
 @use "components/navBar";
+@use "components/notFoundPage";
 @use "components/productGallery";
 @use "components/productList";
 @use "components/productModal";
 @use "components/stepSection";
+@use "components/testimonials";
 @use "components/whatsAppButton";
 
 
+@use "components/ui/checkboxRed";
 @use "components/ui/inputRange";
 
 @use "pages/cartPage";

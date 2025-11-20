@@ -1,0 +1,9 @@
+.checkboxRed {
+    border: 1px solid red;
+
+    &[data-state="checked"] {
+        background-color: red;
+        color: white;
+        border-color: red;
+    }
+}
