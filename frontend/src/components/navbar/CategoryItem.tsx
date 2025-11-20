@@ -4,6 +4,7 @@ import Link from "next/link"
 import { ChevronDown } from "lucide-react"
 import { Product } from "@/interfaces/interfaces"
 import { motion } from "framer-motion"
+import { useEffect, useRef } from "react"
 
 interface Props {
     category: string
@@ -20,11 +21,31 @@ export default function CategoryItem({
     onToggle,
     formatCategory,
 }: Props) {
+    const containerRef = useRef<HTMLLIElement>(null)
+
+    useEffect(() => {
+        function handleClickOutside(event: MouseEvent) {
+            if (
+                containerRef.current &&
+                !containerRef.current.contains(event.target as Node)
+            ) {
+                if (isOpen) {
+                    onToggle()
+                }
+            }
+        }
+
+        document.addEventListener("mousedown", handleClickOutside)
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside)
+        }
+    }, [isOpen, onToggle])
+
     return (
-        <li className="nav_bar__category-item">
+        <li className="nav_bar__category-item" ref={containerRef}>
             <button className="nav_bar__categories-btn" onClick={onToggle}>
                 {formatCategory(category)}
-                <ChevronDown size={16} />
+                <ChevronDown />
             </button>
 
             <motion.div
@@ -39,7 +60,10 @@ export default function CategoryItem({
                 <ul className="nav_bar__products-list">
                     {products.map((prod) => (
                         <li key={prod.id}>
-                            <Link href={`/products/${prod.id}`}>
+                            <Link
+                                href={`/products/${prod.id}`}
+                                onClick={() => onToggle()}
+                            >
                                 {prod.name}
                             </Link>
                         </li>

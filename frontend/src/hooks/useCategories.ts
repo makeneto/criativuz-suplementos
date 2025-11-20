@@ -10,9 +10,7 @@ export function useCategories() {
     const allProducts = data?.products || []
 
     const [openCategory, setOpenCategory] = useState<string | null>(null)
-    const [openExtraCategory, setOpenExtraCategory] = useState<string | null>(
-        null
-    )
+
     const dropdownRef = useRef<HTMLDivElement>(null)
 
     const getProductsByCategory = (category: string) =>
@@ -22,24 +20,13 @@ export function useCategories() {
 
     const formatCategory = (cat: string) => cat.replace(/-/g, " ")
 
-    const allCategories = Array.from(
-        new Set(allProducts.map((p: any) => p.category).filter(Boolean))
-    )
-
-    const extraCategories = allCategories.filter(
-        (cat: any) => !MAIN_CATEGORIES.includes(cat.toLowerCase())
-    ) as string[]
-
     return {
         dropdownRef,
         openCategory,
         setOpenCategory,
-        openExtraCategory,
-        setOpenExtraCategory,
         getProductsByCategory,
         formatCategory,
         mainCategories: MAIN_CATEGORIES,
-        extraCategories,
         isPending,
     }
 }
