@@ -54,7 +54,7 @@
                 "inStock": true
             },
             {
-                "id": 2552,
+                "id": 3300,
                 "name": "Hulk Gainer",
                 "brand": "NutriTech",
                 "price": [37000],
@@ -65,7 +65,32 @@
                     "synopsis": "NutriTech® Hulk Gainer é um suplemento calórico para ganho de peso desenvolvido para ajudar atletas e entusiastas do fitness a ganhar massa muscular. Com uma mistura de proteínas de digestão rápida e lenta, carboidratos complexos e gorduras saudáveis, Hulk Gainer fornece os nutrientes que seu corpo precisa para auxiliar no crescimento e recuperação muscular.",
                     "highlights": [
                         "Até 825 kcal por dose grande",
-                        "30 g de proteína por dose",
+                        "30g de proteína por dose",
+                        "Alto teor de carboidratos (165 g por dose grande)"
+                    ],
+                    "information": "HULK GAINER utiliza a mistura PROVEN PROTEIN de proteínas de rápida digestão, como isolados e concentrados de proteína de soro de leite, proteínas de digestão média, como isolados de ervilha e arroz, e a proteína de digestão lenta, caseinato de cálcio, para maximizar a síntese de proteína e garantir que os níveis de retenção de proteína muscular permaneçam elevados por mais tempo .",
+                    "recommendedUse": "Misture 3 colheres cheias (~200 g) do NutriTech Hulk Gainer com 450 ml de água ou leite, beba dentro de 30 minutos após o treino, 2–3 doses por dia ou conforme necessário para atingir suas metas calóricas."
+                },
+                "postImages": [
+                    "https://i.postimg.cc/5NkxXCXq/Nutritech-Hulk-gainer-4kg-marsh.webp"
+                ],
+                "bestSeller": false,
+                "flavors": ["Monster Marshmallow"],
+                "inStock": true
+            },
+            {
+                "id": 2552,
+                "name": "Hulk Gainer Box",
+                "brand": "NutriTech",
+                "price": [37000],
+                "discountPrice": [0],
+                "weight": ["4kg"],
+                "category": "ganho de massa",
+                "description": {
+                    "synopsis": "NutriTech® Hulk Gainer é um suplemento calórico para ganho de peso desenvolvido para ajudar atletas e entusiastas do fitness a ganhar massa muscular. Com uma mistura de proteínas de digestão rápida e lenta, carboidratos complexos e gorduras saudáveis, Hulk Gainer fornece os nutrientes que seu corpo precisa para auxiliar no crescimento e recuperação muscular.",
+                    "highlights": [
+                        "Até 825 kcal por dose grande",
+                        "30g de proteína por dose",
                         "Alto teor de carboidratos (165 g por dose grande)"
                     ],
                     "information": "HULK GAINER utiliza a mistura PROVEN PROTEIN de proteínas de rápida digestão, como isolados e concentrados de proteína de soro de leite, proteínas de digestão média, como isolados de ervilha e arroz, e a proteína de digestão lenta, caseinato de cálcio, para maximizar a síntese de proteína e garantir que os níveis de retenção de proteína muscular permaneçam elevados por mais tempo .",

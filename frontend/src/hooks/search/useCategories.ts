@@ -1,7 +1,7 @@
 "use client"
 
 import { useRef, useState } from "react"
-import useProducts from "@/hooks/useProducts"
+import useProducts from "@/hooks/product/useProducts"
 import { MAIN_CATEGORIES } from "@/constants/mainCategories"
 import { Product } from "@/interfaces/interfaces"
 
@@ -18,14 +18,11 @@ export function useCategories() {
             (p: Product) => p.category?.toLowerCase() === category.toLowerCase()
         )
 
-    const formatCategory = (cat: string) => cat.replace(/-/g, " ")
-
     return {
         dropdownRef,
         openCategory,
         setOpenCategory,
         getProductsByCategory,
-        formatCategory,
         mainCategories: MAIN_CATEGORIES,
         isPending,
     }

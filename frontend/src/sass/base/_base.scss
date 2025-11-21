@@ -7,10 +7,6 @@ sans-serif;
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
     background: white;
     font-family: $font-family;
@@ -61,14 +57,28 @@ button {
 }
 
 .productPrice {
-    margin-top: 0.3rem;
     display: flex;
-    justify-content: center;
     align-items: center;
     gap: .3rem;
 
     & span {
         font-weight: 600;
+    }
+}
+
+.currentPrice {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+
+    & p {
+        color: #c20303dd;
+        font-weight: 600;
+    }
+
+    & span {
+        text-decoration: line-through;
+        color: rgb(155, 153, 153);
     }
 }
 

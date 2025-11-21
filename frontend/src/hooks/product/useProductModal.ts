@@ -25,6 +25,7 @@ export function useProductModal(product: any) {
 
     const selectFlavor = (flavor: string) => setSelectedFlavor(flavor)
 
+    // { Daqui
     const basePrice = Array.isArray(product.price)
         ? product.price[imageIndex] ?? product.price[0]
         : product.price
@@ -40,10 +41,12 @@ export function useProductModal(product: any) {
     const totalDiscountPrice = effectivePrice * qtd
 
     const formattedPrice = formatCurrency(totalBasePrice)
+
     const formattedDiscountPrice =
         discountValue && discountValue > 0
             ? formatCurrency(totalDiscountPrice)
             : null
+    // Até aqui }
 
     return {
         qtd,

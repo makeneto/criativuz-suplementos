@@ -1,6 +1,6 @@
 "use client"
 
-import useProducts from "@/hooks/useProducts"
+import useProducts from "@/hooks/product/useProducts"
 
 export function useSearchProducts() {
     const { data, isPending } = useProducts()

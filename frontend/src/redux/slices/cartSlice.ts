@@ -7,6 +7,7 @@ export interface CartItem {
     name: string
     image: string
     price: number
+    discountPrice: number
     flavor: string
     weight: string
     category: string
@@ -61,8 +62,15 @@ const cartSlice = createSlice({
             state.items = []
             localStorage.removeItem("criativCart")
         },
+
+        updateQuantity: (state, action) => {
+            const { id, quantity } = action.payload
+            const item = state.items.find((i) => i.id === id)
+            if (item) item.quantity = quantity
+        },
     },
 })
 
-export const { addToCart, removeFromCart, clearCart } = cartSlice.actions
+export const { addToCart, removeFromCart, clearCart, updateQuantity } =
+    cartSlice.actions
 export default cartSlice.reducer

@@ -4,8 +4,8 @@ import { Heart, HeartOff, Info, Store } from "lucide-react"
 import ProductModal from "./ProductModal"
 import Link from "next/link"
 import TextPrice from "../ui/TextPrice"
-import { useID } from "@/hooks/useID"
-import useFavoriteHelpers from "@/hooks/useFavoriteHelpers"
+import { useID } from "@/hooks/product/useID"
+import useFavoriteHelpers from "@/hooks/favorite/useFavoriteHelpers"
 
 interface ProductCartProps {
     products: any
@@ -92,7 +92,10 @@ export default function ProductCard({
                                 {p.name}
                             </Link>
 
-                            <TextPrice product={p} />
+                            <TextPrice
+                                product={p}
+                                className="justify-center mt-1"
+                            />
                         </li>
                     )
                 })}

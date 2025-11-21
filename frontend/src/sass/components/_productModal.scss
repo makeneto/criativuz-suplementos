@@ -117,35 +117,18 @@ $solidBorder: 1px solid #e7e7e7;
                 margin-bottom: 1rem;
                 border-bottom: $solidBorder;
 
-                h2 {
-                    font-size: 1.4rem;
-                    font-weight: 500;
-                }
-
-                p {
-                    color: #c20303dd;
-                    font-weight: 600;
-                    font-size: 1.1rem;
-                }
-
                 & div {
-                    display: flex;
-                    align-items: center;
-                    gap: 0.7rem;
+                    & h2 {
+                        font-size: 1.4rem;
+                        font-weight: 500;
+                    }
 
-                    & span {
-                        text-decoration: line-through;
-                        color: rgb(155, 153, 153);
+                    & p {
+                        color: #c20303dd;
+                        font-weight: 600;
+                        font-size: 1.1rem;
                     }
                 }
-            }
-
-            &--description {
-                display: -webkit-box;
-                -webkit-line-clamp: 3;
-                -webkit-box-orient: vertical;
-                overflow: hidden;
-                text-overflow: ellipsis;
             }
 
             & section {
@@ -196,12 +179,20 @@ $solidBorder: 1px solid #e7e7e7;
             }
         }
     }
+
+    &--description {
+        margin-top: 1rem;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
 }
 
 .submitSection {
     background: white;
-    padding-top: 1rem;
-    margin-top: auto;
+    padding-top: 2rem;
     display: flex;
     gap: 1rem;
 

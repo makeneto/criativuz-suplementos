@@ -1,29 +1,32 @@
-import React from "react"
+"use client"
+
 import { useDispatch } from "react-redux"
 import { HeartOff, TruckElectric } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 import { removeFromFavorites } from "@/redux/slices/favoriteSlice"
 import TextPrice from "../ui/TextPrice"
+import { useFavoriteSheetItem } from "@/hooks/favorite/useFavoriteSheetItem"
 
 interface FavoriteItemProps {
     id: string | number
     postImages: string[] | string
     name: string
+    price?: number | number[]
+    discountPrice?: number | number[]
+    [key: string]: any
 }
 
-interface ItemsProps {
+interface Props {
     item: FavoriteItemProps
 }
 
-export default function FavoriteSheetItem({ item }: ItemsProps) {
+export default function FavoriteSheetItem({ item }: Props) {
     const dispatch = useDispatch()
+    const { formattedPrice, formattedDiscountPrice, variants } =
+        useFavoriteSheetItem(item)
     const { id, postImages, name } = item
 
-    const variants = {
-        hidden: { opacity: 0, x: -50 },
-        visible: { opacity: 1, x: 0 },
-        exit: { opacity: 0, x: 50, transition: { duration: 0.3 } },
-    }
+    const imageSrc = Array.isArray(postImages) ? postImages[0] : postImages
 
     return (
         <AnimatePresence>
@@ -38,7 +41,7 @@ export default function FavoriteSheetItem({ item }: ItemsProps) {
             >
                 <div className="sheetItem__main">
                     <img
-                        src={Array.isArray(postImages) ? postImages[0] : postImages}
+                        src={imageSrc}
                         alt={name}
                         className="w-[6rem] h-[6rem] object-cover"
                     />
@@ -52,7 +55,16 @@ export default function FavoriteSheetItem({ item }: ItemsProps) {
                         </div>
 
                         <div className="operations">
-                            <TextPrice product={item} />
+                            <section>
+                                {formattedDiscountPrice ? (
+                                    <div className="currentPrice">
+                                        <p>{formattedDiscountPrice}</p>
+                                        <span>{formattedPrice}</span>
+                                    </div>
+                                ) : (
+                                    <TextPrice product={item} />
+                                )}
+                            </section>
 
                             <button
                                 type="button"

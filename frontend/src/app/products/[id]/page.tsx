@@ -1,20 +1,16 @@
 "use client"
 
-import React, { useState, useEffect } from "react"
-import { v4 as uuidv4 } from "uuid"
-import { toast } from "sonner"
+import React from "react"
 
-import { useAppDispatch } from "@/redux/hooks"
-import { addToCart } from "@/redux/slices/cartSlice"
-import ProductOptions from "@/components/ui/ProductOptions"
-import { useProductLogic } from "@/hooks/useProductLogic"
-import useProducts from "@/hooks/useProducts"
 import ProductHeader from "@/components/product/ProductHeader"
 import ProductDescription from "@/components/product/ProductDescription"
+import ProductGallery from "@/components/product/ProductGallery"
+import ProductOptions from "@/components/ui/ProductOptions"
 import ProductActions from "@/components/product/ProductActions"
 import ProductDetails from "@/components/product/ProductDetails"
-import Spinner from "@/components/ui/Spinner"
-import ProductGallery from "@/components/product/ProductGallery"
+import useProducts from "@/hooks/product/useProducts"
+import ProductPageLoader from "@/components/product/ProductPageLoader"
+import { useProductPage } from "@/hooks/product/useProductPage"
 
 interface ProductPageProps {
     params: Promise<{ id: string }>
@@ -26,33 +22,9 @@ export default function ProductPage({ params }: ProductPageProps) {
     const products = data?.products ?? []
     const product = products.find((p: any) => p.id === Number(id))
 
-    const [deliveryDate, setDeliveryDate] = useState<Date | undefined>()
-    const dispatch = useAppDispatch()
-
-    useEffect(() => {
-        if (product) document.title = `Criativuz | ${product.name}`
-    }, [product])
-
-    if (isPending)
-        return (
-            <div
-                className="productPage"
-                style={{
-                    height: "70dvh",
-                    paddingTop: "10rem",
-                    display: "flex",
-                    alignItems: "start",
-                    justifyContent: "center",
-                }}
-            >
-                <Spinner size="64" />
-            </div>
-        )
-
-    if (!product)
-        return <div className="productPage">Produto não encontrado.</div>
-
     const {
+        deliveryDate,
+        setDeliveryDate,
         imageIndex,
         qtd,
         formattedPrice,
@@ -63,40 +35,14 @@ export default function ProductPage({ params }: ProductPageProps) {
         handleSelectWeight,
         handleSelectFlavor,
         handleSubmit,
-    } = useProductLogic({
-        product,
-        buttonLabel: "Encomendar",
-        deliveryDate,
-    })
+        handleOrderClick,
+        handleAddToCart,
+    } = useProductPage(product)
 
-    const handleOrderClick = (e: React.MouseEvent) => {
-        e.preventDefault()
-        handleSubmit({ preventDefault() {}, type: "submit" } as React.FormEvent)
-    }
+    if (isPending) return <ProductPageLoader />
 
-    const handleAddToCart = () => {
-        const flavor = selectedFlavor || product.flavors?.[0]
-        const weight = selectedWeight || product.weight?.[0]
-        const index = product.weight?.indexOf(weight)
-        const price = product.price?.[index ?? 0] || product.price?.[0] || 0
-        const image =
-            product.postImages?.[index ?? 0] || product.postImages?.[0]
-
-        const item = {
-            id: uuidv4(),
-            name: product.name,
-            image,
-            price,
-            flavor,
-            weight,
-            category: product.category,
-            quantity: qtd,
-        }
-
-        dispatch(addToCart(item))
-
-        toast.success(`${product.name} adicionado ao carrinho.`)
-    }
+    if (!product)
+        return <div className="productPage">Produto não encontrado.</div>
 
     return (
         <section className="productPage">
@@ -117,7 +63,6 @@ export default function ProductPage({ params }: ProductPageProps) {
                         price={formattedPrice}
                         discountPrice={formattedDiscountPrice ?? undefined}
                     />
-
                     <ProductDescription text={product.description?.synopsis} />
 
                     <ProductOptions

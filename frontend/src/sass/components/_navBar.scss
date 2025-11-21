@@ -121,7 +121,6 @@ $solidBorder: 1px solid #e7e7e7;
                 color: white;
                 font-size: 1rem;
                 font-weight: 500;
-                text-transform: capitalize;
                 text-align: start;
 
                 width: 100%;
@@ -278,10 +277,10 @@ $solidBorder: 1px solid #e7e7e7;
                 }
             }
 
-            .searchProductLogo {
+            .searchProductImg {
                 width: 3.6rem;
                 height: 3.6rem;
-                object-fit: cover;
+                object-fit: contain;
                 border-radius: 4px;
                 margin-right: 0.7rem;
             }

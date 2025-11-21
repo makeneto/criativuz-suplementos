@@ -17,9 +17,11 @@
     &__overlay {
         position: absolute;
         inset: 0;
-        background: linear-gradient(to right, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.525) 20%, rgba(0, 0, 0, 0) 100%);
+        background: linear-gradient(to right,
+                rgba(0, 0, 0, 0.6) 0%,
+                rgba(0, 0, 0, 0.525) 20%,
+                rgba(0, 0, 0, 0) 100%);
     }
-
 
     &__content {
         max-width: 40%;

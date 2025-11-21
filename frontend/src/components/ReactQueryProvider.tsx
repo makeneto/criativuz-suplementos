@@ -10,10 +10,5 @@ export default function ReactQueryProvider({
 }) {
     const [client] = useState(() => new QueryClient())
 
-    return (
-        <QueryClientProvider client={client}>
-            {children}
-            {/* <ReactQueryDevtools initialIsOpen={false} /> */}
-        </QueryClientProvider>
-    )
+    return <QueryClientProvider client={client}>{children}</QueryClientProvider>
 }

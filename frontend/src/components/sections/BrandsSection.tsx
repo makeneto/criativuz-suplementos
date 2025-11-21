@@ -1,6 +1,6 @@
 "use client"
 
-import useProducts from "@/hooks/useProducts"
+import useProducts from "@/hooks/product/useProducts"
 import BrandsItem from "../brands/BrandsItem"
 import Spinner from "../ui/Spinner"
 

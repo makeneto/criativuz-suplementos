@@ -1,4 +1,4 @@
-import SearchBar from "./SearchBar"
+import SearchBar from "../search/SearchBar"
 import { Headset, Heart } from "lucide-react"
 import CartSheet from "../cart/CartSheet"
 import FavoriteSheet from "../favorite/FavoriteSheet"

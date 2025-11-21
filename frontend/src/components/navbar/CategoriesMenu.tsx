@@ -1,6 +1,6 @@
 "use client"
 
-import { useCategories } from "@/hooks/useCategories"
+import { useCategories } from "@/hooks/search/useCategories"
 import CategoryItem from "./CategoryItem"
 
 export default function CategoriesMenu() {
@@ -9,7 +9,6 @@ export default function CategoriesMenu() {
         openCategory,
         setOpenCategory,
         getProductsByCategory,
-        formatCategory,
         mainCategories,
     } = useCategories()
 
@@ -25,7 +24,6 @@ export default function CategoriesMenu() {
                         onToggle={() =>
                             setOpenCategory(openCategory === cat ? null : cat)
                         }
-                        formatCategory={formatCategory}
                     />
                 ))}
             </ul>

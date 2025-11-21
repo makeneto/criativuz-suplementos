@@ -3,7 +3,7 @@
 import { useDispatch } from "react-redux"
 import { v4 as uuidv4 } from "uuid"
 
-import { useProductModal } from "@/hooks/useProductModal"
+import { useProductModal } from "@/hooks/product/useProductModal"
 import { sendWhatsAppMessage } from "@/utils/sendWhatsAppMessage"
 import { formatCurrency } from "@/utils/formatCurrency"
 import { formatOrderDate } from "@/utils/formatOrderDate"
@@ -74,6 +74,7 @@ export function useProductLogic({
             name: product.name,
             image,
             price,
+            discountPrice: product.discountPrice,
             flavor,
             weight,
             category: product.category,

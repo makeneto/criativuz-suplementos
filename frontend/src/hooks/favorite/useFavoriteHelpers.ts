@@ -1,5 +1,5 @@
 import { useCallback } from "react"
-import { useAddToFavorites } from "@/hooks/useAddToFavorite"
+import { useAddToFavorites } from "@/hooks/favorite/useAddToFavorite"
 
 const normalizeId = (v: any) => (v === null || v === undefined ? "" : String(v))
 

@@ -53,6 +53,17 @@ export default function SearchFilter({
 }: SearchFilterProps) {
     return (
         <Accordion type="single" defaultValue="item-1" collapsible>
+            <AccordionItem value="item-1">
+                <AccordionTrigger>Marca</AccordionTrigger>
+                <AccordionContent className="pl-4">
+                    <BrandsFound
+                        selectedBrands={selectedBrands}
+                        onChange={onChangeBrands}
+                        availableBrands={availableBrands}
+                    />
+                </AccordionContent>
+            </AccordionItem>
+
             <AccordionItem value="item-2">
                 <AccordionTrigger>Objetivo</AccordionTrigger>
                 <AccordionContent className="pl-4">
@@ -64,17 +75,6 @@ export default function SearchFilter({
             </AccordionItem>
 
             <AccordionItem value="item-3">
-                <AccordionTrigger>Marca</AccordionTrigger>
-                <AccordionContent className="pl-4">
-                    <BrandsFound
-                        selectedBrands={selectedBrands}
-                        onChange={onChangeBrands}
-                        availableBrands={availableBrands}
-                    />
-                </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem value="item-4">
                 <AccordionTrigger>Categoria</AccordionTrigger>
                 <AccordionContent>
                     <SelectUI
@@ -88,7 +88,7 @@ export default function SearchFilter({
                 </AccordionContent>
             </AccordionItem>
 
-            <AccordionItem value="item-5">
+            <AccordionItem value="item-4">
                 <AccordionTrigger>Sabor</AccordionTrigger>
                 <AccordionContent>
                     <SelectUI
@@ -100,7 +100,7 @@ export default function SearchFilter({
                 </AccordionContent>
             </AccordionItem>
 
-            <AccordionItem value="item-6">
+            <AccordionItem value="item-5">
                 <AccordionTrigger>Preço</AccordionTrigger>
                 <AccordionContent>
                     <RangePrice

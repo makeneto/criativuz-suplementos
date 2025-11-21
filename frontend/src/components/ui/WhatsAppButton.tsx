@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { useScrollVisibility } from "@/hooks/useScrollVisibility"
+import { useScrollVisibility } from "@/hooks/utils/useScrollVisibility"
 import WhatsAppIcon from "./WhatsAppIcon"
 
 export default function WhatsAppButton() {

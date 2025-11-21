@@ -17,7 +17,7 @@ export default function SearchResultItem({
                 <img
                     src={prod.postImages?.[0] || "/placeholder.png"}
                     alt={prod.name}
-                    className="searchProductLogo"
+                    className="searchProductImg"
                 />
 
                 <div>

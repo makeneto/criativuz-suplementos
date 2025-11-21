@@ -11,12 +11,12 @@ import {
 } from "@/components/ui/popover"
 import { formatOrderDate } from "@/utils/formatOrderDate"
 
-interface Calendar22Props {
+interface ScheduleProps {
     date: Date | undefined
     setDate: (date: Date | undefined) => void
 }
 
-export function Calendar22({ date, setDate }: Calendar22Props) {
+export function Schedule({ date, setDate }: ScheduleProps) {
     const [open, setOpen] = React.useState(false)
 
     return (

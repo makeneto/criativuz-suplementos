@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import { useSearchProducts } from "@/hooks/useSearchProducts"
+import { useSearchProducts } from "@/hooks/search/useSearchProducts"
 
 export function useFilteredProducts() {
     const { products, isPending } = useSearchProducts()

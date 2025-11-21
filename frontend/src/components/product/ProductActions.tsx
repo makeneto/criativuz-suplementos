@@ -1,15 +1,6 @@
-import { Calendar22 } from "../ui/Calendar22"
+import { Schedule } from "../ui/Schedule"
 import ProductQuantity from "../ui/ProductQuantity"
-
-interface ProductActionsProps {
-    qtd: number
-    onAdd: () => void
-    onSubtract: () => void
-    deliveryDate?: Date
-    setDeliveryDate: (date: Date | undefined) => void
-    onOrder: (e: React.MouseEvent) => void
-    onAddToCart: () => void
-}
+import { ProductActionsProps } from "@/interfaces/interfaces"
 
 export default function ProductActions({
     qtd,
@@ -28,7 +19,7 @@ export default function ProductActions({
                     onAdd={onAdd}
                     onSubtract={onSubtract}
                 />
-                <Calendar22 date={deliveryDate} setDate={setDeliveryDate} />
+                <Schedule date={deliveryDate} setDate={setDeliveryDate} />
             </div>
 
             <div>

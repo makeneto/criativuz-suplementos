@@ -1,25 +1,13 @@
-import React from "react"
 import { useDispatch } from "react-redux"
 import { removeFromCart } from "@/redux/slices/cartSlice"
 import { Trash, TruckElectric } from "lucide-react"
-import { formatCurrency } from "@/utils/formatCurrency"
 import ProductQuantity from "../ui/ProductQuantity"
-import { useCartQuantity } from "@/hooks/useCartQuantity"
+import { useCartQuantity } from "@/hooks/cart/useCartQuantity"
 import { motion, AnimatePresence } from "framer-motion"
-import { useAddToFavorites } from "@/hooks/useAddToFavorite"
+import { useAddToFavorites } from "@/hooks/favorite/useAddToFavorite"
 import { normalizeFavorite } from "@/utils/normalizeFavorite"
-
-interface CartItemProps {
-    id: string
-    image: string
-    name: string
-    weight: string
-    flavor: string
-    category: string
-    price: number
-    discountPrice?: number
-    quantity: number
-}
+import TextPrice from "../ui/TextPrice"
+import { CartItemProps } from "@/interfaces/interfaces"
 
 interface ItemsProps {
     item: CartItemProps
@@ -80,7 +68,7 @@ export default function CartItem({ item }: ItemsProps) {
                                 onSubtract={() => handleQtd("subtract")}
                             />
                             <h2 className="font-semibold">
-                                {formatCurrency(price * qtd)}
+                                <TextPrice product={item} qtd={qtd} />
                             </h2>
                         </div>
 

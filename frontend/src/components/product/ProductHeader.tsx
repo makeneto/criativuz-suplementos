@@ -1,5 +1,5 @@
 import { Heart, HeartOff } from "lucide-react"
-import useFavoriteHelpers from "@/hooks/useFavoriteHelpers"
+import useFavoriteHelpers from "@/hooks/favorite/useFavoriteHelpers"
 
 export default function ProductHeader({
     product,

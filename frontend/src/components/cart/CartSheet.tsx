@@ -16,7 +16,7 @@ import { useState } from "react"
 import { Badge } from "../ui/badge"
 import CartSheetItem from "./CartSheetItem"
 import { useAppSelector } from "@/redux/hooks"
-import { useID } from "@/hooks/useID"
+import { useID } from "@/hooks/product/useID"
 
 export default function CartSheet() {
     const cartItems = useAppSelector((state: RootState) => state.cart.items)

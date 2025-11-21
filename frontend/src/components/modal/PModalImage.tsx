@@ -4,7 +4,7 @@ interface ProductImageProps {
     isProductPage?: boolean
 }
 
-export default function ProductImage({
+export default function PModalImage({
     src,
     alt,
     isProductPage,

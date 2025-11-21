@@ -1,28 +1,14 @@
-import {
-    Sheet,
-    SheetTrigger,
-    SheetContent,
-    SheetHeader,
-    SheetTitle,
-    SheetClose,
-} from "@/components/ui/sheet"
-import { Heart, X } from "lucide-react"
+"use client"
 
-import { useAppSelector } from "@/redux/hooks"
-import { RootState } from "@/redux/store"
-import { useState } from "react"
+import { Sheet, SheetTrigger } from "@/components/ui/sheet"
+import { Heart } from "lucide-react"
 import { Badge } from "../ui/badge"
-import FavoriteSheetItem from "./FavoriteSheetItem"
-import { useID } from "@/hooks/useID"
+import FavoriteSheetContent from "./FavoriteSheetContent"
+import { useFavoriteSheet } from "@/hooks/favorite/useFavoriteSheet"
 
 export default function FavoriteSheet() {
-    const favoriteItems = useAppSelector(
-        (state: RootState) => state.favorites.items
-    )
-
-    const { length: favoriteLength } = favoriteItems
-    const [open, setOpen] = useState(false)
-    const randomId = useID()
+    const { open, setOpen, randomId, favoriteItems } = useFavoriteSheet()
+    const favoriteLength = favoriteItems.length
 
     return (
         <Sheet open={open} onOpenChange={setOpen}>
@@ -43,40 +29,10 @@ export default function FavoriteSheet() {
                 </div>
             </SheetTrigger>
 
-            <SheetContent>
-                <SheetHeader>
-                    <SheetTitle className="text-lg font-semibold">
-                        Favoritos{" "}
-                        {favoriteLength > 0 && (
-                            <span className="cartLength">
-                                ({favoriteLength})
-                            </span>
-                        )}
-                    </SheetTitle>
-
-                    <SheetClose className="closeSheetButton">
-                        <X size={20} />
-                    </SheetClose>
-                </SheetHeader>
-
-                <div className="mt-5 flex flex-col gap-4 h-[87%]">
-                    {favoriteLength === 0 ? (
-                        <div className="miniEmptySheet">
-                            <img
-                                src="/images/empty-cart.webp"
-                                alt="Empty favorite"
-                            />
-                        </div>
-                    ) : (
-                        favoriteItems.map((item) => (
-                            <FavoriteSheetItem
-                                key={`${item.id}-${randomId}`}
-                                item={item}
-                            />
-                        ))
-                    )}
-                </div>
-            </SheetContent>
+            <FavoriteSheetContent
+                favoriteItems={favoriteItems}
+                randomId={randomId}
+            />
         </Sheet>
     )
 }
