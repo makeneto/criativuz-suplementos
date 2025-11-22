@@ -2,8 +2,11 @@
 
 import { useCategories } from "@/hooks/search/useCategories"
 import CategoryItem from "./CategoryItem"
+import { useMediaQuery } from "react-responsive"
 
 export default function CategoriesMenu() {
+    const isDesktopBetween = useMediaQuery({ minWidth: 1024, maxWidth: 1280 })
+
     const {
         dropdownRef,
         openCategory,
@@ -12,10 +15,14 @@ export default function CategoriesMenu() {
         mainCategories,
     } = useCategories()
 
+    const categories = isDesktopBetween
+        ? mainCategories.slice(0, 3)
+        : mainCategories
+
     return (
         <div className="nav_bar__categories" ref={dropdownRef}>
             <ul className="nav_bar__categories-list">
-                {mainCategories.map((cat) => (
+                {categories.map((cat) => (
                     <CategoryItem
                         key={cat}
                         category={cat}

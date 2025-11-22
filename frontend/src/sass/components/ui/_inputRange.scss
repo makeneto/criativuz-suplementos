@@ -22,7 +22,7 @@ input[type="range"] {
             border: 2px solid red;
             cursor: pointer;
             margin-top: -5px;
-            transition: background 0.2s, transform 0.2s;
+            transition: background .2s, transform .2s;
 
             &:hover {
                 background: red;
@@ -45,7 +45,7 @@ input[type="range"] {
             background: #fff;
             border: 2px solid red;
             cursor: pointer;
-            transition: background 0.2s, transform 0.2s;
+            transition: background .2s, transform .2s;
 
             &:hover {
                 background: red;

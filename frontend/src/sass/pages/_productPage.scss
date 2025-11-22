@@ -10,6 +10,11 @@ $solidBorder: 1px solid #e7e7e7;
         display: flex;
         position: relative;
 
+        @media (max-width: 1280px) {
+            gap: 9rem;
+            margin-inline: 6rem 6rem;
+        }
+
         &--content {
             flex: 1;
             padding-top: 3rem;
@@ -27,11 +32,15 @@ $solidBorder: 1px solid #e7e7e7;
 
                 & div {
                     display: grid;
-                    gap: 0.2rem;
+                    gap: .2rem;
 
-                    h2 {
+                    h1 {
                         font-size: 1.7rem;
                         font-weight: 500;
+
+                        @media (max-width: 1280px) {
+                            font-size: 1.4rem;
+                        }
                     }
 
                     p {
@@ -43,7 +52,7 @@ $solidBorder: 1px solid #e7e7e7;
                     div {
                         display: flex;
                         align-items: center;
-                        gap: 0.7rem;
+                        gap: .7rem;
 
                         span {
                             text-decoration: line-through;
@@ -63,7 +72,7 @@ $solidBorder: 1px solid #e7e7e7;
                 display: flex;
                 flex-wrap: wrap;
                 align-items: center;
-                gap: 0.3rem;
+                gap: .3rem;
 
                 li {
                     user-select: none;
@@ -224,16 +233,16 @@ $solidBorder: 1px solid #e7e7e7;
 
     &__details {
         &--highlights {
-            background-color: rgba(128, 128, 128, 0.134);
+            background-color: rgba(128, 128, 128, .134);
             padding: 2rem;
             display: grid;
-            gap: 0.8rem;
+            gap: .8rem;
             margin-bottom: 1.6rem;
 
             li {
                 display: flex;
                 align-items: center;
-                gap: 0.7rem;
+                gap: .7rem;
 
                 svg {
                     width: 1.3rem;

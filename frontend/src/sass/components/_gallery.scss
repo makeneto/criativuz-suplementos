@@ -8,6 +8,10 @@
     grid-template-rows: repeat(5, 1fr);
     gap: 2px;
 
+    @media (max-width: 1280px) {
+        margin-bottom: 15rem;
+    }
+
     & a {
         &:first-child {
             grid-row: span 3 / span 3;

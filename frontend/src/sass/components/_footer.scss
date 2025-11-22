@@ -6,6 +6,10 @@
     display: grid;
     gap: 5rem;
 
+    @media (max-width: 1280px) {
+        padding-inline: 6rem;
+    }
+
     &__logo {
         width: auto;
         height: 2.3rem;
@@ -15,6 +19,12 @@
     &__links {
         display: flex;
         justify-content: space-between;
+    }
+
+    @media (max-width: 1280px) {
+        &__content {
+            gap: 5rem;
+        }
     }
 
     &__about {
@@ -50,7 +60,11 @@
 
     &__list {
         display: grid;
-        gap: 0.8rem;
+        gap: .8rem;
+
+        @media (max-width: 1280px) {
+            gap: .5rem;
+        }
 
         & li,
         & a {

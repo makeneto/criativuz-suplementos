@@ -4,19 +4,31 @@
     grid-template-columns: repeat(4, 1fr);
     justify-content: space-between;
     gap: 4rem;
+
+    @media (max-width: 1280px) {
+        margin: 0 6rem 11rem;
+    }
 }
 
 .step {
     display: grid;
-    gap: 0.4rem;
+    gap: .4rem;
+
+    @media (max-width: 1280px) {
+        gap: .2;
+    }
 
     &__num {
         font-size: 5rem;
-        color: rgba(128, 128, 128, 0.508);
+        color: rgba(128, 128, 128, .508);
         line-height: 5rem;
         font-weight: 700;
+
+        @media (max-width: 1280px) {
+            font-size: 4rem;
+        }
     }
-    
+
     &__title {
         font-size: 1.3rem;
         font-weight: 600;

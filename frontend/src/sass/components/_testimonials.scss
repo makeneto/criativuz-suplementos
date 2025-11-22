@@ -1,5 +1,4 @@
 .testimonials {
-
     &__grid {
         width: 70%;
         margin-top: -12rem;
@@ -9,10 +8,16 @@
         grid-template-rows: repeat(2, 1fr);
         grid-template-columns: repeat(4, 1fr);
         gap: 1rem;
+
+        @media (max-width: 1280px) {
+            width: 85%;
+            margin-top: -10rem;
+            margin-bottom: 11rem;
+        }
     }
 
     &__item {
-        border: 1px solid rgba(169, 169, 169, 0.226);
+        border: 1px solid rgba(169, 169, 169, .226);
         display: grid;
         justify-content: center;
 
@@ -29,6 +34,10 @@
                 height: 2rem;
                 object-fit: contain;
             }
+
+            @media (max-width: 1280px) {
+                padding: 3rem 3rem 3rem 0;
+            }
         }
 
         &--2 {
@@ -37,6 +46,22 @@
             grid-row: span 2 / span 2;
             grid-column-start: 3;
             gap: 2rem;
+
+            @media (max-width: 1280px) {
+                gap: 1.7rem;
+            }
+        }
+
+        &--1,
+        &--2 {
+            h1 {
+                font-size: 1.3rem;
+                font-weight: 500;
+
+                @media (max-width: 1280px) {
+                    font-size: 1.2rem;
+                }
+            }
         }
 
         &--3 {
@@ -51,18 +76,18 @@
             grid-row-start: 3;
         }
 
-        &--1,
-        &--2 {
-            h1 {
-                font-size: 1.3rem;
-                font-weight: 500;
-            }
-        }
-
         &--3,
         &--4 {
             padding: 1.5rem;
             gap: 2rem;
+
+            @media (max-width: 1280px) {
+                gap: 0;
+
+                & h1 {
+                    font-size: .9rem;
+                }
+            }
         }
     }
 

@@ -5,6 +5,7 @@ import { Product } from "@/interfaces/interfaces"
 import { useRef } from "react"
 import { useClickOutside } from "@/hooks/navBar/useClickOutside"
 import { CategoryDropdownList } from "./CategoryDropdownList"
+import { useMediaQuery } from "react-responsive"
 
 interface Props {
     category: string
@@ -22,6 +23,8 @@ export default function CategoryItem({
     const containerRef = useRef<HTMLLIElement>(null)
     useClickOutside(containerRef, () => isOpen && onToggle())
 
+    const isDesktopBetween = useMediaQuery({ minWidth: 1024, maxWidth: 1280 })
+
     return (
         <li className="nav_bar__category-item" ref={containerRef}>
             <button
@@ -30,7 +33,9 @@ export default function CategoryItem({
                 aria-expanded={isOpen}
                 aria-controls={`category-${category}`}
             >
-                {category}
+                {category === "Ganho de massa" && isDesktopBetween
+                    ? "Massa"
+                    : category}
                 <ChevronDown />
             </button>
 

@@ -6,6 +6,7 @@ import Link from "next/link"
 import TextPrice from "../ui/TextPrice"
 import { useID } from "@/hooks/product/useID"
 import useFavoriteHelpers from "@/hooks/favorite/useFavoriteHelpers"
+import { useMediaQuery } from "react-responsive"
 
 interface ProductCartProps {
     products: any
@@ -21,6 +22,19 @@ export default function ProductCard({
     const [modalConfig, setModalConfig] = useState<any>(null)
     const { addFavorite, isFavoriteFor } = useFavoriteHelpers()
 
+    const isDesktopBetween = useMediaQuery({ minWidth: 1024, maxWidth: 1280 })
+    const isMobile = useMediaQuery({ maxWidth: 639 })
+
+    const columns = isDesktopBetween ? 3 : isThree ? 3 : 4
+
+    const displayProducts = Array.isArray(products)
+        ? isMobile
+            ? products.slice(0, 4)
+            : isDesktopBetween
+            ? products.slice(0, 6)
+            : products
+        : []
+
     function handleShowProductModal() {
         setSelectedProduct(null)
     }
@@ -30,10 +44,10 @@ export default function ProductCard({
             <ul
                 className={"sectionGrid__list"}
                 style={{
-                    gridTemplateColumns: `repeat(${isThree ? 3 : 4}, 1fr)`,
+                    gridTemplateColumns: `repeat(${columns}, 1fr)`,
                 }}
             >
-                {products.map((p: any) => {
+                {displayProducts.map((p: any) => {
                     const isFavorite = isFavoriteFor(p)
 
                     return (

@@ -11,7 +11,7 @@
     background-color: transparent;
     border-radius: 50%;
     cursor: pointer;
-    transition: all 0.3s;
+    transition: all .3s;
 
     &.visible {
         opacity: 1;
@@ -32,9 +32,9 @@
         align-items: center;
         justify-content: center;
         background-color: transparent;
-        letter-spacing: 0.8px;
+        letter-spacing: .8px;
         border-radius: 50%;
-        transition: all 0.3s;
+        transition: all .3s;
     }
 
     .whatsapp-bg {
@@ -46,7 +46,7 @@
         z-index: -1;
         border-radius: 50%;
         pointer-events: none;
-        transition: all 0.3s;
+        transition: all .3s;
     }
 
     &:hover {
@@ -57,7 +57,7 @@
 
         .whatsapp-icon {
             backdrop-filter: blur(4px);
-            background-color: rgba(156, 156, 156, 0.466);
+            background-color: rgba(156, 156, 156, .466);
         }
     }
 

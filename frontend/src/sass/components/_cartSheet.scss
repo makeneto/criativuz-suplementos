@@ -3,11 +3,11 @@ $solidBorder: 1px solid #d3d3d3;
 .cartLength {
     color: grey;
     font-weight: normal;
-    font-size: 0.87rem;
+    font-size: .87rem;
 }
 
 .closeSheetButton {
-    padding: 0.2rem;
+    padding: .2rem;
     border: 1px solid transparent;
     transition: border .2s ease-in;
 
@@ -27,7 +27,7 @@ $solidBorder: 1px solid #d3d3d3;
 .vewAllLink {
     color: #2836d2;
     font-weight: 400;
-    font-size: 0.9rem;
+    font-size: .9rem;
     transition: all .2s ease-in;
 
     &:hover {
@@ -40,7 +40,7 @@ $solidBorder: 1px solid #d3d3d3;
     position: relative;
 
     &:not(:first-child) {
-        padding-top: 1rem;
+        padding-top: 2rem;
     }
 
     &:not(:last-child)::after {
@@ -63,7 +63,7 @@ $solidBorder: 1px solid #d3d3d3;
     &__content {
         width: 100%;
         display: grid;
-        gap: 0.4rem;
+        gap: .4rem;
 
         & h1 {
             font-weight: 600;
@@ -71,11 +71,11 @@ $solidBorder: 1px solid #d3d3d3;
 
         &--details {
             display: flex;
-            gap: 1rem;
-            margin-bottom: 0.2rem;
+            gap: 1.3rem;
+            margin-bottom: .2rem;
 
             & p {
-                font-size: 0.84rem;
+                font-size: .84rem;
                 color: gray;
 
                 & span {
@@ -89,15 +89,19 @@ $solidBorder: 1px solid #d3d3d3;
             display: flex;
             align-items: center;
             justify-content: space-between;
+            gap: 4rem;
+
+            @media (max-width: 1280px) {
+                gap: 2rem;
+            }
 
             & section {
-                font-size: 0.9rem;
+                font-size: .9rem;
             }
 
             & h2 {
-                font-size: 0.9rem;
+                font-size: .9rem;
             }
-
         }
 
         & .options {
@@ -105,9 +109,9 @@ $solidBorder: 1px solid #d3d3d3;
             display: flex;
             align-items: center;
             justify-content: flex-end;
-            gap: 0.8rem;
+            gap: .8rem;
             color: gray;
-            font-size: 0.8rem;
+            font-size: .8rem;
 
             & p {
                 transition: all .2s ease;
@@ -119,12 +123,12 @@ $solidBorder: 1px solid #d3d3d3;
             }
 
             &--trash {
-                padding: 0.2rem;
+                padding: .2rem;
                 cursor: pointer;
 
                 & svg {
-                    width: 0.9rem;
-                    height: 0.9rem;
+                    width: .9rem;
+                    height: .9rem;
                     color: gray;
                     cursor: pointer;
                     transition: all .2s ease;
@@ -144,16 +148,16 @@ $solidBorder: 1px solid #d3d3d3;
     display: flex;
     align-items: center;
     align-self: center;
-    gap: 0.4rem;
-    background-color: rgba(172, 255, 47, 0.333);
+    gap: .4rem;
+    background-color: rgba(172, 255, 47, .333);
     color: green;
-    padding-inline: 0.5rem;
+    padding-inline: .5rem;
     border-radius: .2rem;
     width: fit-content;
-    font-size: 0.8rem;
+    font-size: .8rem;
 
     & svg {
-        width: 0.85rem;
+        width: .85rem;
         color: green;
     }
 }

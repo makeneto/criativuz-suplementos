@@ -95,7 +95,7 @@ export default function HelpSheet() {
                 </SheetHeader>
 
                 <form
-                    className="mt-5 flex flex-col gap-10 h-[87%]"
+                    className="mt-5 flex flex-col gap-10 h-[87%]mb-4"
                     onSubmit={handleSubmit(onSubmit)}
                     noValidate
                 >

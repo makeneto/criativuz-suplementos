@@ -24,14 +24,14 @@ export default function TextPrice({
     })
 
     return (
-        <h2 className={`productPrice ${className}`}>
+        <div className={`productPrice ${className}`}>
             {Array.isArray(price) && price.length > 1 && (
                 <p className="lightTag">A partir de</p>
             )}
 
-            <span style={{ color, fontWeight }}>
+            <p style={{ color, fontWeight }}>
                 {formatCurrency(finalPrice)}
-            </span>
-        </h2>
+            </p>
+        </div>
     )
 }

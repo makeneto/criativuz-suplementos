@@ -16,7 +16,7 @@ export default function ProductHeader({
     return (
         <header>
             <div>
-                <h2>{product.name}</h2>
+                <h1>{product.name}</h1>
                 {discountPrice ? (
                     <div>
                         <p>{discountPrice}</p>

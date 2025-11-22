@@ -18,8 +18,8 @@
         position: absolute;
         inset: 0;
         background: linear-gradient(to right,
-                rgba(0, 0, 0, 0.6) 0%,
-                rgba(0, 0, 0, 0.525) 20%,
+                rgba(0, 0, 0, .6) 0%,
+                rgba(0, 0, 0, .525) 20%,
                 rgba(0, 0, 0, 0) 100%);
     }
 
@@ -35,17 +35,24 @@
 
         & h2 {
             font-weight: 700;
-            font-size: 1.1rem;
-        }
-
-        & h2 {
             font-size: 4.6rem;
             line-height: 5.3rem;
+
+            @media (max-width: 1280px) {
+                margin-top: 1rem;
+                font-size: 2.6rem;
+                line-height: 3rem;
+            }
         }
 
         & p {
-            margin-top: 0.8rem;
+            margin-top: .8rem;
             font-size: 1.5rem;
+
+            @media (max-width: 1280px) {
+                margin-top: 1rem;
+                font-size: 1.2rem;
+            }
         }
     }
 
@@ -54,18 +61,26 @@
         display: inline-block;
         background: white;
         color: #250609;
-        padding: 0.6rem 1rem;
-        border-radius: 0rem;
-        transition: background 0.3s ease;
+        padding: .6rem 1rem;
+        border-radius: 0;
+        transition: background .3s ease;
 
         & span {
             text-decoration: none;
             font-weight: 500;
             font-size: 1.2rem;
+
+            @media (max-width: 1280px) {
+                font-size: 1rem;
+            }
         }
 
         &:hover {
             background: rgb(231, 231, 231);
+        }
+
+        @media (max-width: 1280px) {
+            margin-top: 2rem;
         }
     }
 
@@ -73,17 +88,17 @@
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        background: rgba(255, 255, 255, 0.7);
-        padding: 0.5rem 1rem;
+        background: rgba(255, 255, 255, .7);
+        padding: .5rem 1rem;
         border-radius: 50%;
         cursor: pointer;
         font-size: 1.5rem;
         line-height: 1;
         border: none;
-        transition: background 0.3s;
+        transition: background .3s;
 
         &:hover {
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, .9);
         }
 
         &--prev {

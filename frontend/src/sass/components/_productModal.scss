@@ -3,7 +3,7 @@ $solidBorder: 1px solid #e7e7e7;
 .modalOverlay {
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, .5);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -66,7 +66,11 @@ $solidBorder: 1px solid #e7e7e7;
     width: 45%;
     padding: 1.3rem;
     display: flex;
-    box-shadow: 0 0 1rem 0.4rem rgba(0, 0, 0, 0.155);
+    box-shadow: 0 0 1rem .4rem rgba(0, 0, 0, .155);
+
+    @media (max-width: 1280px) {
+        width: 65%;
+    }
 
     &__container {
         display: flex;
@@ -93,7 +97,7 @@ $solidBorder: 1px solid #e7e7e7;
         }
 
         &--image {
-            width: 50%;
+            width: 40%;
             height: 100%;
             object-fit: contain;
         }
@@ -101,7 +105,6 @@ $solidBorder: 1px solid #e7e7e7;
         &--content {
             flex: 1;
             flex-direction: column;
-            padding-right: .5rem;
 
             &::-webkit-scrollbar {
                 display: none;
@@ -112,8 +115,8 @@ $solidBorder: 1px solid #e7e7e7;
 
             & header {
                 display: grid;
-                gap: 0.2rem;
-                padding-bottom: 0.9rem;
+                gap: .2rem;
+                padding-bottom: .9rem;
                 margin-bottom: 1rem;
                 border-bottom: $solidBorder;
 
@@ -142,7 +145,7 @@ $solidBorder: 1px solid #e7e7e7;
                 display: flex;
                 flex-wrap: wrap;
                 align-items: center;
-                gap: 0.9rem;
+                gap: .9rem;
 
                 & li {
                     user-select: none;
@@ -155,12 +158,17 @@ $solidBorder: 1px solid #e7e7e7;
 
                 & li:not(:first-child) {
                     cursor: pointer;
-                    border: $solidBorder;
+                    border: 1px solid #3d0a0f8a;
                     padding: .5rem 1rem;
-                    color: #c7c0c0;
+                    color: #3d0a0f8a;
                     font-weight: 500;
                     text-transform: uppercase;
                     transition: all .2s ease-in;
+
+                    @media (max-width: 1280px) {
+                        padding: .4rem .7rem;
+                        font-size: .94rem;
+                    }
 
                     &.active {
                         background-color: #3d0a0f;
@@ -174,7 +182,7 @@ $solidBorder: 1px solid #e7e7e7;
             .calendarSection {
                 display: flex;
                 gap: 1rem;
-                padding-left: 0.1rem;
+                padding-left: .1rem;
                 margin-bottom: 1rem;
             }
         }
@@ -203,7 +211,7 @@ $solidBorder: 1px solid #e7e7e7;
         text-transform: uppercase;
         font-size: 1rem;
         transition: all .2s ease-in;
-        padding-block: 0.6rem;
+        padding-block: .6rem;
     }
 
     & button:first-child,
@@ -284,7 +292,7 @@ $solidBorder: 1px solid #e7e7e7;
         cursor: pointer;
         color: #3d0a0f;
         font-size: 1rem;
-        padding: .2rem 0.6rem;
+        padding: .2rem .6rem;
         transition: all .2s ease-in;
 
         &:hover {
@@ -301,6 +309,6 @@ $solidBorder: 1px solid #e7e7e7;
         font-weight: 500;
         margin-inline: 1.2rem;
         text-align: center;
-        font-size: 0.8rem;
+        font-size: .8rem;
     }
 }

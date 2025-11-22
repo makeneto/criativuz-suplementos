@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation"
 import { useSearchDropdown } from "@/hooks/navBar/useSearchDropdown"
 import SearchDropdown from "./SearchDropdown"
 import { useFilteredProducts } from "@/hooks/search/useFilteredProducts"
+import { useMediaQuery } from "react-responsive"
 
 export default function SearchBar() {
     const router = useRouter()
@@ -12,6 +13,8 @@ export default function SearchBar() {
         useFilteredProducts()
 
     const { inputRef, showDropdown, setShowDropdown } = useSearchDropdown()
+
+    const isDesktopBetween = useMediaQuery({ minWidth: 1024, maxWidth: 1280 })
 
     const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
         if (e.key === "Enter") {
@@ -32,7 +35,9 @@ export default function SearchBar() {
 
             <input
                 type="text"
-                placeholder="Procurar suplementos, acessórios..."
+                placeholder={`Procurar suplementos${
+                    !isDesktopBetween ? ", acessórios" : ""
+                }...`}
                 value={searchTerm}
                 onChange={(e) => {
                     setSearchTerm(e.target.value)

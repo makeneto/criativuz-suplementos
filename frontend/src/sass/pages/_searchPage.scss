@@ -1,6 +1,9 @@
 .searchPage {
-    margin-block: 12rem;
-    margin-inline: 18rem;
+    margin: 12rem 18rem;
+
+    @media (max-width: 1280px) {
+        margin: 10rem 6rem;
+    }
 
     & main {
         margin-top: 2rem;
@@ -9,10 +12,19 @@
         gap: 3rem;
         position: relative;
 
+        @media (max-width: 1280px) {
+            grid-template-columns: 22% 78%;
+            margin-top: 4rem;
+        }
+
         & aside {
             position: sticky;
             top: 15%;
             align-self: start;
+
+            @media (max-width: 1280px) {
+                top: 17%
+            }
         }
     }
 }
@@ -20,12 +32,12 @@
 .topFilter {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: space-between;
     gap: 2rem;
 }
 
 .filterBy {
     display: flex;
     align-items: center;
-    gap: 0.8rem;
+    gap: .8rem;
 }

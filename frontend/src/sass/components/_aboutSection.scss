@@ -4,22 +4,36 @@
     display: flex;
     position: relative;
 
-    &_image,
-    &_content {
-        width: 50rem;
+    @media (max-width: 1280px) {
+        margin-block: 0;
+        margin-inline: 6rem 8rem;
     }
 
     &_image {
+        width: 50rem;
         height: 44rem;
-        background: #80808020 url('/images/about.webp');
+        background: #80808020 url('/images/about.webp') top center;
+
+        @media (max-width: 1280px) {
+            width: 33rem;
+            height: 33rem;
+        }
     }
 
     &_content {
+        width: 50rem;
         background: rgba(128, 128, 128, .125);
         padding: 11rem 8rem 11rem 12rem;
         position: absolute;
         top: -5rem;
         right: 5rem;
+
+        @media (max-width: 1280px) {
+            width: 40rem;
+            top: -4rem;
+            right: -2rem;
+            padding: 5rem 5rem 5rem 7rem;
+        }
 
         & h1 {
             font-size: 2em;
@@ -29,7 +43,7 @@
         }
 
         & p:not(:first-of-type) {
-            margin-top: 0.8rem;
+            margin-top: .8rem;
         }
     }
 }
