@@ -31,7 +31,7 @@ $solidBorder: 1px solid #e7e7e7;
     &_bar {
         background: #D91807 url('/images/red-cloud.webp') no-repeat center center;
         background-size: cover;
-        padding: .4rem 2rem .4rem 1rem;
+        padding: .4rem 2.23rem .4rem 1rem;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -121,6 +121,10 @@ $solidBorder: 1px solid #e7e7e7;
             position: relative;
             margin-left: 2rem;
 
+            @media (max-width: 1280px) {
+                margin-left: 1rem;
+            }
+
             &-btn {
                 color: white;
                 font-size: 1rem;
@@ -144,8 +148,12 @@ $solidBorder: 1px solid #e7e7e7;
 
             &-list {
                 display: flex;
-                gap: 1rem;
                 list-style: none;
+                gap: 1rem;
+
+                @media (max-width: 1280px) {
+                    gap: 0;
+                }
 
                 .nav_bar__category-item {
                     position: relative;
@@ -154,7 +162,6 @@ $solidBorder: 1px solid #e7e7e7;
                 li {
                     border-radius: .3rem;
                     margin-inline: .4rem;
-
                     padding: .5rem 1rem;
                     transition: background .2s;
 
@@ -162,6 +169,10 @@ $solidBorder: 1px solid #e7e7e7;
                         color: white;
                         display: block;
                         text-decoration: none;
+                    }
+
+                    &:hover {
+                        background-color: rgba(41, 0, 0, 0.158);
                     }
                 }
             }

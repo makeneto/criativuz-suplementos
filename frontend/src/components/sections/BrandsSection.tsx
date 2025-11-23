@@ -9,16 +9,15 @@ export default function BrandsSection() {
     const brands = data?.brands || []
 
     return (
-        <section className="brandsSection">
+        <section className="brandsSection" id="brands">
             <div className="introSection">
                 <p className="intro__category">Brands</p>
                 <h1 className="font-medium ">Resultado das Melhores Marcas</h1>
                 <p className="brandsSection__description">
                     Na <span className="lightTag">Criativuz Suplementos</span>,
-                    só trabalhamos com marcas de confiança, reconhecidas pela
-                    qualidade e eficácia. Produtos testados e aprovados por
-                    atletas e especialistas para garantir os melhores
-                    resultados.
+                    trabalhamos apenas com marcas confiáveis, testadas e
+                    aprovadas por atletas e especialistas para garantir
+                    qualidade e resultados.
                 </p>
             </div>
 

@@ -12,7 +12,7 @@ export default function Hero() {
                 <h2>Quem Cresce Natural é Planta!</h2>
                 <p>Resultados não vêm só do treino</p>
 
-                <Link href="" className="hero__button">
+                <Link href="#brands" className="hero__button">
                     <span>Começar</span>
                 </Link>
             </div>

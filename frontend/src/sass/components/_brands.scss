@@ -1,9 +1,10 @@
 .brandsSection {
     width: 70%;
-    margin: 12rem auto 18rem;
+    margin: 12rem auto 20rem;
     text-align: center;
 
     @media (max-width: 1280px) {
+        width: 90%;
         margin-block: 9rem 15rem;
     }
 
@@ -40,28 +41,40 @@
 
     & ul {
         margin-top: 4rem;
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
+        display: flex;
         align-items: center;
+        justify-content: space-between;
         gap: 5rem;
+
+        @media (max-width: 1280px) {
+            margin-top: 4.2rem;
+        }
 
         & img {
             height: 3rem;
             object-fit: contain;
             filter: grayscale(100%);
             transition: filter .3s;
+
+            @media (max-width: 1280px) {
+                height: 2rem;
+            }
+
+            &:hover {
+                filter: none;
+            }
         }
 
         & .blackBullBrand {
-            height: 6rem;
+            height: 4rem;
         }
 
         & .nplBrand {
-            height: 4.6rem;
+            height: 3.6rem;
         }
 
-        & img:hover {
-            filter: none;
+        & .nutriTBrand {
+            height: 3rem;
         }
     }
 }

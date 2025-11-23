@@ -26,7 +26,7 @@ export default function TextPrice({
     return (
         <div className={`productPrice ${className}`}>
             {Array.isArray(price) && price.length > 1 && (
-                <p className="lightTag">A partir de</p>
+                <span className="lightTag">A partir de</span>
             )}
 
             <p style={{ color, fontWeight }}>

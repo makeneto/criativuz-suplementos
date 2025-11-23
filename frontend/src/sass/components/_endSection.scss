@@ -7,7 +7,7 @@
 
     @media (max-width: 1280px) {
         margin-block: 0 11rem;
-        margin-inline: 8rem 6rem;
+        margin-inline: 6rem 4rem;
     }
 
     &_image {
@@ -15,8 +15,13 @@
         height: 44rem;
         background: #80808020 url('/images/performance.webp') top/cover no-repeat;
 
-        @media (max-width: 1280px) {
-            width: 33rem;
+        @media (min-width: 769px) and (max-width: 1266) {
+            width: 34rem;
+            height: 33rem;
+        }
+
+        @media (min-width: 1267) and (max-width: 1280px) {
+            width: 37rem;
             height: 33rem;
         }
     }
@@ -42,6 +47,11 @@
             font-weight: 700;
             line-height: 2.5rem;
             margin-bottom: 1rem;
+
+            @media (max-width: 1280px) {
+                font-size: 1.7em;
+                line-height: 2rem;
+            }
         }
 
         & p:not(:first-of-type) {

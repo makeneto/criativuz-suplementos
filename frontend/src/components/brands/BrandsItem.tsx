@@ -21,6 +21,8 @@ export default function BrandsItem({ brands }: BrandsItemProps) {
                             ? "blackBullBrand"
                             : brand.name === "NPL"
                             ? "nplBrand"
+                            : brand.name === "NutriTech"
+                            ? "nutriTBrand"
                             : ""
                     }
                 />
