@@ -1,5 +1,6 @@
 import useTextPrice from "@/hooks/utils/useTextPrice"
 import { formatCurrency } from "@/utils/formatCurrency"
+import { useMediaQuery } from "react-responsive"
 
 interface TextPriceProps {
     product: any
@@ -16,6 +17,8 @@ export default function TextPrice({
 }: TextPriceProps) {
     const { price, discountPrice } = product
 
+    const isMobile = useMediaQuery({ maxWidth: 639 })
+
     const { finalPrice, color, fontWeight } = useTextPrice({
         price,
         discountPrice,
@@ -26,12 +29,12 @@ export default function TextPrice({
     return (
         <div className={`productPrice ${className}`}>
             {Array.isArray(price) && price.length > 1 && (
-                <span className="lightTag">A partir de</span>
+                <span className="lightTag">
+                    {!isMobile ? "A partir de" : "De"}
+                </span>
             )}
 
-            <p style={{ color, fontWeight }}>
-                {formatCurrency(finalPrice)}
-            </p>
+            <p style={{ color, fontWeight }}>{formatCurrency(finalPrice)}</p>
         </div>
     )
 }

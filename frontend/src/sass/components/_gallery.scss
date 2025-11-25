@@ -1,4 +1,4 @@
-.gallery {
+.largeGallery {
     width: 100%;
     height: 80dvh;
     margin-bottom: 19rem;
@@ -81,6 +81,57 @@
             grid-column-start: 4;
             grid-row-start: 1;
             background: url('/images/dorian-yates.webp') top center;
+            background-size: cover;
+        }
+    }
+}
+
+// SmallGallery
+
+.smallGallery {
+    margin-block: -2.87rem 11rem;
+    width: 100%;
+    height: 90dvh;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+
+    clip-path: polygon(0 5.4%, 100% 0, 100% 96%, 0% 100%);
+
+    & a {
+        &:first-child {
+            grid-row: span 3 / span 3;
+            background: url('/images/ronnie-c.webp') top center;
+            background-size: cover;
+        }
+
+        &:nth-child(2) {
+            grid-row: span 2 / span 2;
+            background: url('/images/phil-heath.webp') top center;
+            background-size: cover;
+        }
+
+        &:nth-child(3) {
+            grid-row: span 2 / span 2;
+            grid-column-start: 2;
+            grid-row-start: 3;
+            background: url('/images/kevin-l.webp') top center;
+            background-size: cover;
+        }
+
+        &:nth-child(4) {
+            grid-row: span 3 / span 3;
+            grid-row-start: 4;
+            background: url('/images/arnould-s.webp') top center;
+            background-size: cover;
+        }
+
+        &:nth-child(5) {
+            grid-row: span 2 / span 2;
+            grid-column-start: 2;
+            grid-row-start: 5;
+            background: url('/images/cbum.webp') top center;
             background-size: cover;
         }
     }

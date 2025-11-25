@@ -10,6 +10,10 @@
         font-weight: 600;
         letter-spacing: .2rem;
         text-transform: uppercase;
+
+        @media (max-width: 640px) {
+            font-size: .9rem;
+        }
     }
 
     &__title {
@@ -19,9 +23,17 @@
         @media (max-width: 1280px) {
             font-size: 1.8em;
         }
+
+        @media (max-width: 640px) {
+            font-size: 1.4em;
+        }
     }
 
     &__description {
         font-size: 1.2rem;
+
+        @media (max-width: 640px) {
+            font-size: .976rem;
+        }
     }
 }

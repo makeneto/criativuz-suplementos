@@ -10,6 +10,10 @@
         padding-inline: 4rem;
     }
 
+    @media (max-width: 640px) {
+        padding: 3rem 1rem;
+    }
+
     &__logo {
         width: auto;
         height: 2.3rem;
@@ -19,16 +23,37 @@
     &__links {
         display: flex;
         justify-content: space-between;
+
+        @media (max-width: 640px) {
+            display: grid;
+        }
     }
 
-    @media (max-width: 1280px) {
-        &__content {
+    &__content {
+        @media (max-width: 1280px) {
             gap: 5rem;
         }
     }
 
+    &__links {
+        gap: 5rem;
+
+        @media (max-width: 640px) {
+            grid-template-columns: repeat(2, 1fr);
+            justify-content: space-between;
+            column-gap: 8rem;
+            row-gap: 4rem;
+        }
+    }
+
+
+
     &__about {
         width: 30%;
+
+        @media (max-width: 640px) {
+            width: 100%
+        }
     }
 
     &__description {
@@ -46,10 +71,6 @@
         & svg {
             stroke: white;
         }
-    }
-
-    &__links {
-        gap: 5rem;
     }
 
     &__title {

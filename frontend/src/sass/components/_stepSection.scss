@@ -8,6 +8,15 @@
     @media (max-width: 1280px) {
         margin: 0 4rem 11rem;
     }
+
+    @media (max-width: 640px) {
+        gap: 4rem;
+        margin: 0;
+        grid-template-columns: repeat(1, 1fr);
+        background-color: #590209;
+        padding: 7rem 1rem;
+        clip-path: polygon(0 4%, 100% 0, 100% 96%, 0% 100%);
+    }
 }
 
 .step {
@@ -15,7 +24,12 @@
     gap: .4rem;
 
     @media (max-width: 1280px) {
-        gap: .2;
+        gap: .2rem;
+    }
+
+    @media (max-width: 640px) {
+        gap: .8rem;
+        text-align: center;
     }
 
     &__num {
@@ -26,11 +40,30 @@
 
         @media (max-width: 1280px) {
             font-size: 4rem;
+            line-height: 4rem;
+        }
+
+        @media (max-width: 640px) {
+            font-size: 3.4rem;
+            line-height: 3.5rem;
+            color: #F20530;
         }
     }
 
     &__title {
         font-size: 1.3rem;
         font-weight: 600;
+
+        @media (max-width: 640px) {
+            font-size: 1.2rem;
+            line-height: 1.5rem;
+            color: #F2C6A0;
+        }
+    }
+
+    @media (max-width: 640px) {
+        &__description {
+            color: #F2C6A0;
+        }
     }
 }

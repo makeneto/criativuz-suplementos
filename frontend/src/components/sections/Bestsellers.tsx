@@ -13,7 +13,7 @@ export default function Bestsellers() {
 
     return (
         <section className="sectionGrid" id="bestseller">
-            <IntroSection category="Bestsellers" title="Mais Vendidos" />
+            <IntroSection category="Bestsellers" title="Mais vendidos" />
             {isPending ? <Spinner /> : <ProductCard products={bestSellers} />}
         </section>
     )

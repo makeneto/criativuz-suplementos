@@ -5,16 +5,24 @@
         margin: 12rem 4rem 8rem;
     }
 
+    @media (max-width: 640px) {
+        margin: 10rem 1rem 10rem;
+    }
+
     &__list {
         margin-top: 3rem;
         display: grid;
         align-items: center;
         column-gap: 2.5rem;
-        row-gap: 4rem;
+        row-gap: 6rem;
 
         @media (max-width: 1280px) {
             margin-top: 0;
             gap: 6rem 1rem;
+        }
+
+        @media (max-width: 640px) {
+            gap: 5rem 3rem;
         }
 
         & li {
@@ -27,6 +35,10 @@
                 padding-inline: 2.5rem;
             }
 
+            @media (max-width: 640px) {
+                padding: 0;
+            }
+
             & .productName {
                 margin-block: .3rem .9rem;
                 font-size: 1.1rem;
@@ -35,14 +47,20 @@
                 &:hover {
                     color: rgb(118, 0, 0);
                 }
+
+                @media (max-width: 640px) {
+                    font-size: 1rem;
+                }
             }
 
-            &:hover {
-                box-shadow: 0 15px 25px #00000014;
+            @media (min-width: 1024px) {
+                &:hover {
+                    box-shadow: 0 15px 25px #00000014;
 
-                .sectionGrid__list--view--controls {
-                    opacity: 1;
-                    transform: translateX(0);
+                    .sectionGrid__list--view--controls {
+                        opacity: 1;
+                        transform: translateX(0);
+                    }
                 }
             }
         }
@@ -59,6 +77,10 @@
 
                 @media (max-width: 1280px) {
                     height: 10rem;
+                }
+
+                @media (max-width: 640px) {
+                    height: 9rem;
                 }
             }
 

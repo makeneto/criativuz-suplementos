@@ -3,9 +3,10 @@
 import useFooter from "@/hooks/footer/useFooter"
 import FooterAbout from "../footer/FooterAbout"
 import FooterLinks from "../footer/FooterLinks"
+import Copyright from "../footer/Copyright"
 
 export default function Footer() {
-    const { columns, currentYear } = useFooter()
+    const { columns } = useFooter()
 
     return (
         <footer className="footer">
@@ -13,10 +14,8 @@ export default function Footer() {
                 <FooterAbout />
                 <FooterLinks columns={columns} />
             </section>
-            <p>
-                © {currentYear} Criativuz Suplementos. Todos os direitos
-                reservados.
-            </p>
+
+            <Copyright />
         </footer>
     )
 }

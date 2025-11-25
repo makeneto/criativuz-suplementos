@@ -10,6 +10,12 @@
         margin-inline: 6rem 4rem;
     }
 
+    @media (max-width: 640px) {
+        position: relative;
+        display: grid;
+        margin-inline: 1rem;
+    }
+
     &_image {
         width: 50rem;
         height: 44rem;
@@ -23,6 +29,14 @@
         @media (min-width: 1267) and (max-width: 1280px) {
             width: 37rem;
             height: 33rem;
+        }
+
+        @media (max-width: 640px) {
+            width: 90%;
+            height: 22rem;
+            margin-inline: auto;
+            position: relative;
+            top: -3rem;
         }
     }
 
@@ -42,6 +56,14 @@
             left: -2rem;
         }
 
+        @media (max-width: 640px) {
+            width: 100%;
+            position: relative;
+            top: 0;
+            left: 0;
+            padding: 2.6rem 2.2rem 6rem 2.5rem;
+        }
+
         & h1 {
             font-size: 2em;
             font-weight: 700;
@@ -52,10 +74,20 @@
                 font-size: 1.7em;
                 line-height: 2rem;
             }
+
+            @media (max-width: 640px) {
+                font-size: 1.4em;
+                line-height: 1.58rem;
+                margin-bottom: 1.4rem;
+            }
         }
 
         & p:not(:first-of-type) {
             margin-top: .8rem;
+
+            @media (max-width: 640px) {
+                margin-top: 1.3rem;
+            }
         }
     }
 }

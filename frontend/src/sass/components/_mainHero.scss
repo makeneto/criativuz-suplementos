@@ -3,6 +3,15 @@
     position: relative;
     min-width: 100%;
     height: 100%;
+    margin-bottom: 12rem;
+
+    @media (max-width: 1280px) {
+        margin-bottom: 9rem;
+    }
+
+    @media (max-width: 640px) {
+        height: 70dvh;
+    }
 
     @media (min-width: 768px) {
         height: 100dvh;
@@ -21,10 +30,14 @@
                 rgba(0, 0, 0, .6) 0%,
                 rgba(0, 0, 0, .525) 20%,
                 rgba(0, 0, 0, 0) 100%);
+
+        @media (max-width: 640px) {
+            background: radial-gradient(circle, rgba(0, 0, 0, 0.62) 9%, rgba(0, 0, 0, 0.32) 90%);
+        }
     }
 
     &__content {
-        max-width: 40%;
+        width: 40%;
         padding: 3rem;
         color: white;
 
@@ -33,15 +46,31 @@
         left: 2%;
         transform: translateY(-50%);
 
+        @media (max-width: 640px) {
+            text-align: center;
+            width: 100%;
+            padding: 0;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
         & h2 {
             font-weight: 700;
             font-size: 4.6rem;
             line-height: 5.3rem;
 
+
             @media (max-width: 1280px) {
                 margin-top: 1rem;
                 font-size: 2.6rem;
                 line-height: 3rem;
+            }
+
+            @media (max-width: 640px) {
+                margin-top: .7rem;
+                font-size: 2rem;
+                line-height: 2.4rem;
             }
         }
 
@@ -53,6 +82,11 @@
                 margin-top: 1rem;
                 font-size: 1.2rem;
             }
+
+            @media (max-width: 640px) {
+                margin-top: .7rem;
+                font-size: 1rem;
+            }
         }
     }
 
@@ -60,10 +94,11 @@
         margin-top: 2.5rem;
         display: inline-block;
         background: white;
+        border: 1px solid transparent;
         color: #250609;
         padding: .6rem 1rem;
         border-radius: 0;
-        transition: background .3s ease;
+        transition: background .2s ease;
 
         & span {
             text-decoration: none;
@@ -73,10 +108,16 @@
             @media (max-width: 1280px) {
                 font-size: 1rem;
             }
+
+            @media (max-width: 640px) {
+                font-size: .9rem;
+            }
         }
 
         &:hover {
-            background: rgb(231, 231, 231);
+            background: transparent;
+            border: 1px solid white;
+            color: white;
         }
 
         @media (max-width: 1280px) {

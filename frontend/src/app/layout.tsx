@@ -31,7 +31,7 @@ export default function RootLayout({
             <body className={poppins.className + " antialiased"}>
                 <ReduxProvider>
                     <ReactQueryProvider>
-                        <NavBar />
+                        {/* <NavBar /> */}
                         {children}
                         <Toaster />
                         <WhatsAppButton />

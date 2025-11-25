@@ -1,11 +1,15 @@
 .brandsSection {
     width: 70%;
-    margin: 12rem auto 20rem;
+    margin: 0 auto 20rem;
     text-align: center;
 
     @media (max-width: 1280px) {
         width: 90%;
-        margin-block: 9rem 15rem;
+        margin-block: 0 15rem;
+    }
+
+    @media (max-width: 640px) {
+        margin-block: 0 7rem;
     }
 
     &__category {
@@ -14,6 +18,10 @@
         font-weight: 600;
         letter-spacing: .2rem;
         text-transform: uppercase;
+
+        @media (max-width: 640px) {
+            font-size: .8rem;
+        }
     }
 
     & h1 {
@@ -24,6 +32,11 @@
         @media (max-width: 1280px) {
             margin-top: .1rem;
             font-size: 1.8em;
+        }
+
+        @media (max-width: 640px) {
+            margin-top: .1rem;
+            font-size: 1.4em;
         }
     }
 
@@ -36,6 +49,11 @@
         @media (max-width: 1280px) {
             margin: .6rem auto;
             font-size: 1rem;
+        }
+
+        @media (max-width: 640px) {
+            width: 88%;
+            font-size: .976rem;
         }
     }
 
@@ -50,6 +68,12 @@
             margin-top: 4.2rem;
         }
 
+        @media (max-width: 640px) {
+            display: grid;
+            justify-content: center;
+            gap: 3rem;
+        }
+
         & img {
             height: 3rem;
             object-fit: contain;
@@ -60,6 +84,11 @@
                 height: 2rem;
             }
 
+            @media (max-width: 640px) {
+                height: 2.2rem;
+                justify-self: center;
+            }
+
             &:hover {
                 filter: none;
             }
@@ -67,14 +96,32 @@
 
         & .blackBullBrand {
             height: 4rem;
+
+            @media (max-width: 640px) {
+                height: 3.9rem;
+            }
         }
 
         & .nplBrand {
             height: 3.6rem;
+
+            @media (max-width: 640px) {
+                height: 3.8rem;
+            }
         }
 
         & .nutriTBrand {
             height: 3rem;
+
+            @media (max-width: 640px) {
+                height: 2.8rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .vitaTBrand {
+                height: 1.7rem;
+            }
         }
     }
 }

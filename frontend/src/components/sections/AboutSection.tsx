@@ -14,9 +14,8 @@ export default function AboutSection() {
                     progresso verdadeiro é construído passo a passo, com
                     escolhas conscientes e dedicação, porque, afinal,{" "}
                     <span className="lightTag">
-                        quem cresce natural é planta
+                        quem cresce natural é planta.
                     </span>
-                    .
                 </p>
 
                 <p>

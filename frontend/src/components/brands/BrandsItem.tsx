@@ -23,6 +23,8 @@ export default function BrandsItem({ brands }: BrandsItemProps) {
                             ? "nplBrand"
                             : brand.name === "NutriTech"
                             ? "nutriTBrand"
+                            : brand.name === "VitaTech"
+                            ? "vitaTBrand"
                             : ""
                     }
                 />

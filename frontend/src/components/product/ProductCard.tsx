@@ -25,11 +25,11 @@ export default function ProductCard({
     const isDesktopBetween = useMediaQuery({ minWidth: 1024, maxWidth: 1280 })
     const isMobile = useMediaQuery({ maxWidth: 639 })
 
-    const columns = isDesktopBetween ? 3 : isThree ? 3 : 4
+    const columns = isDesktopBetween ? 3 : isThree ? 3 : isMobile ? 2 : 4
 
     const displayProducts = Array.isArray(products)
         ? isMobile
-            ? products.slice(0, 4)
+            ? products.slice(0, 8)
             : isDesktopBetween
             ? products.slice(0, 6)
             : products
