@@ -154,6 +154,10 @@ $solidBorder: 1px solid #e7e7e7;
                 & li:first-child {
                     border-bottom: .1rem solid red;
                     padding-block: .2rem;
+
+                    @media (max-width: 640px) {
+                        font-size: .9rem !important;
+                    }
                 }
 
                 & li:not(:first-child) {
@@ -168,6 +172,11 @@ $solidBorder: 1px solid #e7e7e7;
                     @media (max-width: 1280px) {
                         padding: .4rem .7rem;
                         font-size: .94rem;
+                    }
+
+                    @media (max-width: 640px) {
+                        padding: .3rem .6rem;
+                        font-size: .8rem;
                     }
 
                     &.active {
@@ -212,6 +221,7 @@ $solidBorder: 1px solid #e7e7e7;
         font-size: 1rem;
         transition: all .2s ease-in;
         padding-block: .6rem;
+
     }
 
     & button:first-child,
@@ -265,6 +275,12 @@ $solidBorder: 1px solid #e7e7e7;
             filter: brightness(95%);
             cursor: not-allowed;
         }
+
+        @media (max-width: 640px) {
+            padding-inline: .7rem;
+            padding-block: .31rem;
+            font-size: 1rem;
+        }
     }
 
     & p {
@@ -273,6 +289,11 @@ $solidBorder: 1px solid #e7e7e7;
         margin-inline: 1.2rem;
         text-align: center;
         font-size: 1.3rem;
+
+        @media (max-width: 640px) {
+            margin-inline: .6rem;
+            font-size: 1rem;
+        }
     }
 }
 

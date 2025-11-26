@@ -11,17 +11,37 @@
         top: 20%;
     }
 
+    @media (max-width: 640px) {
+        width: 100%;
+        position: relative;
+        top: 0;
+    }
+
     &--main {
         width: 100%;
         height: auto;
         object-fit: contain;
         display: block;
+
+        @media (max-width: 1280px) {
+            height: 400px;
+        }
+
+        @media (max-width: 640px) {
+            width: 70%;
+            height: 18rem;
+            margin: auto;
+        }
     }
 
     &__options {
         margin-top: 2rem;
         display: flex;
         gap: 1rem;
+
+        @media (max-width: 640px) {
+            justify-content: center;
+        }
     }
 
     &__thumb {

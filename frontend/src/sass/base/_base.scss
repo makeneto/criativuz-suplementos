@@ -18,10 +18,13 @@ body {
 }
 
 a,
-button,
 label {
     cursor: pointer;
     color: inherit;
+}
+
+button {
+    cursor: pointer;
 }
 
 a {

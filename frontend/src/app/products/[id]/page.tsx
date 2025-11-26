@@ -49,7 +49,7 @@ export default function ProductPage({ params }: ProductPageProps) {
             <div className="productPage__container">
                 <ProductGallery
                     isProductPage
-                    src={product.postImages[imageIndex]}
+                    imageIndex={imageIndex}
                     alt={product.name}
                     product={product}
                 />

@@ -1,31 +1,32 @@
-import Image from "next/image"
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import { useMediaQuery } from "react-responsive"
+import ImageControls from "./ImageControls"
+import DesktopThumbs from "./DesktopThumbs"
 
 interface ProductGalleryProps {
-    src: string
+    imageIndex: number
     alt: string
     isProductPage?: boolean
     product: any
 }
 
 export default function ProductGallery({
-    src,
+    imageIndex,
     alt,
     isProductPage,
     product,
 }: ProductGalleryProps) {
-    const [selectedImage, setSelectedImage] = useState(src)
-    const [selectedIndex, setSelectedIndex] = useState(0)
+    const [selectedIndex, setSelectedIndex] = useState(imageIndex)
+    const isMobile = useMediaQuery({ maxWidth: 640 })
 
-    const handleSelectImage = (image: string, index: number) => {
-        setSelectedImage(image)
-        setSelectedIndex(index)
-    }
+    useEffect(() => {
+        setSelectedIndex(imageIndex)
+    }, [imageIndex])
 
     return (
-        <aside className="productGallery">
+        <aside className="productGallery relative">
             <img
-                src={selectedImage}
+                src={product.postImages[selectedIndex]}
                 alt={alt}
                 className={`${
                     isProductPage ? "productGallery" : "modalProduct"
@@ -33,25 +34,19 @@ export default function ProductGallery({
                 style={{ backgroundColor: "#fff" }}
             />
 
-            <ul className="productGallery__options">
-                {product.postImages.map((image: string, index: number) => (
-                    <li
-                        key={index}
-                        onClick={() => handleSelectImage(image, index)}
-                        className={`productGallery__thumb${
-                            selectedIndex === index ? "--active" : "--inactive"
-                        }`}
-                    >
-                        <Image
-                            src={image}
-                            alt={`${product.name} ${index + 1}`}
-                            width={100}
-                            height={100}
-                            className="productGallery__image"
-                        />
-                    </li>
-                ))}
-            </ul>
+            {isMobile && product.postImages.length > 1 ? (
+                <ImageControls
+                    selectedIndex={selectedIndex}
+                    setSelectedIndex={setSelectedIndex}
+                    product={product}
+                />
+            ) : !isMobile ? (
+                <DesktopThumbs
+                    selectedIndex={selectedIndex}
+                    setSelectedIndex={setSelectedIndex}
+                    product={product}
+                />
+            ) : null}
         </aside>
     )
 }

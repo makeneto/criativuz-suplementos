@@ -26,7 +26,7 @@ export function Schedule({ date, setDate }: ScheduleProps) {
                     <Button
                         variant="outline"
                         id="date"
-                        className="w-48 justify-between text-base font-normal"
+                        className="w-48 justify-between sm:text-xl md:text-base font-normal text-red-950"
                     >
                         {date ? formatOrderDate(date) : "Data de entrega"}
                         <Calendar1 className="text-zinc-600" />

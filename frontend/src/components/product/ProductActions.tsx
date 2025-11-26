@@ -23,10 +23,10 @@ export default function ProductActions({
             </div>
 
             <div>
-                <button type="button" className="order" onClick={onAddToCart}>
+                <button type="button" className="cart" onClick={onAddToCart}>
                     Add ao Carrinho
                 </button>
-                <button type="submit" className="cart" onClick={onOrder}>
+                <button type="submit" className="order" onClick={onOrder}>
                     Encomendar
                 </button>
             </div>

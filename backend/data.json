@@ -32,9 +32,9 @@
                 "id": 6769,
                 "name": "Hyper Gain Mass",
                 "brand": "NPL",
-                "price": [38500],
-                "discountPrice": [0],
-                "weight": ["4kg"],
+                "price": [13000, 38500],
+                "discountPrice": [0, 36000],
+                "weight": ["1Kg", "4kg"],
                 "category": "ganho de massa",
                 "description": {
                     "synopsis": "Hyper Gain Mass é um suplemento hipercalórico para ganho de massa, com mais de 1350 calorias por porção, desenvolvido para otimizar o crescimento muscular e aumentar a síntese de proteína muscular.",
@@ -47,6 +47,7 @@
                     "recommendedUse": "Misture de 3 a 6 colheres-medida rasas (175 a 350 g) com 250 a 500 ml de água fria ou leite integral e consuma de 1 a 3 vezes ao dia. Recomenda-se o uso de uma porção completa por dia (6 colheres-medida) dividida em doses."
                 },
                 "postImages": [
+                    "https://i.postimg.cc/g0yhF2v7/hyper-gain-mass-npl-1kg.jpg",
                     "https://i.postimg.cc/qR3pPSBf/hyper-gain-mass-4kg.webp"
                 ],
                 "bestSeller": false,
@@ -188,7 +189,11 @@
                 "category": "proteína",
                 "description": {
                     "synopsis": "Fórmula para absorção máxima e recuperação",
-                    "highlights": [],
+                    "highlights": [
+                        "Auxilia no ganho de massa muscular",
+                        "Fornece aminoácidos essenciais para recuperação",
+                        "Apoia a síntese proteica pós-treino"
+                    ],
                     "information": "Proteína de soro de leite com aminoácidos absorção máxima e recuperação para crescimento muscular Com sistema de transporte de alto impacto",
                     "recommendedUse": "Misture 2 colheres (40 g) com 150-200 ml de água fria e agite bem. Consuma 1-3 porcoes diárias como lanche entre as refeições, e após o treino."
                 },
@@ -208,13 +213,13 @@
                 "weight": ["200g"],
                 "category": "creatina",
                 "description": {
-                    "synopsis": "USN 3 em 1 Creatina Monoidratada e Aminoácidos é um suplemento poderoso para impulsionar o desempenho atlético e o crescimento muscular. Combina creatina monoidratada micronizada com aminoácidos para aumentar o desenvolvimento muscular magro e a produção de energia.",
+                    "synopsis": "USN 3 em 1 Creatina Monohidrato e Aminoácidos é um suplemento poderoso para impulsionar o desempenho atlético e o crescimento muscular. Combina creatina monohidrato micronizada com aminoácidos para aumentar o desenvolvimento muscular magro e a produção de energia.",
                     "highlights": [
                         "Apoia o crescimento muscular magro",
                         "Apoia a produção de energia muscular",
                         "Aumenta a intensidade e a resistência do treinamento muscular"
                     ],
-                    "information": "A mistura de monoidrato de creatina micronizada e aminoácidos que promove o crescimento muscular magro e aumenta a produção de energia muscular, aumentando a intensidade e a resistência do treino.",
+                    "information": "A mistura de monohidrato de creatina micronizada e aminoácidos que promove o crescimento muscular magro e aumenta a produção de energia muscular, aumentando a intensidade e a resistência do treino.",
                     "recommendedUse": "Misture ±1 colher (5,5 g) com 150 - 200 ml de água, proteína em pó ou suplemento para ganho de massa. Tome 1 a 2 porções diariamente, 30 minutos antes ou imediatamente após o exercício, ou em dias sem treino, após acordar. As porções podem ser dobradas, se necessário. Pode ser usado para carga de creatina. Observe que os efeitos benéficos da creatina só serão obtidos com uma ingestão diária de pelo menos 3 g de creatina."
                 },
                 "postImages": [
@@ -277,7 +282,7 @@
             },
             {
                 "id": 3343,
-                "name": "Creatina Extreme",
+                "name": "Creatina Extrema",
                 "brand": "Black Bull",
                 "price": [19500],
                 "discountPrice": [0],
@@ -285,7 +290,11 @@
                 "category": "creatina",
                 "description": {
                     "synopsis": "Crea Extreme dá-te mais força, explosão e resistência pra levantares pesado e cresceres de verdade — porque no treino, potência é tudo.",
-                    "highlights": [],
+                    "highlights": [
+                        "Ganhe massa muscular rapidamente",
+                        "Aumentar os ganhos de força",
+                        "Maximize o desempenho muscular"
+                    ],
                     "information": "CREA EXTREME é rico em creatina e carboidratos, uma fórmula de transporte de creatina com três objetivos: ganhar massa muscular rapidamente, aumentar os ganhos de força e maximizar o desempenho muscular. O atleta mais esforçado da academia, prepare-se para quebrar todos os recordes pessoais, dia após dia, repetição após repetição.",
                     "recommendedUse": "Misture 1 colher de CREA EXTREME com 500 ml de água ou sua bebida favorita, usando um Black Bull Shaker e aproveite. Beba durante ou antes da academia. Para melhores resultados, use 1 porção por dia."
                 },
@@ -294,6 +303,32 @@
                 ],
                 "bestSeller": false,
                 "flavors": ["Coca Cola", "Mirtilo"],
+                "inStock": true
+            },
+            {
+                "id": 8855,
+                "name": "Creatina Monohidrato",
+                "brand": "NPL",
+                "price": [14000],
+                "discountPrice": [0],
+                "weight": ["150g"],
+                "category": "creatina",
+                "description": {
+                    "synopsis": "A creatina monohidratada da NPL oferece a forma mais pura e de mais fácil absorção de creatina disponível.",
+                    "highlights": [
+                        "Micronizado",
+                        "Promover o crescimento de massa muscular magra",
+                        "Aumentar a força",
+                        "Melhora a recuperação muscular"
+                    ],
+                    "information": "A Creatina Monohidratada da NPL oferece a forma mais pura e de mais fácil absorção de creatina disponível. A creatina é armazenada como fosfocreatina no tecido muscular e fornece energia para as contrações musculares. Estudos sobre a creatina demonstraram sua eficácia no aumento da força, potência e resistência.",
+                    "recommendedUse": "Misture 1 colher medidora rasa (aproximadamente 5 g) com 150-250 ml de água fria ou sua bebida esportiva favorita de 1 a 3 vezes ao dia. Em dias de treino, consuma antes e imediatamente após o exercício. Em dias sem treino, consuma 2 porções com intervalo de 6 a 12 horas."
+                },
+                "postImages": [
+                    "https://i.postimg.cc/q7cKVv85/creatine-mono-NPL.jpg"
+                ],
+                "bestSeller": false,
+                "flavors": ["Sem sabor"],
                 "inStock": true
             },
             {
@@ -406,7 +441,12 @@
                 "category": "queima gordura",
                 "description": {
                     "synopsis": "O Nutritech Lipocut é um poderoso queimador de gordura que ajuda você a perder peso e conquistar o corpo desejado. Contém uma mistura de ingredientes que aceleram o metabolismo, reduzem o apetite e aumentam a energia, tornando-o um suplemento ideal para quem busca eliminar quilos extras.",
-                    "highlights": [],
+                    "highlights": [
+                        "Ajuda na queima da gordura armazenada",
+                        "Evita o armazenamento de gordura da dieta",
+                        "Fórmula sem estimulantes para menos efeitos colaterais",
+                        "Contribui para manter energia e níveis de glicose estáveis"
+                    ],
                     "information": "O NUTRITECH LIPOCUT foi desenvolvido como um auxiliar no controle de peso sem estimulantes. Formulado com uma mistura lipotrópica exclusiva, sem cafeína, que visa combinar os benefícios potenciais desses ingredientes essenciais para influenciar positivamente seu programa de controle de peso, incluindo exercícios regulares e uma dieta com restrição calórica. O LIPOCUT não contém estimulantes nem substâncias proibidas, sendo adequado para consumo por atletas.",
                     "recommendedUse": "Tomar 2 cápsulas três vezes ao dia, 20 minutos antes do pequeno‑almoço, almoço e jantar."
                 },
@@ -425,7 +465,11 @@
                 "category": "suporte à saúde",
                 "description": {
                     "synopsis": "Cápsulas gelatinosas Vitatech Ômega 3. Suplemento de óleo de peixe com ácidos graxos essenciais, eficaz e de ação rápida. Promove a saúde do coração e do cérebro e ajuda a reduzir a inflamação. Cápsula gelatinosa de origem sustentável para consumo diário.",
-                    "highlights": [],
+                    "highlights": [
+                        "Auxilia na saúde cardiovascular",
+                        "Contribui para função cerebral e cognitiva",
+                        "Ajuda na saúde das articulações"
+                    ],
                     "information": "Ômega 3 Pode combater a depressão e a ansiedade, melhorar a saúde ocular, promover a saúde cerebral durante a gravidez e no início da vida, reduzir os fatores de risco para doenças cardíacas, reduzir os sintomas da síndrome metabólica, combater a inflamação, combater doenças autoimunes, melhorar os transtornos mentais, reduzir a asma em crianças, reduzir a gordura no fígado e aliviar as dores menstruais.   Pode melhorar a saúde óssea e articular e melhorar o sono.",
                     "recommendedUse": "Tomar 1 soft‑gel cápsula diariamente com uma refeição."
                 },
@@ -444,7 +488,12 @@
                 "category": "suporte à saúde",
                 "description": {
                     "synopsis": "Cápsulas de colágeno Vitatech com peptídeos de colágeno de alta absorção clinicamente comprovados. Ação rápida e eficaz, que promove a saúde da pele, cabelos, unhas, articulações e ossos. Peptídeos de colágeno tipo I e II. Cápsula para tomar diariamente.",
-                    "highlights": [],
+                    "highlights": [
+                        "Auxilia na saúde da pele, cabelos e unhas",
+                        "Contribui para a saúde das articulações",
+                        "Promove elasticidade e firmeza da pele",
+                        "Suporte à saúde óssea e muscular"
+                    ],
                     "information": "Collagen Peptides Oferece múltiplos benefícios à saúde, atuando como blocos de construção para articulações, ossos e músculos saudáveis, bem como para a pele. O colágeno é um componente estrutural essencial",
                     "recommendedUse": "Tome 1 cápsula por dia com água."
                 },
@@ -465,7 +514,12 @@
                 "category": "suporte à saúde",
                 "description": {
                     "synopsis": "Comprimidos Vitatech Multivitamínico para Homens com Raiz de Maca. Suplemento vitamínico complexo eficaz e de ação rápida. Comprimido para tomar diariamente.",
-                    "highlights": [],
+                    "highlights": [
+                        "Suporte para saúde geral",
+                        "Contribui para energia e vitalidade",
+                        "Mantém função imunológica",
+                        "Suporte à saúde masculina específica"
+                    ],
                     "information": "Protege seus olhos da cegueira noturna e do declínio relacionado à idade. Pode reduzir o risco de certos tipos de câncer. Contribui para a saúde do sistema imunológico. Reduz o risco de acne. Contribui para a saúde óssea. Promove o crescimento e a reprodução saudáveis.",
                     "recommendedUse": "Tome 1 comprimido por dia com o café da manhã."
                 },
@@ -486,7 +540,12 @@
                 "category": "suporte à saúde",
                 "description": {
                     "synopsis": "Comprimidos Vitatech Multivitamínico para Mulheres com Extrato de Cranberry. Suplemento vitamínico complexo eficaz e de ação rápida. Comprimido para tomar diariamente.",
-                    "highlights": [],
+                    "highlights": [
+                        "Suporte à saúde geral feminina",
+                        "Contribui para energia e vitalidade",
+                        "Mantém função imunológica",
+                        "Suporte à saúde óssea e hormonal"
+                    ],
                     "information": "Protege seus olhos da cegueira noturna e do declínio relacionado à idade. Pode reduzir o risco de certos tipos de câncer. Contribui para a saúde do sistema imunológico. Reduz o risco de acne. Contribui para a saúde óssea. Promove o crescimento e a reprodução saudáveis.",
                     "recommendedUse": "Tome 1 comprimido por dia com o café da manhã."
                 },

@@ -3,6 +3,10 @@ $solidBorder: 1px solid #e7e7e7;
 .productPage {
     margin-block: 10rem 6rem;
 
+    @media (max-width: 640px) {
+        margin-block: 6rem 6rem;
+    }
+
     &__container {
         align-items: flex-start;
         gap: 5rem;
@@ -13,6 +17,12 @@ $solidBorder: 1px solid #e7e7e7;
         @media (max-width: 1280px) {
             gap: 9rem;
             margin-inline: 4rem;
+        }
+
+        @media (max-width: 640px) {
+            display: grid;
+            gap: 1rem;
+            margin-inline: 1rem;
         }
 
         &--content {
@@ -41,12 +51,20 @@ $solidBorder: 1px solid #e7e7e7;
                         @media (max-width: 1280px) {
                             font-size: 1.4rem;
                         }
+
+                        @media (max-width: 640px) {
+                            font-size: 1.5rem;
+                        }
                     }
 
                     p {
                         color: #c20303dd;
                         font-weight: 600;
                         font-size: 1.3rem;
+
+                        @media (max-width: 640px) {
+                            font-size: 1rem;
+                        }
                     }
 
                     div {
@@ -66,6 +84,10 @@ $solidBorder: 1px solid #e7e7e7;
                 display: grid;
                 gap: 1.1rem;
                 margin-top: 1.8rem;
+
+                @media (max-width: 640px) {
+                    margin-top: 2rem;
+                }
             }
 
             &--list {
@@ -117,7 +139,6 @@ $solidBorder: 1px solid #e7e7e7;
             width: 1.2rem;
             transition: all .2s ease-in;
         }
-
     }
 
     .activatedItem {
@@ -151,9 +172,14 @@ $solidBorder: 1px solid #e7e7e7;
     .productSubmitSection {
         width: fit-content;
         background: white;
-        margin-block: 2rem 1.6rem;
+        margin-block: 2rem 2.4rem;
         display: grid;
         gap: 1rem;
+
+        @media (max-width: 640px) {
+            width: 100%;
+            margin-block: 2rem;
+        }
 
         & div {
             display: flex;
@@ -203,9 +229,24 @@ $solidBorder: 1px solid #e7e7e7;
             color: white;
             padding-block: .6rem;
             text-transform: uppercase;
+            font-size: .9rem;
+
+            @media (max-width: 640px) {
+                font-size: .8rem;
+            }
         }
 
         .order {
+            background-color: red;
+            border: none;
+            transition: all .2s ease-in;
+
+            &:hover {
+                background-color: rgb(216, 0, 0);
+            }
+        }
+
+        .cart {
             background-color: transparent;
             color: #3d0a0f;
             border: 1px solid #3d0a0f;
@@ -218,17 +259,6 @@ $solidBorder: 1px solid #e7e7e7;
                 transition: all .2s ease-in;
             }
         }
-
-        .cart {
-            background-color: red;
-            border: none;
-            font-size: 1rem;
-            transition: all .2s ease-in;
-
-            &:hover {
-                background-color: rgb(216, 0, 0);
-            }
-        }
     }
 
     &__details {
@@ -239,14 +269,23 @@ $solidBorder: 1px solid #e7e7e7;
             gap: .8rem;
             margin-bottom: 1.6rem;
 
+            @media (max-width: 640px) {
+                padding: 1.5rem;
+            }
+
             li {
                 display: flex;
                 align-items: center;
                 gap: .7rem;
 
+                @media (max-width: 640px) {
+                    gap: .8rem;
+                    font-size: .9rem;
+                }
+
                 svg {
-                    width: 1.3rem;
-                    height: 1.3rem;
+                    min-width: 1.3rem;
+                    min-height: 1.3rem;
                 }
             }
         }
