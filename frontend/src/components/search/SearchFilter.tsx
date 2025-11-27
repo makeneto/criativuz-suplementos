@@ -1,5 +1,6 @@
 "use client"
 
+import React from "react"
 import {
     Accordion,
     AccordionContent,
@@ -11,7 +12,7 @@ import BrandsFound from "./BrandsFound"
 import SelectUI from "./SelectUI"
 import UserGoals from "./UserGoals"
 
-interface SearchFilterProps {
+export interface SearchFilterProps {
     filterContent: string[]
     selected: string | null
     onSelect: (value: string | null) => void
@@ -31,6 +32,8 @@ interface SearchFilterProps {
     categoryOptions: string[] | any
     selectedCategory: string | null
     onChangeCategory: (value: string | null) => void
+
+    children?: React.ReactNode
 }
 
 export default function SearchFilter({

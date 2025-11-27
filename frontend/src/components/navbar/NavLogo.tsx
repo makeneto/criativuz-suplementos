@@ -6,7 +6,7 @@ export default function NavLogo() {
             <img
                 src="/icons/criativuz-logo.png"
                 alt="Criativuz Logo"
-                className="nav_bar--logo"
+                className="nav__bar--logo"
             />
         </Link>
     )

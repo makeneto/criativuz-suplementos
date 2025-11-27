@@ -30,7 +30,7 @@ export default function ProductHeader({
             <button
                 type="button"
                 onClick={() => addFavorite(product as any)}
-                className={`productItem ${
+                className={`favButton ${
                     isFavorite ? "activatedItem" : "deactivatedItem"
                 }`}
                 aria-pressed={isFavorite}

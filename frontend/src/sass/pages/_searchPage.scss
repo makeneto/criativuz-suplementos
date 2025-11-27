@@ -5,6 +5,10 @@
         margin: 9.2rem 4rem 10rem;
     }
 
+    @media (max-width: 1024px) {
+        margin: 7rem 1rem;
+    }
+
     & main {
         margin-top: 2rem;
         display: grid;
@@ -17,6 +21,10 @@
             margin-top: 4rem;
         }
 
+        @media (max-width: 640px) {
+            grid-template-columns: 100%;
+        }
+
         & aside {
             position: sticky;
             top: 15%;
@@ -24,6 +32,10 @@
 
             @media (max-width: 1280px) {
                 top: 17%
+            }
+
+            @media (max-width: 640px) {
+                display: none;
             }
         }
     }
@@ -40,4 +52,14 @@
     display: flex;
     align-items: center;
     gap: .8rem;
+}
+
+.filterButton {
+    &:hover {
+
+        & p,
+        & svg {
+            color: rgb(105, 0, 0);
+        }
+    }
 }

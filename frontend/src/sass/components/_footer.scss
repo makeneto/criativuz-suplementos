@@ -6,6 +6,11 @@
     display: grid;
     gap: 5rem;
 
+    & p {
+        font-size: .976rem;
+        line-height: 1.666rem;
+    }
+
     @media (max-width: 1280px) {
         padding-inline: 4rem;
     }
@@ -17,6 +22,10 @@
     &__logo {
         width: auto;
         height: 2.3rem;
+
+        @media (max-width: 640px) {
+            height: 1.8rem;
+        }
     }
 
     &__content,
@@ -46,8 +55,6 @@
         }
     }
 
-
-
     &__about {
         width: 30%;
 
@@ -60,6 +67,11 @@
         &-text {
             margin: 2.2rem 0;
             line-height: 1.8rem;
+
+            @media (max-width: 640px) {
+                font-size: .976rem;
+                line-height: 1.666rem;
+            }
         }
     }
 
@@ -70,6 +82,10 @@
 
         & svg {
             stroke: white;
+
+            @media (max-width: 640px) {
+                width: 1.4rem;
+            }
         }
     }
 
@@ -87,9 +103,18 @@
             gap: .5rem;
         }
 
+        @media (max-width: 640px) {
+            gap: 1rem;
+        }
+
         & li,
         & a {
             cursor: pointer;
+
+            @media (max-width: 640px) {
+                font-size: .976rem;
+                line-height: 1.4rem;
+            }
 
             &:hover {
                 text-decoration: underline;

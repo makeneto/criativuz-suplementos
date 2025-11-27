@@ -37,6 +37,7 @@
 
             @media (max-width: 640px) {
                 padding: 0;
+                text-align: start;
             }
 
             & .productName {
@@ -49,12 +50,17 @@
                 }
 
                 @media (max-width: 640px) {
-                    font-size: 1rem;
+                    font-weight: 600;
+                    font-size: .93rem;
                 }
             }
 
-            @media (min-width: 1024px) {
-                &:hover {
+            &:hover {
+                & .productName {
+                    color: rgb(118, 0, 0);
+                }
+
+                @media (min-width: 1024px) {
                     box-shadow: 0 15px 25px #00000014;
 
                     .sectionGrid__list--view--controls {
@@ -63,6 +69,8 @@
                     }
                 }
             }
+
+
         }
 
         &--view {
@@ -80,7 +88,7 @@
                 }
 
                 @media (max-width: 640px) {
-                    height: 9rem;
+                    height: 8rem;
                 }
             }
 

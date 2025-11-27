@@ -6,7 +6,7 @@ import HelpSheet from "../help/HelpSheet"
 
 export default function UserActions() {
     return (
-        <aside className="nav_bar__aside">
+        <aside className="nav__bar__aside">
             <SearchBar />
             <HelpSheet />
             <FavoriteSheet />

@@ -4,7 +4,7 @@ $solidBorder: 1px solid #e7e7e7;
     margin-block: 10rem 6rem;
 
     @media (max-width: 640px) {
-        margin-block: 6rem 6rem;
+        margin-block: 7rem 6rem;
     }
 
     &__container {
@@ -125,7 +125,7 @@ $solidBorder: 1px solid #e7e7e7;
         }
     }
 
-    .productItem {
+    .favButton {
         cursor: pointer;
         width: 2.5rem;
         height: 2.5rem;
@@ -135,9 +135,18 @@ $solidBorder: 1px solid #e7e7e7;
         justify-content: center;
         transition: all .2s ease-in;
 
+        @media (max-width: 640px) {
+            width: 2.2rem;
+            height: 2.2rem;
+        }
+
         & svg {
             width: 1.2rem;
             transition: all .2s ease-in;
+
+            @media (max-width: 640px) {
+                width: 1rem;
+            }
         }
     }
 

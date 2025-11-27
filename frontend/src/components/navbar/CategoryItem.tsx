@@ -26,9 +26,9 @@ export default function CategoryItem({
     const isDesktopBetween = useMediaQuery({ minWidth: 1024, maxWidth: 1280 })
 
     return (
-        <li className="nav_bar__category-item" ref={containerRef}>
+        <li className="nav__bar__category-item" ref={containerRef}>
             <button
-                className="nav_bar__categories-btn"
+                className="nav__bar__categories-btn"
                 onClick={onToggle}
                 aria-expanded={isOpen}
                 aria-controls={`category-${category}`}

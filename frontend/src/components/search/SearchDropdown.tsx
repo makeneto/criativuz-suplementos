@@ -14,7 +14,7 @@ export default function SearchDropdown({
     onItemClick,
 }: Props) {
     return (
-        <ul className="nav_bar__search-dropdown">
+        <ul className="nav__bar__search-dropdown">
             {filteredProducts.length > 0 && (
                 <>
                     <h5>Produtos</h5>

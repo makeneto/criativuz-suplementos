@@ -1,40 +1,11 @@
 "use client"
 
-import { useEffect, useState } from "react"
-
-import InformBar from "../sections/InformBar"
-import UserActions from "./UserActions"
-import NavLogo from "./NavLogo"
-import CategoriesMenu from "./CategoriesMenu"
+import { useMediaQuery } from "react-responsive"
+import DesktopNavBar from "./DesktopNavBar"
+import MobileNavBar from "./MobileNavBar"
 
 export default function NavBar() {
-    const [hasShadow, setHasShadow] = useState(false)
+    const isMobile = useMediaQuery({ maxWidth: 630 })
 
-    useEffect(() => {
-        const handleScroll = () => {
-            setHasShadow(window.scrollY >= 10)
-        }
-
-        window.addEventListener("scroll", handleScroll)
-        return () => window.removeEventListener("scroll", handleScroll)
-    }, [])
-
-    return (
-        <section
-            className={`nav fixed top-0 left-0 w-full z-50 bg-white transition-shadow duration-3000 ${
-                hasShadow ? "shadow-lg" : ""
-            }`}
-        >
-            <InformBar />
-
-            <nav className="nav_bar">
-                <div className="nav_bar--firstChild">
-                    <NavLogo />
-                    <CategoriesMenu />
-                </div>
-
-                <UserActions />
-            </nav>
-        </section>
-    )
+    return !isMobile ? <DesktopNavBar /> : <MobileNavBar />
 }

@@ -25,7 +25,15 @@ export default function ProductCard({
     const isDesktopBetween = useMediaQuery({ minWidth: 1024, maxWidth: 1280 })
     const isMobile = useMediaQuery({ maxWidth: 639 })
 
-    const columns = isDesktopBetween ? 3 : isThree ? 3 : isMobile ? 2 : 4
+    const columns = isDesktopBetween
+        ? 3
+        : isMobile
+        ? isThree
+            ? 2
+            : 2
+        : isThree
+        ? 3
+        : 4
 
     const displayProducts = Array.isArray(products)
         ? isMobile
@@ -106,10 +114,7 @@ export default function ProductCard({
                                 {p.name}
                             </Link>
 
-                            <TextPrice
-                                product={p}
-                                className="justify-center mt-1"
-                            />
+                            <TextPrice product={p} className="mt-1" />
                         </li>
                     )
                 })}

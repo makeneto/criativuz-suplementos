@@ -19,7 +19,7 @@ export function CategoryDropdownList({ products, isOpen, onToggle }: Props) {
                 visibility: isOpen ? "visible" : "hidden",
             }}
         >
-            <ul className="nav_bar__products-list">
+            <ul className="nav__bar__products-list">
                 {products.map((prod) => (
                     <li key={prod.id}>
                         <Link href={`/products/${prod.id}`} onClick={onToggle}>

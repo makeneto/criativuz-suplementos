@@ -75,6 +75,7 @@
         }
 
         & img {
+            cursor: pointer;
             height: 3rem;
             object-fit: contain;
             filter: grayscale(100%);

@@ -62,10 +62,26 @@ button {
 .productPrice {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: .3rem;
+
+    @media (max-width: 640px) {
+        justify-content: flex-start;
+    }
+
+    @media (max-width: 640px) {
+        & span {
+            font-size: .899rem;
+        }
+    }
 
     & p {
         font-weight: 600;
+
+        @media (max-width: 640px) {
+            font-weight: 500;
+            font-size: .899rem;
+        }
     }
 }
 

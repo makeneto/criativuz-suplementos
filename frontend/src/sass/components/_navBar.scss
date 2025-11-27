@@ -28,13 +28,26 @@ $solidBorder: 1px solid #e7e7e7;
         }
     }
 
-    &_bar {
+    &__bar {
         background: #D91807 url('/images/red-cloud.webp') no-repeat center center;
         background-size: cover;
         padding: .4rem 2.23rem .4rem 1rem;
         display: flex;
         align-items: center;
         justify-content: space-between;
+
+        &--mobile {
+            padding: 1.4rem 1rem;
+
+            & svg {
+                cursor: pointer;
+                color: white;
+            }
+
+            & .borderSeparator {
+                border: 1px solid rgba(255, 164, 164, 0.719);
+            }
+        }
 
         &--firstChild {
             display: flex;
@@ -47,6 +60,11 @@ $solidBorder: 1px solid #e7e7e7;
         &--logo {
             margin-top: .5rem;
             width: 9rem;
+
+            @media (max-width: 640px) {
+                width: 7rem;
+                margin-top: 0;
+            }
         }
 
         &__aside {
@@ -155,7 +173,7 @@ $solidBorder: 1px solid #e7e7e7;
                     gap: 0;
                 }
 
-                .nav_bar__category-item {
+                .nav__bar__category-item {
                     position: relative;
                 }
 
@@ -179,7 +197,7 @@ $solidBorder: 1px solid #e7e7e7;
         }
 
         &__products-list,
-        &__products-list.nav_bar__products-list--right {
+        &__products-list.nav__bar__products-list--right {
             background: rgba(255, 0, 0, .767);
             -webkit-backdrop-filter: blur(8px);
             backdrop-filter: blur(8px);
@@ -211,7 +229,7 @@ $solidBorder: 1px solid #e7e7e7;
             }
         }
 
-        &__products-list.nav_bar__products-list--right {
+        &__products-list.nav__bar__products-list--right {
             top: .6rem;
             left: 100%;
             margin-left: .2rem;

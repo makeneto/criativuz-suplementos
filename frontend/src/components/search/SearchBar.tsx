@@ -27,7 +27,7 @@ export default function SearchBar() {
 
     return (
         <div
-            className="nav_bar__aside--inputContainer"
+            className="nav__bar__aside--inputContainer"
             style={{ position: "relative" }}
             ref={inputRef}
         >

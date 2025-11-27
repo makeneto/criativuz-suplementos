@@ -2,7 +2,6 @@ import type { Metadata } from "next"
 import ReactQueryProvider from "@/components/ReactQueryProvider"
 import { Poppins } from "next/font/google"
 
-import NavBar from "@/components/navbar/NavBar"
 import Footer from "@/components/sections/Footer"
 
 import "../css/global.css"
@@ -10,6 +9,7 @@ import "../css/style.css"
 import { ReduxProvider } from "@/redux/ReduxProvider"
 import { Toaster } from "sonner"
 import WhatsAppButton from "@/components/ui/WhatsAppButton"
+import NavBar from "@/components/navbar/NavBar"
 
 const poppins = Poppins({
     subsets: ["latin"],
@@ -31,7 +31,7 @@ export default function RootLayout({
             <body className={poppins.className + " antialiased"}>
                 <ReduxProvider>
                     <ReactQueryProvider>
-                        {/* <NavBar /> */}
+                        <NavBar />
                         {children}
                         <Toaster />
                         <WhatsAppButton />

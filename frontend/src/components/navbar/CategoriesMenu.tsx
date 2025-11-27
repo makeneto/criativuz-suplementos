@@ -20,8 +20,8 @@ export default function CategoriesMenu() {
         : mainCategories
 
     return (
-        <div className="nav_bar__categories" ref={dropdownRef}>
-            <ul className="nav_bar__categories-list">
+        <div className="nav__bar__categories" ref={dropdownRef}>
+            <ul className="nav__bar__categories-list">
                 {categories.map((cat) => (
                     <CategoryItem
                         key={cat}
