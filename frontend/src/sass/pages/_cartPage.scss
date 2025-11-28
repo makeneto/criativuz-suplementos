@@ -5,15 +5,28 @@
         margin: 10rem 4rem;
     }
 
+    @media (max-width: 640px) {
+        margin: 6rem 1rem;
+    }
+
     &__header {
         margin-bottom: 3rem;
         display: flex;
         align-items: center;
         justify-content: space-between;
 
+        @media (max-width: 640px) {
+            display: none;
+            ;
+        }
+
         &--title {
             font-weight: 700;
             font-size: 2rem;
+
+            @media (max-width: 640px) {
+                font-size: 1.4em;
+            }
         }
 
         & p {
@@ -43,6 +56,12 @@
             padding-block: 1rem 1.6rem;
         }
 
+        @media (max-width: 640px) {
+            display: block;
+            align-items: center;
+            justify-content: space-between;
+        }
+
         & div {
             display: grid;
             gap: 1rem;
@@ -66,7 +85,16 @@
         & span {
             display: grid;
             gap: 1rem;
-            justify-content: flex-end;
+
+            @media (max-width: 640px) {
+                width: 100%;
+                gap: .8rem;
+                text-align: center;
+
+                & p {
+                    font-size: .8rem;
+                }
+            }
         }
 
         .orderCart {
@@ -240,8 +268,22 @@
     justify-content: center;
     margin-block: 10rem 13rem;
 
+    @media (max-width: 640px) {
+        display: grid;
+
+        & p {
+            font-weight: 500;
+            text-align: center;
+        }
+    }
+
     & img {
         width: 20rem;
+        object-fit: contain;
+
+        @media (max-width: 640px) {
+            width: 16rem;
+        }
     }
 }
 

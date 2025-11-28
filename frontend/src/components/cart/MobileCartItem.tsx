@@ -1,20 +1,17 @@
 import { useDispatch } from "react-redux"
-import { removeFromCart } from "@/redux/slices/cartSlice"
-import { Trash, TruckElectric } from "lucide-react"
-import ProductQuantity from "../ui/ProductQuantity"
-import { useCartQuantity } from "@/hooks/cart/useCartQuantity"
 import { motion, AnimatePresence } from "framer-motion"
-import { useAddToFavorites } from "@/hooks/favorite/useAddToFavorite"
+import { Trash, TruckElectric } from "lucide-react"
+
 import { normalizeFavorite } from "@/utils/normalizeFavorite"
 import TextPrice from "../ui/TextPrice"
-import { CartItemProps } from "@/interfaces/interfaces"
+import ProductQuantity from "../ui/ProductQuantity"
 import { VARIANT_ANIMATED } from "@/constants/variantAnimated"
+import { useAddToFavorites } from "@/hooks/favorite/useAddToFavorite"
+import { useCartQuantity } from "@/hooks/cart/useCartQuantity"
+import { removeFromCart } from "@/redux/slices/cartSlice"
+import { memo } from "react"
 
-interface ItemsProps {
-    item: CartItemProps
-}
-
-export default function CartItem({ item }: ItemsProps) {
+const MobileCartItem = memo(function MobileCartItem({ item }: any) {
     const dispatch = useDispatch()
     const { id, image, name, weight, flavor, quantity } = item
     const { qtd, handleQtd } = useCartQuantity(id, quantity)
@@ -22,7 +19,7 @@ export default function CartItem({ item }: ItemsProps) {
 
     return (
         <AnimatePresence>
-            <motion.div
+            <motion.li
                 key={id}
                 className="sheetItem"
                 initial="hidden"
@@ -82,7 +79,9 @@ export default function CartItem({ item }: ItemsProps) {
                         </div>
                     </div>
                 </div>
-            </motion.div>
+            </motion.li>
         </AnimatePresence>
     )
-}
+})
+
+export default MobileCartItem

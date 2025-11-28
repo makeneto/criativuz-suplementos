@@ -45,7 +45,7 @@ export default function MobileFilterSheet({
     return (
         <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild>
-                <div className="flex gap-3 items-center cursor-pointer p-1 filterButton">
+                <div className="flex gap-3 items-center cursor-pointer p-1 filterButton select-none">
                     <SlidersHorizontal className="w-4 h-4" />
                     <p>Filtrar</p>
                 </div>

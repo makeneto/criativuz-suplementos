@@ -61,7 +61,7 @@ export default function CartItemRow({ item, variants }: any) {
                 </div>
             </td>
             <td>
-                <TextPrice product={item} isLight />
+                <TextPrice product={item} isLight isTable={true} />
             </td>
             <td>
                 <ProductQuantity
@@ -72,7 +72,7 @@ export default function CartItemRow({ item, variants }: any) {
                 />
             </td>
             <td>
-                <TextPrice product={item} qtd={qtd} />
+                <TextPrice product={item} qtd={qtd} isTable={true} />
             </td>
         </motion.tr>
     )

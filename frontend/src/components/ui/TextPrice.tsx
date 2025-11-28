@@ -6,6 +6,7 @@ interface TextPriceProps {
     product: any
     qtd?: number
     isLight?: boolean
+    isTable?: boolean
     className?: string
 }
 
@@ -13,6 +14,7 @@ export default function TextPrice({
     product,
     qtd,
     isLight = false,
+    isTable = false,
     className,
 }: TextPriceProps) {
     const { price, discountPrice } = product
@@ -27,7 +29,11 @@ export default function TextPrice({
     })
 
     return (
-        <div className={`productPrice ${className}`}>
+        <div
+            className={`productPrice ${className} ${
+                isTable ? "sm:justify-start" :  "justify-center"
+            }`}
+        >
             {Array.isArray(price) && price.length > 1 && (
                 <span className="lightTag">
                     {!isMobile ? "A partir de" : "De"}

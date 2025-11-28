@@ -37,7 +37,9 @@ export default function ProductCard({
 
     const displayProducts = Array.isArray(products)
         ? isMobile
-            ? products.slice(0, 8)
+            ? isThree
+                ? products
+                : products.slice(0, 8)
             : isDesktopBetween
             ? products.slice(0, 6)
             : products
@@ -62,10 +64,7 @@ export default function ProductCard({
                         <li key={`${p.id}-${randomId}`}>
                             <div className="sectionGrid__list--view">
                                 <Link href={`/products/${p.id}`}>
-                                    <img
-                                        src={p.postImages[0]}
-                                        alt={`Product Image`}
-                                    />
+                                    <img src={p.postImages[0]} alt={p.name} />
                                 </Link>
                                 <div className="sectionGrid__list--view--controls">
                                     <div

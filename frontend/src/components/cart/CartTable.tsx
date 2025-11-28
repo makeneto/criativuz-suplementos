@@ -1,13 +1,8 @@
-import { motion, AnimatePresence } from "framer-motion"
+import { AnimatePresence } from "framer-motion"
 import CartItemRow from "./CartItemRow"
 import { useSelector } from "react-redux"
 import { RootState } from "@/redux/store"
-
-const variants = {
-    hidden: { opacity: 0, x: 40 },
-    visible: { opacity: 1, x: 0 },
-    exit: { opacity: 0, x: 40, transition: { duration: 0.3 } },
-}
+import { VARIANT_ANIMATED } from "@/constants/variantAnimated"
 
 export default function CartTable() {
     const cartItems = useSelector((state: RootState) => state.cart.items)
@@ -29,7 +24,7 @@ export default function CartTable() {
                         <CartItemRow
                             key={item.id}
                             item={item}
-                            variants={variants}
+                            variants={VARIANT_ANIMATED}
                         />
                     ))}
                 </AnimatePresence>

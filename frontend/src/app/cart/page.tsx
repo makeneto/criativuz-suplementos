@@ -9,6 +9,8 @@ import CartSummary from "@/components/cart/CartSummary"
 import EmptyCart from "@/components/cart/EmptyCart"
 import { useCartItems } from "@/hooks/cart/useCartItems"
 import { useWhatsAppOrder } from "@/hooks/product/useWhatsAppOrder"
+import { useMediaQuery } from "react-responsive"
+import MobileCartList from "@/components/cart/MobileCartList"
 
 export default function Cart() {
     const router = useRouter()
@@ -16,6 +18,8 @@ export default function Cart() {
     const { cartItems, subtotal } = useCartItems()
     const { whatsappUrl } = useWhatsAppOrder(cartItems, deliveryDate, subtotal)
     const currentYear = new Date().getFullYear()
+
+    const isMobile = useMediaQuery({ maxWidth: 640 })
 
     return (
         <main className="cartPage">
@@ -25,7 +29,12 @@ export default function Cart() {
             />
             {cartItems.length > 0 ? (
                 <>
-                    <CartTable />
+                    {!isMobile ? (
+                        <CartTable />
+                    ) : (
+                        <MobileCartList subtotal={subtotal} />
+                    )}
+
                     <CartSummary
                         subtotal={subtotal}
                         deliveryDate={deliveryDate}

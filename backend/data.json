@@ -2,6 +2,31 @@
     "all": {
         "products": [
             {
+                "id": 2026,
+                "name": "Fast Grow Anabol",
+                "brand": "USN",
+                "price": [68500],
+                "discountPrice": [0],
+                "weight": ["4kg"],
+                "category": "ganho de massa",
+                "description": {
+                    "synopsis": "Fast Grow Anabol gH é um suplemento completo para ganho de massa magra, proporcionando crescimento muscular acelerado e recuperação ideal.",
+                    "highlights": [
+                        "Constrói massa muscular extremamente magra.",
+                        "Mantém a massa muscular",
+                        "Aumenta a recuperação, o crescimento e a potência muscular."
+                    ],
+                    "information": "Fast Grow Anabol gH é um suplemento para ganho de massa magra que ajuda você a alcançar seus objetivos mais ambiciosos. Ele auxilia na construção e manutenção de massa muscular magra, além de potencializar a recuperação, o crescimento e a força muscular.",
+                    "recommendedUse": "Como suplemento nutricional: adicione 3 colheres-medida (150 g) a 600–650 ml de água fria. Utilize um liquidificador ou um shaker manual por cerca de 30 segundos. Consuma de 1 a 2 porções por dia como lanche entre as refeições (as porções podem ser reduzidas à metade). Pessoas com menos de 80 kg: consumir de 2 a 3 porções por dia durante os primeiros 5 dias e de 1 a 2 porções por dia a partir de então. Pessoas com mais de 80 kg: consumir 2 porções por dia durante os primeiros 5 dias e apenas 1 porção por dia a partir de então. 1 porção = 3 colheres-medida. Para melhores resultados, use como um lanche entre as refeições diariamente.Certificado Halal e adequado para pessoas com intolerância à lactose."
+                },
+                "postImages": [
+                    "https://i.postimg.cc/m2W1gtGw/fast_grow_anabolic_gh.webp"
+                ],
+                "bestSeller": false,
+                "flavors": ["Chocolate", "Baunilha", "Morango"],
+                "inStock": true
+            },
+            {
                 "id": 6354,
                 "name": "Hyperbolic Mass gh",
                 "brand": "USN",
@@ -281,6 +306,31 @@
                 "inStock": true
             },
             {
+                "id": 1090,
+                "name": "Creatina Testo",
+                "brand": "USN",
+                "price": [19500],
+                "discountPrice": [0],
+                "weight": ["270g"],
+                "category": "creatina",
+                "description": {
+                    "synopsis": "A fórmula da Creatina Testo entrega creatina monohidratada pura, destinada a melhorar força, explosão e capacidade de repetição, garantindo evolução consistente ao longo das semanas.",
+                    "highlights": [
+                        "Aumenta o desempenho muscular e a potência",
+                        "Aumenta a resistência",
+                        "Transporta creatina e glicogênio para os músculos"
+                    ],
+                    "information": "CreaTest utiliza creatina monohidratada micronizada, a forma mais estudada e mais comprovada. A função é simples: aumentar as reservas de fosfocreatina, permitindo que o músculo produza energia imediata com mais eficiência durante treinos intensos. Isso resulta em mais força, maior capacidade de repetir séries pesadas e recuperação ligeiramente mais rápida entre esforços curtos.",
+                    "recommendedUse": "A utilização padrão é tomar uma dose diária, em qualquer horário, de preferência sempre no mesmo período para manter regularidade. Pode ser misturada com água ou com qualquer bebida não estimulante."
+                },
+                "postImages": [
+                    "https://i.postimg.cc/yYC38kzQ/usn_createst_270g.webp"
+                ],
+                "bestSeller": false,
+                "flavors": ["Sunrise Miami"],
+                "inStock": true
+            },
+            {
                 "id": 3343,
                 "name": "Creatina Extrema",
                 "brand": "Black Bull",
@@ -325,6 +375,7 @@
                     "recommendedUse": "Misture 1 colher medidora rasa (aproximadamente 5 g) com 150-250 ml de água fria ou sua bebida esportiva favorita de 1 a 3 vezes ao dia. Em dias de treino, consuma antes e imediatamente após o exercício. Em dias sem treino, consuma 2 porções com intervalo de 6 a 12 horas."
                 },
                 "postImages": [
+                    "https://i.postimg.cc/tg19Nhxr/mcronized-creatine-monohydrate-150g.webp",
                     "https://i.postimg.cc/q7cKVv85/creatine-mono-NPL.jpg"
                 ],
                 "bestSeller": false,
@@ -456,6 +507,32 @@
                 "inStock": true
             },
             {
+                "id": 3654,
+                "name": "Diet Slimming",
+                "brand": "Black Bull",
+                "price": [28500],
+                "discountPrice": [0],
+                "weight": ["908g"],
+                "category": "queima gordura",
+                "description": {
+                    "synopsis": "DIET SHAKE é um shake emagrecedor rico em proteínas e com baixo teor calórico.",
+                    "highlights": [
+                        "Rico em proteínas",
+                        "Baixo teor de gordura",
+                        "Ideal para dietas com baixas calorias"
+                    ],
+                    "information": "DIET SHAKE é um shake emagrecedor rico em proteínas e com baixo teor calórico. Sua fórmula foi desenvolvida para ajudar você a suprir suas necessidades nutricionais diárias e, assim, auxiliar na perda de peso.",
+                    "recommendedUse": "Para um shake saboroso e delicioso, misture 2 colheres (aproximadamente 45g) com 300ml de água fria. Consuma de 2 a 3 porções por dia ou conforme necessário para atender às suas necessidades de proteína ou para manter o peso. Use leite para aumentar a ingestão de proteínas e calorias por porção e para obter um milkshake com sabor fantástico."
+                },
+                "postImages": [
+                    "https://i.postimg.cc/fTQSRJhF/diet_summing.webp",
+                    "https://i.postimg.cc/BZDhrX39/diet-summing-table.webp"
+                ],
+                "bestSeller": false,
+                "flavors": ["Chocolate"],
+                "inStock": true
+            },
+            {
                 "id": 4189,
                 "name": "Omega 3",
                 "brand": "VitaTech",
@@ -480,7 +557,7 @@
             },
             {
                 "id": 4288,
-                "name": "Collagen Peptides",
+                "name": "Peptídeos de Colágeno",
                 "brand": "VitaTech",
                 "price": [16000],
                 "discountPrice": [0],
@@ -505,8 +582,36 @@
                 "inStock": true
             },
             {
+                "id": 2020,
+                "name": "Vitamina B",
+                "brand": "VitaTech",
+                "price": [16000],
+                "discountPrice": [0],
+                "weight": ["30 Comp"],
+                "category": "suporte à saúde",
+                "description": {
+                    "synopsis": "A Vitamina B da VitaTech apoia energia celular, foco mental e metabolismo eficiente.",
+                    "highlights": [
+                        "Redução da fadiga",
+                        "Metabolismo saudável",
+                        "Função cerebral e nervosa",
+                        "Formação de glóbulos vermelhos",
+                        "Saúde da pele e do cabelo",
+                        "Melhora do humor e do equilíbrio hormonal"
+                    ],
+                    "information": "A Vitamina B da VitaTech combina todas as principais vitaminas do Complexo B — B1, B2, B3, B5, B6, B7, B9 e B12 — em doses equilibradas.",
+                    "recommendedUse": "Tomar 1 cápsula por dia, preferencialmente junto a uma refeição."
+                },
+                "postImages": [
+                    "https://i.postimg.cc/XY0mX9jJ/vitatech-vitamin-b.webp"
+                ],
+                "bestSeller": false,
+                "flavors": [],
+                "inStock": true
+            },
+            {
                 "id": 4588,
-                "name": "Multi Vitamin Men",
+                "name": "Multi Vitamina Homem",
                 "brand": "VitaTech",
                 "price": [16000],
                 "discountPrice": [0],
@@ -532,7 +637,7 @@
             },
             {
                 "id": 4388,
-                "name": "Multi Vitamin Women",
+                "name": "Multi Vitamina Mulher",
                 "brand": "VitaTech",
                 "price": [16000],
                 "discountPrice": [0],
@@ -550,7 +655,35 @@
                     "recommendedUse": "Tome 1 comprimido por dia com o café da manhã."
                 },
                 "postImages": [
-                    "https://i.postimg.cc/Bv5N6crC/multi-vitamin-women.png"
+                    "https://i.postimg.cc/cHmwMyYK/vitatech-multi-vitamin-women.webp"
+                ],
+                "bestSeller": false,
+                "flavors": [],
+                "inStock": true
+            },
+            {
+                "id": 1017,
+                "name": "Multi Vitamina Mineral",
+                "brand": "VitaTech",
+                "price": [16000],
+                "discountPrice": [0],
+                "weight": ["30 Comp"],
+                "category": "suporte à saúde",
+                "description": {
+                    "synopsis": "A Multi Vitamina Mineral da VitaTech entrega o básico bem-feito: vitaminas e minerais essenciais para manter energia estável, imunidade funcional e desempenho diário.",
+                    "highlights": [
+                        "Estilos de vida ativos",
+                        "Produção de energia",
+                        "Saúde óssea e articular",
+                        "Função do sistema imunológico",
+                        "Metabolismo",
+                        "Defesa antioxidante"
+                    ],
+                    "information": "Este multivitamínico combina vitaminas e minerais essenciais para sustentar a produção natural de energia, fortalecer o sistema imunitário e apoiar funções neurológicas, musculares e hormonais.",
+                    "recommendedUse": "Tomar 1 cápsula por dia, preferencialmente junto a uma refeição."
+                },
+                "postImages": [
+                    "https://i.postimg.cc/v8rSkc72/vitatech-multi-vitamin-mineral-active-min.webp"
                 ],
                 "bestSeller": false,
                 "flavors": [],
@@ -583,9 +716,9 @@
                 "id": 1188,
                 "name": "Qhush Hyperdrive",
                 "brand": "USN",
-                "price": [16500],
-                "discountPrice": [0],
-                "weight": ["210g"],
+                "price": [14000, 16500],
+                "discountPrice": [0, 0],
+                "weight": ["150g", "210g"],
                 "category": "pré-treino",
                 "description": {
                     "synopsis": "Qhush Hyperdrive é um suplemento pré-treino projetado para dar energia concentrada, aumentar foco e resistência, melhorar o desempenho muscular e acelerar a recuperação, tudo isso sem causar queda brusca de energia.",
@@ -598,7 +731,8 @@
                     "recommendedUse": "Para treinos padrão: misture 1 colher medidora (5,3 g) com 150–200 ml de água e mexa ou agite bem. Para um treino extremo: misture 2 colheres (10,5 g) com 250–300 ml de água e mexa ou agite bem. Tome 30–45 minutos antes do treino."
                 },
                 "postImages": [
-                    "https://i.postimg.cc/N0RqPD5k/qhush-hyperdrive.webp"
+                    "https://i.postimg.cc/Prnv5PjG/usn-qhush-hyperdrive-super-heat.webp",
+                    "https://i.postimg.cc/jdYnSLrm/usn-qhush-hyperdrive-gaming.webp"
                 ],
                 "bestSeller": true,
                 "flavors": ["Super heat", "Hyperdrive gaming"],
@@ -619,7 +753,7 @@
                         "Melhora a recuperação",
                         "Melhora o foco energético"
                     ],
-                    "information": "Bombas musculares e volumização Potência e desempenho Energia e foco mental intenso",
+                    "information": "Bombas musculares e volumização Potência e desempenho Energia e foco mental intenso.",
                     "recommendedUse": "Misture 2 colheres (25 g) com 200-250ml de água fria e mexa bem. Consuma 30-45 minutos antes do treino."
                 },
                 "postImages": [
@@ -627,6 +761,32 @@
                 ],
                 "bestSeller": false,
                 "flavors": ["Cereja"],
+                "inStock": true
+            },
+            {
+                "id": 3003,
+                "name": "NO Charge",
+                "brand": "NPL",
+                "price": [2500],
+                "discountPrice": [0],
+                "weight": ["21g"],
+                "category": "pré-treino",
+                "description": {
+                    "synopsis": "O NO Charge é um dos nossos pré-treinos mais populares, contendo diversos ingredientes ativos para facilitar o pump muscular. ",
+                    "highlights": [
+                        "Aumenta os ganhos de energia",
+                        "Melhora a recuperação",
+                        "Melhora o foco energético"
+                    ],
+                    "information": "O NO Charge é um dos nossos pré-treinos mais populares, contendo diversos ingredientes ativos para facilitar o pump muscular. Ele contém tamponadores de ácido lático para melhorar o desempenho e a recuperação, além de nootrópicos para proporcionar foco mental extremo durante o treino.",
+                    "recommendedUse": "Tome 1 sachê aproximadamente 10 minutos antes do treino com 300ml de água fria."
+                },
+                "postImages": [
+                    "https://i.postimg.cc/593P4DHx/n-o-charge-pre-21g.webp",
+                    "https://i.postimg.cc/ZYcfbXW2/n-o-charge-pre-21g-box.webp"
+                ],
+                "bestSeller": false,
+                "flavors": [],
                 "inStock": true
             }
         ],

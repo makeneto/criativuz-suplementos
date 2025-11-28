@@ -58,13 +58,7 @@ button:disabled {
 .productPrice {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 0.3rem;
-}
-@media (max-width: 640px) {
-  .productPrice {
-    justify-content: flex-start;
-  }
 }
 @media (max-width: 640px) {
   .productPrice span {
@@ -1039,6 +1033,7 @@ button:disabled {
   justify-content: space-between;
 }
 .nav__bar--mobile {
+  width: 100%;
   padding: 1.4rem 1rem;
 }
 .nav__bar--mobile svg {
@@ -1440,7 +1435,6 @@ button:disabled {
 @media (max-width: 640px) {
   .sectionGrid__list li {
     padding: 0;
-    text-align: start;
   }
 }
 .sectionGrid__list li .productName {
@@ -2208,15 +2202,30 @@ input[type=range]::-ms-thumb {
     margin: 10rem 4rem;
   }
 }
+@media (max-width: 640px) {
+  .cartPage {
+    margin: 6rem 1rem;
+  }
+}
 .cartPage__header {
   margin-bottom: 3rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+@media (max-width: 640px) {
+  .cartPage__header {
+    display: none;
+  }
+}
 .cartPage__header--title {
   font-weight: 700;
   font-size: 2rem;
+}
+@media (max-width: 640px) {
+  .cartPage__header--title {
+    font-size: 1.4em;
+  }
 }
 .cartPage__header p {
   display: flex;
@@ -2243,6 +2252,13 @@ input[type=range]::-ms-thumb {
     padding-block: 1rem 1.6rem;
   }
 }
+@media (max-width: 640px) {
+  .cartPage__total {
+    display: block;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
 .cartPage__total div {
   display: grid;
   gap: 1rem;
@@ -2264,7 +2280,16 @@ input[type=range]::-ms-thumb {
 .cartPage__total span {
   display: grid;
   gap: 1rem;
-  justify-content: flex-end;
+}
+@media (max-width: 640px) {
+  .cartPage__total span {
+    width: 100%;
+    gap: 0.8rem;
+    text-align: center;
+  }
+  .cartPage__total span p {
+    font-size: 0.8rem;
+  }
 }
 .cartPage__total .orderCart {
   background-color: red;
@@ -2412,8 +2437,23 @@ input[type=range]::-ms-thumb {
   justify-content: center;
   margin-block: 10rem 13rem;
 }
+@media (max-width: 640px) {
+  .emptyCart {
+    display: grid;
+  }
+  .emptyCart p {
+    font-weight: 500;
+    text-align: center;
+  }
+}
 .emptyCart img {
   width: 20rem;
+  object-fit: contain;
+}
+@media (max-width: 640px) {
+  .emptyCart img {
+    width: 16rem;
+  }
 }
 
 .miniEmptySheet {
