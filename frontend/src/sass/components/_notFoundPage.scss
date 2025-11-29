@@ -12,9 +12,17 @@
         transform: translate(-50%, -50%);
         color: white;
 
+        @media (max-width: 640px) {
+            width: 89%;
+        }
+
         & h1 {
             font-size: 10rem;
             font-weight: 700;
+
+            @media (max-width: 640px) {
+                font-size: 6rem;
+            }
         }
 
         & p {

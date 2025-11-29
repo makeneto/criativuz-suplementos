@@ -1,0 +1,15 @@
+.menuDropDown {
+    background: rgba(255, 0, 0, 0.863);
+    -webkit-backdrop-filter: blur(23px);
+    backdrop-filter: blur(10px);
+    border: 1px solid #ffffff0d;
+
+    width: 100vw;
+    height: 80dvh;
+    position: absolute;
+    top: 190%;
+    left: -24%;
+    padding: 1rem;
+    z-index: 9999;
+    color: white;
+}

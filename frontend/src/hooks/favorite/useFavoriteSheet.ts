@@ -1,3 +1,5 @@
+"use client"
+
 import { useState } from "react"
 import { useID } from "@/hooks/product/useID"
 import { useAppSelector } from "@/redux/hooks"

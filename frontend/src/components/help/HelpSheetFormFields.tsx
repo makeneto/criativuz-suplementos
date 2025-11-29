@@ -12,7 +12,9 @@ export function HelpSheetFormFields({ register, errors }: Props) {
     return (
         <>
             <Field data-invalid={!!errors.nome}>
-                <Label htmlFor="nome">Nome</Label>
+                <Label htmlFor="nome" className="flex gap-[0.3rem]">
+                    Nome <span className="text-red-600">*</span>
+                </Label>
                 <Input
                     type="text"
                     id="nome"
@@ -26,7 +28,9 @@ export function HelpSheetFormFields({ register, errors }: Props) {
             </Field>
 
             <Field data-invalid={!!errors.email}>
-                <Label htmlFor="email">Email</Label>
+                <Label htmlFor="email" className="flex gap-[0.3rem]">
+                    Email <span className="text-red-600">*</span>
+                </Label>
                 <Input
                     type="email"
                     id="email"
@@ -43,7 +47,9 @@ export function HelpSheetFormFields({ register, errors }: Props) {
             </Field>
 
             <Field data-invalid={!!errors.telefone}>
-                <Label htmlFor="telefone">Telefone / WhatsApp</Label>
+                <Label htmlFor="telefone" className="flex gap-[0.3rem]">
+                    Telefone / WhatsApp <span className="text-red-600">*</span>
+                </Label>
                 <Input
                     type="text"
                     id="telefone"

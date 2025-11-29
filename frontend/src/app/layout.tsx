@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import ReactQueryProvider from "@/components/ReactQueryProvider"
+import ReactQueryProvider from "@/components/sections/ReactQueryProvider"
 import { Poppins } from "next/font/google"
 
 import Footer from "@/components/sections/Footer"

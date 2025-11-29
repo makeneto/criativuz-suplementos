@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { useForm, Controller } from "react-hook-form"
+import { useForm } from "react-hook-form"
 import {
     Sheet,
     SheetTrigger,
@@ -11,19 +11,7 @@ import {
     SheetClose,
 } from "@/components/ui/sheet"
 import { Headset, X } from "lucide-react"
-import {
-    Field,
-    FieldSeparator,
-    FieldSet,
-    FieldLegend,
-    FieldError,
-} from "../ui/field"
-import { Label } from "../ui/label"
-import { Input } from "../ui/input"
-import { Textarea } from "../ui/textarea"
-import SelectUI from "../search/SelectUI"
-import { RadioGroup, RadioGroupItem } from "../ui/radio-group"
-import { Button } from "../ui/button"
+import { FieldSeparator } from "../ui/field"
 import { useHelpForm } from "@/hooks/helpForm/useHelpForm"
 import { SUPPORT_CATEGORIES, URGENCY } from "@/constants/helpForm"
 import { HelpSheetFormFields } from "./HelpSheetFormFields"
@@ -31,14 +19,7 @@ import { CategoryUrgencySelect } from "./CategoryUrgencySelect"
 import { MessageField } from "./MessageField"
 import { ContactPreference } from "./ContactPreference"
 import { FormActions } from "./FormActions"
-
-type FormValues = {
-    nome: string
-    email: string
-    telefone?: string
-    mensagem: string
-    contatoPreferencia: string
-}
+import { FormValues } from "@/app/help/page"
 
 export default function HelpSheet() {
     const [open, setOpen] = useState(false)

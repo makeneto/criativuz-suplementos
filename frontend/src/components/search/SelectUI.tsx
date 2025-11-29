@@ -28,7 +28,9 @@ export default function SelectUI({
 }: SelectUIProps) {
     return (
         <div className="filterBy">
-            {isFilterBy && <p className="font-medium mt-1">Filtrar por: </p>}
+            {isFilterBy && (
+                <p className="font-semibold md:font-medium mt-1">Filtrar por: </p>
+            )}
 
             <Select
                 value={selected ?? undefined}

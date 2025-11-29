@@ -11,7 +11,7 @@ type Props = {
 export function MessageField({ register, errors }: Props) {
     return (
         <Field data-invalid={!!errors.mensagem}>
-            <Label htmlFor="mensagem">Descrição do problema</Label>
+            <Label htmlFor="mensagem" className="flex gap-[0.3rem]">Descrição do problema <span className="text-red-600">*</span></Label>
             <Textarea
                 id="mensagem"
                 placeholder="Explique seu problema detalhadamente."

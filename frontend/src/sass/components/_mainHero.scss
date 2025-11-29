@@ -32,7 +32,7 @@
                 rgba(0, 0, 0, 0) 100%);
 
         @media (max-width: 640px) {
-            background: radial-gradient(circle, rgba(0, 0, 0, 0.62) 9%, rgba(0, 0, 0, 0.32) 90%);
+            background: radial-gradient(circle, rgba(32, 0, 0, 0.842) 9%, rgba(0, 0, 0, 0.32) 90%);
         }
     }
 
@@ -50,7 +50,7 @@
             text-align: center;
             width: 100%;
             padding: 0;
-            top: 50%;
+            top: 53%;
             left: 50%;
             transform: translate(-50%, -50%);
         }
@@ -70,7 +70,7 @@
             @media (max-width: 640px) {
                 margin-top: .7rem;
                 font-size: 2rem;
-                line-height: 2.4rem;
+                line-height: 2.3rem;
             }
         }
 

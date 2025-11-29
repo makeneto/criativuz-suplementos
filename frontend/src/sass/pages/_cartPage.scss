@@ -6,7 +6,7 @@
     }
 
     @media (max-width: 640px) {
-        margin: 6rem 1rem;
+        margin: 7rem 1rem;
     }
 
     &__header {
@@ -290,6 +290,7 @@
 .miniEmptySheet {
     flex: 1;
     position: relative;
+    height: 60dvh;
 
     & img {
         width: 15rem;

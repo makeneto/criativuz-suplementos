@@ -4,7 +4,6 @@ import { toast } from "sonner"
 export function useSupportForm({ onClose }: { onClose: () => void }) {
     const [sending, setSending] = useState(false)
 
-    // agora recebe os dados já validados do react-hook-form
     const handleSubmit = async (data: Record<string, any>) => {
         setSending(true)
 
@@ -14,7 +13,7 @@ export function useSupportForm({ onClose }: { onClose: () => void }) {
             formData.append("Email", data.email ?? "")
             formData.append("Telefone", data.telefone ?? "")
             formData.append("Categoria", data.categoria ?? "Outra")
-            formData.append("Nível de Urgência", data.urgencia ?? "Média")
+            formData.append("Nível de Urgência", data.urgencia ?? "Alta")
             formData.append("Mensagem", data.mensagem ?? "")
             formData.append(
                 "Contato Preferência",

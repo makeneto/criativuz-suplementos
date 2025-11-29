@@ -31,7 +31,6 @@ export default function ProductGallery({
                 className={`${
                     isProductPage ? "productGallery" : "modalProduct"
                 }--main`}
-                style={{ backgroundColor: "#fff" }}
             />
 
             {isMobile && product.postImages.length > 1 ? (
