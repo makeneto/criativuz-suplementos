@@ -8,8 +8,12 @@
         margin-block: 0 15rem;
     }
 
+    @media (max-width: 768px) {
+        margin-bottom: 12rem;
+    }
+
     @media (max-width: 640px) {
-        margin-block: 0 7rem;
+        margin-bottom: 7rem;
     }
 
     &__category {
@@ -68,7 +72,7 @@
             margin-top: 4.2rem;
         }
 
-        @media (max-width: 640px) {
+        @media (max-width: 768px) {
             display: grid;
             justify-content: center;
             gap: 3rem;
@@ -85,7 +89,7 @@
                 height: 2rem;
             }
 
-            @media (max-width: 640px) {
+            @media (max-width: 768px) {
                 height: 2.2rem;
                 justify-self: center;
             }

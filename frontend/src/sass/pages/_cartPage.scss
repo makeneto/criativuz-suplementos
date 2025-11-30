@@ -5,8 +5,12 @@
         margin: 10rem 4rem;
     }
 
+    @media (max-width: 768px) {
+        margin: 7rem 2rem;
+    }
+
     @media (max-width: 640px) {
-        margin: 7rem 1rem;
+        margin-inline: 1rem;
     }
 
     &__header {
@@ -15,16 +19,19 @@
         align-items: center;
         justify-content: space-between;
 
+        @media (max-width: 768px) {
+            margin-bottom: 1rem;
+        }
+
         @media (max-width: 640px) {
             display: none;
-            ;
         }
 
         &--title {
             font-weight: 700;
             font-size: 2rem;
 
-            @media (max-width: 640px) {
+            @media (max-width: 768px) {
                 font-size: 1.4em;
             }
         }

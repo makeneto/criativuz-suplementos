@@ -87,7 +87,6 @@
 }
 
 // SmallGallery
-
 .smallGallery {
     margin-block: -2.87rem 11rem;
     width: 100%;
@@ -98,6 +97,11 @@
     grid-template-rows: repeat(6, 1fr);
 
     clip-path: polygon(0 5.4%, 100% 0, 100% 96%, 0% 100%);
+
+    @media (min-width: 639px) and (max-width: 768px) {
+        margin-block: -5.34rem 17rem;
+        clip-path: polygon(0 9%, 100% 0, 100% 96%, 0% 100%);
+    }
 
     & a {
         &:first-child {

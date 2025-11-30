@@ -18,7 +18,7 @@ export default function SearchPage() {
     const { data, isPending } = useProducts()
     const allProducts = data?.products || []
 
-    const isDesktop = useMediaQuery({ minWidth: 631 })
+    const isDesktop = useMediaQuery({ minWidth: 769 })
 
     const {
         selectedFlavor,

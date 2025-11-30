@@ -39,8 +39,13 @@ $solidBorder: 1px solid #d3d3d3;
     padding-bottom: 2rem;
     position: relative;
 
+    @media (minWidth: 639px) and (max-width: 768px) {
+        padding-top: 2rem;
+    }
+
     &:not(:first-child) {
         padding-top: 2rem;
+
     }
 
     &:not(:last-child)::after {

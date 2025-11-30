@@ -56,7 +56,7 @@ export default function HelpPage() {
 
     return (
         <form
-            className="mt-28 flex flex-col gap-10 h-[87%] mb-8 px-4"
+            className="mt-28 md:mt-35 flex flex-col gap-10 h-[87%] mb-8 md:mb-[5rem] px-4 md:px-8"
             onSubmit={handleSubmit(onSubmit)}
             noValidate
         >

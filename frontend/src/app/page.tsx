@@ -6,11 +6,13 @@ import EndSection from "@/components/sections/EndSection"
 import Bestsellers from "../components/sections/Bestsellers"
 import AboutSection from "@/components/sections/AboutSection"
 import Testimonials from "@/components/sections/Testimonials"
+import { IntroPopUp } from "@/components/introPopUp/IntroPopUp"
 
 export default async function Home() {
     return (
         <>
             <Hero />
+            <IntroPopUp />
             <BrandsSection />
             <AboutSection />
             <Bestsellers />

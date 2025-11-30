@@ -19,7 +19,7 @@ export default function TextPrice({
 }: TextPriceProps) {
     const { price, discountPrice } = product
 
-    const isMobile = useMediaQuery({ maxWidth: 639 })
+    const isMobile = useMediaQuery({ maxWidth: 768 })
 
     const { finalPrice, color, fontWeight } = useTextPrice({
         price,

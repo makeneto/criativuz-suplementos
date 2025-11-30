@@ -4,7 +4,7 @@ import { useMediaQuery } from "react-responsive"
 
 export default function Copyright() {
     const { currentYear } = useFooter()
-    const isMobile = useMediaQuery({ maxWidth: 640 })
+    const isMobile = useMediaQuery({ maxWidth: 768 })
 
     return (
         <p style={{textAlign: isMobile ? "center" : "start"}}>

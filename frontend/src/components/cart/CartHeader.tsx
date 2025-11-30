@@ -12,6 +12,7 @@ export default function CartHeader({
             <h1 className="cartPage__header--title">
                 🛒 Carrinho {length === 0 && "está vazio"}
             </h1>
+            
             <p onClick={onBack}>
                 <ArrowLeft size={18} />
                 Voltar

@@ -12,4 +12,19 @@
     padding: 1rem;
     z-index: 9999;
     color: white;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+
+    @media (max-width: 768px) {
+        top: 218%;
+        width: 48vw;
+        height: 61dvh;
+    }
 }

@@ -5,8 +5,13 @@
         margin: 12rem 4rem 8rem;
     }
 
+    @media (max-width: 768px) {
+        margin: 10rem 0rem 15rem;
+    }
+
     @media (max-width: 640px) {
-        margin: 10rem 1rem 10rem;
+        margin-bottom: 10rem;
+        margin-inline: 1rem;
     }
 
     &__list {
@@ -19,6 +24,10 @@
         @media (max-width: 1280px) {
             margin-top: 0;
             gap: 6rem 1rem;
+        }
+
+        @media (max-width: 768px) {
+            column-gap: 9rem;
         }
 
         @media (max-width: 640px) {
@@ -35,7 +44,7 @@
                 padding-inline: 2.5rem;
             }
 
-            @media (max-width: 640px) {
+            @media (max-width: 768px) {
                 padding: 0;
             }
 
@@ -53,7 +62,9 @@
                     font-size: .93rem;
                 }
             }
+        }
 
+        .inStock {
             &:hover {
                 & .productName {
                     color: rgb(118, 0, 0);
@@ -68,8 +79,38 @@
                     }
                 }
             }
+        }
 
+        .outOfStock {
+            cursor: not-allowed;
+            user-select: none;
 
+            & img {
+                filter: grayscale(100%);
+            }
+
+            &__badge {
+                width: fit-content;
+                margin: -0.5rem auto 0;
+                background-color: red;
+                color: white;
+                font-size: .9rem;
+                display: flex;
+                align-items: center;
+                gap: .5rem;
+                border-radius: .3rem;
+                padding: .1rem .4rem;
+
+                & svg {
+                    width: 1rem;
+                    height: 1rem;
+                }
+
+                @media (max-width: 640px) {
+                    font-size: .7rem;
+                    padding: .2rem .3rem;
+                }
+            }
         }
 
         &--view {

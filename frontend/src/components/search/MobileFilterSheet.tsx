@@ -52,9 +52,9 @@ export default function MobileFilterSheet({
             </SheetTrigger>
 
             <SheetContent>
-                <SheetHeader className="mt-[-0.5rem]">
-                    <SheetTitle className="text-base font-semibold">
-                        Filtrar por
+                <SheetHeader className="mt-[-0.5rem] sm:mt-[5rem]">
+                    <SheetTitle className="text-base sm:text-xl font-semibold">
+                        Filtros
                     </SheetTitle>
                     <SheetClose className="closeSheetButton">
                         <X size={20} />

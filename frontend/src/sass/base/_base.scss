@@ -11,6 +11,7 @@ body {
     background: white;
     font-family: $font-family;
     color: #250609;
+    overflow-x: hidden;
 }
 
 ::selection {

@@ -20,13 +20,18 @@ export function CategoryDropdownList({ products, isOpen, onToggle }: Props) {
             }}
         >
             <ul className="nav__bar__products-list">
-                {products.map((prod) => (
-                    <li key={prod.id}>
-                        <Link href={`/products/${prod.id}`} onClick={onToggle}>
-                            {prod.name}
-                        </Link>
-                    </li>
-                ))}
+                {products
+                    .filter((prod) => prod.inStock)
+                    .map((prod) => (
+                        <li key={prod.id}>
+                            <Link
+                                href={`/products/${prod.id}`}
+                                onClick={onToggle}
+                            >
+                                {prod.name}
+                            </Link>
+                        </li>
+                    ))}
             </ul>
         </motion.div>
     )

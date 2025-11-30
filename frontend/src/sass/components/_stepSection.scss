@@ -9,13 +9,21 @@
         margin: 0 4rem 11rem;
     }
 
+    @media (max-width: 768px) {
+        gap: 6rem;
+        margin: 0;
+        grid-template-columns: repeat(2, 1fr);
+        background-color: #590209;
+        padding: 9rem 2rem 13rem;
+        clip-path: polygon(0 4%, 100% 0, 100% 90%, 0% 100%);
+    }
+    
     @media (max-width: 640px) {
         gap: 4rem;
-        margin: 0;
         grid-template-columns: repeat(1, 1fr);
         background-color: #590209;
-        padding: 7rem 1rem;
-        clip-path: polygon(0 4%, 100% 0, 100% 96%, 0% 100%);
+        padding: 7rem 1rem 9rem;
+        clip-path: polygon(0 3%, 100% 0, 100% 96%, 0% 100%);
     }
 }
 
@@ -27,7 +35,7 @@
         gap: .2rem;
     }
 
-    @media (max-width: 640px) {
+    @media (max-width: 768px) {
         gap: .8rem;
         text-align: center;
     }
@@ -43,10 +51,14 @@
             line-height: 4rem;
         }
 
-        @media (max-width: 640px) {
-            font-size: 3.4rem;
+        @media (max-width: 768px) {
+            font-size: 3.9rem;
             line-height: 3.5rem;
             color: #F20530;
+        }
+
+        @media (max-width: 640px) {
+            font-size: 3.4rem;
         }
     }
 
@@ -54,14 +66,14 @@
         font-size: 1.3rem;
         font-weight: 600;
 
-        @media (max-width: 640px) {
+        @media (max-width: 768px) {
             font-size: 1.2rem;
             line-height: 1.5rem;
             color: #F2C6A0;
         }
     }
 
-    @media (max-width: 640px) {
+    @media (max-width: 768px) {
         &__description {
             color: #F2C6A0;
         }

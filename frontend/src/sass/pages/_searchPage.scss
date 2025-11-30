@@ -9,6 +9,10 @@
         margin: 7rem 1rem;
     }
 
+    @media (min-width: 639px) and (max-width: 768px) {
+        margin: 8rem 2rem;
+    }
+
     & main {
         margin-top: 2rem;
         display: grid;
@@ -21,7 +25,7 @@
             margin-top: 4rem;
         }
 
-        @media (max-width: 640px) {
+        @media (max-width: 768px) {
             grid-template-columns: 100%;
         }
 
@@ -34,7 +38,7 @@
                 top: 17%
             }
 
-            @media (max-width: 640px) {
+            @media (max-width: 768px) {
                 display: none;
             }
         }

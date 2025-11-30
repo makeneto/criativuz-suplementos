@@ -3,6 +3,10 @@ $solidBorder: 1px solid #e7e7e7;
 .productPage {
     margin-block: 10rem 6rem;
 
+    @media (max-width: 768px) {
+        margin-block: 9rem 7rem;
+    }
+
     @media (max-width: 640px) {
         margin-block: 7rem 6rem;
     }
@@ -19,9 +23,13 @@ $solidBorder: 1px solid #e7e7e7;
             margin-inline: 4rem;
         }
 
-        @media (max-width: 640px) {
+        @media (max-width: 768px) {
             display: grid;
             gap: 1rem;
+            margin-inline: 2rem;
+        }
+
+        @media (max-width: 640px) {
             margin-inline: 1rem;
         }
 
@@ -30,6 +38,10 @@ $solidBorder: 1px solid #e7e7e7;
             padding-top: 3rem;
             display: flex;
             flex-direction: column;
+
+            @media (max-width: 768px) {
+                padding-top: 3rem;
+            }
 
             @media (max-width: 640px) {
                 padding-top: 1rem;
@@ -89,7 +101,7 @@ $solidBorder: 1px solid #e7e7e7;
                 gap: 1.1rem;
                 margin-top: 1.8rem;
 
-                @media (max-width: 640px) {
+                @media (max-width: 768px) {
                     margin-top: 2rem;
                 }
             }
@@ -148,7 +160,7 @@ $solidBorder: 1px solid #e7e7e7;
             width: 1.2rem;
             transition: all .2s ease-in;
 
-            @media (max-width: 640px) {
+            @media (max-width: 768px) {
                 width: 1rem;
             }
         }
@@ -189,7 +201,7 @@ $solidBorder: 1px solid #e7e7e7;
         display: grid;
         gap: 1rem;
 
-        @media (max-width: 640px) {
+        @media (max-width: 768px) {
             width: 100%;
             margin-block: 2rem;
         }
@@ -244,6 +256,10 @@ $solidBorder: 1px solid #e7e7e7;
             text-transform: uppercase;
             font-size: .9rem;
 
+            @media (max-width: 768px) {
+                font-size: 1rem;
+            }
+
             @media (max-width: 640px) {
                 font-size: .8rem;
             }
@@ -281,6 +297,10 @@ $solidBorder: 1px solid #e7e7e7;
             display: grid;
             gap: .8rem;
             margin-bottom: 1.6rem;
+
+            @media (max-width: 768px) {
+                margin-block: 1.5rem 2em;   
+            }
 
             @media (max-width: 640px) {
                 padding: 1.5rem;

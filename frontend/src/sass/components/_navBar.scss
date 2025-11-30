@@ -252,15 +252,22 @@ $solidBorder: 1px solid #e7e7e7;
             margin: 0;
             border-radius: 0 0 8px 8px;
 
-            @media (max-width: 640px) {
+            @media (max-width: 768px) {
+                width: 50%;
                 top: 100%;
-                border-radius: 0;
+                left: 2%;
+                
                 border: none;
-
+                border-radius: 0;
                 background: #ffffffde;
                 -webkit-backdrop-filter: blur(23px);
                 backdrop-filter: blur(10px);
                 border: 1px solid #ffffff0d;
+            }
+
+            @media (max-width: 640px) {
+                width: 100%;
+                left: 0%;
             }
 
             h5,

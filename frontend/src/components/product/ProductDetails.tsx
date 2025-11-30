@@ -6,15 +6,19 @@ import {
     AccordionTrigger,
 } from "@/components/ui/accordion"
 
+interface ProductDetailsProps {
+    highlights: string[]
+    info: string
+    useCase: string
+    usage: string
+}
+
 export default function ProductDetails({
     highlights,
     info,
+    useCase,
     usage,
-}: {
-    highlights: string[]
-    info: string
-    usage: string
-}) {
+}: ProductDetailsProps) {
     return (
         <div className="productPage__details">
             <ul className="productPage__details--highlights">
@@ -33,6 +37,11 @@ export default function ProductDetails({
                 </AccordionItem>
 
                 <AccordionItem value="item-2">
+                    <AccordionTrigger>Quando usar?</AccordionTrigger>
+                    <AccordionContent>{useCase}</AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-3">
                     <AccordionTrigger>Como usar?</AccordionTrigger>
                     <AccordionContent>{usage}</AccordionContent>
                 </AccordionItem>

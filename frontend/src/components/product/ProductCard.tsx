@@ -1,12 +1,13 @@
 "use client"
 import { useState } from "react"
-import { Heart, HeartOff, Info, Store } from "lucide-react"
+import { Heart, HeartOff, Info, Store, XCircle } from "lucide-react"
 import ProductModal from "./ProductModal"
 import Link from "next/link"
 import TextPrice from "../ui/TextPrice"
 import { useID } from "@/hooks/product/useID"
 import useFavoriteHelpers from "@/hooks/favorite/useFavoriteHelpers"
 import { useMediaQuery } from "react-responsive"
+import { ProductLink } from "./ProductLink"
 
 interface ProductCartProps {
     products: any
@@ -23,7 +24,7 @@ export default function ProductCard({
     const { addFavorite, isFavoriteFor } = useFavoriteHelpers()
 
     const isDesktopBetween = useMediaQuery({ minWidth: 1024, maxWidth: 1280 })
-    const isMobile = useMediaQuery({ maxWidth: 639 })
+    const isMobile = useMediaQuery({ maxWidth: 768 })
 
     const columns = isDesktopBetween
         ? 3
@@ -61,11 +62,17 @@ export default function ProductCard({
                     const isFavorite = isFavoriteFor(p)
 
                     return (
-                        <li key={`${p.id}-${randomId}`}>
+                        <li
+                            key={`${p.id}-${randomId}`}
+                            className={p.inStock ? "inStock" : "outOfStock"}
+                        >
                             <div className="sectionGrid__list--view">
-                                <Link href={`/products/${p.id}`}>
+                                <ProductLink
+                                    inStock={p.inStock}
+                                    href={`/products/${p.id}`}
+                                >
                                     <img src={p.postImages[0]} alt={p.name} />
-                                </Link>
+                                </ProductLink>
                                 <div className="sectionGrid__list--view--controls">
                                     <div
                                         className="productControl deactivated"
@@ -98,22 +105,32 @@ export default function ProductCard({
                                     </div>
 
                                     <div className="productControl deactivated">
-                                        <Link href={`/products/${p.id}`}>
+                                        <ProductLink
+                                            inStock={p.inStock}
+                                            href={`/products/${p.id}`}
+                                        >
                                             <Info />
-                                        </Link>
+                                        </ProductLink>
                                     </div>
                                 </div>
                             </div>
 
-                            <Link
+                            <ProductLink
+                                inStock={p.inStock}
                                 href={`/products/${p.id}`}
-                                key={p.id}
                                 className="productName"
                             >
                                 {p.name}
-                            </Link>
+                            </ProductLink>
 
-                            <TextPrice product={p} className="mt-1" />
+                            {!p.inStock ? (
+                                <p className="outOfStock__badge">
+                                    <XCircle />
+                                    Fora de Stock
+                                </p>
+                            ) : (
+                                <TextPrice product={p} className="mt-1" />
+                            )}
                         </li>
                     )
                 })}

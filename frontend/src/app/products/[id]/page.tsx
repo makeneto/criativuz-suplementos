@@ -88,6 +88,7 @@ export default function ProductPage({ params }: ProductPageProps) {
                     <ProductDetails
                         highlights={product.description.highlights}
                         info={product.description.information}
+                        useCase={product.description.useCase}
                         usage={product.description.recommendedUse}
                     />
                 </form>

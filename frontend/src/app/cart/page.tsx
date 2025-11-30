@@ -19,7 +19,7 @@ export default function Cart() {
     const { whatsappUrl } = useWhatsAppOrder(cartItems, deliveryDate, subtotal)
     const currentYear = new Date().getFullYear()
 
-    const isMobile = useMediaQuery({ maxWidth: 640 })
+    const isMobile = useMediaQuery({ maxWidth: 768 })
 
     return (
         <main className="cartPage">

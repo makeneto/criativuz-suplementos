@@ -11,40 +11,41 @@ type Props = {
 export function HelpSheetFormFields({ register, errors }: Props) {
     return (
         <>
-            <Field data-invalid={!!errors.nome}>
-                <Label htmlFor="nome" className="flex gap-[0.3rem]">
-                    Nome <span className="text-red-600">*</span>
-                </Label>
-                <Input
-                    type="text"
-                    id="nome"
-                    placeholder="Makene Neto"
-                    {...register("nome", {
-                        required: "Nome é obrigatório",
-                        minLength: { value: 2, message: "Nome muito curto" },
-                    })}
-                />
-                {errors.nome && <FieldError errors={[errors.nome]} />}
-            </Field>
-
-            <Field data-invalid={!!errors.email}>
-                <Label htmlFor="email" className="flex gap-[0.3rem]">
-                    Email <span className="text-red-600">*</span>
-                </Label>
-                <Input
-                    type="email"
-                    id="email"
-                    placeholder="user@exemplo.com"
-                    {...register("email", {
-                        required: "Email é obrigatório",
-                        pattern: {
-                            value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                            message: "Email inválido",
-                        },
-                    })}
-                />
-                {errors.email && <FieldError errors={[errors.email]} />}
-            </Field>
+            <div className="grid gap-9 sm:grid-cols-2 sm:gap-8">
+                <Field data-invalid={!!errors.nome}>
+                    <Label htmlFor="nome" className="flex gap-[0.3rem]">
+                        Nome <span className="text-red-600">*</span>
+                    </Label>
+                    <Input
+                        type="text"
+                        id="nome"
+                        placeholder="Makene Neto"
+                        {...register("nome", {
+                            required: "Nome é obrigatório",
+                            minLength: { value: 2, message: "Nome muito curto" },
+                        })}
+                    />
+                    {errors.nome && <FieldError errors={[errors.nome]} />}
+                </Field>
+                <Field data-invalid={!!errors.email}>
+                    <Label htmlFor="email" className="flex gap-[0.3rem]">
+                        Email <span className="text-red-600">*</span>
+                    </Label>
+                    <Input
+                        type="email"
+                        id="email"
+                        placeholder="user@exemplo.com"
+                        {...register("email", {
+                            required: "Email é obrigatório",
+                            pattern: {
+                                value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                                message: "Email inválido",
+                            },
+                        })}
+                    />
+                    {errors.email && <FieldError errors={[errors.email]} />}
+                </Field>
+            </div>
 
             <Field data-invalid={!!errors.telefone}>
                 <Label htmlFor="telefone" className="flex gap-[0.3rem]">
