@@ -897,7 +897,7 @@ button:disabled {
   background-color: white;
   position: relative;
   width: 100vw;
-  height: 100%;
+  height: 100dvh;
   margin-bottom: 12rem;
 }
 @media (max-width: 1280px) {
