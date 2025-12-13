@@ -42,7 +42,7 @@ export default function SearchDropdown({
                             : "noProducts"
                     }
                 >
-                    <span>Pesquisar por "{searchTerm}"</span>
+                    <span>{`Pesquisar por "${searchTerm}"`}</span>
                     <ArrowUpRight />
                 </h6>
             </Link>

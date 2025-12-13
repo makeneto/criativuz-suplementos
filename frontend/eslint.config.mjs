@@ -23,6 +23,7 @@ const eslintConfig = [
       "@typescript-eslint/no-explicit-any": "off",
       "react/jsx-key": "off",
       "@next/next/no-img-element": "off",
+      "react/no-unescaped-entities": "off",
     },
   },
 ];
