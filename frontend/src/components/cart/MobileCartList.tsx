@@ -24,8 +24,8 @@ export default function MobileCartList({ subtotal }: any) {
             <FieldSeparator />
 
             <ul>
-                {cartItems.map((item: any) => (
-                    <MobileCartItem item={item} />
+                {cartItems.map((item: any, index: number) => (
+                    <MobileCartItem item={item} key={index} />
                 ))}
             </ul>
         </main>
