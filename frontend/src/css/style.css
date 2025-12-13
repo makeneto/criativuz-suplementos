@@ -126,7 +126,7 @@ button:disabled {
 }
 @media (max-width: 640px) {
   .about {
-    margin-inline: 1rem;
+    margin-inline: 1rem !important;
   }
 }
 .about_image {
@@ -512,7 +512,7 @@ button:disabled {
 }
 @media (max-width: 640px) {
   .end {
-    margin-inline: 1rem;
+    margin-inline: 1rem !important;
   }
 }
 .end_image {

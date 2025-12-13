@@ -175,7 +175,7 @@
                         "Aumenta a recuperação muscular",
                         "Rico em calorias para crescimento muscular"
                     ],
-                    "information":"DIETA ALTAMENTE RICA EM PROTEÍNAS Com 30g de proteína proveniente do Whey Protein Isolado, esta proteína pura fornece aminoácidos essenciais para o seu corpo.",
+                    "information": "DIETA ALTAMENTE RICA EM PROTEÍNAS Com 30g de proteína proveniente do Whey Protein Isolado, esta proteína pura fornece aminoácidos essenciais para o seu corpo.",
                     "useCase": "Indicado quando se precisa dar um impulso calórico extra para acompanhar treinos intensos e favorecer o crescimento muscular.",
                     "recommendedUse": "Misture 200-250 ml de água gelada, leite ou suco. Adicione 1 medida (45 g) de proteína isolada de soro de leite Nitro Fusion. Mexa bem. Beba. Recomenda-se consumir o whey protein isolado Nitro Fusion após o exercício para obter recuperação imediata e ganho de massa muscular."
                 },
@@ -183,7 +183,7 @@
                     "https://i.postimg.cc/GhBSLbb1/hf-series-nitro-fusion-whey-protein-2kg.webp",
                     "https://i.postimg.cc/tRvMGsGX/hf-series-nitro-fusion-whey-protein-4kg.webp"
                 ],
-                "bestSeller": true,
+                "bestSeller": false,
                 "flavors": ["Mirtilo", "Cookies e Cremes"],
                 "inStock": true
             },

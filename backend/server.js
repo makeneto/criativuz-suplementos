@@ -2,6 +2,7 @@ import express from "express"
 import cors from "cors"
 import dotenv from "dotenv"
 import fs from "fs"
+import path from "path"
 
 dotenv.config()
 
@@ -9,18 +10,15 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 
-// Lê o arquivo JSON
-const data = JSON.parse(fs.readFileSync("./data.json", "utf-8"))
+const filePath = path.join(process.cwd(), "./data.json")
+const data = JSON.parse(fs.readFileSync(filePath, "utf-8"))
 
-// Rota inicial
 app.get("/", (req, res) => {
     res.send("API Criativuz Suplementos rodando 🚀")
 })
 
-// Rota de produtos (puxando do data.json)
 app.get("/api/all", (req, res) => {
     res.json(data.all)
 })
 
-const PORT = process.env.PORT || 5000
-app.listen(PORT, () => console.log(`Backend rodando na porta ${PORT}`))
+export default app

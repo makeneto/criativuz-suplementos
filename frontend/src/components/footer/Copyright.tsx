@@ -1,5 +1,4 @@
 import useFooter from "@/hooks/footer/useFooter"
-import { Activity } from "react"
 import { useMediaQuery } from "react-responsive"
 
 export default function Copyright() {
@@ -7,11 +6,8 @@ export default function Copyright() {
     const isMobile = useMediaQuery({ maxWidth: 768 })
 
     return (
-        <p style={{textAlign: isMobile ? "center" : "start"}}>
-            © {currentYear} Criativuz Suplementos.{" "}
-            <Activity mode={isMobile ? "visible" : "hidden"}>
-                <br />
-            </Activity>
+        <p style={{ textAlign: isMobile ? "center" : "start" }}>
+            © {currentYear} Criativuz Suplementos. {isMobile && <br />}
             Todos os direitos reservados.
         </p>
     )

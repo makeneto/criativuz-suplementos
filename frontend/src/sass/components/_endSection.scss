@@ -5,6 +5,7 @@
     justify-content: flex-end;
     position: relative;
 
+    
     @media (max-width: 1280px) {
         margin-block: 0 11rem;
         margin-inline: 6rem 4rem;
@@ -15,11 +16,11 @@
         display: grid;
         margin-inline: 2rem;
     }
-
+    
     @media (max-width: 640px) {
-        margin-inline: 1rem;
+        margin-inline: 1rem !important;
     }
-
+    
     &_image {
         width: 50rem;
         height: 44rem;
