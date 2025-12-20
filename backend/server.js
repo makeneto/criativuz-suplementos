@@ -14,8 +14,14 @@ app.use(express.json())
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
-const filePath = path.join(__dirname, "./data.json")
-const data = JSON.parse(fs.readFileSync(filePath, "utf-8"))
+let data
+try {
+    const filePath = path.join(__dirname, "data.json")
+    data = JSON.parse(fs.readFileSync(filePath, "utf-8"))
+} catch (error) {
+    console.error("Erro ao carregar data.json:", error)
+    data = { all: [] }
+}
 
 app.get("/", (req, res) => {
     res.send("API Criativuz Suplementos rodando 🚀")
