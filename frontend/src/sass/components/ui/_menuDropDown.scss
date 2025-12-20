@@ -18,13 +18,17 @@
     }
 
     -ms-overflow-style: none;
-    /* IE and Edge */
     scrollbar-width: none;
-    /* Firefox */
 
     @media (max-width: 768px) {
         top: 218%;
         width: 48vw;
         height: 61dvh;
+    }
+
+    @media (width <=640px) {
+        width: 100vw;
+        height: 82dvh;
+        top: 2.9rem;
     }
 }

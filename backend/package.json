@@ -9,7 +9,7 @@
         "dev": "node server.js"
     },
     "keywords": [],
-    "author": "",
+    "author": "Makene Neto",
     "license": "ISC",
     "packageManager": "pnpm@10.16.1",
     "dependencies": {

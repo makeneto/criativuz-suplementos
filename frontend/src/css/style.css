@@ -2351,15 +2351,20 @@ input[type=range]::-ms-thumb {
 }
 .menuDropDown {
   -ms-overflow-style: none;
-  /* IE and Edge */
   scrollbar-width: none;
-  /* Firefox */
 }
 @media (max-width: 768px) {
   .menuDropDown {
     top: 218%;
     width: 48vw;
     height: 61dvh;
+  }
+}
+@media (width <= 640px) {
+  .menuDropDown {
+    width: 100vw;
+    height: 82dvh;
+    top: 2.9rem;
   }
 }
 

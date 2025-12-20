@@ -1,9 +1,10 @@
 import { Search, X } from "lucide-react"
 import SearchDropdown from "../search/SearchDropdown"
+import { RefObject } from "react"
 
 interface MobileSearchProps {
-    searchRef: React.RefObject<HTMLDivElement | null>
-    inputRef: React.RefObject<HTMLInputElement | null>
+    searchRef: RefObject<HTMLDivElement>
+    inputRef: RefObject<HTMLInputElement>
     searchTerm: string
     filteredProducts: any[]
     showDropdown: boolean

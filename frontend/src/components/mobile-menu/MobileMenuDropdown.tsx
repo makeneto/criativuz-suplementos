@@ -5,7 +5,7 @@ import { CategoryAccordion } from "./CategoryAccordion"
 
 interface Props {
     toggleMenu: () => void
-    dropdownRef: RefObject<HTMLDivElement | null>
+    dropdownRef: RefObject<HTMLDivElement>
 }
 
 export function MobileMenuDropdown({ toggleMenu, dropdownRef }: Props) {
