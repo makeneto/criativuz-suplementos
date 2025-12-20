@@ -3,6 +3,7 @@ import cors from "cors"
 import dotenv from "dotenv"
 import fs from "fs"
 import path from "path"
+import { fileURLToPath } from "url"
 
 dotenv.config()
 
@@ -10,7 +11,10 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 
-const filePath = path.join(process.cwd(), "./data.json")
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+
+const filePath = path.join(__dirname, "./data.json")
 const data = JSON.parse(fs.readFileSync(filePath, "utf-8"))
 
 app.get("/", (req, res) => {
