@@ -2703,7 +2703,7 @@ input[type=range]::-ms-thumb {
 }
 @media (max-width: 640px) {
   .productPage__container {
-    margin-inline: 1rem;
+    margin-inline: 1rem !important;
   }
 }
 .productPage__container--content {

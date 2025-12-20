@@ -30,7 +30,7 @@ $solidBorder: 1px solid #e7e7e7;
         }
 
         @media (max-width: 640px) {
-            margin-inline: 1rem;
+            margin-inline: 1rem !important;
         }
 
         &--content {
@@ -299,7 +299,7 @@ $solidBorder: 1px solid #e7e7e7;
             margin-bottom: 1.6rem;
 
             @media (max-width: 768px) {
-                margin-block: 1.5rem 2em;   
+                margin-block: 1.5rem 2em;
             }
 
             @media (max-width: 640px) {
